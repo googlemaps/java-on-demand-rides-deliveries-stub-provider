@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <runtime>java8</runtime>
+
+  <!-- Replace YOUR-APPID-HERE before deploying.
+       If you created an App Engine for Business (googleplex) app for Googlers
+       only, YOUR-APPID-HERE should look like s~google.com:my-app (where my-app
+       is what you typed in the "Application Identifier" box when you created
+       the app in the App Engine control panel). If you created a public App
+       Engine (AppSpot) app, just say my-app. -->
+  <application>YOUR-APPID-HERE</application>
+  <version>1</version>
+
+  <!-- Keep your application thread-safe and you can have multiple responding
+       threads. -->
+  <threadsafe>true</threadsafe>
+
+  <!-- Continue to use urlfetch to open URLs in Java.
+       Delete this to use the socket API, which is more performant but could
+       conceivably lead to different behavior. -->
+  <url-stream-handler>urlfetch</url-stream-handler>
+</appengine-web-app>

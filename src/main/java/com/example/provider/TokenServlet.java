@@ -1,0 +1,92 @@
+/* Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.example.provider;
+
+import com.example.provider.utils.ServletUtils;
+import com.google.common.base.Ascii;
+import com.google.fleetengine.auth.AuthTokenMinter;
+import com.google.fleetengine.auth.token.FleetEngineToken;
+import com.google.fleetengine.auth.token.FleetEngineTokenType;
+import com.google.fleetengine.auth.token.TripClaims;
+import com.google.fleetengine.auth.token.VehicleClaims;
+import com.google.fleetengine.auth.token.factory.signer.SigningTokenException;
+import com.google.gson.Gson;
+import java.io.IOException;
+import java.util.logging.Logger;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet for token endpoints to get signed tokens.
+ *
+ * <p>GET /token/:tokenType tokenType: "driver" or "consumer"
+ */
+@Singleton
+public class TokenServlet extends HttpServlet {
+
+  private static final Logger logger = Logger.getLogger(TokenServlet.class.getName());
+  private final AuthTokenMinter minter;
+
+  @Inject
+  TokenServlet(AuthTokenMinter minter) {
+    super();
+    this.minter = minter;
+  }
+
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    ServletUtils.setStandardResponseHeaders(response);
+
+    String tokenType = request.getPathInfo().substring(1);
+    FleetEngineTokenType tokenTypeEnum;
+    try {
+      tokenTypeEnum = FleetEngineTokenType.valueOf(Ascii.toUpperCase(tokenType));
+    } catch (IllegalArgumentException e) {
+      logger.warning(String.format("Requested token for tokenType [%s], but did not find token.",
+          tokenType));
+      response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+          String.format("Could not find token for the given type: %s", tokenType));
+      return;
+    }
+
+    FleetEngineToken authToken;
+    try {
+      switch (tokenTypeEnum) {
+        case DRIVER:
+          authToken = this.minter.getDriverToken(VehicleClaims.create());
+          break;
+        case CONSUMER:
+          authToken = this.minter.getConsumerToken(TripClaims.create());
+          break;
+        default:
+          logger.severe("Requested token for tokenType [%s], but it should not get here.");
+          response.sendError(
+              HttpServletResponse.SC_BAD_REQUEST,
+              String.format("Could not find token for the given type: %s", tokenType));
+          return;
+      }
+    } catch (SigningTokenException exception) {
+      throw new SampleProviderException("Error signing token", exception);
+    }
+
+    logger.info(String.format("Found token for type %s: %s", tokenType, authToken.jwt()));
+
+    response.getWriter().print(new Gson().toJson(authToken));
+    response.getWriter().flush();
+  }
+}
