@@ -40,7 +40,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 12;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface ListVehiclesRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 12;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -61,7 +61,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The parent.
    */
-  java.lang.String getParent();
+  String getParent();
   /**
    * <pre>
    * Required. Must be in the format "providers/{provider}".
@@ -95,7 +95,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>string page_token = 4;</code>
    * @return The pageToken.
    */
-  java.lang.String getPageToken();
+  String getPageToken();
   /**
    * <pre>
    * The next_page_token value returned from a previous response, if any.
@@ -152,7 +152,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.TripType trip_types = 7;</code>
    * @return A list containing the tripTypes.
    */
-  java.util.List<google.maps.fleetengine.v1.TripType> getTripTypesList();
+  java.util.List<TripType> getTripTypesList();
   /**
    * <pre>
    * Restrict the search to only those vehicles that support at least
@@ -173,7 +173,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The tripTypes at the given index.
    */
-  google.maps.fleetengine.v1.TripType getTripTypes(int index);
+  TripType getTripTypes(int index);
   /**
    * <pre>
    * Restrict the search to only those vehicles that support at least
@@ -183,7 +183,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.TripType trip_types = 7;</code>
    * @return A list containing the enum numeric values on the wire for tripTypes.
    */
-  java.util.List<java.lang.Integer>
+  java.util.List<Integer>
   getTripTypesValueList();
   /**
    * <pre>
@@ -238,7 +238,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType.Category vehicle_type_categories = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the vehicleTypeCategories.
    */
-  java.util.List<google.maps.fleetengine.v1.Vehicle.VehicleType.Category> getVehicleTypeCategoriesList();
+  java.util.List<Vehicle.VehicleType.Category> getVehicleTypeCategoriesList();
   /**
    * <pre>
    * Required. Restrict the search to those vehicles with the specified type categories.
@@ -257,7 +257,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The vehicleTypeCategories at the given index.
    */
-  google.maps.fleetengine.v1.Vehicle.VehicleType.Category getVehicleTypeCategories(int index);
+  Vehicle.VehicleType.Category getVehicleTypeCategories(int index);
   /**
    * <pre>
    * Required. Restrict the search to those vehicles with the specified type categories.
@@ -266,7 +266,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType.Category vehicle_type_categories = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the enum numeric values on the wire for vehicleTypeCategories.
    */
-  java.util.List<java.lang.Integer>
+  java.util.List<Integer>
   getVehicleTypeCategoriesValueList();
   /**
    * <pre>
@@ -302,7 +302,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>repeated string required_attributes = 10;</code>
    * @return A list containing the requiredAttributes.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getRequiredAttributesList();
   /**
    * <pre>
@@ -352,7 +352,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The requiredAttributes at the given index.
    */
-  java.lang.String getRequiredAttributes(int index);
+  String getRequiredAttributes(int index);
   /**
    * <pre>
    * Callers can form complex logical operations using the
@@ -394,7 +394,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>repeated string required_one_of_attributes = 13;</code>
    * @return A list containing the requiredOneOfAttributes.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getRequiredOneOfAttributesList();
   /**
    * <pre>
@@ -426,7 +426,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The requiredOneOfAttributes at the given index.
    */
-  java.lang.String getRequiredOneOfAttributes(int index);
+  String getRequiredOneOfAttributes(int index);
   /**
    * <pre>
    * Restrict the search to only those vehicles with at least one
@@ -458,7 +458,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>repeated string required_one_of_attribute_sets = 15;</code>
    * @return A list containing the requiredOneOfAttributeSets.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getRequiredOneOfAttributeSetsList();
   /**
    * <pre>
@@ -488,7 +488,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The requiredOneOfAttributeSets at the given index.
    */
-  java.lang.String getRequiredOneOfAttributeSets(int index);
+  String getRequiredOneOfAttributeSets(int index);
   /**
    * <pre>
    * Restrict the search to only those vehicles with at least one set of the
@@ -523,7 +523,7 @@ public interface ListVehiclesRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.VehicleState vehicle_state = 11;</code>
    * @return The vehicleState.
    */
-  google.maps.fleetengine.v1.VehicleState getVehicleState();
+  VehicleState getVehicleState();
 
   /**
    * <pre>

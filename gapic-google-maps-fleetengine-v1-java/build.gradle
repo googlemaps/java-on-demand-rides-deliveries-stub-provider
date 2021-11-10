@@ -35,11 +35,11 @@ compileJava.options.encoding = 'UTF-8'
 javadoc.options.encoding = 'UTF-8'
 
 dependencies {
-  compile 'com.google.api:gax:2.3.0'
-  testCompile 'com.google.api:gax:2.3.0:testlib'
-  compile 'com.google.api:gax-grpc:2.3.0'
-  testCompile 'com.google.api:gax-grpc:2.3.0:testlib'
-  testCompile 'io.grpc:grpc-netty-shaded:1.37.0'
+  compile 'com.google.api:gax:2.6.1'
+  testCompile 'com.google.api:gax:2.6.1:testlib'
+  compile 'com.google.api:gax-grpc:2.6.1'
+  testCompile 'com.google.api:gax-grpc:2.6.1:testlib'
+  testCompile 'io.grpc:grpc-netty-shaded:1.41.0'
   testCompile 'junit:junit:4.13.2'
   compile project(':proto-google-maps-fleetengine-v1-java')
   testCompile project(':grpc-google-maps-fleetengine-v1-java')

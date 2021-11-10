@@ -23,8 +23,8 @@ apply plugin: 'java'
 description = 'GRPC library for grpc-google-maps-fleetengine-v1-java'
 group = 'com.google.api.grpc'
 version = (findProperty('version') == 'unspecified') ? '0.0.0-SNAPSHOT' : version
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
   mavenCentral()
@@ -32,8 +32,8 @@ repositories {
 }
 
 dependencies {
-  compile 'io.grpc:grpc-stub:1.37.0'
-  compile 'io.grpc:grpc-protobuf:1.37.0'
+  compile 'io.grpc:grpc-stub:1.41.0'
+  compile 'io.grpc:grpc-protobuf:1.41.0'
   compile project(':proto-google-maps-fleetengine-v1-java')
 }
 

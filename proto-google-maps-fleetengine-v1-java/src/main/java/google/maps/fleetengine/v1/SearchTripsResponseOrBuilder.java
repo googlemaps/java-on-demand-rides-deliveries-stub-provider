@@ -30,7 +30,7 @@ public interface SearchTripsResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.Trip> 
+  java.util.List<Trip>
       getTripsList();
   /**
    * <pre>
@@ -39,7 +39,7 @@ public interface SearchTripsResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
-  google.maps.fleetengine.v1.Trip getTrips(int index);
+  Trip getTrips(int index);
   /**
    * <pre>
    * The list of trips for the requested vehicle.
@@ -55,7 +55,7 @@ public interface SearchTripsResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.TripOrBuilder> 
+  java.util.List<? extends TripOrBuilder>
       getTripsOrBuilderList();
   /**
    * <pre>
@@ -64,7 +64,7 @@ public interface SearchTripsResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Trip trips = 1;</code>
    */
-  google.maps.fleetengine.v1.TripOrBuilder getTripsOrBuilder(
+  TripOrBuilder getTripsOrBuilder(
       int index);
 
   /**
@@ -77,7 +77,7 @@ public interface SearchTripsResponseOrBuilder extends
    * <code>string next_page_token = 2;</code>
    * @return The nextPageToken.
    */
-  java.lang.String getNextPageToken();
+  String getNextPageToken();
   /**
    * <pre>
    * Pass this token in the SearchTripsRequest to continue to

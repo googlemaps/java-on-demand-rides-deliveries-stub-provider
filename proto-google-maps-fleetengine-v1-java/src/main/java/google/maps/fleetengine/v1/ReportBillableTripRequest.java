@@ -43,14 +43,14 @@ private static final long serialVersionUID = 0L;
     solutionType_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new ReportBillableTripRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -75,13 +75,13 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             name_ = s;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             countryCode_ = s;
             break;
@@ -93,7 +93,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               relatedIds_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
@@ -131,15 +131,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor;
+    return TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_fieldAccessorTable
+    return TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.ReportBillableTripRequest.class, google.maps.fleetengine.v1.ReportBillableTripRequest.Builder.class);
+            ReportBillableTripRequest.class, Builder.class);
   }
 
   /**
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static SolutionType valueOf(int value) {
       return forNumber(value);
     }
@@ -237,7 +237,7 @@ private static final long serialVersionUID = 0L;
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -248,7 +248,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.ReportBillableTripRequest.getDescriptor().getEnumTypes().get(0);
+      return ReportBillableTripRequest.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final SolutionType[] VALUES = values();
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
     public static SolutionType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+  private volatile Object name_;
   /**
    * <pre>
    * Required. Must be in the format
@@ -288,15 +288,15 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getName() {
+    Object ref = name_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
@@ -313,14 +313,14 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
+    Object ref = name_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       name_ = b;
       return b;
     } else {
@@ -329,7 +329,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COUNTRY_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object countryCode_;
+  private volatile Object countryCode_;
   /**
    * <pre>
    * Required. Two letter country code of the country where the trip takes place. Price is
@@ -339,15 +339,15 @@ private static final long serialVersionUID = 0L;
    * <code>string country_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The countryCode.
    */
-  @java.lang.Override
-  public java.lang.String getCountryCode() {
-    java.lang.Object ref = countryCode_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getCountryCode() {
+    Object ref = countryCode_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       countryCode_ = s;
       return s;
     }
@@ -361,14 +361,14 @@ private static final long serialVersionUID = 0L;
    * <code>string country_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for countryCode.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getCountryCodeBytes() {
-    java.lang.Object ref = countryCode_;
-    if (ref instanceof java.lang.String) {
+    Object ref = countryCode_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       countryCode_ = b;
       return b;
     } else {
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.BillingPlatformIdentifier platform = 5;</code>
    * @return The enum numeric value on the wire for platform.
    */
-  @java.lang.Override public int getPlatformValue() {
+  @Override public int getPlatformValue() {
     return platform_;
   }
   /**
@@ -397,10 +397,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.BillingPlatformIdentifier platform = 5;</code>
    * @return The platform.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.BillingPlatformIdentifier getPlatform() {
+  @Override public BillingPlatformIdentifier getPlatform() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.BillingPlatformIdentifier result = google.maps.fleetengine.v1.BillingPlatformIdentifier.valueOf(platform_);
-    return result == null ? google.maps.fleetengine.v1.BillingPlatformIdentifier.UNRECOGNIZED : result;
+    BillingPlatformIdentifier result = BillingPlatformIdentifier.valueOf(platform_);
+    return result == null ? BillingPlatformIdentifier.UNRECOGNIZED : result;
   }
 
   public static final int RELATED_IDS_FIELD_NUMBER = 6;
@@ -446,7 +446,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The relatedIds at the given index.
    */
-  public java.lang.String getRelatedIds(int index) {
+  public String getRelatedIds(int index) {
     return relatedIds_.get(index);
   }
   /**
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
    * @return The enum numeric value on the wire for solutionType.
    */
-  @java.lang.Override public int getSolutionTypeValue() {
+  @Override public int getSolutionTypeValue() {
     return solutionType_;
   }
   /**
@@ -489,14 +489,14 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
    * @return The solutionType.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType getSolutionType() {
+  @Override public SolutionType getSolutionType() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType result = google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType.valueOf(solutionType_);
-    return result == null ? google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType.UNRECOGNIZED : result;
+    SolutionType result = SolutionType.valueOf(solutionType_);
+    return result == null ? SolutionType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -506,40 +506,40 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!getCountryCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, countryCode_);
     }
-    if (platform_ != google.maps.fleetengine.v1.BillingPlatformIdentifier.BILLING_PLATFORM_IDENTIFIER_UNSPECIFIED.getNumber()) {
+    if (platform_ != BillingPlatformIdentifier.BILLING_PLATFORM_IDENTIFIER_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, platform_);
     }
     for (int i = 0; i < relatedIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, relatedIds_.getRaw(i));
     }
-    if (solutionType_ != google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType.SOLUTION_TYPE_UNSPECIFIED.getNumber()) {
+    if (solutionType_ != SolutionType.SOLUTION_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, solutionType_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!getCountryCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, countryCode_);
     }
-    if (platform_ != google.maps.fleetengine.v1.BillingPlatformIdentifier.BILLING_PLATFORM_IDENTIFIER_UNSPECIFIED.getNumber()) {
+    if (platform_ != BillingPlatformIdentifier.BILLING_PLATFORM_IDENTIFIER_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, platform_);
     }
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getRelatedIdsList().size();
     }
-    if (solutionType_ != google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType.SOLUTION_TYPE_UNSPECIFIED.getNumber()) {
+    if (solutionType_ != SolutionType.SOLUTION_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, solutionType_);
     }
@@ -560,15 +560,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.ReportBillableTripRequest)) {
+    if (!(obj instanceof ReportBillableTripRequest)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.ReportBillableTripRequest other = (google.maps.fleetengine.v1.ReportBillableTripRequest) obj;
+    ReportBillableTripRequest other = (ReportBillableTripRequest) obj;
 
     if (!getName()
         .equals(other.getName())) return false;
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -606,69 +606,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(byte[] data)
+  public static ReportBillableTripRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(java.io.InputStream input)
+  public static ReportBillableTripRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ReportBillableTripRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseDelimitedFrom(
+  public static ReportBillableTripRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest parseFrom(
+  public static ReportBillableTripRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -676,23 +676,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.ReportBillableTripRequest prototype) {
+  public static Builder newBuilder(ReportBillableTripRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -706,18 +706,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.ReportBillableTripRequest)
-      google.maps.fleetengine.v1.ReportBillableTripRequestOrBuilder {
+      ReportBillableTripRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor;
+      return TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_fieldAccessorTable
+      return TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.ReportBillableTripRequest.class, google.maps.fleetengine.v1.ReportBillableTripRequest.Builder.class);
+              ReportBillableTripRequest.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.ReportBillableTripRequest.newBuilder()
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -751,29 +751,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor;
+      return TripApi.internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.ReportBillableTripRequest getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.ReportBillableTripRequest.getDefaultInstance();
+    @Override
+    public ReportBillableTripRequest getDefaultInstanceForType() {
+      return ReportBillableTripRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.ReportBillableTripRequest build() {
-      google.maps.fleetengine.v1.ReportBillableTripRequest result = buildPartial();
+    @Override
+    public ReportBillableTripRequest build() {
+      ReportBillableTripRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.ReportBillableTripRequest buildPartial() {
-      google.maps.fleetengine.v1.ReportBillableTripRequest result = new google.maps.fleetengine.v1.ReportBillableTripRequest(this);
+    @Override
+    public ReportBillableTripRequest buildPartial() {
+      ReportBillableTripRequest result = new ReportBillableTripRequest(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.countryCode_ = countryCode_;
@@ -788,50 +788,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.ReportBillableTripRequest) {
-        return mergeFrom((google.maps.fleetengine.v1.ReportBillableTripRequest)other);
+      if (other instanceof ReportBillableTripRequest) {
+        return mergeFrom((ReportBillableTripRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.ReportBillableTripRequest other) {
-      if (other == google.maps.fleetengine.v1.ReportBillableTripRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ReportBillableTripRequest other) {
+      if (other == ReportBillableTripRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -861,21 +861,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.ReportBillableTripRequest parsedMessage = null;
+      ReportBillableTripRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.ReportBillableTripRequest) e.getUnfinishedMessage();
+        parsedMessage = (ReportBillableTripRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private Object name_ = "";
     /**
      * <pre>
      * Required. Must be in the format
@@ -899,16 +899,16 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getName() {
+      Object ref = name_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         name_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -925,11 +925,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      java.lang.Object ref = name_;
+      Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         name_ = b;
         return b;
       } else {
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setName(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1002,7 +1002,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object countryCode_ = "";
+    private Object countryCode_ = "";
     /**
      * <pre>
      * Required. Two letter country code of the country where the trip takes place. Price is
@@ -1012,16 +1012,16 @@ private static final long serialVersionUID = 0L;
      * <code>string country_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The countryCode.
      */
-    public java.lang.String getCountryCode() {
-      java.lang.Object ref = countryCode_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getCountryCode() {
+      Object ref = countryCode_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         countryCode_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1035,11 +1035,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
-      java.lang.Object ref = countryCode_;
+      Object ref = countryCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         countryCode_ = b;
         return b;
       } else {
@@ -1057,7 +1057,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCountryCode(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1112,7 +1112,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.BillingPlatformIdentifier platform = 5;</code>
      * @return The enum numeric value on the wire for platform.
      */
-    @java.lang.Override public int getPlatformValue() {
+    @Override public int getPlatformValue() {
       return platform_;
     }
     /**
@@ -1138,11 +1138,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.BillingPlatformIdentifier platform = 5;</code>
      * @return The platform.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.BillingPlatformIdentifier getPlatform() {
+    @Override
+    public BillingPlatformIdentifier getPlatform() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.BillingPlatformIdentifier result = google.maps.fleetengine.v1.BillingPlatformIdentifier.valueOf(platform_);
-      return result == null ? google.maps.fleetengine.v1.BillingPlatformIdentifier.UNRECOGNIZED : result;
+      BillingPlatformIdentifier result = BillingPlatformIdentifier.valueOf(platform_);
+      return result == null ? BillingPlatformIdentifier.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -1153,7 +1153,7 @@ private static final long serialVersionUID = 0L;
      * @param value The platform to set.
      * @return This builder for chaining.
      */
-    public Builder setPlatform(google.maps.fleetengine.v1.BillingPlatformIdentifier value) {
+    public Builder setPlatform(BillingPlatformIdentifier value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1225,7 +1225,7 @@ private static final long serialVersionUID = 0L;
      * @param index The index of the element to return.
      * @return The relatedIds at the given index.
      */
-    public java.lang.String getRelatedIds(int index) {
+    public String getRelatedIds(int index) {
       return relatedIds_.get(index);
     }
     /**
@@ -1258,7 +1258,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setRelatedIds(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1280,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addRelatedIds(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1302,7 +1302,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllRelatedIds(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureRelatedIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, relatedIds_);
@@ -1360,7 +1360,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
      * @return The enum numeric value on the wire for solutionType.
      */
-    @java.lang.Override public int getSolutionTypeValue() {
+    @Override public int getSolutionTypeValue() {
       return solutionType_;
     }
     /**
@@ -1388,11 +1388,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
      * @return The solutionType.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType getSolutionType() {
+    @Override
+    public SolutionType getSolutionType() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType result = google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType.valueOf(solutionType_);
-      return result == null ? google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType.UNRECOGNIZED : result;
+      SolutionType result = SolutionType.valueOf(solutionType_);
+      return result == null ? SolutionType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -1404,7 +1404,7 @@ private static final long serialVersionUID = 0L;
      * @param value The solutionType to set.
      * @return This builder for chaining.
      */
-    public Builder setSolutionType(google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType value) {
+    public Builder setSolutionType(SolutionType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1428,13 +1428,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1445,18 +1445,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.ReportBillableTripRequest)
-  private static final google.maps.fleetengine.v1.ReportBillableTripRequest DEFAULT_INSTANCE;
+  private static final ReportBillableTripRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.ReportBillableTripRequest();
+    DEFAULT_INSTANCE = new ReportBillableTripRequest();
   }
 
-  public static google.maps.fleetengine.v1.ReportBillableTripRequest getDefaultInstance() {
+  public static ReportBillableTripRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ReportBillableTripRequest>
       PARSER = new com.google.protobuf.AbstractParser<ReportBillableTripRequest>() {
-    @java.lang.Override
+    @Override
     public ReportBillableTripRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1469,13 +1469,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<ReportBillableTripRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.ReportBillableTripRequest getDefaultInstanceForType() {
+  @Override
+  public ReportBillableTripRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -40,7 +40,7 @@ public interface GetVehicleRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface GetVehicleRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -62,7 +62,7 @@ public interface GetVehicleRequestOrBuilder extends
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * Required. Must be in the format

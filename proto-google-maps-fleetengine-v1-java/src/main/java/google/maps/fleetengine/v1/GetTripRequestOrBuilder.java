@@ -40,7 +40,7 @@ public interface GetTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface GetTripRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -61,7 +61,7 @@ public interface GetTripRequestOrBuilder extends
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * Required. Must be in the format "providers/{provider}/trips/{trip}".
@@ -93,7 +93,7 @@ public interface GetTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.TripView view = 11;</code>
    * @return The view.
    */
-  google.maps.fleetengine.v1.TripView getView();
+  TripView getView();
 
   /**
    * <pre>
@@ -188,5 +188,5 @@ public interface GetTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.PolylineFormatType route_format_type = 8;</code>
    * @return The routeFormatType.
    */
-  google.maps.fleetengine.v1.PolylineFormatType getRouteFormatType();
+  PolylineFormatType getRouteFormatType();
 }

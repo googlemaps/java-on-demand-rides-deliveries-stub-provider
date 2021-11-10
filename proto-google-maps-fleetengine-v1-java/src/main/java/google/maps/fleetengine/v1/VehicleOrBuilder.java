@@ -32,7 +32,7 @@ public interface VehicleOrBuilder extends
    * <code>string name = 1;</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * The unique name for this vehicle.
@@ -62,7 +62,7 @@ public interface VehicleOrBuilder extends
    * <code>.maps.fleetengine.v1.VehicleState vehicle_state = 2;</code>
    * @return The vehicleState.
    */
-  google.maps.fleetengine.v1.VehicleState getVehicleState();
+  VehicleState getVehicleState();
 
   /**
    * <pre>
@@ -72,7 +72,7 @@ public interface VehicleOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.TripType supported_trip_types = 3;</code>
    * @return A list containing the supportedTripTypes.
    */
-  java.util.List<google.maps.fleetengine.v1.TripType> getSupportedTripTypesList();
+  java.util.List<TripType> getSupportedTripTypesList();
   /**
    * <pre>
    * Supported trip types.
@@ -91,7 +91,7 @@ public interface VehicleOrBuilder extends
    * @param index The index of the element to return.
    * @return The supportedTripTypes at the given index.
    */
-  google.maps.fleetengine.v1.TripType getSupportedTripTypes(int index);
+  TripType getSupportedTripTypes(int index);
   /**
    * <pre>
    * Supported trip types.
@@ -100,7 +100,7 @@ public interface VehicleOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.TripType supported_trip_types = 3;</code>
    * @return A list containing the enum numeric values on the wire for supportedTripTypes.
    */
-  java.util.List<java.lang.Integer>
+  java.util.List<Integer>
   getSupportedTripTypesValueList();
   /**
    * <pre>
@@ -121,7 +121,7 @@ public interface VehicleOrBuilder extends
    * <code>repeated string current_trips = 4;</code>
    * @return A list containing the currentTrips.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getCurrentTripsList();
   /**
    * <pre>
@@ -141,7 +141,7 @@ public interface VehicleOrBuilder extends
    * @param index The index of the element to return.
    * @return The currentTrips at the given index.
    */
-  java.lang.String getCurrentTrips(int index);
+  String getCurrentTrips(int index);
   /**
    * <pre>
    * List of IDs for trips in progress.
@@ -171,7 +171,7 @@ public interface VehicleOrBuilder extends
    * <code>.maps.fleetengine.v1.VehicleLocation last_location = 5;</code>
    * @return The lastLocation.
    */
-  google.maps.fleetengine.v1.VehicleLocation getLastLocation();
+  VehicleLocation getLastLocation();
   /**
    * <pre>
    * Last reported location of the vehicle.
@@ -179,7 +179,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.VehicleLocation last_location = 5;</code>
    */
-  google.maps.fleetengine.v1.VehicleLocationOrBuilder getLastLocationOrBuilder();
+  VehicleLocationOrBuilder getLastLocationOrBuilder();
 
   /**
    * <pre>
@@ -211,7 +211,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.VehicleAttribute> 
+  java.util.List<VehicleAttribute>
       getAttributesList();
   /**
    * <pre>
@@ -220,7 +220,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttribute getAttributes(int index);
+  VehicleAttribute getAttributes(int index);
   /**
    * <pre>
    * List of vehicle service attributes.
@@ -236,7 +236,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleAttributeOrBuilder> 
+  java.util.List<? extends VehicleAttributeOrBuilder>
       getAttributesOrBuilderList();
   /**
    * <pre>
@@ -245,7 +245,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeOrBuilder getAttributesOrBuilder(
+  VehicleAttributeOrBuilder getAttributesOrBuilder(
       int index);
 
   /**
@@ -267,7 +267,7 @@ public interface VehicleOrBuilder extends
    * <code>.maps.fleetengine.v1.Vehicle.VehicleType vehicle_type = 9;</code>
    * @return The vehicleType.
    */
-  google.maps.fleetengine.v1.Vehicle.VehicleType getVehicleType();
+  Vehicle.VehicleType getVehicleType();
   /**
    * <pre>
    * The type of this Vehicle.  Can be filtered during SearchVehicles.  Also
@@ -276,7 +276,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.Vehicle.VehicleType vehicle_type = 9;</code>
    */
-  google.maps.fleetengine.v1.Vehicle.VehicleTypeOrBuilder getVehicleTypeOrBuilder();
+  Vehicle.VehicleTypeOrBuilder getVehicleTypeOrBuilder();
 
   /**
    * <pre>
@@ -295,7 +295,7 @@ public interface VehicleOrBuilder extends
    * <code>.maps.fleetengine.v1.LicensePlate license_plate = 10;</code>
    * @return The licensePlate.
    */
-  google.maps.fleetengine.v1.LicensePlate getLicensePlate();
+  LicensePlate getLicensePlate();
   /**
    * <pre>
    * License plate information for the vehicle.
@@ -303,7 +303,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.LicensePlate license_plate = 10;</code>
    */
-  google.maps.fleetengine.v1.LicensePlateOrBuilder getLicensePlateOrBuilder();
+  LicensePlateOrBuilder getLicensePlateOrBuilder();
 
   /**
    * <pre>
@@ -312,7 +312,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.util.List<google.maps.fleetengine.v1.TerminalLocation> 
+  @Deprecated java.util.List<TerminalLocation>
       getRouteList();
   /**
    * <pre>
@@ -321,7 +321,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
    */
-  @java.lang.Deprecated google.maps.fleetengine.v1.TerminalLocation getRoute(int index);
+  @Deprecated TerminalLocation getRoute(int index);
   /**
    * <pre>
    * Deprecated. Use vehicle.waypoint instead.
@@ -329,7 +329,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
    */
-  @java.lang.Deprecated int getRouteCount();
+  @Deprecated int getRouteCount();
   /**
    * <pre>
    * Deprecated. Use vehicle.waypoint instead.
@@ -337,7 +337,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.util.List<? extends google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+  @Deprecated java.util.List<? extends TerminalLocationOrBuilder>
       getRouteOrBuilderList();
   /**
    * <pre>
@@ -346,7 +346,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
    */
-  @java.lang.Deprecated google.maps.fleetengine.v1.TerminalLocationOrBuilder getRouteOrBuilder(
+  @Deprecated TerminalLocationOrBuilder getRouteOrBuilder(
       int index);
 
   /**
@@ -361,7 +361,7 @@ public interface VehicleOrBuilder extends
    * <code>string current_route_segment = 20;</code>
    * @return The currentRouteSegment.
    */
-  java.lang.String getCurrentRouteSegment();
+  String getCurrentRouteSegment();
   /**
    * <pre>
    * The polyline specifying the route the driver app intends to take to
@@ -440,7 +440,7 @@ public interface VehicleOrBuilder extends
    * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
    * @return The currentRouteSegmentEndPoint.
    */
-  google.maps.fleetengine.v1.TripWaypoint getCurrentRouteSegmentEndPoint();
+  TripWaypoint getCurrentRouteSegmentEndPoint();
   /**
    * <pre>
    * The waypoint where current_route_segment ends. This can be supplied by
@@ -453,7 +453,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
    */
-  google.maps.fleetengine.v1.TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder();
+  TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder();
 
   /**
    * <pre>
@@ -609,7 +609,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.TripWaypoint> 
+  java.util.List<TripWaypoint>
       getWaypointsList();
   /**
    * <pre>
@@ -618,7 +618,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
    */
-  google.maps.fleetengine.v1.TripWaypoint getWaypoints(int index);
+  TripWaypoint getWaypoints(int index);
   /**
    * <pre>
    * The remaining set of waypoints assigned to this Vehicle.
@@ -634,7 +634,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+  java.util.List<? extends TripWaypointOrBuilder>
       getWaypointsOrBuilderList();
   /**
    * <pre>
@@ -643,7 +643,7 @@ public interface VehicleOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
    */
-  google.maps.fleetengine.v1.TripWaypointOrBuilder getWaypointsOrBuilder(
+  TripWaypointOrBuilder getWaypointsOrBuilder(
       int index);
 
   /**
@@ -709,7 +709,7 @@ public interface VehicleOrBuilder extends
    * <code>.maps.fleetengine.v1.NavigationStatus navigation_status = 26;</code>
    * @return The navigationStatus.
    */
-  google.maps.fleetengine.v1.NavigationStatus getNavigationStatus();
+  NavigationStatus getNavigationStatus();
 
   /**
    * <pre>
@@ -730,7 +730,7 @@ public interface VehicleOrBuilder extends
    * <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27;</code>
    * @return The deviceSettings.
    */
-  google.maps.fleetengine.v1.DeviceSettings getDeviceSettings();
+  DeviceSettings getDeviceSettings();
   /**
    * <pre>
    * Information about various device settings. This is internal debug only
@@ -739,5 +739,5 @@ public interface VehicleOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27;</code>
    */
-  google.maps.fleetengine.v1.DeviceSettingsOrBuilder getDeviceSettingsOrBuilder();
+  DeviceSettingsOrBuilder getDeviceSettingsOrBuilder();
 }

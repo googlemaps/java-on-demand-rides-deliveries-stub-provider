@@ -49,14 +49,14 @@ private static final long serialVersionUID = 0L;
     view_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new Trip();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -67,7 +67,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -81,13 +81,13 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             name_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             vehicleId_ = s;
             break;
@@ -105,11 +105,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            google.maps.fleetengine.v1.TerminalLocation.Builder subBuilder = null;
+            TerminalLocation.Builder subBuilder = null;
             if (pickupPoint_ != null) {
               subBuilder = pickupPoint_.toBuilder();
             }
-            pickupPoint_ = input.readMessage(google.maps.fleetengine.v1.TerminalLocation.parser(), extensionRegistry);
+            pickupPoint_ = input.readMessage(TerminalLocation.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(pickupPoint_);
               pickupPoint_ = subBuilder.buildPartial();
@@ -131,11 +131,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            google.maps.fleetengine.v1.TerminalLocation.Builder subBuilder = null;
+            TerminalLocation.Builder subBuilder = null;
             if (dropoffPoint_ != null) {
               subBuilder = dropoffPoint_.toBuilder();
             }
-            dropoffPoint_ = input.readMessage(google.maps.fleetengine.v1.TerminalLocation.parser(), extensionRegistry);
+            dropoffPoint_ = input.readMessage(TerminalLocation.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(dropoffPoint_);
               dropoffPoint_ = subBuilder.buildPartial();
@@ -171,11 +171,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            google.maps.fleetengine.v1.VehicleLocation.Builder subBuilder = null;
+            VehicleLocation.Builder subBuilder = null;
             if (lastLocation_ != null) {
               subBuilder = lastLocation_.toBuilder();
             }
-            lastLocation_ = input.readMessage(google.maps.fleetengine.v1.VehicleLocation.parser(), extensionRegistry);
+            lastLocation_ = input.readMessage(VehicleLocation.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(lastLocation_);
               lastLocation_ = subBuilder.buildPartial();
@@ -211,11 +211,11 @@ private static final long serialVersionUID = 0L;
           }
           case 114: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              intermediateDestinations_ = new java.util.ArrayList<google.maps.fleetengine.v1.TerminalLocation>();
+              intermediateDestinations_ = new java.util.ArrayList<TerminalLocation>();
               mutable_bitField0_ |= 0x00000001;
             }
             intermediateDestinations_.add(
-                input.readMessage(google.maps.fleetengine.v1.TerminalLocation.parser(), extensionRegistry));
+                input.readMessage(TerminalLocation.parser(), extensionRegistry));
             break;
           }
           case 120: {
@@ -225,11 +225,11 @@ private static final long serialVersionUID = 0L;
           }
           case 130: {
             if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              remainingWaypoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.TripWaypoint>();
+              remainingWaypoints_ = new java.util.ArrayList<TripWaypoint>();
               mutable_bitField0_ |= 0x00000008;
             }
             remainingWaypoints_.add(
-                input.readMessage(google.maps.fleetengine.v1.TripWaypoint.parser(), extensionRegistry));
+                input.readMessage(TripWaypoint.parser(), extensionRegistry));
             break;
           }
           case 154: {
@@ -247,19 +247,19 @@ private static final long serialVersionUID = 0L;
           }
           case 162: {
             if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-              vehicleWaypoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.TripWaypoint>();
+              vehicleWaypoints_ = new java.util.ArrayList<TripWaypoint>();
               mutable_bitField0_ |= 0x00000010;
             }
             vehicleWaypoints_.add(
-                input.readMessage(google.maps.fleetengine.v1.TripWaypoint.parser(), extensionRegistry));
+                input.readMessage(TripWaypoint.parser(), extensionRegistry));
             break;
           }
           case 178: {
-            google.maps.fleetengine.v1.StopLocation.Builder subBuilder = null;
+            StopLocation.Builder subBuilder = null;
             if (actualPickupPoint_ != null) {
               subBuilder = actualPickupPoint_.toBuilder();
             }
-            actualPickupPoint_ = input.readMessage(google.maps.fleetengine.v1.StopLocation.parser(), extensionRegistry);
+            actualPickupPoint_ = input.readMessage(StopLocation.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(actualPickupPoint_);
               actualPickupPoint_ = subBuilder.buildPartial();
@@ -268,11 +268,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 186: {
-            google.maps.fleetengine.v1.StopLocation.Builder subBuilder = null;
+            StopLocation.Builder subBuilder = null;
             if (actualDropoffPoint_ != null) {
               subBuilder = actualDropoffPoint_.toBuilder();
             }
-            actualDropoffPoint_ = input.readMessage(google.maps.fleetengine.v1.StopLocation.parser(), extensionRegistry);
+            actualDropoffPoint_ = input.readMessage(StopLocation.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(actualDropoffPoint_);
               actualDropoffPoint_ = subBuilder.buildPartial();
@@ -281,11 +281,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 194: {
-            google.maps.fleetengine.v1.TripWaypoint.Builder subBuilder = null;
+            TripWaypoint.Builder subBuilder = null;
             if (currentRouteSegmentEndPoint_ != null) {
               subBuilder = currentRouteSegmentEndPoint_.toBuilder();
             }
-            currentRouteSegmentEndPoint_ = input.readMessage(google.maps.fleetengine.v1.TripWaypoint.parser(), extensionRegistry);
+            currentRouteSegmentEndPoint_ = input.readMessage(TripWaypoint.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(currentRouteSegmentEndPoint_);
               currentRouteSegmentEndPoint_ = subBuilder.buildPartial();
@@ -344,11 +344,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 258: {
-            google.maps.fleetengine.v1.StopLocation.Builder subBuilder = null;
+            StopLocation.Builder subBuilder = null;
             if (actualPickupArrivalPoint_ != null) {
               subBuilder = actualPickupArrivalPoint_.toBuilder();
             }
-            actualPickupArrivalPoint_ = input.readMessage(google.maps.fleetengine.v1.StopLocation.parser(), extensionRegistry);
+            actualPickupArrivalPoint_ = input.readMessage(StopLocation.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(actualPickupArrivalPoint_);
               actualPickupArrivalPoint_ = subBuilder.buildPartial();
@@ -358,20 +358,20 @@ private static final long serialVersionUID = 0L;
           }
           case 266: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              actualIntermediateDestinationArrivalPoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.StopLocation>();
+              actualIntermediateDestinationArrivalPoints_ = new java.util.ArrayList<StopLocation>();
               mutable_bitField0_ |= 0x00000002;
             }
             actualIntermediateDestinationArrivalPoints_.add(
-                input.readMessage(google.maps.fleetengine.v1.StopLocation.parser(), extensionRegistry));
+                input.readMessage(StopLocation.parser(), extensionRegistry));
             break;
           }
           case 274: {
             if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              actualIntermediateDestinations_ = new java.util.ArrayList<google.maps.fleetengine.v1.StopLocation>();
+              actualIntermediateDestinations_ = new java.util.ArrayList<StopLocation>();
               mutable_bitField0_ |= 0x00000004;
             }
             actualIntermediateDestinations_.add(
-                input.readMessage(google.maps.fleetengine.v1.StopLocation.parser(), extensionRegistry));
+                input.readMessage(StopLocation.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -413,19 +413,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.Trips.internal_static_maps_fleetengine_v1_Trip_descriptor;
+    return Trips.internal_static_maps_fleetengine_v1_Trip_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.Trips.internal_static_maps_fleetengine_v1_Trip_fieldAccessorTable
+    return Trips.internal_static_maps_fleetengine_v1_Trip_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.Trip.class, google.maps.fleetengine.v1.Trip.Builder.class);
+            Trip.class, Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  private volatile Object name_;
   /**
    * <pre>
    * In the format "providers/{provider}/trips/{trip}"
@@ -434,15 +434,15 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 1;</code>
    * @return The name.
    */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getName() {
+    Object ref = name_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
@@ -455,14 +455,14 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 1;</code>
    * @return The bytes for name.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
+    Object ref = name_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       name_ = b;
       return b;
     } else {
@@ -471,7 +471,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VEHICLE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object vehicleId_;
+  private volatile Object vehicleId_;
   /**
    * <pre>
    * ID of the vehicle making this trip.
@@ -480,15 +480,15 @@ private static final long serialVersionUID = 0L;
    * <code>string vehicle_id = 2;</code>
    * @return The vehicleId.
    */
-  @java.lang.Override
-  public java.lang.String getVehicleId() {
-    java.lang.Object ref = vehicleId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getVehicleId() {
+    Object ref = vehicleId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       vehicleId_ = s;
       return s;
     }
@@ -501,14 +501,14 @@ private static final long serialVersionUID = 0L;
    * <code>string vehicle_id = 2;</code>
    * @return The bytes for vehicleId.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getVehicleIdBytes() {
-    java.lang.Object ref = vehicleId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = vehicleId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       vehicleId_ = b;
       return b;
     } else {
@@ -526,7 +526,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripStatus trip_status = 3;</code>
    * @return The enum numeric value on the wire for tripStatus.
    */
-  @java.lang.Override public int getTripStatusValue() {
+  @Override public int getTripStatusValue() {
     return tripStatus_;
   }
   /**
@@ -537,10 +537,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripStatus trip_status = 3;</code>
    * @return The tripStatus.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.TripStatus getTripStatus() {
+  @Override public TripStatus getTripStatus() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.TripStatus result = google.maps.fleetengine.v1.TripStatus.valueOf(tripStatus_);
-    return result == null ? google.maps.fleetengine.v1.TripStatus.UNRECOGNIZED : result;
+    TripStatus result = TripStatus.valueOf(tripStatus_);
+    return result == null ? TripStatus.UNRECOGNIZED : result;
   }
 
   public static final int TRIP_TYPE_FIELD_NUMBER = 4;
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripType trip_type = 4;</code>
    * @return The enum numeric value on the wire for tripType.
    */
-  @java.lang.Override public int getTripTypeValue() {
+  @Override public int getTripTypeValue() {
     return tripType_;
   }
   /**
@@ -564,14 +564,14 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripType trip_type = 4;</code>
    * @return The tripType.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.TripType getTripType() {
+  @Override public TripType getTripType() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.TripType result = google.maps.fleetengine.v1.TripType.valueOf(tripType_);
-    return result == null ? google.maps.fleetengine.v1.TripType.UNRECOGNIZED : result;
+    TripType result = TripType.valueOf(tripType_);
+    return result == null ? TripType.UNRECOGNIZED : result;
   }
 
   public static final int PICKUP_POINT_FIELD_NUMBER = 5;
-  private google.maps.fleetengine.v1.TerminalLocation pickupPoint_;
+  private TerminalLocation pickupPoint_;
   /**
    * <pre>
    * Location where customer indicates they will be picked up.
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
    * @return Whether the pickupPoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasPickupPoint() {
     return pickupPoint_ != null;
   }
@@ -592,9 +592,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
    * @return The pickupPoint.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocation getPickupPoint() {
-    return pickupPoint_ == null ? google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : pickupPoint_;
+  @Override
+  public TerminalLocation getPickupPoint() {
+    return pickupPoint_ == null ? TerminalLocation.getDefaultInstance() : pickupPoint_;
   }
   /**
    * <pre>
@@ -603,13 +603,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocationOrBuilder getPickupPointOrBuilder() {
+  @Override
+  public TerminalLocationOrBuilder getPickupPointOrBuilder() {
     return getPickupPoint();
   }
 
   public static final int ACTUAL_PICKUP_POINT_FIELD_NUMBER = 22;
-  private google.maps.fleetengine.v1.StopLocation actualPickupPoint_;
+  private StopLocation actualPickupPoint_;
   /**
    * <pre>
    * Input only. The actual location when and where customer was picked up.
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the actualPickupPoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasActualPickupPoint() {
     return actualPickupPoint_ != null;
   }
@@ -634,9 +634,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The actualPickupPoint.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocation getActualPickupPoint() {
-    return actualPickupPoint_ == null ? google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualPickupPoint_;
+  @Override
+  public StopLocation getActualPickupPoint() {
+    return actualPickupPoint_ == null ? StopLocation.getDefaultInstance() : actualPickupPoint_;
   }
   /**
    * <pre>
@@ -647,13 +647,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocationOrBuilder getActualPickupPointOrBuilder() {
+  @Override
+  public StopLocationOrBuilder getActualPickupPointOrBuilder() {
     return getActualPickupPoint();
   }
 
   public static final int ACTUAL_PICKUP_ARRIVAL_POINT_FIELD_NUMBER = 32;
-  private google.maps.fleetengine.v1.StopLocation actualPickupArrivalPoint_;
+  private StopLocation actualPickupArrivalPoint_;
   /**
    * <pre>
    * Input only. The actual time and location of the driver arrival at
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the actualPickupArrivalPoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasActualPickupArrivalPoint() {
     return actualPickupArrivalPoint_ != null;
   }
@@ -680,9 +680,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The actualPickupArrivalPoint.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocation getActualPickupArrivalPoint() {
-    return actualPickupArrivalPoint_ == null ? google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualPickupArrivalPoint_;
+  @Override
+  public StopLocation getActualPickupArrivalPoint() {
+    return actualPickupArrivalPoint_ == null ? StopLocation.getDefaultInstance() : actualPickupArrivalPoint_;
   }
   /**
    * <pre>
@@ -694,8 +694,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocationOrBuilder getActualPickupArrivalPointOrBuilder() {
+  @Override
+  public StopLocationOrBuilder getActualPickupArrivalPointOrBuilder() {
     return getActualPickupArrivalPoint();
   }
 
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp pickup_time = 6;</code>
    * @return Whether the pickupTime field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasPickupTime() {
     return pickupTime_ != null;
   }
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp pickup_time = 6;</code>
    * @return The pickupTime.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getPickupTime() {
     return pickupTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : pickupTime_;
   }
@@ -735,13 +735,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp pickup_time = 6;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getPickupTimeOrBuilder() {
     return getPickupTime();
   }
 
   public static final int INTERMEDIATE_DESTINATIONS_FIELD_NUMBER = 14;
-  private java.util.List<google.maps.fleetengine.v1.TerminalLocation> intermediateDestinations_;
+  private java.util.List<TerminalLocation> intermediateDestinations_;
   /**
    * <pre>
    * Intermediate stops in order that the trip requests (in addition
@@ -751,8 +751,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  @java.lang.Override
-  public java.util.List<google.maps.fleetengine.v1.TerminalLocation> getIntermediateDestinationsList() {
+  @Override
+  public java.util.List<TerminalLocation> getIntermediateDestinationsList() {
     return intermediateDestinations_;
   }
   /**
@@ -764,8 +764,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  @java.lang.Override
-  public java.util.List<? extends google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+  @Override
+  public java.util.List<? extends TerminalLocationOrBuilder>
       getIntermediateDestinationsOrBuilderList() {
     return intermediateDestinations_;
   }
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  @java.lang.Override
+  @Override
   public int getIntermediateDestinationsCount() {
     return intermediateDestinations_.size();
   }
@@ -791,8 +791,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocation getIntermediateDestinations(int index) {
+  @Override
+  public TerminalLocation getIntermediateDestinations(int index) {
     return intermediateDestinations_.get(index);
   }
   /**
@@ -804,8 +804,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocationOrBuilder getIntermediateDestinationsOrBuilder(
+  @Override
+  public TerminalLocationOrBuilder getIntermediateDestinationsOrBuilder(
       int index) {
     return intermediateDestinations_.get(index);
   }
@@ -823,7 +823,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp intermediate_destinations_version = 25;</code>
    * @return Whether the intermediateDestinationsVersion field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasIntermediateDestinationsVersion() {
     return intermediateDestinationsVersion_ != null;
   }
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp intermediate_destinations_version = 25;</code>
    * @return The intermediateDestinationsVersion.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getIntermediateDestinationsVersion() {
     return intermediateDestinationsVersion_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : intermediateDestinationsVersion_;
   }
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp intermediate_destinations_version = 25;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getIntermediateDestinationsVersionOrBuilder() {
     return getIntermediateDestinationsVersion();
   }
@@ -873,13 +873,13 @@ private static final long serialVersionUID = 0L;
    * <code>int32 intermediate_destination_index = 15;</code>
    * @return The intermediateDestinationIndex.
    */
-  @java.lang.Override
+  @Override
   public int getIntermediateDestinationIndex() {
     return intermediateDestinationIndex_;
   }
 
   public static final int ACTUAL_INTERMEDIATE_DESTINATION_ARRIVAL_POINTS_FIELD_NUMBER = 33;
-  private java.util.List<google.maps.fleetengine.v1.StopLocation> actualIntermediateDestinationArrivalPoints_;
+  private java.util.List<StopLocation> actualIntermediateDestinationArrivalPoints_;
   /**
    * <pre>
    * Input only. The actual time and location of the driver's arrival at
@@ -890,8 +890,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public java.util.List<google.maps.fleetengine.v1.StopLocation> getActualIntermediateDestinationArrivalPointsList() {
+  @Override
+  public java.util.List<StopLocation> getActualIntermediateDestinationArrivalPointsList() {
     return actualIntermediateDestinationArrivalPoints_;
   }
   /**
@@ -904,8 +904,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public java.util.List<? extends google.maps.fleetengine.v1.StopLocationOrBuilder> 
+  @Override
+  public java.util.List<? extends StopLocationOrBuilder>
       getActualIntermediateDestinationArrivalPointsOrBuilderList() {
     return actualIntermediateDestinationArrivalPoints_;
   }
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public int getActualIntermediateDestinationArrivalPointsCount() {
     return actualIntermediateDestinationArrivalPoints_.size();
   }
@@ -933,8 +933,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinationArrivalPoints(int index) {
+  @Override
+  public StopLocation getActualIntermediateDestinationArrivalPoints(int index) {
     return actualIntermediateDestinationArrivalPoints_.get(index);
   }
   /**
@@ -947,14 +947,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocationOrBuilder getActualIntermediateDestinationArrivalPointsOrBuilder(
+  @Override
+  public StopLocationOrBuilder getActualIntermediateDestinationArrivalPointsOrBuilder(
       int index) {
     return actualIntermediateDestinationArrivalPoints_.get(index);
   }
 
   public static final int ACTUAL_INTERMEDIATE_DESTINATIONS_FIELD_NUMBER = 34;
-  private java.util.List<google.maps.fleetengine.v1.StopLocation> actualIntermediateDestinations_;
+  private java.util.List<StopLocation> actualIntermediateDestinations_;
   /**
    * <pre>
    * Input only. The actual time and location when and where the customer was picked up from
@@ -965,8 +965,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public java.util.List<google.maps.fleetengine.v1.StopLocation> getActualIntermediateDestinationsList() {
+  @Override
+  public java.util.List<StopLocation> getActualIntermediateDestinationsList() {
     return actualIntermediateDestinations_;
   }
   /**
@@ -979,8 +979,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public java.util.List<? extends google.maps.fleetengine.v1.StopLocationOrBuilder> 
+  @Override
+  public java.util.List<? extends StopLocationOrBuilder>
       getActualIntermediateDestinationsOrBuilderList() {
     return actualIntermediateDestinations_;
   }
@@ -994,7 +994,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public int getActualIntermediateDestinationsCount() {
     return actualIntermediateDestinations_.size();
   }
@@ -1008,8 +1008,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinations(int index) {
+  @Override
+  public StopLocation getActualIntermediateDestinations(int index) {
     return actualIntermediateDestinations_.get(index);
   }
   /**
@@ -1022,14 +1022,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocationOrBuilder getActualIntermediateDestinationsOrBuilder(
+  @Override
+  public StopLocationOrBuilder getActualIntermediateDestinationsOrBuilder(
       int index) {
     return actualIntermediateDestinations_.get(index);
   }
 
   public static final int DROPOFF_POINT_FIELD_NUMBER = 7;
-  private google.maps.fleetengine.v1.TerminalLocation dropoffPoint_;
+  private TerminalLocation dropoffPoint_;
   /**
    * <pre>
    * Location where customer indicates they will be dropped off.
@@ -1038,7 +1038,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
    * @return Whether the dropoffPoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDropoffPoint() {
     return dropoffPoint_ != null;
   }
@@ -1050,9 +1050,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
    * @return The dropoffPoint.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocation getDropoffPoint() {
-    return dropoffPoint_ == null ? google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : dropoffPoint_;
+  @Override
+  public TerminalLocation getDropoffPoint() {
+    return dropoffPoint_ == null ? TerminalLocation.getDefaultInstance() : dropoffPoint_;
   }
   /**
    * <pre>
@@ -1061,13 +1061,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocationOrBuilder getDropoffPointOrBuilder() {
+  @Override
+  public TerminalLocationOrBuilder getDropoffPointOrBuilder() {
     return getDropoffPoint();
   }
 
   public static final int ACTUAL_DROPOFF_POINT_FIELD_NUMBER = 23;
-  private google.maps.fleetengine.v1.StopLocation actualDropoffPoint_;
+  private StopLocation actualDropoffPoint_;
   /**
    * <pre>
    * Input only. The actual time and location when and where customer was dropped off.
@@ -1078,7 +1078,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the actualDropoffPoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasActualDropoffPoint() {
     return actualDropoffPoint_ != null;
   }
@@ -1092,9 +1092,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The actualDropoffPoint.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocation getActualDropoffPoint() {
-    return actualDropoffPoint_ == null ? google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualDropoffPoint_;
+  @Override
+  public StopLocation getActualDropoffPoint() {
+    return actualDropoffPoint_ == null ? StopLocation.getDefaultInstance() : actualDropoffPoint_;
   }
   /**
    * <pre>
@@ -1105,8 +1105,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.StopLocationOrBuilder getActualDropoffPointOrBuilder() {
+  @Override
+  public StopLocationOrBuilder getActualDropoffPointOrBuilder() {
     return getActualDropoffPoint();
   }
 
@@ -1121,7 +1121,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp dropoff_time = 8;</code>
    * @return Whether the dropoffTime field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDropoffTime() {
     return dropoffTime_ != null;
   }
@@ -1134,7 +1134,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp dropoff_time = 8;</code>
    * @return The dropoffTime.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getDropoffTime() {
     return dropoffTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dropoffTime_;
   }
@@ -1146,13 +1146,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp dropoff_time = 8;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getDropoffTimeOrBuilder() {
     return getDropoffTime();
   }
 
   public static final int REMAINING_WAYPOINTS_FIELD_NUMBER = 16;
-  private java.util.List<google.maps.fleetengine.v1.TripWaypoint> remainingWaypoints_;
+  private java.util.List<TripWaypoint> remainingWaypoints_;
   /**
    * <pre>
    * Output only. The full path from the current location to the dropoff point, inclusive.
@@ -1162,8 +1162,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public java.util.List<google.maps.fleetengine.v1.TripWaypoint> getRemainingWaypointsList() {
+  @Override
+  public java.util.List<TripWaypoint> getRemainingWaypointsList() {
     return remainingWaypoints_;
   }
   /**
@@ -1175,8 +1175,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public java.util.List<? extends google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+  @Override
+  public java.util.List<? extends TripWaypointOrBuilder>
       getRemainingWaypointsOrBuilderList() {
     return remainingWaypoints_;
   }
@@ -1189,7 +1189,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public int getRemainingWaypointsCount() {
     return remainingWaypoints_.size();
   }
@@ -1202,8 +1202,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TripWaypoint getRemainingWaypoints(int index) {
+  @Override
+  public TripWaypoint getRemainingWaypoints(int index) {
     return remainingWaypoints_.get(index);
   }
   /**
@@ -1215,14 +1215,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TripWaypointOrBuilder getRemainingWaypointsOrBuilder(
+  @Override
+  public TripWaypointOrBuilder getRemainingWaypointsOrBuilder(
       int index) {
     return remainingWaypoints_.get(index);
   }
 
   public static final int VEHICLE_WAYPOINTS_FIELD_NUMBER = 20;
-  private java.util.List<google.maps.fleetengine.v1.TripWaypoint> vehicleWaypoints_;
+  private java.util.List<TripWaypoint> vehicleWaypoints_;
   /**
    * <pre>
    * This field supports manual ordering of the waypoints for the trip.
@@ -1235,8 +1235,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  @java.lang.Override
-  public java.util.List<google.maps.fleetengine.v1.TripWaypoint> getVehicleWaypointsList() {
+  @Override
+  public java.util.List<TripWaypoint> getVehicleWaypointsList() {
     return vehicleWaypoints_;
   }
   /**
@@ -1251,8 +1251,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  @java.lang.Override
-  public java.util.List<? extends google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+  @Override
+  public java.util.List<? extends TripWaypointOrBuilder>
       getVehicleWaypointsOrBuilderList() {
     return vehicleWaypoints_;
   }
@@ -1268,7 +1268,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  @java.lang.Override
+  @Override
   public int getVehicleWaypointsCount() {
     return vehicleWaypoints_.size();
   }
@@ -1284,8 +1284,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TripWaypoint getVehicleWaypoints(int index) {
+  @Override
+  public TripWaypoint getVehicleWaypoints(int index) {
     return vehicleWaypoints_.get(index);
   }
   /**
@@ -1300,8 +1300,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TripWaypointOrBuilder getVehicleWaypointsOrBuilder(
+  @Override
+  public TripWaypointOrBuilder getVehicleWaypointsOrBuilder(
       int index) {
     return vehicleWaypoints_.get(index);
   }
@@ -1317,7 +1317,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng route = 9;</code>
    */
-  @java.lang.Override
+  @Override
   public java.util.List<com.google.type.LatLng> getRouteList() {
     return route_;
   }
@@ -1330,7 +1330,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng route = 9;</code>
    */
-  @java.lang.Override
+  @Override
   public java.util.List<? extends com.google.type.LatLngOrBuilder> 
       getRouteOrBuilderList() {
     return route_;
@@ -1344,7 +1344,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng route = 9;</code>
    */
-  @java.lang.Override
+  @Override
   public int getRouteCount() {
     return route_.size();
   }
@@ -1357,7 +1357,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng route = 9;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLng getRoute(int index) {
     return route_.get(index);
   }
@@ -1370,14 +1370,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng route = 9;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLngOrBuilder getRouteOrBuilder(
       int index) {
     return route_.get(index);
   }
 
   public static final int CURRENT_ROUTE_SEGMENT_END_POINT_FIELD_NUMBER = 24;
-  private google.maps.fleetengine.v1.TripWaypoint currentRouteSegmentEndPoint_;
+  private TripWaypoint currentRouteSegmentEndPoint_;
   /**
    * <pre>
    * The waypoint where current_route_segment ends. This can be supplied by
@@ -1391,7 +1391,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
    * @return Whether the currentRouteSegmentEndPoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasCurrentRouteSegmentEndPoint() {
     return currentRouteSegmentEndPoint_ != null;
   }
@@ -1408,9 +1408,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
    * @return The currentRouteSegmentEndPoint.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TripWaypoint getCurrentRouteSegmentEndPoint() {
-    return currentRouteSegmentEndPoint_ == null ? google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance() : currentRouteSegmentEndPoint_;
+  @Override
+  public TripWaypoint getCurrentRouteSegmentEndPoint() {
+    return currentRouteSegmentEndPoint_ == null ? TripWaypoint.getDefaultInstance() : currentRouteSegmentEndPoint_;
   }
   /**
    * <pre>
@@ -1424,8 +1424,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder() {
+  @Override
+  public TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder() {
     return getCurrentRouteSegmentEndPoint();
   }
 
@@ -1446,7 +1446,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
    * @return Whether the remainingDistanceMeters field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRemainingDistanceMeters() {
     return remainingDistanceMeters_ != null;
   }
@@ -1465,7 +1465,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
    * @return The remainingDistanceMeters.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getRemainingDistanceMeters() {
     return remainingDistanceMeters_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : remainingDistanceMeters_;
   }
@@ -1483,7 +1483,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getRemainingDistanceMetersOrBuilder() {
     return getRemainingDistanceMeters();
   }
@@ -1506,7 +1506,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp eta_to_first_waypoint = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the etaToFirstWaypoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasEtaToFirstWaypoint() {
     return etaToFirstWaypoint_ != null;
   }
@@ -1526,7 +1526,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp eta_to_first_waypoint = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The etaToFirstWaypoint.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getEtaToFirstWaypoint() {
     return etaToFirstWaypoint_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : etaToFirstWaypoint_;
   }
@@ -1545,7 +1545,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp eta_to_first_waypoint = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getEtaToFirstWaypointOrBuilder() {
     return getEtaToFirstWaypoint();
   }
@@ -1561,7 +1561,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration remaining_time_to_first_waypoint = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the remainingTimeToFirstWaypoint field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRemainingTimeToFirstWaypoint() {
     return remainingTimeToFirstWaypoint_ != null;
   }
@@ -1574,7 +1574,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration remaining_time_to_first_waypoint = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The remainingTimeToFirstWaypoint.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Duration getRemainingTimeToFirstWaypoint() {
     return remainingTimeToFirstWaypoint_ == null ? com.google.protobuf.Duration.getDefaultInstance() : remainingTimeToFirstWaypoint_;
   }
@@ -1586,7 +1586,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Duration remaining_time_to_first_waypoint = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DurationOrBuilder getRemainingTimeToFirstWaypointOrBuilder() {
     return getRemainingTimeToFirstWaypoint();
   }
@@ -1602,7 +1602,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp remaining_waypoints_version = 19;</code>
    * @return Whether the remainingWaypointsVersion field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRemainingWaypointsVersion() {
     return remainingWaypointsVersion_ != null;
   }
@@ -1615,7 +1615,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp remaining_waypoints_version = 19;</code>
    * @return The remainingWaypointsVersion.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getRemainingWaypointsVersion() {
     return remainingWaypointsVersion_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : remainingWaypointsVersion_;
   }
@@ -1627,7 +1627,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp remaining_waypoints_version = 19;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getRemainingWaypointsVersionOrBuilder() {
     return getRemainingWaypointsVersion();
   }
@@ -1645,7 +1645,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29;</code>
    * @return Whether the remainingWaypointsRouteVersion field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRemainingWaypointsRouteVersion() {
     return remainingWaypointsRouteVersion_ != null;
   }
@@ -1660,7 +1660,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29;</code>
    * @return The remainingWaypointsRouteVersion.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getRemainingWaypointsRouteVersion() {
     return remainingWaypointsRouteVersion_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : remainingWaypointsRouteVersion_;
   }
@@ -1674,7 +1674,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getRemainingWaypointsRouteVersionOrBuilder() {
     return getRemainingWaypointsRouteVersion();
   }
@@ -1691,13 +1691,13 @@ private static final long serialVersionUID = 0L;
    * <code>int32 number_of_passengers = 10;</code>
    * @return The numberOfPassengers.
    */
-  @java.lang.Override
+  @Override
   public int getNumberOfPassengers() {
     return numberOfPassengers_;
   }
 
   public static final int LAST_LOCATION_FIELD_NUMBER = 11;
-  private google.maps.fleetengine.v1.VehicleLocation lastLocation_;
+  private VehicleLocation lastLocation_;
   /**
    * <pre>
    * Indicates the last reported location of the vehicle along the route.
@@ -1706,7 +1706,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
    * @return Whether the lastLocation field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasLastLocation() {
     return lastLocation_ != null;
   }
@@ -1718,9 +1718,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
    * @return The lastLocation.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.VehicleLocation getLastLocation() {
-    return lastLocation_ == null ? google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance() : lastLocation_;
+  @Override
+  public VehicleLocation getLastLocation() {
+    return lastLocation_ == null ? VehicleLocation.getDefaultInstance() : lastLocation_;
   }
   /**
    * <pre>
@@ -1729,8 +1729,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.VehicleLocationOrBuilder getLastLocationOrBuilder() {
+  @Override
+  public VehicleLocationOrBuilder getLastLocationOrBuilder() {
     return getLastLocation();
   }
 
@@ -1747,7 +1747,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool last_location_snappable = 26;</code>
    * @return The lastLocationSnappable.
    */
-  @java.lang.Override
+  @Override
   public boolean getLastLocationSnappable() {
     return lastLocationSnappable_;
   }
@@ -1763,7 +1763,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripView view = 31;</code>
    * @return The enum numeric value on the wire for view.
    */
-  @java.lang.Override public int getViewValue() {
+  @Override public int getViewValue() {
     return view_;
   }
   /**
@@ -1775,14 +1775,14 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripView view = 31;</code>
    * @return The view.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.TripView getView() {
+  @Override public TripView getView() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.TripView result = google.maps.fleetengine.v1.TripView.valueOf(view_);
-    return result == null ? google.maps.fleetengine.v1.TripView.UNRECOGNIZED : result;
+    TripView result = TripView.valueOf(view_);
+    return result == null ? TripView.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1792,19 +1792,19 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getVehicleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vehicleId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vehicleId_);
     }
-    if (tripStatus_ != google.maps.fleetengine.v1.TripStatus.UNKNOWN_TRIP_STATUS.getNumber()) {
+    if (tripStatus_ != TripStatus.UNKNOWN_TRIP_STATUS.getNumber()) {
       output.writeEnum(3, tripStatus_);
     }
-    if (tripType_ != google.maps.fleetengine.v1.TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
+    if (tripType_ != TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
       output.writeEnum(4, tripType_);
     }
     if (pickupPoint_ != null) {
@@ -1870,7 +1870,7 @@ private static final long serialVersionUID = 0L;
     if (remainingWaypointsRouteVersion_ != null) {
       output.writeMessage(29, getRemainingWaypointsRouteVersion());
     }
-    if (view_ != google.maps.fleetengine.v1.TripView.TRIP_VIEW_UNSPECIFIED.getNumber()) {
+    if (view_ != TripView.TRIP_VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(31, view_);
     }
     if (actualPickupArrivalPoint_ != null) {
@@ -1885,23 +1885,23 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getVehicleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vehicleId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vehicleId_);
     }
-    if (tripStatus_ != google.maps.fleetengine.v1.TripStatus.UNKNOWN_TRIP_STATUS.getNumber()) {
+    if (tripStatus_ != TripStatus.UNKNOWN_TRIP_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, tripStatus_);
     }
-    if (tripType_ != google.maps.fleetengine.v1.TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
+    if (tripType_ != TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, tripType_);
     }
@@ -1989,7 +1989,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(29, getRemainingWaypointsRouteVersion());
     }
-    if (view_ != google.maps.fleetengine.v1.TripView.TRIP_VIEW_UNSPECIFIED.getNumber()) {
+    if (view_ != TripView.TRIP_VIEW_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(31, view_);
     }
@@ -2010,15 +2010,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.Trip)) {
+    if (!(obj instanceof Trip)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.Trip other = (google.maps.fleetengine.v1.Trip) obj;
+    Trip other = (Trip) obj;
 
     if (!getName()
         .equals(other.getName())) return false;
@@ -2124,7 +2124,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -2237,69 +2237,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(byte[] data)
+  public static Trip parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(java.io.InputStream input)
+  public static Trip parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Trip parseDelimitedFrom(java.io.InputStream input)
+  public static Trip parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.Trip parseDelimitedFrom(
+  public static Trip parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.Trip parseFrom(
+  public static Trip parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -2307,23 +2307,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.Trip prototype) {
+  public static Builder newBuilder(Trip prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -2337,18 +2337,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.Trip)
-      google.maps.fleetengine.v1.TripOrBuilder {
+      TripOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.Trips.internal_static_maps_fleetengine_v1_Trip_descriptor;
+      return Trips.internal_static_maps_fleetengine_v1_Trip_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.Trips.internal_static_maps_fleetengine_v1_Trip_fieldAccessorTable
+      return Trips.internal_static_maps_fleetengine_v1_Trip_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.Trip.class, google.maps.fleetengine.v1.Trip.Builder.class);
+              Trip.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.Trip.newBuilder()
@@ -2357,7 +2357,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -2372,7 +2372,7 @@ private static final long serialVersionUID = 0L;
         getRouteFieldBuilder();
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -2520,29 +2520,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.Trips.internal_static_maps_fleetengine_v1_Trip_descriptor;
+      return Trips.internal_static_maps_fleetengine_v1_Trip_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.Trip getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.Trip.getDefaultInstance();
+    @Override
+    public Trip getDefaultInstanceForType() {
+      return Trip.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.Trip build() {
-      google.maps.fleetengine.v1.Trip result = buildPartial();
+    @Override
+    public Trip build() {
+      Trip result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.Trip buildPartial() {
-      google.maps.fleetengine.v1.Trip result = new google.maps.fleetengine.v1.Trip(this);
+    @Override
+    public Trip buildPartial() {
+      Trip result = new Trip(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.vehicleId_ = vehicleId_;
@@ -2685,50 +2685,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.Trip) {
-        return mergeFrom((google.maps.fleetengine.v1.Trip)other);
+      if (other instanceof Trip) {
+        return mergeFrom((Trip)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.Trip other) {
-      if (other == google.maps.fleetengine.v1.Trip.getDefaultInstance()) return this;
+    public Builder mergeFrom(Trip other) {
+      if (other == Trip.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -2961,21 +2961,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.Trip parsedMessage = null;
+      Trip parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.Trip) e.getUnfinishedMessage();
+        parsedMessage = (Trip) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -2986,7 +2986,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private Object name_ = "";
     /**
      * <pre>
      * In the format "providers/{provider}/trips/{trip}"
@@ -2995,16 +2995,16 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      * @return The name.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getName() {
+      Object ref = name_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         name_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -3017,11 +3017,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      java.lang.Object ref = name_;
+      Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         name_ = b;
         return b;
       } else {
@@ -3038,7 +3038,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setName(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3082,7 +3082,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object vehicleId_ = "";
+    private Object vehicleId_ = "";
     /**
      * <pre>
      * ID of the vehicle making this trip.
@@ -3091,16 +3091,16 @@ private static final long serialVersionUID = 0L;
      * <code>string vehicle_id = 2;</code>
      * @return The vehicleId.
      */
-    public java.lang.String getVehicleId() {
-      java.lang.Object ref = vehicleId_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getVehicleId() {
+      Object ref = vehicleId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         vehicleId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -3113,11 +3113,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getVehicleIdBytes() {
-      java.lang.Object ref = vehicleId_;
+      Object ref = vehicleId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         vehicleId_ = b;
         return b;
       } else {
@@ -3134,7 +3134,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setVehicleId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3187,7 +3187,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripStatus trip_status = 3;</code>
      * @return The enum numeric value on the wire for tripStatus.
      */
-    @java.lang.Override public int getTripStatusValue() {
+    @Override public int getTripStatusValue() {
       return tripStatus_;
     }
     /**
@@ -3213,11 +3213,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripStatus trip_status = 3;</code>
      * @return The tripStatus.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TripStatus getTripStatus() {
+    @Override
+    public TripStatus getTripStatus() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.TripStatus result = google.maps.fleetengine.v1.TripStatus.valueOf(tripStatus_);
-      return result == null ? google.maps.fleetengine.v1.TripStatus.UNRECOGNIZED : result;
+      TripStatus result = TripStatus.valueOf(tripStatus_);
+      return result == null ? TripStatus.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -3228,7 +3228,7 @@ private static final long serialVersionUID = 0L;
      * @param value The tripStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setTripStatus(google.maps.fleetengine.v1.TripStatus value) {
+    public Builder setTripStatus(TripStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3261,7 +3261,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripType trip_type = 4;</code>
      * @return The enum numeric value on the wire for tripType.
      */
-    @java.lang.Override public int getTripTypeValue() {
+    @Override public int getTripTypeValue() {
       return tripType_;
     }
     /**
@@ -3287,11 +3287,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripType trip_type = 4;</code>
      * @return The tripType.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TripType getTripType() {
+    @Override
+    public TripType getTripType() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.TripType result = google.maps.fleetengine.v1.TripType.valueOf(tripType_);
-      return result == null ? google.maps.fleetengine.v1.TripType.UNRECOGNIZED : result;
+      TripType result = TripType.valueOf(tripType_);
+      return result == null ? TripType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -3302,7 +3302,7 @@ private static final long serialVersionUID = 0L;
      * @param value The tripType to set.
      * @return This builder for chaining.
      */
-    public Builder setTripType(google.maps.fleetengine.v1.TripType value) {
+    public Builder setTripType(TripType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3326,9 +3326,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private google.maps.fleetengine.v1.TerminalLocation pickupPoint_;
+    private TerminalLocation pickupPoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> pickupPointBuilder_;
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder> pickupPointBuilder_;
     /**
      * <pre>
      * Location where customer indicates they will be picked up.
@@ -3348,9 +3348,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
      * @return The pickupPoint.
      */
-    public google.maps.fleetengine.v1.TerminalLocation getPickupPoint() {
+    public TerminalLocation getPickupPoint() {
       if (pickupPointBuilder_ == null) {
-        return pickupPoint_ == null ? google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : pickupPoint_;
+        return pickupPoint_ == null ? TerminalLocation.getDefaultInstance() : pickupPoint_;
       } else {
         return pickupPointBuilder_.getMessage();
       }
@@ -3362,7 +3362,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
      */
-    public Builder setPickupPoint(google.maps.fleetengine.v1.TerminalLocation value) {
+    public Builder setPickupPoint(TerminalLocation value) {
       if (pickupPointBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3383,7 +3383,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
      */
     public Builder setPickupPoint(
-        google.maps.fleetengine.v1.TerminalLocation.Builder builderForValue) {
+        TerminalLocation.Builder builderForValue) {
       if (pickupPointBuilder_ == null) {
         pickupPoint_ = builderForValue.build();
         onChanged();
@@ -3400,11 +3400,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
      */
-    public Builder mergePickupPoint(google.maps.fleetengine.v1.TerminalLocation value) {
+    public Builder mergePickupPoint(TerminalLocation value) {
       if (pickupPointBuilder_ == null) {
         if (pickupPoint_ != null) {
           pickupPoint_ =
-            google.maps.fleetengine.v1.TerminalLocation.newBuilder(pickupPoint_).mergeFrom(value).buildPartial();
+            TerminalLocation.newBuilder(pickupPoint_).mergeFrom(value).buildPartial();
         } else {
           pickupPoint_ = value;
         }
@@ -3440,7 +3440,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocation.Builder getPickupPointBuilder() {
+    public TerminalLocation.Builder getPickupPointBuilder() {
       
       onChanged();
       return getPickupPointFieldBuilder().getBuilder();
@@ -3452,12 +3452,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocationOrBuilder getPickupPointOrBuilder() {
+    public TerminalLocationOrBuilder getPickupPointOrBuilder() {
       if (pickupPointBuilder_ != null) {
         return pickupPointBuilder_.getMessageOrBuilder();
       } else {
         return pickupPoint_ == null ?
-            google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : pickupPoint_;
+            TerminalLocation.getDefaultInstance() : pickupPoint_;
       }
     }
     /**
@@ -3468,11 +3468,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>
         getPickupPointFieldBuilder() {
       if (pickupPointBuilder_ == null) {
         pickupPointBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder>(
+            TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>(
                 getPickupPoint(),
                 getParentForChildren(),
                 isClean());
@@ -3481,9 +3481,9 @@ private static final long serialVersionUID = 0L;
       return pickupPointBuilder_;
     }
 
-    private google.maps.fleetengine.v1.StopLocation actualPickupPoint_;
+    private StopLocation actualPickupPoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> actualPickupPointBuilder_;
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder> actualPickupPointBuilder_;
     /**
      * <pre>
      * Input only. The actual location when and where customer was picked up.
@@ -3507,9 +3507,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The actualPickupPoint.
      */
-    public google.maps.fleetengine.v1.StopLocation getActualPickupPoint() {
+    public StopLocation getActualPickupPoint() {
       if (actualPickupPointBuilder_ == null) {
-        return actualPickupPoint_ == null ? google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualPickupPoint_;
+        return actualPickupPoint_ == null ? StopLocation.getDefaultInstance() : actualPickupPoint_;
       } else {
         return actualPickupPointBuilder_.getMessage();
       }
@@ -3523,7 +3523,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder setActualPickupPoint(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder setActualPickupPoint(StopLocation value) {
       if (actualPickupPointBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3546,7 +3546,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder setActualPickupPoint(
-        google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        StopLocation.Builder builderForValue) {
       if (actualPickupPointBuilder_ == null) {
         actualPickupPoint_ = builderForValue.build();
         onChanged();
@@ -3565,11 +3565,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder mergeActualPickupPoint(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder mergeActualPickupPoint(StopLocation value) {
       if (actualPickupPointBuilder_ == null) {
         if (actualPickupPoint_ != null) {
           actualPickupPoint_ =
-            google.maps.fleetengine.v1.StopLocation.newBuilder(actualPickupPoint_).mergeFrom(value).buildPartial();
+            StopLocation.newBuilder(actualPickupPoint_).mergeFrom(value).buildPartial();
         } else {
           actualPickupPoint_ = value;
         }
@@ -3609,7 +3609,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder getActualPickupPointBuilder() {
+    public StopLocation.Builder getActualPickupPointBuilder() {
       
       onChanged();
       return getActualPickupPointFieldBuilder().getBuilder();
@@ -3623,12 +3623,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocationOrBuilder getActualPickupPointOrBuilder() {
+    public StopLocationOrBuilder getActualPickupPointOrBuilder() {
       if (actualPickupPointBuilder_ != null) {
         return actualPickupPointBuilder_.getMessageOrBuilder();
       } else {
         return actualPickupPoint_ == null ?
-            google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualPickupPoint_;
+            StopLocation.getDefaultInstance() : actualPickupPoint_;
       }
     }
     /**
@@ -3641,11 +3641,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> 
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder>
         getActualPickupPointFieldBuilder() {
       if (actualPickupPointBuilder_ == null) {
         actualPickupPointBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder>(
+            StopLocation, StopLocation.Builder, StopLocationOrBuilder>(
                 getActualPickupPoint(),
                 getParentForChildren(),
                 isClean());
@@ -3654,9 +3654,9 @@ private static final long serialVersionUID = 0L;
       return actualPickupPointBuilder_;
     }
 
-    private google.maps.fleetengine.v1.StopLocation actualPickupArrivalPoint_;
+    private StopLocation actualPickupArrivalPoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> actualPickupArrivalPointBuilder_;
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder> actualPickupArrivalPointBuilder_;
     /**
      * <pre>
      * Input only. The actual time and location of the driver arrival at
@@ -3682,9 +3682,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The actualPickupArrivalPoint.
      */
-    public google.maps.fleetengine.v1.StopLocation getActualPickupArrivalPoint() {
+    public StopLocation getActualPickupArrivalPoint() {
       if (actualPickupArrivalPointBuilder_ == null) {
-        return actualPickupArrivalPoint_ == null ? google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualPickupArrivalPoint_;
+        return actualPickupArrivalPoint_ == null ? StopLocation.getDefaultInstance() : actualPickupArrivalPoint_;
       } else {
         return actualPickupArrivalPointBuilder_.getMessage();
       }
@@ -3699,7 +3699,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder setActualPickupArrivalPoint(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder setActualPickupArrivalPoint(StopLocation value) {
       if (actualPickupArrivalPointBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3723,7 +3723,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder setActualPickupArrivalPoint(
-        google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        StopLocation.Builder builderForValue) {
       if (actualPickupArrivalPointBuilder_ == null) {
         actualPickupArrivalPoint_ = builderForValue.build();
         onChanged();
@@ -3743,11 +3743,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder mergeActualPickupArrivalPoint(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder mergeActualPickupArrivalPoint(StopLocation value) {
       if (actualPickupArrivalPointBuilder_ == null) {
         if (actualPickupArrivalPoint_ != null) {
           actualPickupArrivalPoint_ =
-            google.maps.fleetengine.v1.StopLocation.newBuilder(actualPickupArrivalPoint_).mergeFrom(value).buildPartial();
+            StopLocation.newBuilder(actualPickupArrivalPoint_).mergeFrom(value).buildPartial();
         } else {
           actualPickupArrivalPoint_ = value;
         }
@@ -3789,7 +3789,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder getActualPickupArrivalPointBuilder() {
+    public StopLocation.Builder getActualPickupArrivalPointBuilder() {
       
       onChanged();
       return getActualPickupArrivalPointFieldBuilder().getBuilder();
@@ -3804,12 +3804,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocationOrBuilder getActualPickupArrivalPointOrBuilder() {
+    public StopLocationOrBuilder getActualPickupArrivalPointOrBuilder() {
       if (actualPickupArrivalPointBuilder_ != null) {
         return actualPickupArrivalPointBuilder_.getMessageOrBuilder();
       } else {
         return actualPickupArrivalPoint_ == null ?
-            google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualPickupArrivalPoint_;
+            StopLocation.getDefaultInstance() : actualPickupArrivalPoint_;
       }
     }
     /**
@@ -3823,11 +3823,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> 
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder>
         getActualPickupArrivalPointFieldBuilder() {
       if (actualPickupArrivalPointBuilder_ == null) {
         actualPickupArrivalPointBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder>(
+            StopLocation, StopLocation.Builder, StopLocationOrBuilder>(
                 getActualPickupArrivalPoint(),
                 getParentForChildren(),
                 isClean());
@@ -4000,17 +4000,17 @@ private static final long serialVersionUID = 0L;
       return pickupTimeBuilder_;
     }
 
-    private java.util.List<google.maps.fleetengine.v1.TerminalLocation> intermediateDestinations_ =
+    private java.util.List<TerminalLocation> intermediateDestinations_ =
       java.util.Collections.emptyList();
     private void ensureIntermediateDestinationsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        intermediateDestinations_ = new java.util.ArrayList<google.maps.fleetengine.v1.TerminalLocation>(intermediateDestinations_);
+        intermediateDestinations_ = new java.util.ArrayList<TerminalLocation>(intermediateDestinations_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> intermediateDestinationsBuilder_;
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder> intermediateDestinationsBuilder_;
 
     /**
      * <pre>
@@ -4021,7 +4021,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.TerminalLocation> getIntermediateDestinationsList() {
+    public java.util.List<TerminalLocation> getIntermediateDestinationsList() {
       if (intermediateDestinationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(intermediateDestinations_);
       } else {
@@ -4053,7 +4053,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocation getIntermediateDestinations(int index) {
+    public TerminalLocation getIntermediateDestinations(int index) {
       if (intermediateDestinationsBuilder_ == null) {
         return intermediateDestinations_.get(index);
       } else {
@@ -4070,7 +4070,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
     public Builder setIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.TerminalLocation value) {
+        int index, TerminalLocation value) {
       if (intermediateDestinationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4093,7 +4093,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
     public Builder setIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.TerminalLocation.Builder builderForValue) {
+        int index, TerminalLocation.Builder builderForValue) {
       if (intermediateDestinationsBuilder_ == null) {
         ensureIntermediateDestinationsIsMutable();
         intermediateDestinations_.set(index, builderForValue.build());
@@ -4112,7 +4112,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public Builder addIntermediateDestinations(google.maps.fleetengine.v1.TerminalLocation value) {
+    public Builder addIntermediateDestinations(TerminalLocation value) {
       if (intermediateDestinationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4135,7 +4135,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
     public Builder addIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.TerminalLocation value) {
+        int index, TerminalLocation value) {
       if (intermediateDestinationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4158,7 +4158,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
     public Builder addIntermediateDestinations(
-        google.maps.fleetengine.v1.TerminalLocation.Builder builderForValue) {
+        TerminalLocation.Builder builderForValue) {
       if (intermediateDestinationsBuilder_ == null) {
         ensureIntermediateDestinationsIsMutable();
         intermediateDestinations_.add(builderForValue.build());
@@ -4178,7 +4178,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
     public Builder addIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.TerminalLocation.Builder builderForValue) {
+        int index, TerminalLocation.Builder builderForValue) {
       if (intermediateDestinationsBuilder_ == null) {
         ensureIntermediateDestinationsIsMutable();
         intermediateDestinations_.add(index, builderForValue.build());
@@ -4198,7 +4198,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
     public Builder addAllIntermediateDestinations(
-        java.lang.Iterable<? extends google.maps.fleetengine.v1.TerminalLocation> values) {
+        Iterable<? extends TerminalLocation> values) {
       if (intermediateDestinationsBuilder_ == null) {
         ensureIntermediateDestinationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4256,7 +4256,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocation.Builder getIntermediateDestinationsBuilder(
+    public TerminalLocation.Builder getIntermediateDestinationsBuilder(
         int index) {
       return getIntermediateDestinationsFieldBuilder().getBuilder(index);
     }
@@ -4269,7 +4269,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocationOrBuilder getIntermediateDestinationsOrBuilder(
+    public TerminalLocationOrBuilder getIntermediateDestinationsOrBuilder(
         int index) {
       if (intermediateDestinationsBuilder_ == null) {
         return intermediateDestinations_.get(index);  } else {
@@ -4285,7 +4285,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public java.util.List<? extends google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+    public java.util.List<? extends TerminalLocationOrBuilder>
          getIntermediateDestinationsOrBuilderList() {
       if (intermediateDestinationsBuilder_ != null) {
         return intermediateDestinationsBuilder_.getMessageOrBuilderList();
@@ -4302,9 +4302,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocation.Builder addIntermediateDestinationsBuilder() {
+    public TerminalLocation.Builder addIntermediateDestinationsBuilder() {
       return getIntermediateDestinationsFieldBuilder().addBuilder(
-          google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance());
+          TerminalLocation.getDefaultInstance());
     }
     /**
      * <pre>
@@ -4315,10 +4315,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocation.Builder addIntermediateDestinationsBuilder(
+    public TerminalLocation.Builder addIntermediateDestinationsBuilder(
         int index) {
       return getIntermediateDestinationsFieldBuilder().addBuilder(
-          index, google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance());
+          index, TerminalLocation.getDefaultInstance());
     }
     /**
      * <pre>
@@ -4329,16 +4329,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.TerminalLocation.Builder> 
+    public java.util.List<TerminalLocation.Builder>
          getIntermediateDestinationsBuilderList() {
       return getIntermediateDestinationsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>
         getIntermediateDestinationsFieldBuilder() {
       if (intermediateDestinationsBuilder_ == null) {
         intermediateDestinationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder>(
+            TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>(
                 intermediateDestinations_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -4545,7 +4545,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 intermediate_destination_index = 15;</code>
      * @return The intermediateDestinationIndex.
      */
-    @java.lang.Override
+    @Override
     public int getIntermediateDestinationIndex() {
       return intermediateDestinationIndex_;
     }
@@ -4591,17 +4591,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<google.maps.fleetengine.v1.StopLocation> actualIntermediateDestinationArrivalPoints_ =
+    private java.util.List<StopLocation> actualIntermediateDestinationArrivalPoints_ =
       java.util.Collections.emptyList();
     private void ensureActualIntermediateDestinationArrivalPointsIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        actualIntermediateDestinationArrivalPoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.StopLocation>(actualIntermediateDestinationArrivalPoints_);
+        actualIntermediateDestinationArrivalPoints_ = new java.util.ArrayList<StopLocation>(actualIntermediateDestinationArrivalPoints_);
         bitField0_ |= 0x00000002;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> actualIntermediateDestinationArrivalPointsBuilder_;
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder> actualIntermediateDestinationArrivalPointsBuilder_;
 
     /**
      * <pre>
@@ -4613,7 +4613,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.StopLocation> getActualIntermediateDestinationArrivalPointsList() {
+    public java.util.List<StopLocation> getActualIntermediateDestinationArrivalPointsList() {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(actualIntermediateDestinationArrivalPoints_);
       } else {
@@ -4647,7 +4647,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinationArrivalPoints(int index) {
+    public StopLocation getActualIntermediateDestinationArrivalPoints(int index) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         return actualIntermediateDestinationArrivalPoints_.get(index);
       } else {
@@ -4665,7 +4665,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder setActualIntermediateDestinationArrivalPoints(
-        int index, google.maps.fleetengine.v1.StopLocation value) {
+        int index, StopLocation value) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4689,7 +4689,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder setActualIntermediateDestinationArrivalPoints(
-        int index, google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        int index, StopLocation.Builder builderForValue) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         ensureActualIntermediateDestinationArrivalPointsIsMutable();
         actualIntermediateDestinationArrivalPoints_.set(index, builderForValue.build());
@@ -4709,7 +4709,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder addActualIntermediateDestinationArrivalPoints(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder addActualIntermediateDestinationArrivalPoints(StopLocation value) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4733,7 +4733,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addActualIntermediateDestinationArrivalPoints(
-        int index, google.maps.fleetengine.v1.StopLocation value) {
+        int index, StopLocation value) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4757,7 +4757,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addActualIntermediateDestinationArrivalPoints(
-        google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        StopLocation.Builder builderForValue) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         ensureActualIntermediateDestinationArrivalPointsIsMutable();
         actualIntermediateDestinationArrivalPoints_.add(builderForValue.build());
@@ -4778,7 +4778,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addActualIntermediateDestinationArrivalPoints(
-        int index, google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        int index, StopLocation.Builder builderForValue) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         ensureActualIntermediateDestinationArrivalPointsIsMutable();
         actualIntermediateDestinationArrivalPoints_.add(index, builderForValue.build());
@@ -4799,7 +4799,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addAllActualIntermediateDestinationArrivalPoints(
-        java.lang.Iterable<? extends google.maps.fleetengine.v1.StopLocation> values) {
+        Iterable<? extends StopLocation> values) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         ensureActualIntermediateDestinationArrivalPointsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4860,7 +4860,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder getActualIntermediateDestinationArrivalPointsBuilder(
+    public StopLocation.Builder getActualIntermediateDestinationArrivalPointsBuilder(
         int index) {
       return getActualIntermediateDestinationArrivalPointsFieldBuilder().getBuilder(index);
     }
@@ -4874,7 +4874,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocationOrBuilder getActualIntermediateDestinationArrivalPointsOrBuilder(
+    public StopLocationOrBuilder getActualIntermediateDestinationArrivalPointsOrBuilder(
         int index) {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         return actualIntermediateDestinationArrivalPoints_.get(index);  } else {
@@ -4891,7 +4891,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public java.util.List<? extends google.maps.fleetengine.v1.StopLocationOrBuilder> 
+    public java.util.List<? extends StopLocationOrBuilder>
          getActualIntermediateDestinationArrivalPointsOrBuilderList() {
       if (actualIntermediateDestinationArrivalPointsBuilder_ != null) {
         return actualIntermediateDestinationArrivalPointsBuilder_.getMessageOrBuilderList();
@@ -4909,9 +4909,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder addActualIntermediateDestinationArrivalPointsBuilder() {
+    public StopLocation.Builder addActualIntermediateDestinationArrivalPointsBuilder() {
       return getActualIntermediateDestinationArrivalPointsFieldBuilder().addBuilder(
-          google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
+          StopLocation.getDefaultInstance());
     }
     /**
      * <pre>
@@ -4923,10 +4923,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder addActualIntermediateDestinationArrivalPointsBuilder(
+    public StopLocation.Builder addActualIntermediateDestinationArrivalPointsBuilder(
         int index) {
       return getActualIntermediateDestinationArrivalPointsFieldBuilder().addBuilder(
-          index, google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
+          index, StopLocation.getDefaultInstance());
     }
     /**
      * <pre>
@@ -4938,16 +4938,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.StopLocation.Builder> 
+    public java.util.List<StopLocation.Builder>
          getActualIntermediateDestinationArrivalPointsBuilderList() {
       return getActualIntermediateDestinationArrivalPointsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> 
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder>
         getActualIntermediateDestinationArrivalPointsFieldBuilder() {
       if (actualIntermediateDestinationArrivalPointsBuilder_ == null) {
         actualIntermediateDestinationArrivalPointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder>(
+            StopLocation, StopLocation.Builder, StopLocationOrBuilder>(
                 actualIntermediateDestinationArrivalPoints_,
                 ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
@@ -4957,17 +4957,17 @@ private static final long serialVersionUID = 0L;
       return actualIntermediateDestinationArrivalPointsBuilder_;
     }
 
-    private java.util.List<google.maps.fleetengine.v1.StopLocation> actualIntermediateDestinations_ =
+    private java.util.List<StopLocation> actualIntermediateDestinations_ =
       java.util.Collections.emptyList();
     private void ensureActualIntermediateDestinationsIsMutable() {
       if (!((bitField0_ & 0x00000004) != 0)) {
-        actualIntermediateDestinations_ = new java.util.ArrayList<google.maps.fleetengine.v1.StopLocation>(actualIntermediateDestinations_);
+        actualIntermediateDestinations_ = new java.util.ArrayList<StopLocation>(actualIntermediateDestinations_);
         bitField0_ |= 0x00000004;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> actualIntermediateDestinationsBuilder_;
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder> actualIntermediateDestinationsBuilder_;
 
     /**
      * <pre>
@@ -4979,7 +4979,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.StopLocation> getActualIntermediateDestinationsList() {
+    public java.util.List<StopLocation> getActualIntermediateDestinationsList() {
       if (actualIntermediateDestinationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(actualIntermediateDestinations_);
       } else {
@@ -5013,7 +5013,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinations(int index) {
+    public StopLocation getActualIntermediateDestinations(int index) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         return actualIntermediateDestinations_.get(index);
       } else {
@@ -5031,7 +5031,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder setActualIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.StopLocation value) {
+        int index, StopLocation value) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5055,7 +5055,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder setActualIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        int index, StopLocation.Builder builderForValue) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         ensureActualIntermediateDestinationsIsMutable();
         actualIntermediateDestinations_.set(index, builderForValue.build());
@@ -5075,7 +5075,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder addActualIntermediateDestinations(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder addActualIntermediateDestinations(StopLocation value) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5099,7 +5099,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addActualIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.StopLocation value) {
+        int index, StopLocation value) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5123,7 +5123,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addActualIntermediateDestinations(
-        google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        StopLocation.Builder builderForValue) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         ensureActualIntermediateDestinationsIsMutable();
         actualIntermediateDestinations_.add(builderForValue.build());
@@ -5144,7 +5144,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addActualIntermediateDestinations(
-        int index, google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        int index, StopLocation.Builder builderForValue) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         ensureActualIntermediateDestinationsIsMutable();
         actualIntermediateDestinations_.add(index, builderForValue.build());
@@ -5165,7 +5165,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder addAllActualIntermediateDestinations(
-        java.lang.Iterable<? extends google.maps.fleetengine.v1.StopLocation> values) {
+        Iterable<? extends StopLocation> values) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         ensureActualIntermediateDestinationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5226,7 +5226,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder getActualIntermediateDestinationsBuilder(
+    public StopLocation.Builder getActualIntermediateDestinationsBuilder(
         int index) {
       return getActualIntermediateDestinationsFieldBuilder().getBuilder(index);
     }
@@ -5240,7 +5240,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocationOrBuilder getActualIntermediateDestinationsOrBuilder(
+    public StopLocationOrBuilder getActualIntermediateDestinationsOrBuilder(
         int index) {
       if (actualIntermediateDestinationsBuilder_ == null) {
         return actualIntermediateDestinations_.get(index);  } else {
@@ -5257,7 +5257,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public java.util.List<? extends google.maps.fleetengine.v1.StopLocationOrBuilder> 
+    public java.util.List<? extends StopLocationOrBuilder>
          getActualIntermediateDestinationsOrBuilderList() {
       if (actualIntermediateDestinationsBuilder_ != null) {
         return actualIntermediateDestinationsBuilder_.getMessageOrBuilderList();
@@ -5275,9 +5275,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder addActualIntermediateDestinationsBuilder() {
+    public StopLocation.Builder addActualIntermediateDestinationsBuilder() {
       return getActualIntermediateDestinationsFieldBuilder().addBuilder(
-          google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
+          StopLocation.getDefaultInstance());
     }
     /**
      * <pre>
@@ -5289,10 +5289,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder addActualIntermediateDestinationsBuilder(
+    public StopLocation.Builder addActualIntermediateDestinationsBuilder(
         int index) {
       return getActualIntermediateDestinationsFieldBuilder().addBuilder(
-          index, google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
+          index, StopLocation.getDefaultInstance());
     }
     /**
      * <pre>
@@ -5304,16 +5304,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.StopLocation.Builder> 
+    public java.util.List<StopLocation.Builder>
          getActualIntermediateDestinationsBuilderList() {
       return getActualIntermediateDestinationsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> 
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder>
         getActualIntermediateDestinationsFieldBuilder() {
       if (actualIntermediateDestinationsBuilder_ == null) {
         actualIntermediateDestinationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder>(
+            StopLocation, StopLocation.Builder, StopLocationOrBuilder>(
                 actualIntermediateDestinations_,
                 ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
@@ -5323,9 +5323,9 @@ private static final long serialVersionUID = 0L;
       return actualIntermediateDestinationsBuilder_;
     }
 
-    private google.maps.fleetengine.v1.TerminalLocation dropoffPoint_;
+    private TerminalLocation dropoffPoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> dropoffPointBuilder_;
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder> dropoffPointBuilder_;
     /**
      * <pre>
      * Location where customer indicates they will be dropped off.
@@ -5345,9 +5345,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
      * @return The dropoffPoint.
      */
-    public google.maps.fleetengine.v1.TerminalLocation getDropoffPoint() {
+    public TerminalLocation getDropoffPoint() {
       if (dropoffPointBuilder_ == null) {
-        return dropoffPoint_ == null ? google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : dropoffPoint_;
+        return dropoffPoint_ == null ? TerminalLocation.getDefaultInstance() : dropoffPoint_;
       } else {
         return dropoffPointBuilder_.getMessage();
       }
@@ -5359,7 +5359,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
      */
-    public Builder setDropoffPoint(google.maps.fleetengine.v1.TerminalLocation value) {
+    public Builder setDropoffPoint(TerminalLocation value) {
       if (dropoffPointBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5380,7 +5380,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
      */
     public Builder setDropoffPoint(
-        google.maps.fleetengine.v1.TerminalLocation.Builder builderForValue) {
+        TerminalLocation.Builder builderForValue) {
       if (dropoffPointBuilder_ == null) {
         dropoffPoint_ = builderForValue.build();
         onChanged();
@@ -5397,11 +5397,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
      */
-    public Builder mergeDropoffPoint(google.maps.fleetengine.v1.TerminalLocation value) {
+    public Builder mergeDropoffPoint(TerminalLocation value) {
       if (dropoffPointBuilder_ == null) {
         if (dropoffPoint_ != null) {
           dropoffPoint_ =
-            google.maps.fleetengine.v1.TerminalLocation.newBuilder(dropoffPoint_).mergeFrom(value).buildPartial();
+            TerminalLocation.newBuilder(dropoffPoint_).mergeFrom(value).buildPartial();
         } else {
           dropoffPoint_ = value;
         }
@@ -5437,7 +5437,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocation.Builder getDropoffPointBuilder() {
+    public TerminalLocation.Builder getDropoffPointBuilder() {
       
       onChanged();
       return getDropoffPointFieldBuilder().getBuilder();
@@ -5449,12 +5449,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocationOrBuilder getDropoffPointOrBuilder() {
+    public TerminalLocationOrBuilder getDropoffPointOrBuilder() {
       if (dropoffPointBuilder_ != null) {
         return dropoffPointBuilder_.getMessageOrBuilder();
       } else {
         return dropoffPoint_ == null ?
-            google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : dropoffPoint_;
+            TerminalLocation.getDefaultInstance() : dropoffPoint_;
       }
     }
     /**
@@ -5465,11 +5465,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>
         getDropoffPointFieldBuilder() {
       if (dropoffPointBuilder_ == null) {
         dropoffPointBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder>(
+            TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>(
                 getDropoffPoint(),
                 getParentForChildren(),
                 isClean());
@@ -5478,9 +5478,9 @@ private static final long serialVersionUID = 0L;
       return dropoffPointBuilder_;
     }
 
-    private google.maps.fleetengine.v1.StopLocation actualDropoffPoint_;
+    private StopLocation actualDropoffPoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> actualDropoffPointBuilder_;
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder> actualDropoffPointBuilder_;
     /**
      * <pre>
      * Input only. The actual time and location when and where customer was dropped off.
@@ -5504,9 +5504,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The actualDropoffPoint.
      */
-    public google.maps.fleetengine.v1.StopLocation getActualDropoffPoint() {
+    public StopLocation getActualDropoffPoint() {
       if (actualDropoffPointBuilder_ == null) {
-        return actualDropoffPoint_ == null ? google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualDropoffPoint_;
+        return actualDropoffPoint_ == null ? StopLocation.getDefaultInstance() : actualDropoffPoint_;
       } else {
         return actualDropoffPointBuilder_.getMessage();
       }
@@ -5520,7 +5520,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder setActualDropoffPoint(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder setActualDropoffPoint(StopLocation value) {
       if (actualDropoffPointBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5543,7 +5543,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     public Builder setActualDropoffPoint(
-        google.maps.fleetengine.v1.StopLocation.Builder builderForValue) {
+        StopLocation.Builder builderForValue) {
       if (actualDropoffPointBuilder_ == null) {
         actualDropoffPoint_ = builderForValue.build();
         onChanged();
@@ -5562,11 +5562,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public Builder mergeActualDropoffPoint(google.maps.fleetengine.v1.StopLocation value) {
+    public Builder mergeActualDropoffPoint(StopLocation value) {
       if (actualDropoffPointBuilder_ == null) {
         if (actualDropoffPoint_ != null) {
           actualDropoffPoint_ =
-            google.maps.fleetengine.v1.StopLocation.newBuilder(actualDropoffPoint_).mergeFrom(value).buildPartial();
+            StopLocation.newBuilder(actualDropoffPoint_).mergeFrom(value).buildPartial();
         } else {
           actualDropoffPoint_ = value;
         }
@@ -5606,7 +5606,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocation.Builder getActualDropoffPointBuilder() {
+    public StopLocation.Builder getActualDropoffPointBuilder() {
       
       onChanged();
       return getActualDropoffPointFieldBuilder().getBuilder();
@@ -5620,12 +5620,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.StopLocationOrBuilder getActualDropoffPointOrBuilder() {
+    public StopLocationOrBuilder getActualDropoffPointOrBuilder() {
       if (actualDropoffPointBuilder_ != null) {
         return actualDropoffPointBuilder_.getMessageOrBuilder();
       } else {
         return actualDropoffPoint_ == null ?
-            google.maps.fleetengine.v1.StopLocation.getDefaultInstance() : actualDropoffPoint_;
+            StopLocation.getDefaultInstance() : actualDropoffPoint_;
       }
     }
     /**
@@ -5638,11 +5638,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder> 
+        StopLocation, StopLocation.Builder, StopLocationOrBuilder>
         getActualDropoffPointFieldBuilder() {
       if (actualDropoffPointBuilder_ == null) {
         actualDropoffPointBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.StopLocation, google.maps.fleetengine.v1.StopLocation.Builder, google.maps.fleetengine.v1.StopLocationOrBuilder>(
+            StopLocation, StopLocation.Builder, StopLocationOrBuilder>(
                 getActualDropoffPoint(),
                 getParentForChildren(),
                 isClean());
@@ -5815,17 +5815,17 @@ private static final long serialVersionUID = 0L;
       return dropoffTimeBuilder_;
     }
 
-    private java.util.List<google.maps.fleetengine.v1.TripWaypoint> remainingWaypoints_ =
+    private java.util.List<TripWaypoint> remainingWaypoints_ =
       java.util.Collections.emptyList();
     private void ensureRemainingWaypointsIsMutable() {
       if (!((bitField0_ & 0x00000008) != 0)) {
-        remainingWaypoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.TripWaypoint>(remainingWaypoints_);
+        remainingWaypoints_ = new java.util.ArrayList<TripWaypoint>(remainingWaypoints_);
         bitField0_ |= 0x00000008;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder> remainingWaypointsBuilder_;
+        TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder> remainingWaypointsBuilder_;
 
     /**
      * <pre>
@@ -5836,7 +5836,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.TripWaypoint> getRemainingWaypointsList() {
+    public java.util.List<TripWaypoint> getRemainingWaypointsList() {
       if (remainingWaypointsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(remainingWaypoints_);
       } else {
@@ -5868,7 +5868,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint getRemainingWaypoints(int index) {
+    public TripWaypoint getRemainingWaypoints(int index) {
       if (remainingWaypointsBuilder_ == null) {
         return remainingWaypoints_.get(index);
       } else {
@@ -5885,7 +5885,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setRemainingWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint value) {
+        int index, TripWaypoint value) {
       if (remainingWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5908,7 +5908,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setRemainingWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint.Builder builderForValue) {
+        int index, TripWaypoint.Builder builderForValue) {
       if (remainingWaypointsBuilder_ == null) {
         ensureRemainingWaypointsIsMutable();
         remainingWaypoints_.set(index, builderForValue.build());
@@ -5927,7 +5927,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public Builder addRemainingWaypoints(google.maps.fleetengine.v1.TripWaypoint value) {
+    public Builder addRemainingWaypoints(TripWaypoint value) {
       if (remainingWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5950,7 +5950,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addRemainingWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint value) {
+        int index, TripWaypoint value) {
       if (remainingWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5973,7 +5973,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addRemainingWaypoints(
-        google.maps.fleetengine.v1.TripWaypoint.Builder builderForValue) {
+        TripWaypoint.Builder builderForValue) {
       if (remainingWaypointsBuilder_ == null) {
         ensureRemainingWaypointsIsMutable();
         remainingWaypoints_.add(builderForValue.build());
@@ -5993,7 +5993,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addRemainingWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint.Builder builderForValue) {
+        int index, TripWaypoint.Builder builderForValue) {
       if (remainingWaypointsBuilder_ == null) {
         ensureRemainingWaypointsIsMutable();
         remainingWaypoints_.add(index, builderForValue.build());
@@ -6013,7 +6013,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllRemainingWaypoints(
-        java.lang.Iterable<? extends google.maps.fleetengine.v1.TripWaypoint> values) {
+        Iterable<? extends TripWaypoint> values) {
       if (remainingWaypointsBuilder_ == null) {
         ensureRemainingWaypointsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6071,7 +6071,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint.Builder getRemainingWaypointsBuilder(
+    public TripWaypoint.Builder getRemainingWaypointsBuilder(
         int index) {
       return getRemainingWaypointsFieldBuilder().getBuilder(index);
     }
@@ -6084,7 +6084,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.TripWaypointOrBuilder getRemainingWaypointsOrBuilder(
+    public TripWaypointOrBuilder getRemainingWaypointsOrBuilder(
         int index) {
       if (remainingWaypointsBuilder_ == null) {
         return remainingWaypoints_.get(index);  } else {
@@ -6100,7 +6100,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public java.util.List<? extends google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+    public java.util.List<? extends TripWaypointOrBuilder>
          getRemainingWaypointsOrBuilderList() {
       if (remainingWaypointsBuilder_ != null) {
         return remainingWaypointsBuilder_.getMessageOrBuilderList();
@@ -6117,9 +6117,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint.Builder addRemainingWaypointsBuilder() {
+    public TripWaypoint.Builder addRemainingWaypointsBuilder() {
       return getRemainingWaypointsFieldBuilder().addBuilder(
-          google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
+          TripWaypoint.getDefaultInstance());
     }
     /**
      * <pre>
@@ -6130,10 +6130,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint.Builder addRemainingWaypointsBuilder(
+    public TripWaypoint.Builder addRemainingWaypointsBuilder(
         int index) {
       return getRemainingWaypointsFieldBuilder().addBuilder(
-          index, google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
+          index, TripWaypoint.getDefaultInstance());
     }
     /**
      * <pre>
@@ -6144,16 +6144,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.TripWaypoint.Builder> 
+    public java.util.List<TripWaypoint.Builder>
          getRemainingWaypointsBuilderList() {
       return getRemainingWaypointsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+        TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder>
         getRemainingWaypointsFieldBuilder() {
       if (remainingWaypointsBuilder_ == null) {
         remainingWaypointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder>(
+            TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder>(
                 remainingWaypoints_,
                 ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
@@ -6163,17 +6163,17 @@ private static final long serialVersionUID = 0L;
       return remainingWaypointsBuilder_;
     }
 
-    private java.util.List<google.maps.fleetengine.v1.TripWaypoint> vehicleWaypoints_ =
+    private java.util.List<TripWaypoint> vehicleWaypoints_ =
       java.util.Collections.emptyList();
     private void ensureVehicleWaypointsIsMutable() {
       if (!((bitField0_ & 0x00000010) != 0)) {
-        vehicleWaypoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.TripWaypoint>(vehicleWaypoints_);
+        vehicleWaypoints_ = new java.util.ArrayList<TripWaypoint>(vehicleWaypoints_);
         bitField0_ |= 0x00000010;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder> vehicleWaypointsBuilder_;
+        TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder> vehicleWaypointsBuilder_;
 
     /**
      * <pre>
@@ -6187,7 +6187,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.TripWaypoint> getVehicleWaypointsList() {
+    public java.util.List<TripWaypoint> getVehicleWaypointsList() {
       if (vehicleWaypointsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(vehicleWaypoints_);
       } else {
@@ -6225,7 +6225,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint getVehicleWaypoints(int index) {
+    public TripWaypoint getVehicleWaypoints(int index) {
       if (vehicleWaypointsBuilder_ == null) {
         return vehicleWaypoints_.get(index);
       } else {
@@ -6245,7 +6245,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
     public Builder setVehicleWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint value) {
+        int index, TripWaypoint value) {
       if (vehicleWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6271,7 +6271,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
     public Builder setVehicleWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint.Builder builderForValue) {
+        int index, TripWaypoint.Builder builderForValue) {
       if (vehicleWaypointsBuilder_ == null) {
         ensureVehicleWaypointsIsMutable();
         vehicleWaypoints_.set(index, builderForValue.build());
@@ -6293,7 +6293,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public Builder addVehicleWaypoints(google.maps.fleetengine.v1.TripWaypoint value) {
+    public Builder addVehicleWaypoints(TripWaypoint value) {
       if (vehicleWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6319,7 +6319,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
     public Builder addVehicleWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint value) {
+        int index, TripWaypoint value) {
       if (vehicleWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6345,7 +6345,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
     public Builder addVehicleWaypoints(
-        google.maps.fleetengine.v1.TripWaypoint.Builder builderForValue) {
+        TripWaypoint.Builder builderForValue) {
       if (vehicleWaypointsBuilder_ == null) {
         ensureVehicleWaypointsIsMutable();
         vehicleWaypoints_.add(builderForValue.build());
@@ -6368,7 +6368,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
     public Builder addVehicleWaypoints(
-        int index, google.maps.fleetengine.v1.TripWaypoint.Builder builderForValue) {
+        int index, TripWaypoint.Builder builderForValue) {
       if (vehicleWaypointsBuilder_ == null) {
         ensureVehicleWaypointsIsMutable();
         vehicleWaypoints_.add(index, builderForValue.build());
@@ -6391,7 +6391,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
     public Builder addAllVehicleWaypoints(
-        java.lang.Iterable<? extends google.maps.fleetengine.v1.TripWaypoint> values) {
+        Iterable<? extends TripWaypoint> values) {
       if (vehicleWaypointsBuilder_ == null) {
         ensureVehicleWaypointsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6458,7 +6458,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint.Builder getVehicleWaypointsBuilder(
+    public TripWaypoint.Builder getVehicleWaypointsBuilder(
         int index) {
       return getVehicleWaypointsFieldBuilder().getBuilder(index);
     }
@@ -6474,7 +6474,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public google.maps.fleetengine.v1.TripWaypointOrBuilder getVehicleWaypointsOrBuilder(
+    public TripWaypointOrBuilder getVehicleWaypointsOrBuilder(
         int index) {
       if (vehicleWaypointsBuilder_ == null) {
         return vehicleWaypoints_.get(index);  } else {
@@ -6493,7 +6493,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public java.util.List<? extends google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+    public java.util.List<? extends TripWaypointOrBuilder>
          getVehicleWaypointsOrBuilderList() {
       if (vehicleWaypointsBuilder_ != null) {
         return vehicleWaypointsBuilder_.getMessageOrBuilderList();
@@ -6513,9 +6513,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint.Builder addVehicleWaypointsBuilder() {
+    public TripWaypoint.Builder addVehicleWaypointsBuilder() {
       return getVehicleWaypointsFieldBuilder().addBuilder(
-          google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
+          TripWaypoint.getDefaultInstance());
     }
     /**
      * <pre>
@@ -6529,10 +6529,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint.Builder addVehicleWaypointsBuilder(
+    public TripWaypoint.Builder addVehicleWaypointsBuilder(
         int index) {
       return getVehicleWaypointsFieldBuilder().addBuilder(
-          index, google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
+          index, TripWaypoint.getDefaultInstance());
     }
     /**
      * <pre>
@@ -6546,16 +6546,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.TripWaypoint.Builder> 
+    public java.util.List<TripWaypoint.Builder>
          getVehicleWaypointsBuilderList() {
       return getVehicleWaypointsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+        TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder>
         getVehicleWaypointsFieldBuilder() {
       if (vehicleWaypointsBuilder_ == null) {
         vehicleWaypointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder>(
+            TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder>(
                 vehicleWaypoints_,
                 ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
@@ -6763,7 +6763,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.type.LatLng route = 9;</code>
      */
     public Builder addAllRoute(
-        java.lang.Iterable<? extends com.google.type.LatLng> values) {
+        Iterable<? extends com.google.type.LatLng> values) {
       if (routeBuilder_ == null) {
         ensureRouteIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6913,9 +6913,9 @@ private static final long serialVersionUID = 0L;
       return routeBuilder_;
     }
 
-    private google.maps.fleetengine.v1.TripWaypoint currentRouteSegmentEndPoint_;
+    private TripWaypoint currentRouteSegmentEndPoint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder> currentRouteSegmentEndPointBuilder_;
+        TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder> currentRouteSegmentEndPointBuilder_;
     /**
      * <pre>
      * The waypoint where current_route_segment ends. This can be supplied by
@@ -6945,9 +6945,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      * @return The currentRouteSegmentEndPoint.
      */
-    public google.maps.fleetengine.v1.TripWaypoint getCurrentRouteSegmentEndPoint() {
+    public TripWaypoint getCurrentRouteSegmentEndPoint() {
       if (currentRouteSegmentEndPointBuilder_ == null) {
-        return currentRouteSegmentEndPoint_ == null ? google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance() : currentRouteSegmentEndPoint_;
+        return currentRouteSegmentEndPoint_ == null ? TripWaypoint.getDefaultInstance() : currentRouteSegmentEndPoint_;
       } else {
         return currentRouteSegmentEndPointBuilder_.getMessage();
       }
@@ -6964,7 +6964,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
-    public Builder setCurrentRouteSegmentEndPoint(google.maps.fleetengine.v1.TripWaypoint value) {
+    public Builder setCurrentRouteSegmentEndPoint(TripWaypoint value) {
       if (currentRouteSegmentEndPointBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6990,7 +6990,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
     public Builder setCurrentRouteSegmentEndPoint(
-        google.maps.fleetengine.v1.TripWaypoint.Builder builderForValue) {
+        TripWaypoint.Builder builderForValue) {
       if (currentRouteSegmentEndPointBuilder_ == null) {
         currentRouteSegmentEndPoint_ = builderForValue.build();
         onChanged();
@@ -7012,11 +7012,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
-    public Builder mergeCurrentRouteSegmentEndPoint(google.maps.fleetengine.v1.TripWaypoint value) {
+    public Builder mergeCurrentRouteSegmentEndPoint(TripWaypoint value) {
       if (currentRouteSegmentEndPointBuilder_ == null) {
         if (currentRouteSegmentEndPoint_ != null) {
           currentRouteSegmentEndPoint_ =
-            google.maps.fleetengine.v1.TripWaypoint.newBuilder(currentRouteSegmentEndPoint_).mergeFrom(value).buildPartial();
+            TripWaypoint.newBuilder(currentRouteSegmentEndPoint_).mergeFrom(value).buildPartial();
         } else {
           currentRouteSegmentEndPoint_ = value;
         }
@@ -7062,7 +7062,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
-    public google.maps.fleetengine.v1.TripWaypoint.Builder getCurrentRouteSegmentEndPointBuilder() {
+    public TripWaypoint.Builder getCurrentRouteSegmentEndPointBuilder() {
       
       onChanged();
       return getCurrentRouteSegmentEndPointFieldBuilder().getBuilder();
@@ -7079,12 +7079,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
-    public google.maps.fleetengine.v1.TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder() {
+    public TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder() {
       if (currentRouteSegmentEndPointBuilder_ != null) {
         return currentRouteSegmentEndPointBuilder_.getMessageOrBuilder();
       } else {
         return currentRouteSegmentEndPoint_ == null ?
-            google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance() : currentRouteSegmentEndPoint_;
+            TripWaypoint.getDefaultInstance() : currentRouteSegmentEndPoint_;
       }
     }
     /**
@@ -7100,11 +7100,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+        TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder>
         getCurrentRouteSegmentEndPointFieldBuilder() {
       if (currentRouteSegmentEndPointBuilder_ == null) {
         currentRouteSegmentEndPointBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.TripWaypoint, google.maps.fleetengine.v1.TripWaypoint.Builder, google.maps.fleetengine.v1.TripWaypointOrBuilder>(
+            TripWaypoint, TripWaypoint.Builder, TripWaypointOrBuilder>(
                 getCurrentRouteSegmentEndPoint(),
                 getParentForChildren(),
                 isClean());
@@ -8079,7 +8079,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 number_of_passengers = 10;</code>
      * @return The numberOfPassengers.
      */
-    @java.lang.Override
+    @Override
     public int getNumberOfPassengers() {
       return numberOfPassengers_;
     }
@@ -8117,9 +8117,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private google.maps.fleetengine.v1.VehicleLocation lastLocation_;
+    private VehicleLocation lastLocation_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.VehicleLocation, google.maps.fleetengine.v1.VehicleLocation.Builder, google.maps.fleetengine.v1.VehicleLocationOrBuilder> lastLocationBuilder_;
+        VehicleLocation, VehicleLocation.Builder, VehicleLocationOrBuilder> lastLocationBuilder_;
     /**
      * <pre>
      * Indicates the last reported location of the vehicle along the route.
@@ -8139,9 +8139,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
      * @return The lastLocation.
      */
-    public google.maps.fleetengine.v1.VehicleLocation getLastLocation() {
+    public VehicleLocation getLastLocation() {
       if (lastLocationBuilder_ == null) {
-        return lastLocation_ == null ? google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance() : lastLocation_;
+        return lastLocation_ == null ? VehicleLocation.getDefaultInstance() : lastLocation_;
       } else {
         return lastLocationBuilder_.getMessage();
       }
@@ -8153,7 +8153,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
      */
-    public Builder setLastLocation(google.maps.fleetengine.v1.VehicleLocation value) {
+    public Builder setLastLocation(VehicleLocation value) {
       if (lastLocationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -8174,7 +8174,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
      */
     public Builder setLastLocation(
-        google.maps.fleetengine.v1.VehicleLocation.Builder builderForValue) {
+        VehicleLocation.Builder builderForValue) {
       if (lastLocationBuilder_ == null) {
         lastLocation_ = builderForValue.build();
         onChanged();
@@ -8191,11 +8191,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
      */
-    public Builder mergeLastLocation(google.maps.fleetengine.v1.VehicleLocation value) {
+    public Builder mergeLastLocation(VehicleLocation value) {
       if (lastLocationBuilder_ == null) {
         if (lastLocation_ != null) {
           lastLocation_ =
-            google.maps.fleetengine.v1.VehicleLocation.newBuilder(lastLocation_).mergeFrom(value).buildPartial();
+            VehicleLocation.newBuilder(lastLocation_).mergeFrom(value).buildPartial();
         } else {
           lastLocation_ = value;
         }
@@ -8231,7 +8231,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
      */
-    public google.maps.fleetengine.v1.VehicleLocation.Builder getLastLocationBuilder() {
+    public VehicleLocation.Builder getLastLocationBuilder() {
       
       onChanged();
       return getLastLocationFieldBuilder().getBuilder();
@@ -8243,12 +8243,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
      */
-    public google.maps.fleetengine.v1.VehicleLocationOrBuilder getLastLocationOrBuilder() {
+    public VehicleLocationOrBuilder getLastLocationOrBuilder() {
       if (lastLocationBuilder_ != null) {
         return lastLocationBuilder_.getMessageOrBuilder();
       } else {
         return lastLocation_ == null ?
-            google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance() : lastLocation_;
+            VehicleLocation.getDefaultInstance() : lastLocation_;
       }
     }
     /**
@@ -8259,11 +8259,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.VehicleLocation, google.maps.fleetengine.v1.VehicleLocation.Builder, google.maps.fleetengine.v1.VehicleLocationOrBuilder> 
+        VehicleLocation, VehicleLocation.Builder, VehicleLocationOrBuilder>
         getLastLocationFieldBuilder() {
       if (lastLocationBuilder_ == null) {
         lastLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.VehicleLocation, google.maps.fleetengine.v1.VehicleLocation.Builder, google.maps.fleetengine.v1.VehicleLocationOrBuilder>(
+            VehicleLocation, VehicleLocation.Builder, VehicleLocationOrBuilder>(
                 getLastLocation(),
                 getParentForChildren(),
                 isClean());
@@ -8284,7 +8284,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool last_location_snappable = 26;</code>
      * @return The lastLocationSnappable.
      */
-    @java.lang.Override
+    @Override
     public boolean getLastLocationSnappable() {
       return lastLocationSnappable_;
     }
@@ -8334,7 +8334,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripView view = 31;</code>
      * @return The enum numeric value on the wire for view.
      */
-    @java.lang.Override public int getViewValue() {
+    @Override public int getViewValue() {
       return view_;
     }
     /**
@@ -8362,11 +8362,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripView view = 31;</code>
      * @return The view.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TripView getView() {
+    @Override
+    public TripView getView() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.TripView result = google.maps.fleetengine.v1.TripView.valueOf(view_);
-      return result == null ? google.maps.fleetengine.v1.TripView.UNRECOGNIZED : result;
+      TripView result = TripView.valueOf(view_);
+      return result == null ? TripView.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -8378,7 +8378,7 @@ private static final long serialVersionUID = 0L;
      * @param value The view to set.
      * @return This builder for chaining.
      */
-    public Builder setView(google.maps.fleetengine.v1.TripView value) {
+    public Builder setView(TripView value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8402,13 +8402,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -8419,18 +8419,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.Trip)
-  private static final google.maps.fleetengine.v1.Trip DEFAULT_INSTANCE;
+  private static final Trip DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.Trip();
+    DEFAULT_INSTANCE = new Trip();
   }
 
-  public static google.maps.fleetengine.v1.Trip getDefaultInstance() {
+  public static Trip getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<Trip>
       PARSER = new com.google.protobuf.AbstractParser<Trip>() {
-    @java.lang.Override
+    @Override
     public Trip parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8443,13 +8443,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<Trip> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.Trip getDefaultInstanceForType() {
+  @Override
+  public Trip getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

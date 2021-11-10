@@ -44,14 +44,14 @@ private static final long serialVersionUID = 0L;
     orderedBy_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new VehicleMatch();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -76,11 +76,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            google.maps.fleetengine.v1.Vehicle.Builder subBuilder = null;
+            Vehicle.Builder subBuilder = null;
             if (vehicle_ != null) {
               subBuilder = vehicle_.toBuilder();
             }
-            vehicle_ = input.readMessage(google.maps.fleetengine.v1.Vehicle.parser(), extensionRegistry);
+            vehicle_ = input.readMessage(Vehicle.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(vehicle_);
               vehicle_ = subBuilder.buildPartial();
@@ -148,11 +148,11 @@ private static final long serialVersionUID = 0L;
           }
           case 58: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              vehicleTripsWaypoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.Waypoint>();
+              vehicleTripsWaypoints_ = new java.util.ArrayList<Waypoint>();
               mutable_bitField0_ |= 0x00000001;
             }
             vehicleTripsWaypoints_.add(
-                input.readMessage(google.maps.fleetengine.v1.Waypoint.parser(), extensionRegistry));
+                input.readMessage(Waypoint.parser(), extensionRegistry));
             break;
           }
           case 64: {
@@ -210,15 +210,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_descriptor;
+    return VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_fieldAccessorTable
+    return VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.VehicleMatch.class, google.maps.fleetengine.v1.VehicleMatch.Builder.class);
+            VehicleMatch.class, Builder.class);
   }
 
   /**
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static VehicleMatchType valueOf(int value) {
       return forNumber(value);
     }
@@ -363,7 +363,7 @@ private static final long serialVersionUID = 0L;
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.VehicleMatch.getDescriptor().getEnumTypes().get(0);
+      return VehicleMatch.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final VehicleMatchType[] VALUES = values();
@@ -382,7 +382,7 @@ private static final long serialVersionUID = 0L;
     public static VehicleMatchType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -401,7 +401,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VEHICLE_FIELD_NUMBER = 1;
-  private google.maps.fleetengine.v1.Vehicle vehicle_;
+  private Vehicle vehicle_;
   /**
    * <pre>
    * Required. A vehicle that matches the request.
@@ -410,7 +410,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the vehicle field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasVehicle() {
     return vehicle_ != null;
   }
@@ -422,9 +422,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehicle.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.Vehicle getVehicle() {
-    return vehicle_ == null ? google.maps.fleetengine.v1.Vehicle.getDefaultInstance() : vehicle_;
+  @Override
+  public Vehicle getVehicle() {
+    return vehicle_ == null ? Vehicle.getDefaultInstance() : vehicle_;
   }
   /**
    * <pre>
@@ -433,8 +433,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.VehicleOrBuilder getVehicleOrBuilder() {
+  @Override
+  public VehicleOrBuilder getVehicleOrBuilder() {
     return getVehicle();
   }
 
@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp vehicle_pickup_eta = 2;</code>
    * @return Whether the vehiclePickupEta field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasVehiclePickupEta() {
     return vehiclePickupEta_ != null;
   }
@@ -464,7 +464,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp vehicle_pickup_eta = 2;</code>
    * @return The vehiclePickupEta.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getVehiclePickupEta() {
     return vehiclePickupEta_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : vehiclePickupEta_;
   }
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp vehicle_pickup_eta = 2;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getVehiclePickupEtaOrBuilder() {
     return getVehiclePickupEta();
   }
@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
    * @return Whether the vehiclePickupDistanceMeters field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasVehiclePickupDistanceMeters() {
     return vehiclePickupDistanceMeters_ != null;
   }
@@ -510,7 +510,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
    * @return The vehiclePickupDistanceMeters.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getVehiclePickupDistanceMeters() {
     return vehiclePickupDistanceMeters_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : vehiclePickupDistanceMeters_;
   }
@@ -524,7 +524,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getVehiclePickupDistanceMetersOrBuilder() {
     return getVehiclePickupDistanceMeters();
   }
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the vehiclePickupStraightLineDistanceMeters field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasVehiclePickupStraightLineDistanceMeters() {
     return vehiclePickupStraightLineDistanceMeters_ != null;
   }
@@ -555,7 +555,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehiclePickupStraightLineDistanceMeters.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getVehiclePickupStraightLineDistanceMeters() {
     return vehiclePickupStraightLineDistanceMeters_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : vehiclePickupStraightLineDistanceMeters_;
   }
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getVehiclePickupStraightLineDistanceMetersOrBuilder() {
     return getVehiclePickupStraightLineDistanceMeters();
   }
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp vehicle_dropoff_eta = 4;</code>
    * @return Whether the vehicleDropoffEta field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasVehicleDropoffEta() {
     return vehicleDropoffEta_ != null;
   }
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp vehicle_dropoff_eta = 4;</code>
    * @return The vehicleDropoffEta.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getVehicleDropoffEta() {
     return vehicleDropoffEta_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : vehicleDropoffEta_;
   }
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp vehicle_dropoff_eta = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getVehicleDropoffEtaOrBuilder() {
     return getVehicleDropoffEta();
   }
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
    * @return Whether the vehiclePickupToDropoffDistanceMeters field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasVehiclePickupToDropoffDistanceMeters() {
     return vehiclePickupToDropoffDistanceMeters_ != null;
   }
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
    * @return The vehiclePickupToDropoffDistanceMeters.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getVehiclePickupToDropoffDistanceMeters() {
     return vehiclePickupToDropoffDistanceMeters_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : vehiclePickupToDropoffDistanceMeters_;
   }
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getVehiclePickupToDropoffDistanceMetersOrBuilder() {
     return getVehiclePickupToDropoffDistanceMeters();
   }
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripType trip_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The enum numeric value on the wire for tripType.
    */
-  @java.lang.Override public int getTripTypeValue() {
+  @Override public int getTripTypeValue() {
     return tripType_;
   }
   /**
@@ -711,14 +711,14 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TripType trip_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The tripType.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.TripType getTripType() {
+  @Override public TripType getTripType() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.TripType result = google.maps.fleetengine.v1.TripType.valueOf(tripType_);
-    return result == null ? google.maps.fleetengine.v1.TripType.UNRECOGNIZED : result;
+    TripType result = TripType.valueOf(tripType_);
+    return result == null ? TripType.UNRECOGNIZED : result;
   }
 
   public static final int VEHICLE_TRIPS_WAYPOINTS_FIELD_NUMBER = 7;
-  private java.util.List<google.maps.fleetengine.v1.Waypoint> vehicleTripsWaypoints_;
+  private java.util.List<Waypoint> vehicleTripsWaypoints_;
   /**
    * <pre>
    * The ordered list of waypoints used to calculate the ETA. The list
@@ -730,8 +730,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  @java.lang.Override
-  public java.util.List<google.maps.fleetengine.v1.Waypoint> getVehicleTripsWaypointsList() {
+  @Override
+  public java.util.List<Waypoint> getVehicleTripsWaypointsList() {
     return vehicleTripsWaypoints_;
   }
   /**
@@ -745,8 +745,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  @java.lang.Override
-  public java.util.List<? extends google.maps.fleetengine.v1.WaypointOrBuilder> 
+  @Override
+  public java.util.List<? extends WaypointOrBuilder>
       getVehicleTripsWaypointsOrBuilderList() {
     return vehicleTripsWaypoints_;
   }
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  @java.lang.Override
+  @Override
   public int getVehicleTripsWaypointsCount() {
     return vehicleTripsWaypoints_.size();
   }
@@ -776,8 +776,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.Waypoint getVehicleTripsWaypoints(int index) {
+  @Override
+  public Waypoint getVehicleTripsWaypoints(int index) {
     return vehicleTripsWaypoints_.get(index);
   }
   /**
@@ -791,8 +791,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.WaypointOrBuilder getVehicleTripsWaypointsOrBuilder(
+  @Override
+  public WaypointOrBuilder getVehicleTripsWaypointsOrBuilder(
       int index) {
     return vehicleTripsWaypoints_.get(index);
   }
@@ -807,7 +807,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.VehicleMatch.VehicleMatchType vehicle_match_type = 8;</code>
    * @return The enum numeric value on the wire for vehicleMatchType.
    */
-  @java.lang.Override public int getVehicleMatchTypeValue() {
+  @Override public int getVehicleMatchTypeValue() {
     return vehicleMatchType_;
   }
   /**
@@ -818,10 +818,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.VehicleMatch.VehicleMatchType vehicle_match_type = 8;</code>
    * @return The vehicleMatchType.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType getVehicleMatchType() {
+  @Override public VehicleMatchType getVehicleMatchType() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType result = google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType.valueOf(vehicleMatchType_);
-    return result == null ? google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType.UNRECOGNIZED : result;
+    VehicleMatchType result = VehicleMatchType.valueOf(vehicleMatchType_);
+    return result == null ? VehicleMatchType.UNRECOGNIZED : result;
   }
 
   public static final int REQUESTED_ORDERED_BY_FIELD_NUMBER = 9;
@@ -834,7 +834,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
    * @return The enum numeric value on the wire for requestedOrderedBy.
    */
-  @java.lang.Override public int getRequestedOrderedByValue() {
+  @Override public int getRequestedOrderedByValue() {
     return requestedOrderedBy_;
   }
   /**
@@ -845,10 +845,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
    * @return The requestedOrderedBy.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder getRequestedOrderedBy() {
+  @Override public SearchVehiclesRequest.VehicleMatchOrder getRequestedOrderedBy() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder result = google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.valueOf(requestedOrderedBy_);
-    return result == null ? google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
+    SearchVehiclesRequest.VehicleMatchOrder result = SearchVehiclesRequest.VehicleMatchOrder.valueOf(requestedOrderedBy_);
+    return result == null ? SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
   }
 
   public static final int ORDERED_BY_FIELD_NUMBER = 10;
@@ -864,7 +864,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
    * @return The enum numeric value on the wire for orderedBy.
    */
-  @java.lang.Override public int getOrderedByValue() {
+  @Override public int getOrderedByValue() {
     return orderedBy_;
   }
   /**
@@ -878,14 +878,14 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
    * @return The orderedBy.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder getOrderedBy() {
+  @Override public SearchVehiclesRequest.VehicleMatchOrder getOrderedBy() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder result = google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.valueOf(orderedBy_);
-    return result == null ? google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
+    SearchVehiclesRequest.VehicleMatchOrder result = SearchVehiclesRequest.VehicleMatchOrder.valueOf(orderedBy_);
+    return result == null ? SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -895,7 +895,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (vehicle_ != null) {
@@ -913,19 +913,19 @@ private static final long serialVersionUID = 0L;
     if (vehiclePickupToDropoffDistanceMeters_ != null) {
       output.writeMessage(5, getVehiclePickupToDropoffDistanceMeters());
     }
-    if (tripType_ != google.maps.fleetengine.v1.TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
+    if (tripType_ != TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
       output.writeEnum(6, tripType_);
     }
     for (int i = 0; i < vehicleTripsWaypoints_.size(); i++) {
       output.writeMessage(7, vehicleTripsWaypoints_.get(i));
     }
-    if (vehicleMatchType_ != google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType.UNKNOWN.getNumber()) {
+    if (vehicleMatchType_ != VehicleMatchType.UNKNOWN.getNumber()) {
       output.writeEnum(8, vehicleMatchType_);
     }
-    if (requestedOrderedBy_ != google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
+    if (requestedOrderedBy_ != SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
       output.writeEnum(9, requestedOrderedBy_);
     }
-    if (orderedBy_ != google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
+    if (orderedBy_ != SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
       output.writeEnum(10, orderedBy_);
     }
     if (vehiclePickupStraightLineDistanceMeters_ != null) {
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -960,7 +960,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getVehiclePickupToDropoffDistanceMeters());
     }
-    if (tripType_ != google.maps.fleetengine.v1.TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
+    if (tripType_ != TripType.UNKNOWN_TRIP_TYPE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, tripType_);
     }
@@ -968,15 +968,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, vehicleTripsWaypoints_.get(i));
     }
-    if (vehicleMatchType_ != google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType.UNKNOWN.getNumber()) {
+    if (vehicleMatchType_ != VehicleMatchType.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, vehicleMatchType_);
     }
-    if (requestedOrderedBy_ != google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
+    if (requestedOrderedBy_ != SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, requestedOrderedBy_);
     }
-    if (orderedBy_ != google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
+    if (orderedBy_ != SearchVehiclesRequest.VehicleMatchOrder.UNKNOWN_VEHICLE_MATCH_ORDER.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(10, orderedBy_);
     }
@@ -989,15 +989,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.VehicleMatch)) {
+    if (!(obj instanceof VehicleMatch)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.VehicleMatch other = (google.maps.fleetengine.v1.VehicleMatch) obj;
+    VehicleMatch other = (VehicleMatch) obj;
 
     if (hasVehicle() != other.hasVehicle()) return false;
     if (hasVehicle()) {
@@ -1039,7 +1039,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -1087,69 +1087,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(byte[] data)
+  public static VehicleMatch parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(java.io.InputStream input)
+  public static VehicleMatch parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseDelimitedFrom(java.io.InputStream input)
+  public static VehicleMatch parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseDelimitedFrom(
+  public static VehicleMatch parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.VehicleMatch parseFrom(
+  public static VehicleMatch parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -1157,23 +1157,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.VehicleMatch prototype) {
+  public static Builder newBuilder(VehicleMatch prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -1188,18 +1188,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.VehicleMatch)
-      google.maps.fleetengine.v1.VehicleMatchOrBuilder {
+      VehicleMatchOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_descriptor;
+      return VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_fieldAccessorTable
+      return VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.VehicleMatch.class, google.maps.fleetengine.v1.VehicleMatch.Builder.class);
+              VehicleMatch.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.VehicleMatch.newBuilder()
@@ -1208,7 +1208,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -1218,7 +1218,7 @@ private static final long serialVersionUID = 0L;
         getVehicleTripsWaypointsFieldBuilder();
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (vehicleBuilder_ == null) {
@@ -1274,29 +1274,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_descriptor;
+      return VehicleApi.internal_static_maps_fleetengine_v1_VehicleMatch_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.VehicleMatch getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.VehicleMatch.getDefaultInstance();
+    @Override
+    public VehicleMatch getDefaultInstanceForType() {
+      return VehicleMatch.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.VehicleMatch build() {
-      google.maps.fleetengine.v1.VehicleMatch result = buildPartial();
+    @Override
+    public VehicleMatch build() {
+      VehicleMatch result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.VehicleMatch buildPartial() {
-      google.maps.fleetengine.v1.VehicleMatch result = new google.maps.fleetengine.v1.VehicleMatch(this);
+    @Override
+    public VehicleMatch buildPartial() {
+      VehicleMatch result = new VehicleMatch(this);
       int from_bitField0_ = bitField0_;
       if (vehicleBuilder_ == null) {
         result.vehicle_ = vehicle_;
@@ -1345,50 +1345,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.VehicleMatch) {
-        return mergeFrom((google.maps.fleetengine.v1.VehicleMatch)other);
+      if (other instanceof VehicleMatch) {
+        return mergeFrom((VehicleMatch)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.VehicleMatch other) {
-      if (other == google.maps.fleetengine.v1.VehicleMatch.getDefaultInstance()) return this;
+    public Builder mergeFrom(VehicleMatch other) {
+      if (other == VehicleMatch.getDefaultInstance()) return this;
       if (other.hasVehicle()) {
         mergeVehicle(other.getVehicle());
       }
@@ -1450,21 +1450,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.VehicleMatch parsedMessage = null;
+      VehicleMatch parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.VehicleMatch) e.getUnfinishedMessage();
+        parsedMessage = (VehicleMatch) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1475,9 +1475,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private google.maps.fleetengine.v1.Vehicle vehicle_;
+    private Vehicle vehicle_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.Vehicle, google.maps.fleetengine.v1.Vehicle.Builder, google.maps.fleetengine.v1.VehicleOrBuilder> vehicleBuilder_;
+        Vehicle, Vehicle.Builder, VehicleOrBuilder> vehicleBuilder_;
     /**
      * <pre>
      * Required. A vehicle that matches the request.
@@ -1497,9 +1497,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The vehicle.
      */
-    public google.maps.fleetengine.v1.Vehicle getVehicle() {
+    public Vehicle getVehicle() {
       if (vehicleBuilder_ == null) {
-        return vehicle_ == null ? google.maps.fleetengine.v1.Vehicle.getDefaultInstance() : vehicle_;
+        return vehicle_ == null ? Vehicle.getDefaultInstance() : vehicle_;
       } else {
         return vehicleBuilder_.getMessage();
       }
@@ -1511,7 +1511,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setVehicle(google.maps.fleetengine.v1.Vehicle value) {
+    public Builder setVehicle(Vehicle value) {
       if (vehicleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1532,7 +1532,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVehicle(
-        google.maps.fleetengine.v1.Vehicle.Builder builderForValue) {
+        Vehicle.Builder builderForValue) {
       if (vehicleBuilder_ == null) {
         vehicle_ = builderForValue.build();
         onChanged();
@@ -1549,11 +1549,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeVehicle(google.maps.fleetengine.v1.Vehicle value) {
+    public Builder mergeVehicle(Vehicle value) {
       if (vehicleBuilder_ == null) {
         if (vehicle_ != null) {
           vehicle_ =
-            google.maps.fleetengine.v1.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
+            Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
         } else {
           vehicle_ = value;
         }
@@ -1589,7 +1589,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public google.maps.fleetengine.v1.Vehicle.Builder getVehicleBuilder() {
+    public Vehicle.Builder getVehicleBuilder() {
       
       onChanged();
       return getVehicleFieldBuilder().getBuilder();
@@ -1601,12 +1601,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public google.maps.fleetengine.v1.VehicleOrBuilder getVehicleOrBuilder() {
+    public VehicleOrBuilder getVehicleOrBuilder() {
       if (vehicleBuilder_ != null) {
         return vehicleBuilder_.getMessageOrBuilder();
       } else {
         return vehicle_ == null ?
-            google.maps.fleetengine.v1.Vehicle.getDefaultInstance() : vehicle_;
+            Vehicle.getDefaultInstance() : vehicle_;
       }
     }
     /**
@@ -1617,11 +1617,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.Vehicle, google.maps.fleetengine.v1.Vehicle.Builder, google.maps.fleetengine.v1.VehicleOrBuilder> 
+        Vehicle, Vehicle.Builder, VehicleOrBuilder>
         getVehicleFieldBuilder() {
       if (vehicleBuilder_ == null) {
         vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.Vehicle, google.maps.fleetengine.v1.Vehicle.Builder, google.maps.fleetengine.v1.VehicleOrBuilder>(
+            Vehicle, Vehicle.Builder, VehicleOrBuilder>(
                 getVehicle(),
                 getParentForChildren(),
                 isClean());
@@ -2595,7 +2595,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripType trip_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for tripType.
      */
-    @java.lang.Override public int getTripTypeValue() {
+    @Override public int getTripTypeValue() {
       return tripType_;
     }
     /**
@@ -2623,11 +2623,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TripType trip_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The tripType.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TripType getTripType() {
+    @Override
+    public TripType getTripType() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.TripType result = google.maps.fleetengine.v1.TripType.valueOf(tripType_);
-      return result == null ? google.maps.fleetengine.v1.TripType.UNRECOGNIZED : result;
+      TripType result = TripType.valueOf(tripType_);
+      return result == null ? TripType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -2639,7 +2639,7 @@ private static final long serialVersionUID = 0L;
      * @param value The tripType to set.
      * @return This builder for chaining.
      */
-    public Builder setTripType(google.maps.fleetengine.v1.TripType value) {
+    public Builder setTripType(TripType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -2664,17 +2664,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<google.maps.fleetengine.v1.Waypoint> vehicleTripsWaypoints_ =
+    private java.util.List<Waypoint> vehicleTripsWaypoints_ =
       java.util.Collections.emptyList();
     private void ensureVehicleTripsWaypointsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        vehicleTripsWaypoints_ = new java.util.ArrayList<google.maps.fleetengine.v1.Waypoint>(vehicleTripsWaypoints_);
+        vehicleTripsWaypoints_ = new java.util.ArrayList<Waypoint>(vehicleTripsWaypoints_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.Waypoint, google.maps.fleetengine.v1.Waypoint.Builder, google.maps.fleetengine.v1.WaypointOrBuilder> vehicleTripsWaypointsBuilder_;
+        Waypoint, Waypoint.Builder, WaypointOrBuilder> vehicleTripsWaypointsBuilder_;
 
     /**
      * <pre>
@@ -2687,7 +2687,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.Waypoint> getVehicleTripsWaypointsList() {
+    public java.util.List<Waypoint> getVehicleTripsWaypointsList() {
       if (vehicleTripsWaypointsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(vehicleTripsWaypoints_);
       } else {
@@ -2723,7 +2723,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public google.maps.fleetengine.v1.Waypoint getVehicleTripsWaypoints(int index) {
+    public Waypoint getVehicleTripsWaypoints(int index) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         return vehicleTripsWaypoints_.get(index);
       } else {
@@ -2742,7 +2742,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
     public Builder setVehicleTripsWaypoints(
-        int index, google.maps.fleetengine.v1.Waypoint value) {
+        int index, Waypoint value) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2767,7 +2767,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
     public Builder setVehicleTripsWaypoints(
-        int index, google.maps.fleetengine.v1.Waypoint.Builder builderForValue) {
+        int index, Waypoint.Builder builderForValue) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         ensureVehicleTripsWaypointsIsMutable();
         vehicleTripsWaypoints_.set(index, builderForValue.build());
@@ -2788,7 +2788,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public Builder addVehicleTripsWaypoints(google.maps.fleetengine.v1.Waypoint value) {
+    public Builder addVehicleTripsWaypoints(Waypoint value) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2813,7 +2813,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
     public Builder addVehicleTripsWaypoints(
-        int index, google.maps.fleetengine.v1.Waypoint value) {
+        int index, Waypoint value) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2838,7 +2838,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
     public Builder addVehicleTripsWaypoints(
-        google.maps.fleetengine.v1.Waypoint.Builder builderForValue) {
+        Waypoint.Builder builderForValue) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         ensureVehicleTripsWaypointsIsMutable();
         vehicleTripsWaypoints_.add(builderForValue.build());
@@ -2860,7 +2860,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
     public Builder addVehicleTripsWaypoints(
-        int index, google.maps.fleetengine.v1.Waypoint.Builder builderForValue) {
+        int index, Waypoint.Builder builderForValue) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         ensureVehicleTripsWaypointsIsMutable();
         vehicleTripsWaypoints_.add(index, builderForValue.build());
@@ -2882,7 +2882,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
     public Builder addAllVehicleTripsWaypoints(
-        java.lang.Iterable<? extends google.maps.fleetengine.v1.Waypoint> values) {
+        Iterable<? extends Waypoint> values) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         ensureVehicleTripsWaypointsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2946,7 +2946,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public google.maps.fleetengine.v1.Waypoint.Builder getVehicleTripsWaypointsBuilder(
+    public Waypoint.Builder getVehicleTripsWaypointsBuilder(
         int index) {
       return getVehicleTripsWaypointsFieldBuilder().getBuilder(index);
     }
@@ -2961,7 +2961,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public google.maps.fleetengine.v1.WaypointOrBuilder getVehicleTripsWaypointsOrBuilder(
+    public WaypointOrBuilder getVehicleTripsWaypointsOrBuilder(
         int index) {
       if (vehicleTripsWaypointsBuilder_ == null) {
         return vehicleTripsWaypoints_.get(index);  } else {
@@ -2979,7 +2979,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public java.util.List<? extends google.maps.fleetengine.v1.WaypointOrBuilder> 
+    public java.util.List<? extends WaypointOrBuilder>
          getVehicleTripsWaypointsOrBuilderList() {
       if (vehicleTripsWaypointsBuilder_ != null) {
         return vehicleTripsWaypointsBuilder_.getMessageOrBuilderList();
@@ -2998,9 +2998,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public google.maps.fleetengine.v1.Waypoint.Builder addVehicleTripsWaypointsBuilder() {
+    public Waypoint.Builder addVehicleTripsWaypointsBuilder() {
       return getVehicleTripsWaypointsFieldBuilder().addBuilder(
-          google.maps.fleetengine.v1.Waypoint.getDefaultInstance());
+          Waypoint.getDefaultInstance());
     }
     /**
      * <pre>
@@ -3013,10 +3013,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public google.maps.fleetengine.v1.Waypoint.Builder addVehicleTripsWaypointsBuilder(
+    public Waypoint.Builder addVehicleTripsWaypointsBuilder(
         int index) {
       return getVehicleTripsWaypointsFieldBuilder().addBuilder(
-          index, google.maps.fleetengine.v1.Waypoint.getDefaultInstance());
+          index, Waypoint.getDefaultInstance());
     }
     /**
      * <pre>
@@ -3029,16 +3029,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
      */
-    public java.util.List<google.maps.fleetengine.v1.Waypoint.Builder> 
+    public java.util.List<Waypoint.Builder>
          getVehicleTripsWaypointsBuilderList() {
       return getVehicleTripsWaypointsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        google.maps.fleetengine.v1.Waypoint, google.maps.fleetengine.v1.Waypoint.Builder, google.maps.fleetengine.v1.WaypointOrBuilder> 
+        Waypoint, Waypoint.Builder, WaypointOrBuilder>
         getVehicleTripsWaypointsFieldBuilder() {
       if (vehicleTripsWaypointsBuilder_ == null) {
         vehicleTripsWaypointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            google.maps.fleetengine.v1.Waypoint, google.maps.fleetengine.v1.Waypoint.Builder, google.maps.fleetengine.v1.WaypointOrBuilder>(
+            Waypoint, Waypoint.Builder, WaypointOrBuilder>(
                 vehicleTripsWaypoints_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -3057,7 +3057,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.VehicleMatch.VehicleMatchType vehicle_match_type = 8;</code>
      * @return The enum numeric value on the wire for vehicleMatchType.
      */
-    @java.lang.Override public int getVehicleMatchTypeValue() {
+    @Override public int getVehicleMatchTypeValue() {
       return vehicleMatchType_;
     }
     /**
@@ -3083,11 +3083,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.VehicleMatch.VehicleMatchType vehicle_match_type = 8;</code>
      * @return The vehicleMatchType.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType getVehicleMatchType() {
+    @Override
+    public VehicleMatchType getVehicleMatchType() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType result = google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType.valueOf(vehicleMatchType_);
-      return result == null ? google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType.UNRECOGNIZED : result;
+      VehicleMatchType result = VehicleMatchType.valueOf(vehicleMatchType_);
+      return result == null ? VehicleMatchType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -3098,7 +3098,7 @@ private static final long serialVersionUID = 0L;
      * @param value The vehicleMatchType to set.
      * @return This builder for chaining.
      */
-    public Builder setVehicleMatchType(google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType value) {
+    public Builder setVehicleMatchType(VehicleMatchType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3131,7 +3131,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
      * @return The enum numeric value on the wire for requestedOrderedBy.
      */
-    @java.lang.Override public int getRequestedOrderedByValue() {
+    @Override public int getRequestedOrderedByValue() {
       return requestedOrderedBy_;
     }
     /**
@@ -3157,11 +3157,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
      * @return The requestedOrderedBy.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder getRequestedOrderedBy() {
+    @Override
+    public SearchVehiclesRequest.VehicleMatchOrder getRequestedOrderedBy() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder result = google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.valueOf(requestedOrderedBy_);
-      return result == null ? google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
+      SearchVehiclesRequest.VehicleMatchOrder result = SearchVehiclesRequest.VehicleMatchOrder.valueOf(requestedOrderedBy_);
+      return result == null ? SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -3172,7 +3172,7 @@ private static final long serialVersionUID = 0L;
      * @param value The requestedOrderedBy to set.
      * @return This builder for chaining.
      */
-    public Builder setRequestedOrderedBy(google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder value) {
+    public Builder setRequestedOrderedBy(SearchVehiclesRequest.VehicleMatchOrder value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3208,7 +3208,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
      * @return The enum numeric value on the wire for orderedBy.
      */
-    @java.lang.Override public int getOrderedByValue() {
+    @Override public int getOrderedByValue() {
       return orderedBy_;
     }
     /**
@@ -3240,11 +3240,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
      * @return The orderedBy.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder getOrderedBy() {
+    @Override
+    public SearchVehiclesRequest.VehicleMatchOrder getOrderedBy() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder result = google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.valueOf(orderedBy_);
-      return result == null ? google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
+      SearchVehiclesRequest.VehicleMatchOrder result = SearchVehiclesRequest.VehicleMatchOrder.valueOf(orderedBy_);
+      return result == null ? SearchVehiclesRequest.VehicleMatchOrder.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -3258,7 +3258,7 @@ private static final long serialVersionUID = 0L;
      * @param value The orderedBy to set.
      * @return This builder for chaining.
      */
-    public Builder setOrderedBy(google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder value) {
+    public Builder setOrderedBy(SearchVehiclesRequest.VehicleMatchOrder value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3284,13 +3284,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -3301,18 +3301,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.VehicleMatch)
-  private static final google.maps.fleetengine.v1.VehicleMatch DEFAULT_INSTANCE;
+  private static final VehicleMatch DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.VehicleMatch();
+    DEFAULT_INSTANCE = new VehicleMatch();
   }
 
-  public static google.maps.fleetengine.v1.VehicleMatch getDefaultInstance() {
+  public static VehicleMatch getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<VehicleMatch>
       PARSER = new com.google.protobuf.AbstractParser<VehicleMatch>() {
-    @java.lang.Override
+    @Override
     public VehicleMatch parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3325,13 +3325,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<VehicleMatch> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.VehicleMatch getDefaultInstanceForType() {
+  @Override
+  public VehicleMatch getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

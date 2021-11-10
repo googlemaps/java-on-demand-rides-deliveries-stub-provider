@@ -121,7 +121,7 @@ public class VehicleServiceSettings extends ClientSettings<VehicleServiceSetting
 
   public static final VehicleServiceSettings create(VehicleServiceStubSettings stub)
       throws IOException {
-    return new VehicleServiceSettings.Builder(stub.toBuilder()).build();
+    return new Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */

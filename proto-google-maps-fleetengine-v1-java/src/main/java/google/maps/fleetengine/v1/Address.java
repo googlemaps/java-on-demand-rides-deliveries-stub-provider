@@ -38,14 +38,14 @@ private static final long serialVersionUID = 0L;
   private Address() {
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new Address();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -56,7 +56,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -69,11 +69,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            google.maps.fleetengine.v1.FormattedAddress.Builder subBuilder = null;
+            FormattedAddress.Builder subBuilder = null;
             if (formattedAddress_ != null) {
               subBuilder = formattedAddress_.toBuilder();
             }
-            formattedAddress_ = input.readMessage(google.maps.fleetengine.v1.FormattedAddress.parser(), extensionRegistry);
+            formattedAddress_ = input.readMessage(FormattedAddress.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(formattedAddress_);
               formattedAddress_ = subBuilder.buildPartial();
@@ -102,19 +102,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_Address_descriptor;
+    return FleetEngine.internal_static_maps_fleetengine_v1_Address_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_Address_fieldAccessorTable
+    return FleetEngine.internal_static_maps_fleetengine_v1_Address_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.Address.class, google.maps.fleetengine.v1.Address.Builder.class);
+            Address.class, Builder.class);
   }
 
   public static final int FORMATTED_ADDRESS_FIELD_NUMBER = 1;
-  private google.maps.fleetengine.v1.FormattedAddress formattedAddress_;
+  private FormattedAddress formattedAddress_;
   /**
    * <pre>
    * A full, human-readable address for this place.
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
    * @return Whether the formattedAddress field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasFormattedAddress() {
     return formattedAddress_ != null;
   }
@@ -135,9 +135,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
    * @return The formattedAddress.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.FormattedAddress getFormattedAddress() {
-    return formattedAddress_ == null ? google.maps.fleetengine.v1.FormattedAddress.getDefaultInstance() : formattedAddress_;
+  @Override
+  public FormattedAddress getFormattedAddress() {
+    return formattedAddress_ == null ? FormattedAddress.getDefaultInstance() : formattedAddress_;
   }
   /**
    * <pre>
@@ -146,13 +146,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.FormattedAddressOrBuilder getFormattedAddressOrBuilder() {
+  @Override
+  public FormattedAddressOrBuilder getFormattedAddressOrBuilder() {
     return getFormattedAddress();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (formattedAddress_ != null) {
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -186,15 +186,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.Address)) {
+    if (!(obj instanceof Address)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.Address other = (google.maps.fleetengine.v1.Address) obj;
+    Address other = (Address) obj;
 
     if (hasFormattedAddress() != other.hasFormattedAddress()) return false;
     if (hasFormattedAddress()) {
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -221,69 +221,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(byte[] data)
+  public static Address parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(java.io.InputStream input)
+  public static Address parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Address parseDelimitedFrom(java.io.InputStream input)
+  public static Address parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.Address parseDelimitedFrom(
+  public static Address parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.Address parseFrom(
+  public static Address parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -291,23 +291,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.Address prototype) {
+  public static Builder newBuilder(Address prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -321,18 +321,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.Address)
-      google.maps.fleetengine.v1.AddressOrBuilder {
+      AddressOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_Address_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_Address_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_Address_fieldAccessorTable
+      return FleetEngine.internal_static_maps_fleetengine_v1_Address_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.Address.class, google.maps.fleetengine.v1.Address.Builder.class);
+              Address.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.Address.newBuilder()
@@ -341,7 +341,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -350,7 +350,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (formattedAddressBuilder_ == null) {
@@ -362,29 +362,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_Address_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_Address_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.Address getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.Address.getDefaultInstance();
+    @Override
+    public Address getDefaultInstanceForType() {
+      return Address.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.Address build() {
-      google.maps.fleetengine.v1.Address result = buildPartial();
+    @Override
+    public Address build() {
+      Address result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.Address buildPartial() {
-      google.maps.fleetengine.v1.Address result = new google.maps.fleetengine.v1.Address(this);
+    @Override
+    public Address buildPartial() {
+      Address result = new Address(this);
       if (formattedAddressBuilder_ == null) {
         result.formattedAddress_ = formattedAddress_;
       } else {
@@ -394,50 +394,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.Address) {
-        return mergeFrom((google.maps.fleetengine.v1.Address)other);
+      if (other instanceof Address) {
+        return mergeFrom((Address)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.Address other) {
-      if (other == google.maps.fleetengine.v1.Address.getDefaultInstance()) return this;
+    public Builder mergeFrom(Address other) {
+      if (other == Address.getDefaultInstance()) return this;
       if (other.hasFormattedAddress()) {
         mergeFormattedAddress(other.getFormattedAddress());
       }
@@ -446,21 +446,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.Address parsedMessage = null;
+      Address parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.Address) e.getUnfinishedMessage();
+        parsedMessage = (Address) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -470,9 +470,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private google.maps.fleetengine.v1.FormattedAddress formattedAddress_;
+    private FormattedAddress formattedAddress_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.FormattedAddress, google.maps.fleetengine.v1.FormattedAddress.Builder, google.maps.fleetengine.v1.FormattedAddressOrBuilder> formattedAddressBuilder_;
+        FormattedAddress, FormattedAddress.Builder, FormattedAddressOrBuilder> formattedAddressBuilder_;
     /**
      * <pre>
      * A full, human-readable address for this place.
@@ -492,9 +492,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
      * @return The formattedAddress.
      */
-    public google.maps.fleetengine.v1.FormattedAddress getFormattedAddress() {
+    public FormattedAddress getFormattedAddress() {
       if (formattedAddressBuilder_ == null) {
-        return formattedAddress_ == null ? google.maps.fleetengine.v1.FormattedAddress.getDefaultInstance() : formattedAddress_;
+        return formattedAddress_ == null ? FormattedAddress.getDefaultInstance() : formattedAddress_;
       } else {
         return formattedAddressBuilder_.getMessage();
       }
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
      */
-    public Builder setFormattedAddress(google.maps.fleetengine.v1.FormattedAddress value) {
+    public Builder setFormattedAddress(FormattedAddress value) {
       if (formattedAddressBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -527,7 +527,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
      */
     public Builder setFormattedAddress(
-        google.maps.fleetengine.v1.FormattedAddress.Builder builderForValue) {
+        FormattedAddress.Builder builderForValue) {
       if (formattedAddressBuilder_ == null) {
         formattedAddress_ = builderForValue.build();
         onChanged();
@@ -544,11 +544,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
      */
-    public Builder mergeFormattedAddress(google.maps.fleetengine.v1.FormattedAddress value) {
+    public Builder mergeFormattedAddress(FormattedAddress value) {
       if (formattedAddressBuilder_ == null) {
         if (formattedAddress_ != null) {
           formattedAddress_ =
-            google.maps.fleetengine.v1.FormattedAddress.newBuilder(formattedAddress_).mergeFrom(value).buildPartial();
+            FormattedAddress.newBuilder(formattedAddress_).mergeFrom(value).buildPartial();
         } else {
           formattedAddress_ = value;
         }
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
      */
-    public google.maps.fleetengine.v1.FormattedAddress.Builder getFormattedAddressBuilder() {
+    public FormattedAddress.Builder getFormattedAddressBuilder() {
       
       onChanged();
       return getFormattedAddressFieldBuilder().getBuilder();
@@ -596,12 +596,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
      */
-    public google.maps.fleetengine.v1.FormattedAddressOrBuilder getFormattedAddressOrBuilder() {
+    public FormattedAddressOrBuilder getFormattedAddressOrBuilder() {
       if (formattedAddressBuilder_ != null) {
         return formattedAddressBuilder_.getMessageOrBuilder();
       } else {
         return formattedAddress_ == null ?
-            google.maps.fleetengine.v1.FormattedAddress.getDefaultInstance() : formattedAddress_;
+            FormattedAddress.getDefaultInstance() : formattedAddress_;
       }
     }
     /**
@@ -612,11 +612,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.FormattedAddress, google.maps.fleetengine.v1.FormattedAddress.Builder, google.maps.fleetengine.v1.FormattedAddressOrBuilder> 
+        FormattedAddress, FormattedAddress.Builder, FormattedAddressOrBuilder>
         getFormattedAddressFieldBuilder() {
       if (formattedAddressBuilder_ == null) {
         formattedAddressBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.FormattedAddress, google.maps.fleetengine.v1.FormattedAddress.Builder, google.maps.fleetengine.v1.FormattedAddressOrBuilder>(
+            FormattedAddress, FormattedAddress.Builder, FormattedAddressOrBuilder>(
                 getFormattedAddress(),
                 getParentForChildren(),
                 isClean());
@@ -624,13 +624,13 @@ private static final long serialVersionUID = 0L;
       }
       return formattedAddressBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -641,18 +641,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.Address)
-  private static final google.maps.fleetengine.v1.Address DEFAULT_INSTANCE;
+  private static final Address DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.Address();
+    DEFAULT_INSTANCE = new Address();
   }
 
-  public static google.maps.fleetengine.v1.Address getDefaultInstance() {
+  public static Address getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<Address>
       PARSER = new com.google.protobuf.AbstractParser<Address>() {
-    @java.lang.Override
+    @Override
     public Address parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -665,13 +665,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<Address> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.Address getDefaultInstanceForType() {
+  @Override
+  public Address getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -39,14 +39,14 @@ private static final long serialVersionUID = 0L;
     name_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new GetVehicleRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -57,7 +57,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -70,11 +70,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            google.maps.fleetengine.v1.RequestHeader.Builder subBuilder = null;
+            RequestHeader.Builder subBuilder = null;
             if (header_ != null) {
               subBuilder = header_.toBuilder();
             }
-            header_ = input.readMessage(google.maps.fleetengine.v1.RequestHeader.parser(), extensionRegistry);
+            header_ = input.readMessage(RequestHeader.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(header_);
               header_ = subBuilder.buildPartial();
@@ -83,7 +83,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             name_ = s;
             break;
@@ -135,19 +135,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor;
+    return VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_fieldAccessorTable
+    return VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.GetVehicleRequest.class, google.maps.fleetengine.v1.GetVehicleRequest.Builder.class);
+            GetVehicleRequest.class, Builder.class);
   }
 
   public static final int HEADER_FIELD_NUMBER = 1;
-  private google.maps.fleetengine.v1.RequestHeader header_;
+  private RequestHeader header_;
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return Whether the header field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasHeader() {
     return header_ != null;
   }
@@ -168,9 +168,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.RequestHeader getHeader() {
-    return header_ == null ? google.maps.fleetengine.v1.RequestHeader.getDefaultInstance() : header_;
+  @Override
+  public RequestHeader getHeader() {
+    return header_ == null ? RequestHeader.getDefaultInstance() : header_;
   }
   /**
    * <pre>
@@ -179,13 +179,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder() {
+  @Override
+  public RequestHeaderOrBuilder getHeaderOrBuilder() {
     return getHeader();
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+  private volatile Object name_;
   /**
    * <pre>
    * Required. Must be in the format
@@ -198,15 +198,15 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getName() {
+    Object ref = name_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
@@ -223,14 +223,14 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
+    Object ref = name_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       name_ = b;
       return b;
     } else {
@@ -252,7 +252,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp current_route_segment_version = 4;</code>
    * @return Whether the currentRouteSegmentVersion field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasCurrentRouteSegmentVersion() {
     return currentRouteSegmentVersion_ != null;
   }
@@ -268,7 +268,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp current_route_segment_version = 4;</code>
    * @return The currentRouteSegmentVersion.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getCurrentRouteSegmentVersion() {
     return currentRouteSegmentVersion_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentRouteSegmentVersion_;
   }
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp current_route_segment_version = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getCurrentRouteSegmentVersionOrBuilder() {
     return getCurrentRouteSegmentVersion();
   }
@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp waypoints_version = 5;</code>
    * @return Whether the waypointsVersion field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasWaypointsVersion() {
     return waypointsVersion_ != null;
   }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp waypoints_version = 5;</code>
    * @return The waypointsVersion.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getWaypointsVersion() {
     return waypointsVersion_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : waypointsVersion_;
   }
@@ -330,13 +330,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp waypoints_version = 5;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getWaypointsVersionOrBuilder() {
     return getWaypointsVersion();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -346,13 +346,13 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (header_ != null) {
       output.writeMessage(1, getHeader());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     if (currentRouteSegmentVersion_ != null) {
@@ -364,7 +364,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getHeader());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     if (currentRouteSegmentVersion_ != null) {
@@ -390,15 +390,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.GetVehicleRequest)) {
+    if (!(obj instanceof GetVehicleRequest)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.GetVehicleRequest other = (google.maps.fleetengine.v1.GetVehicleRequest) obj;
+    GetVehicleRequest other = (GetVehicleRequest) obj;
 
     if (hasHeader() != other.hasHeader()) return false;
     if (hasHeader()) {
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -447,69 +447,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(byte[] data)
+  public static GetVehicleRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(java.io.InputStream input)
+  public static GetVehicleRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseDelimitedFrom(java.io.InputStream input)
+  public static GetVehicleRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseDelimitedFrom(
+  public static GetVehicleRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.GetVehicleRequest parseFrom(
+  public static GetVehicleRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -517,23 +517,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.GetVehicleRequest prototype) {
+  public static Builder newBuilder(GetVehicleRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -547,18 +547,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.GetVehicleRequest)
-      google.maps.fleetengine.v1.GetVehicleRequestOrBuilder {
+      GetVehicleRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor;
+      return VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_fieldAccessorTable
+      return VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.GetVehicleRequest.class, google.maps.fleetengine.v1.GetVehicleRequest.Builder.class);
+              GetVehicleRequest.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.GetVehicleRequest.newBuilder()
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (headerBuilder_ == null) {
@@ -602,29 +602,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor;
+      return VehicleApi.internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.GetVehicleRequest getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.GetVehicleRequest.getDefaultInstance();
+    @Override
+    public GetVehicleRequest getDefaultInstanceForType() {
+      return GetVehicleRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.GetVehicleRequest build() {
-      google.maps.fleetengine.v1.GetVehicleRequest result = buildPartial();
+    @Override
+    public GetVehicleRequest build() {
+      GetVehicleRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.GetVehicleRequest buildPartial() {
-      google.maps.fleetengine.v1.GetVehicleRequest result = new google.maps.fleetengine.v1.GetVehicleRequest(this);
+    @Override
+    public GetVehicleRequest buildPartial() {
+      GetVehicleRequest result = new GetVehicleRequest(this);
       if (headerBuilder_ == null) {
         result.header_ = header_;
       } else {
@@ -645,50 +645,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.GetVehicleRequest) {
-        return mergeFrom((google.maps.fleetengine.v1.GetVehicleRequest)other);
+      if (other instanceof GetVehicleRequest) {
+        return mergeFrom((GetVehicleRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.GetVehicleRequest other) {
-      if (other == google.maps.fleetengine.v1.GetVehicleRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(GetVehicleRequest other) {
+      if (other == GetVehicleRequest.getDefaultInstance()) return this;
       if (other.hasHeader()) {
         mergeHeader(other.getHeader());
       }
@@ -707,21 +707,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.GetVehicleRequest parsedMessage = null;
+      GetVehicleRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.GetVehicleRequest) e.getUnfinishedMessage();
+        parsedMessage = (GetVehicleRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -731,9 +731,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private google.maps.fleetengine.v1.RequestHeader header_;
+    private RequestHeader header_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.RequestHeader, google.maps.fleetengine.v1.RequestHeader.Builder, google.maps.fleetengine.v1.RequestHeaderOrBuilder> headerBuilder_;
+        RequestHeader, RequestHeader.Builder, RequestHeaderOrBuilder> headerBuilder_;
     /**
      * <pre>
      * The standard Fleet Engine request header.
@@ -753,9 +753,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      * @return The header.
      */
-    public google.maps.fleetengine.v1.RequestHeader getHeader() {
+    public RequestHeader getHeader() {
       if (headerBuilder_ == null) {
-        return header_ == null ? google.maps.fleetengine.v1.RequestHeader.getDefaultInstance() : header_;
+        return header_ == null ? RequestHeader.getDefaultInstance() : header_;
       } else {
         return headerBuilder_.getMessage();
       }
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public Builder setHeader(google.maps.fleetengine.v1.RequestHeader value) {
+    public Builder setHeader(RequestHeader value) {
       if (headerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
     public Builder setHeader(
-        google.maps.fleetengine.v1.RequestHeader.Builder builderForValue) {
+        RequestHeader.Builder builderForValue) {
       if (headerBuilder_ == null) {
         header_ = builderForValue.build();
         onChanged();
@@ -805,11 +805,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public Builder mergeHeader(google.maps.fleetengine.v1.RequestHeader value) {
+    public Builder mergeHeader(RequestHeader value) {
       if (headerBuilder_ == null) {
         if (header_ != null) {
           header_ =
-            google.maps.fleetengine.v1.RequestHeader.newBuilder(header_).mergeFrom(value).buildPartial();
+            RequestHeader.newBuilder(header_).mergeFrom(value).buildPartial();
         } else {
           header_ = value;
         }
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public google.maps.fleetengine.v1.RequestHeader.Builder getHeaderBuilder() {
+    public RequestHeader.Builder getHeaderBuilder() {
       
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
@@ -857,12 +857,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder() {
+    public RequestHeaderOrBuilder getHeaderOrBuilder() {
       if (headerBuilder_ != null) {
         return headerBuilder_.getMessageOrBuilder();
       } else {
         return header_ == null ?
-            google.maps.fleetengine.v1.RequestHeader.getDefaultInstance() : header_;
+            RequestHeader.getDefaultInstance() : header_;
       }
     }
     /**
@@ -873,11 +873,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.RequestHeader, google.maps.fleetengine.v1.RequestHeader.Builder, google.maps.fleetengine.v1.RequestHeaderOrBuilder> 
+        RequestHeader, RequestHeader.Builder, RequestHeaderOrBuilder>
         getHeaderFieldBuilder() {
       if (headerBuilder_ == null) {
         headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.RequestHeader, google.maps.fleetengine.v1.RequestHeader.Builder, google.maps.fleetengine.v1.RequestHeaderOrBuilder>(
+            RequestHeader, RequestHeader.Builder, RequestHeaderOrBuilder>(
                 getHeader(),
                 getParentForChildren(),
                 isClean());
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
       return headerBuilder_;
     }
 
-    private java.lang.Object name_ = "";
+    private Object name_ = "";
     /**
      * <pre>
      * Required. Must be in the format
@@ -899,16 +899,16 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getName() {
+      Object ref = name_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         name_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -925,11 +925,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
-      java.lang.Object ref = name_;
+      Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         name_ = b;
         return b;
       } else {
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setName(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1374,13 +1374,13 @@ private static final long serialVersionUID = 0L;
       }
       return waypointsVersionBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1391,18 +1391,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.GetVehicleRequest)
-  private static final google.maps.fleetengine.v1.GetVehicleRequest DEFAULT_INSTANCE;
+  private static final GetVehicleRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.GetVehicleRequest();
+    DEFAULT_INSTANCE = new GetVehicleRequest();
   }
 
-  public static google.maps.fleetengine.v1.GetVehicleRequest getDefaultInstance() {
+  public static GetVehicleRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<GetVehicleRequest>
       PARSER = new com.google.protobuf.AbstractParser<GetVehicleRequest>() {
-    @java.lang.Override
+    @Override
     public GetVehicleRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1415,13 +1415,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<GetVehicleRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.GetVehicleRequest getDefaultInstanceForType() {
+  @Override
+  public GetVehicleRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

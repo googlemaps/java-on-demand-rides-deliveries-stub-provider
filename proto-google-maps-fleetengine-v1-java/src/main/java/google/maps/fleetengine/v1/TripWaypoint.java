@@ -42,14 +42,14 @@ private static final long serialVersionUID = 0L;
     pathToWaypoint_ = java.util.Collections.emptyList();
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new TripWaypoint();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -60,7 +60,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -74,11 +74,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            google.maps.fleetengine.v1.TerminalLocation.Builder subBuilder = null;
+            TerminalLocation.Builder subBuilder = null;
             if (location_ != null) {
               subBuilder = location_.toBuilder();
             }
-            location_ = input.readMessage(google.maps.fleetengine.v1.TerminalLocation.parser(), extensionRegistry);
+            location_ = input.readMessage(TerminalLocation.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(location_);
               location_ = subBuilder.buildPartial();
@@ -87,7 +87,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             tripId_ = s;
             break;
@@ -170,19 +170,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_descriptor;
+    return FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_fieldAccessorTable
+    return FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.TripWaypoint.class, google.maps.fleetengine.v1.TripWaypoint.Builder.class);
+            TripWaypoint.class, Builder.class);
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private google.maps.fleetengine.v1.TerminalLocation location_;
+  private TerminalLocation location_;
   /**
    * <pre>
    * The location where this waypoint is
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
    * @return Whether the location field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasLocation() {
     return location_ != null;
   }
@@ -203,9 +203,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
    * @return The location.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocation getLocation() {
-    return location_ == null ? google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : location_;
+  @Override
+  public TerminalLocation getLocation() {
+    return location_ == null ? TerminalLocation.getDefaultInstance() : location_;
   }
   /**
    * <pre>
@@ -214,13 +214,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocationOrBuilder getLocationOrBuilder() {
+  @Override
+  public TerminalLocationOrBuilder getLocationOrBuilder() {
     return getLocation();
   }
 
   public static final int TRIP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tripId_;
+  private volatile Object tripId_;
   /**
    * <pre>
    * The trip this waypoint is part of
@@ -229,15 +229,15 @@ private static final long serialVersionUID = 0L;
    * <code>string trip_id = 2;</code>
    * @return The tripId.
    */
-  @java.lang.Override
-  public java.lang.String getTripId() {
-    java.lang.Object ref = tripId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getTripId() {
+    Object ref = tripId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       tripId_ = s;
       return s;
     }
@@ -250,14 +250,14 @@ private static final long serialVersionUID = 0L;
    * <code>string trip_id = 2;</code>
    * @return The bytes for tripId.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getTripIdBytes() {
-    java.lang.Object ref = tripId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = tripId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       tripId_ = b;
       return b;
     } else {
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.WaypointType waypoint_type = 3;</code>
    * @return The enum numeric value on the wire for waypointType.
    */
-  @java.lang.Override public int getWaypointTypeValue() {
+  @Override public int getWaypointTypeValue() {
     return waypointType_;
   }
   /**
@@ -288,10 +288,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.WaypointType waypoint_type = 3;</code>
    * @return The waypointType.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.WaypointType getWaypointType() {
+  @Override public WaypointType getWaypointType() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.WaypointType result = google.maps.fleetengine.v1.WaypointType.valueOf(waypointType_);
-    return result == null ? google.maps.fleetengine.v1.WaypointType.UNRECOGNIZED : result;
+    WaypointType result = WaypointType.valueOf(waypointType_);
+    return result == null ? WaypointType.UNRECOGNIZED : result;
   }
 
   public static final int PATH_TO_WAYPOINT_FIELD_NUMBER = 4;
@@ -304,7 +304,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public java.util.List<com.google.type.LatLng> getPathToWaypointList() {
     return pathToWaypoint_;
   }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public java.util.List<? extends com.google.type.LatLngOrBuilder> 
       getPathToWaypointOrBuilderList() {
     return pathToWaypoint_;
@@ -329,7 +329,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public int getPathToWaypointCount() {
     return pathToWaypoint_.size();
   }
@@ -341,7 +341,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLng getPathToWaypoint(int index) {
     return pathToWaypoint_.get(index);
   }
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLngOrBuilder getPathToWaypointOrBuilder(
       int index) {
     return pathToWaypoint_.get(index);
@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value distance_meters = 6;</code>
    * @return Whether the distanceMeters field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDistanceMeters() {
     return distanceMeters_ != null;
   }
@@ -389,7 +389,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value distance_meters = 6;</code>
    * @return The distanceMeters.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getDistanceMeters() {
     return distanceMeters_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : distanceMeters_;
   }
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value distance_meters = 6;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getDistanceMetersOrBuilder() {
     return getDistanceMeters();
   }
@@ -419,7 +419,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp eta = 7;</code>
    * @return Whether the eta field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasEta() {
     return eta_ != null;
   }
@@ -431,7 +431,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp eta = 7;</code>
    * @return The eta.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getEta() {
     return eta_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eta_;
   }
@@ -442,7 +442,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp eta = 7;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getEtaOrBuilder() {
     return getEta();
   }
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration duration = 8;</code>
    * @return Whether the duration field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasDuration() {
     return duration_ != null;
   }
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration duration = 8;</code>
    * @return The duration.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
@@ -492,13 +492,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Duration duration = 8;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
     return getDuration();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -508,16 +508,16 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (location_ != null) {
       output.writeMessage(1, getLocation());
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tripId_);
     }
-    if (waypointType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
+    if (waypointType_ != WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
       output.writeEnum(3, waypointType_);
     }
     for (int i = 0; i < pathToWaypoint_.size(); i++) {
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -545,10 +545,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getLocation());
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tripId_);
     }
-    if (waypointType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
+    if (waypointType_ != WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, waypointType_);
     }
@@ -573,15 +573,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.TripWaypoint)) {
+    if (!(obj instanceof TripWaypoint)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.TripWaypoint other = (google.maps.fleetengine.v1.TripWaypoint) obj;
+    TripWaypoint other = (TripWaypoint) obj;
 
     if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
@@ -612,7 +612,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -648,69 +648,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(byte[] data)
+  public static TripWaypoint parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(java.io.InputStream input)
+  public static TripWaypoint parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseDelimitedFrom(java.io.InputStream input)
+  public static TripWaypoint parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseDelimitedFrom(
+  public static TripWaypoint parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.TripWaypoint parseFrom(
+  public static TripWaypoint parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -718,23 +718,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.TripWaypoint prototype) {
+  public static Builder newBuilder(TripWaypoint prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -749,18 +749,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.TripWaypoint)
-      google.maps.fleetengine.v1.TripWaypointOrBuilder {
+      TripWaypointOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_fieldAccessorTable
+      return FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.TripWaypoint.class, google.maps.fleetengine.v1.TripWaypoint.Builder.class);
+              TripWaypoint.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.TripWaypoint.newBuilder()
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
         getPathToWaypointFieldBuilder();
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (locationBuilder_ == null) {
@@ -819,29 +819,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_TripWaypoint_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TripWaypoint getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance();
+    @Override
+    public TripWaypoint getDefaultInstanceForType() {
+      return TripWaypoint.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TripWaypoint build() {
-      google.maps.fleetengine.v1.TripWaypoint result = buildPartial();
+    @Override
+    public TripWaypoint build() {
+      TripWaypoint result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TripWaypoint buildPartial() {
-      google.maps.fleetengine.v1.TripWaypoint result = new google.maps.fleetengine.v1.TripWaypoint(this);
+    @Override
+    public TripWaypoint buildPartial() {
+      TripWaypoint result = new TripWaypoint(this);
       int from_bitField0_ = bitField0_;
       if (locationBuilder_ == null) {
         result.location_ = location_;
@@ -878,50 +878,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.TripWaypoint) {
-        return mergeFrom((google.maps.fleetengine.v1.TripWaypoint)other);
+      if (other instanceof TripWaypoint) {
+        return mergeFrom((TripWaypoint)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.TripWaypoint other) {
-      if (other == google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance()) return this;
+    public Builder mergeFrom(TripWaypoint other) {
+      if (other == TripWaypoint.getDefaultInstance()) return this;
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
       }
@@ -972,21 +972,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.TripWaypoint parsedMessage = null;
+      TripWaypoint parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.TripWaypoint) e.getUnfinishedMessage();
+        parsedMessage = (TripWaypoint) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -997,9 +997,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private google.maps.fleetengine.v1.TerminalLocation location_;
+    private TerminalLocation location_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> locationBuilder_;
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder> locationBuilder_;
     /**
      * <pre>
      * The location where this waypoint is
@@ -1019,9 +1019,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
      * @return The location.
      */
-    public google.maps.fleetengine.v1.TerminalLocation getLocation() {
+    public TerminalLocation getLocation() {
       if (locationBuilder_ == null) {
-        return location_ == null ? google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : location_;
+        return location_ == null ? TerminalLocation.getDefaultInstance() : location_;
       } else {
         return locationBuilder_.getMessage();
       }
@@ -1033,7 +1033,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
      */
-    public Builder setLocation(google.maps.fleetengine.v1.TerminalLocation value) {
+    public Builder setLocation(TerminalLocation value) {
       if (locationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1054,7 +1054,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
      */
     public Builder setLocation(
-        google.maps.fleetengine.v1.TerminalLocation.Builder builderForValue) {
+        TerminalLocation.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
         onChanged();
@@ -1071,11 +1071,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
      */
-    public Builder mergeLocation(google.maps.fleetengine.v1.TerminalLocation value) {
+    public Builder mergeLocation(TerminalLocation value) {
       if (locationBuilder_ == null) {
         if (location_ != null) {
           location_ =
-            google.maps.fleetengine.v1.TerminalLocation.newBuilder(location_).mergeFrom(value).buildPartial();
+            TerminalLocation.newBuilder(location_).mergeFrom(value).buildPartial();
         } else {
           location_ = value;
         }
@@ -1111,7 +1111,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocation.Builder getLocationBuilder() {
+    public TerminalLocation.Builder getLocationBuilder() {
       
       onChanged();
       return getLocationFieldBuilder().getBuilder();
@@ -1123,12 +1123,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
      */
-    public google.maps.fleetengine.v1.TerminalLocationOrBuilder getLocationOrBuilder() {
+    public TerminalLocationOrBuilder getLocationOrBuilder() {
       if (locationBuilder_ != null) {
         return locationBuilder_.getMessageOrBuilder();
       } else {
         return location_ == null ?
-            google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance() : location_;
+            TerminalLocation.getDefaultInstance() : location_;
       }
     }
     /**
@@ -1139,11 +1139,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+        TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>
         getLocationFieldBuilder() {
       if (locationBuilder_ == null) {
         locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.TerminalLocation, google.maps.fleetengine.v1.TerminalLocation.Builder, google.maps.fleetengine.v1.TerminalLocationOrBuilder>(
+            TerminalLocation, TerminalLocation.Builder, TerminalLocationOrBuilder>(
                 getLocation(),
                 getParentForChildren(),
                 isClean());
@@ -1152,7 +1152,7 @@ private static final long serialVersionUID = 0L;
       return locationBuilder_;
     }
 
-    private java.lang.Object tripId_ = "";
+    private Object tripId_ = "";
     /**
      * <pre>
      * The trip this waypoint is part of
@@ -1161,16 +1161,16 @@ private static final long serialVersionUID = 0L;
      * <code>string trip_id = 2;</code>
      * @return The tripId.
      */
-    public java.lang.String getTripId() {
-      java.lang.Object ref = tripId_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getTripId() {
+      Object ref = tripId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         tripId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1183,11 +1183,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTripIdBytes() {
-      java.lang.Object ref = tripId_;
+      Object ref = tripId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         tripId_ = b;
         return b;
       } else {
@@ -1204,7 +1204,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTripId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1258,7 +1258,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.WaypointType waypoint_type = 3;</code>
      * @return The enum numeric value on the wire for waypointType.
      */
-    @java.lang.Override public int getWaypointTypeValue() {
+    @Override public int getWaypointTypeValue() {
       return waypointType_;
     }
     /**
@@ -1286,11 +1286,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.WaypointType waypoint_type = 3;</code>
      * @return The waypointType.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.WaypointType getWaypointType() {
+    @Override
+    public WaypointType getWaypointType() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.WaypointType result = google.maps.fleetengine.v1.WaypointType.valueOf(waypointType_);
-      return result == null ? google.maps.fleetengine.v1.WaypointType.UNRECOGNIZED : result;
+      WaypointType result = WaypointType.valueOf(waypointType_);
+      return result == null ? WaypointType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -1302,7 +1302,7 @@ private static final long serialVersionUID = 0L;
      * @param value The waypointType to set.
      * @return This builder for chaining.
      */
-    public Builder setWaypointType(google.maps.fleetengine.v1.WaypointType value) {
+    public Builder setWaypointType(WaypointType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1515,7 +1515,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
      */
     public Builder addAllPathToWaypoint(
-        java.lang.Iterable<? extends com.google.type.LatLng> values) {
+        Iterable<? extends com.google.type.LatLng> values) {
       if (pathToWaypointBuilder_ == null) {
         ensurePathToWaypointIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2193,13 +2193,13 @@ private static final long serialVersionUID = 0L;
       }
       return durationBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2210,18 +2210,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.TripWaypoint)
-  private static final google.maps.fleetengine.v1.TripWaypoint DEFAULT_INSTANCE;
+  private static final TripWaypoint DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.TripWaypoint();
+    DEFAULT_INSTANCE = new TripWaypoint();
   }
 
-  public static google.maps.fleetengine.v1.TripWaypoint getDefaultInstance() {
+  public static TripWaypoint getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<TripWaypoint>
       PARSER = new com.google.protobuf.AbstractParser<TripWaypoint>() {
-    @java.lang.Override
+    @Override
     public TripWaypoint parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2234,13 +2234,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<TripWaypoint> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TripWaypoint getDefaultInstanceForType() {
+  @Override
+  public TripWaypoint getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

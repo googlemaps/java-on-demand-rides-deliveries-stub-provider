@@ -41,14 +41,14 @@ private static final long serialVersionUID = 0L;
     supplementalLocationSensor_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new VehicleLocation();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -427,15 +427,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_descriptor;
+    return FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_fieldAccessorTable
+    return FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.VehicleLocation.class, google.maps.fleetengine.v1.VehicleLocation.Builder.class);
+            VehicleLocation.class, Builder.class);
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng location = 1;</code>
    * @return Whether the location field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasLocation() {
     return location_ != null;
   }
@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng location = 1;</code>
    * @return The location.
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLng getLocation() {
     return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
   }
@@ -483,7 +483,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.type.LatLng location = 1;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLngOrBuilder getLocationOrBuilder() {
     return getLocation();
   }
@@ -498,8 +498,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    * @return Whether the horizontalAccuracy field is set.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasHorizontalAccuracy() {
+  @Override
+  @Deprecated public boolean hasHorizontalAccuracy() {
     return horizontalAccuracy_ != null;
   }
   /**
@@ -510,8 +510,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    * @return The horizontalAccuracy.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.DoubleValue getHorizontalAccuracy() {
+  @Override
+  @Deprecated public com.google.protobuf.DoubleValue getHorizontalAccuracy() {
     return horizontalAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : horizontalAccuracy_;
   }
   /**
@@ -521,8 +521,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.DoubleValueOrBuilder getHorizontalAccuracyOrBuilder() {
+  @Override
+  @Deprecated public com.google.protobuf.DoubleValueOrBuilder getHorizontalAccuracyOrBuilder() {
     return getHorizontalAccuracy();
   }
 
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
    * @return Whether the latlngAccuracy field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasLatlngAccuracy() {
     return latlngAccuracy_ != null;
   }
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
    * @return The latlngAccuracy.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getLatlngAccuracy() {
     return latlngAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : latlngAccuracy_;
   }
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getLatlngAccuracyOrBuilder() {
     return getLatlngAccuracy();
   }
@@ -575,7 +575,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value heading = 2;</code>
    * @return Whether the heading field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasHeading() {
     return heading_ != null;
   }
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value heading = 2;</code>
    * @return The heading.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getHeading() {
     return heading_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : heading_;
   }
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value heading = 2;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getHeadingOrBuilder() {
     return getHeading();
   }
@@ -615,8 +615,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    * @return Whether the bearingAccuracy field is set.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasBearingAccuracy() {
+  @Override
+  @Deprecated public boolean hasBearingAccuracy() {
     return bearingAccuracy_ != null;
   }
   /**
@@ -627,8 +627,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    * @return The bearingAccuracy.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.DoubleValue getBearingAccuracy() {
+  @Override
+  @Deprecated public com.google.protobuf.DoubleValue getBearingAccuracy() {
     return bearingAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : bearingAccuracy_;
   }
   /**
@@ -638,8 +638,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.DoubleValueOrBuilder getBearingAccuracyOrBuilder() {
+  @Override
+  @Deprecated public com.google.protobuf.DoubleValueOrBuilder getBearingAccuracyOrBuilder() {
     return getBearingAccuracy();
   }
 
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
    * @return Whether the headingAccuracy field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasHeadingAccuracy() {
     return headingAccuracy_ != null;
   }
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
    * @return The headingAccuracy.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getHeadingAccuracy() {
     return headingAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : headingAccuracy_;
   }
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getHeadingAccuracyOrBuilder() {
     return getHeadingAccuracy();
   }
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue altitude = 5;</code>
    * @return Whether the altitude field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasAltitude() {
     return altitude_ != null;
   }
@@ -703,7 +703,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue altitude = 5;</code>
    * @return The altitude.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getAltitude() {
     return altitude_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : altitude_;
   }
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue altitude = 5;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getAltitudeOrBuilder() {
     return getAltitude();
   }
@@ -729,8 +729,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    * @return Whether the verticalAccuracy field is set.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasVerticalAccuracy() {
+  @Override
+  @Deprecated public boolean hasVerticalAccuracy() {
     return verticalAccuracy_ != null;
   }
   /**
@@ -741,8 +741,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    * @return The verticalAccuracy.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.DoubleValue getVerticalAccuracy() {
+  @Override
+  @Deprecated public com.google.protobuf.DoubleValue getVerticalAccuracy() {
     return verticalAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : verticalAccuracy_;
   }
   /**
@@ -752,8 +752,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.DoubleValueOrBuilder getVerticalAccuracyOrBuilder() {
+  @Override
+  @Deprecated public com.google.protobuf.DoubleValueOrBuilder getVerticalAccuracyOrBuilder() {
     return getVerticalAccuracy();
   }
 
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
    * @return Whether the altitudeAccuracy field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasAltitudeAccuracy() {
     return altitudeAccuracy_ != null;
   }
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
    * @return The altitudeAccuracy.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getAltitudeAccuracy() {
     return altitudeAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : altitudeAccuracy_;
   }
@@ -790,7 +790,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getAltitudeAccuracyOrBuilder() {
     return getAltitudeAccuracy();
   }
@@ -806,8 +806,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    * @return Whether the speedKmph field is set.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasSpeedKmph() {
+  @Override
+  @Deprecated public boolean hasSpeedKmph() {
     return speedKmph_ != null;
   }
   /**
@@ -819,8 +819,8 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    * @return The speedKmph.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.Int32Value getSpeedKmph() {
+  @Override
+  @Deprecated public com.google.protobuf.Int32Value getSpeedKmph() {
     return speedKmph_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : speedKmph_;
   }
   /**
@@ -831,8 +831,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.Int32ValueOrBuilder getSpeedKmphOrBuilder() {
+  @Override
+  @Deprecated public com.google.protobuf.Int32ValueOrBuilder getSpeedKmphOrBuilder() {
     return getSpeedKmph();
   }
 
@@ -846,7 +846,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue speed = 6;</code>
    * @return Whether the speed field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSpeed() {
     return speed_ != null;
   }
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue speed = 6;</code>
    * @return The speed.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getSpeed() {
     return speed_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : speed_;
   }
@@ -869,7 +869,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue speed = 6;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getSpeedOrBuilder() {
     return getSpeed();
   }
@@ -884,7 +884,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
    * @return Whether the speedAccuracy field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSpeedAccuracy() {
     return speedAccuracy_ != null;
   }
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
    * @return The speedAccuracy.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getSpeedAccuracy() {
     return speedAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : speedAccuracy_;
   }
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getSpeedAccuracyOrBuilder() {
     return getSpeedAccuracy();
   }
@@ -922,7 +922,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    * @return Whether the updateTime field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasUpdateTime() {
     return updateTime_ != null;
   }
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    * @return The updateTime.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
@@ -945,7 +945,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
   }
@@ -961,7 +961,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp server_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the serverTime field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasServerTime() {
     return serverTime_ != null;
   }
@@ -974,7 +974,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp server_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The serverTime.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getServerTime() {
     return serverTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : serverTime_;
   }
@@ -986,7 +986,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp server_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getServerTimeOrBuilder() {
     return getServerTime();
   }
@@ -1001,7 +1001,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
    * @return The enum numeric value on the wire for locationSensor.
    */
-  @java.lang.Override public int getLocationSensorValue() {
+  @Override public int getLocationSensorValue() {
     return locationSensor_;
   }
   /**
@@ -1012,10 +1012,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
    * @return The locationSensor.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.LocationSensor getLocationSensor() {
+  @Override public LocationSensor getLocationSensor() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.LocationSensor result = google.maps.fleetengine.v1.LocationSensor.valueOf(locationSensor_);
-    return result == null ? google.maps.fleetengine.v1.LocationSensor.UNRECOGNIZED : result;
+    LocationSensor result = LocationSensor.valueOf(locationSensor_);
+    return result == null ? LocationSensor.UNRECOGNIZED : result;
   }
 
   public static final int IS_ROAD_SNAPPED_FIELD_NUMBER = 27;
@@ -1031,7 +1031,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
    * @return Whether the isRoadSnapped field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasIsRoadSnapped() {
     return isRoadSnapped_ != null;
   }
@@ -1046,7 +1046,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
    * @return The isRoadSnapped.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.BoolValue getIsRoadSnapped() {
     return isRoadSnapped_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isRoadSnapped_;
   }
@@ -1060,7 +1060,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.BoolValueOrBuilder getIsRoadSnappedOrBuilder() {
     return getIsRoadSnapped();
   }
@@ -1075,7 +1075,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the isGpsSensorEnabled field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasIsGpsSensorEnabled() {
     return isGpsSensorEnabled_ != null;
   }
@@ -1087,7 +1087,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The isGpsSensorEnabled.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.BoolValue getIsGpsSensorEnabled() {
     return isGpsSensorEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isGpsSensorEnabled_;
   }
@@ -1098,7 +1098,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.BoolValueOrBuilder getIsGpsSensorEnabledOrBuilder() {
     return getIsGpsSensorEnabled();
   }
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value time_since_update = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the timeSinceUpdate field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasTimeSinceUpdate() {
     return timeSinceUpdate_ != null;
   }
@@ -1129,7 +1129,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value time_since_update = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The timeSinceUpdate.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getTimeSinceUpdate() {
     return timeSinceUpdate_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : timeSinceUpdate_;
   }
@@ -1142,7 +1142,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value time_since_update = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getTimeSinceUpdateOrBuilder() {
     return getTimeSinceUpdate();
   }
@@ -1158,7 +1158,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the numStaleUpdates field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasNumStaleUpdates() {
     return numStaleUpdates_ != null;
   }
@@ -1171,7 +1171,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The numStaleUpdates.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32Value getNumStaleUpdates() {
     return numStaleUpdates_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : numStaleUpdates_;
   }
@@ -1183,7 +1183,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Int32ValueOrBuilder getNumStaleUpdatesOrBuilder() {
     return getNumStaleUpdates();
   }
@@ -1198,7 +1198,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng raw_location = 16;</code>
    * @return Whether the rawLocation field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRawLocation() {
     return rawLocation_ != null;
   }
@@ -1210,7 +1210,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng raw_location = 16;</code>
    * @return The rawLocation.
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLng getRawLocation() {
     return rawLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : rawLocation_;
   }
@@ -1221,7 +1221,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.type.LatLng raw_location = 16;</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLngOrBuilder getRawLocationOrBuilder() {
     return getRawLocation();
   }
@@ -1236,7 +1236,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp raw_location_time = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the rawLocationTime field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRawLocationTime() {
     return rawLocationTime_ != null;
   }
@@ -1248,7 +1248,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp raw_location_time = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The rawLocationTime.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getRawLocationTime() {
     return rawLocationTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : rawLocationTime_;
   }
@@ -1259,7 +1259,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp raw_location_time = 17 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getRawLocationTimeOrBuilder() {
     return getRawLocationTime();
   }
@@ -1274,7 +1274,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.LocationSensor raw_location_sensor = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The enum numeric value on the wire for rawLocationSensor.
    */
-  @java.lang.Override public int getRawLocationSensorValue() {
+  @Override public int getRawLocationSensorValue() {
     return rawLocationSensor_;
   }
   /**
@@ -1285,10 +1285,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.LocationSensor raw_location_sensor = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The rawLocationSensor.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.LocationSensor getRawLocationSensor() {
+  @Override public LocationSensor getRawLocationSensor() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.LocationSensor result = google.maps.fleetengine.v1.LocationSensor.valueOf(rawLocationSensor_);
-    return result == null ? google.maps.fleetengine.v1.LocationSensor.UNRECOGNIZED : result;
+    LocationSensor result = LocationSensor.valueOf(rawLocationSensor_);
+    return result == null ? LocationSensor.UNRECOGNIZED : result;
   }
 
   public static final int RAW_LOCATION_ACCURACY_FIELD_NUMBER = 25;
@@ -1301,7 +1301,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the rawLocationAccuracy field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasRawLocationAccuracy() {
     return rawLocationAccuracy_ != null;
   }
@@ -1313,7 +1313,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The rawLocationAccuracy.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getRawLocationAccuracy() {
     return rawLocationAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : rawLocationAccuracy_;
   }
@@ -1324,7 +1324,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getRawLocationAccuracyOrBuilder() {
     return getRawLocationAccuracy();
   }
@@ -1340,7 +1340,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng supplemental_location = 18 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the supplementalLocation field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSupplementalLocation() {
     return supplementalLocation_ != null;
   }
@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng supplemental_location = 18 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The supplementalLocation.
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLng getSupplementalLocation() {
     return supplementalLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : supplementalLocation_;
   }
@@ -1365,7 +1365,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.type.LatLng supplemental_location = 18 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLngOrBuilder getSupplementalLocationOrBuilder() {
     return getSupplementalLocation();
   }
@@ -1380,7 +1380,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp supplemental_location_time = 19 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the supplementalLocationTime field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSupplementalLocationTime() {
     return supplementalLocationTime_ != null;
   }
@@ -1392,7 +1392,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp supplemental_location_time = 19 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The supplementalLocationTime.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Timestamp getSupplementalLocationTime() {
     return supplementalLocationTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : supplementalLocationTime_;
   }
@@ -1403,7 +1403,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp supplemental_location_time = 19 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.TimestampOrBuilder getSupplementalLocationTimeOrBuilder() {
     return getSupplementalLocationTime();
   }
@@ -1418,7 +1418,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.LocationSensor supplemental_location_sensor = 20 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The enum numeric value on the wire for supplementalLocationSensor.
    */
-  @java.lang.Override public int getSupplementalLocationSensorValue() {
+  @Override public int getSupplementalLocationSensorValue() {
     return supplementalLocationSensor_;
   }
   /**
@@ -1429,10 +1429,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.LocationSensor supplemental_location_sensor = 20 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The supplementalLocationSensor.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.LocationSensor getSupplementalLocationSensor() {
+  @Override public LocationSensor getSupplementalLocationSensor() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.LocationSensor result = google.maps.fleetengine.v1.LocationSensor.valueOf(supplementalLocationSensor_);
-    return result == null ? google.maps.fleetengine.v1.LocationSensor.UNRECOGNIZED : result;
+    LocationSensor result = LocationSensor.valueOf(supplementalLocationSensor_);
+    return result == null ? LocationSensor.UNRECOGNIZED : result;
   }
 
   public static final int SUPPLEMENTAL_LOCATION_ACCURACY_FIELD_NUMBER = 21;
@@ -1446,7 +1446,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return Whether the supplementalLocationAccuracy field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasSupplementalLocationAccuracy() {
     return supplementalLocationAccuracy_ != null;
   }
@@ -1459,7 +1459,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The supplementalLocationAccuracy.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValue getSupplementalLocationAccuracy() {
     return supplementalLocationAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : supplementalLocationAccuracy_;
   }
@@ -1471,7 +1471,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.DoubleValueOrBuilder getSupplementalLocationAccuracyOrBuilder() {
     return getSupplementalLocationAccuracy();
   }
@@ -1486,13 +1486,13 @@ private static final long serialVersionUID = 0L;
    * <code>bool road_snapped = 26 [deprecated = true];</code>
    * @return The roadSnapped.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean getRoadSnapped() {
+  @Override
+  @Deprecated public boolean getRoadSnapped() {
     return roadSnapped_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1502,7 +1502,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (location_ != null) {
@@ -1535,7 +1535,7 @@ private static final long serialVersionUID = 0L;
     if (bearingAccuracy_ != null) {
       output.writeMessage(10, getBearingAccuracy());
     }
-    if (locationSensor_ != google.maps.fleetengine.v1.LocationSensor.UNKNOWN_SENSOR.getNumber()) {
+    if (locationSensor_ != LocationSensor.UNKNOWN_SENSOR.getNumber()) {
       output.writeEnum(11, locationSensor_);
     }
     if (isGpsSensorEnabled_ != null) {
@@ -1562,7 +1562,7 @@ private static final long serialVersionUID = 0L;
     if (supplementalLocationTime_ != null) {
       output.writeMessage(19, getSupplementalLocationTime());
     }
-    if (supplementalLocationSensor_ != google.maps.fleetengine.v1.LocationSensor.UNKNOWN_SENSOR.getNumber()) {
+    if (supplementalLocationSensor_ != LocationSensor.UNKNOWN_SENSOR.getNumber()) {
       output.writeEnum(20, supplementalLocationSensor_);
     }
     if (supplementalLocationAccuracy_ != null) {
@@ -1586,13 +1586,13 @@ private static final long serialVersionUID = 0L;
     if (isRoadSnapped_ != null) {
       output.writeMessage(27, getIsRoadSnapped());
     }
-    if (rawLocationSensor_ != google.maps.fleetengine.v1.LocationSensor.UNKNOWN_SENSOR.getNumber()) {
+    if (rawLocationSensor_ != LocationSensor.UNKNOWN_SENSOR.getNumber()) {
       output.writeEnum(28, rawLocationSensor_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1638,7 +1638,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getBearingAccuracy());
     }
-    if (locationSensor_ != google.maps.fleetengine.v1.LocationSensor.UNKNOWN_SENSOR.getNumber()) {
+    if (locationSensor_ != LocationSensor.UNKNOWN_SENSOR.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(11, locationSensor_);
     }
@@ -1674,7 +1674,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getSupplementalLocationTime());
     }
-    if (supplementalLocationSensor_ != google.maps.fleetengine.v1.LocationSensor.UNKNOWN_SENSOR.getNumber()) {
+    if (supplementalLocationSensor_ != LocationSensor.UNKNOWN_SENSOR.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(20, supplementalLocationSensor_);
     }
@@ -1706,7 +1706,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(27, getIsRoadSnapped());
     }
-    if (rawLocationSensor_ != google.maps.fleetengine.v1.LocationSensor.UNKNOWN_SENSOR.getNumber()) {
+    if (rawLocationSensor_ != LocationSensor.UNKNOWN_SENSOR.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(28, rawLocationSensor_);
     }
@@ -1715,15 +1715,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.VehicleLocation)) {
+    if (!(obj instanceof VehicleLocation)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.VehicleLocation other = (google.maps.fleetengine.v1.VehicleLocation) obj;
+    VehicleLocation other = (VehicleLocation) obj;
 
     if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
@@ -1854,7 +1854,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -1971,69 +1971,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(byte[] data)
+  public static VehicleLocation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(java.io.InputStream input)
+  public static VehicleLocation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseDelimitedFrom(java.io.InputStream input)
+  public static VehicleLocation parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseDelimitedFrom(
+  public static VehicleLocation parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.VehicleLocation parseFrom(
+  public static VehicleLocation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -2041,23 +2041,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.VehicleLocation prototype) {
+  public static Builder newBuilder(VehicleLocation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -2071,18 +2071,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.VehicleLocation)
-      google.maps.fleetengine.v1.VehicleLocationOrBuilder {
+      VehicleLocationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_fieldAccessorTable
+      return FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.VehicleLocation.class, google.maps.fleetengine.v1.VehicleLocation.Builder.class);
+              VehicleLocation.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.VehicleLocation.newBuilder()
@@ -2091,7 +2091,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -2100,7 +2100,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (locationBuilder_ == null) {
@@ -2258,29 +2258,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_VehicleLocation_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.VehicleLocation getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance();
+    @Override
+    public VehicleLocation getDefaultInstanceForType() {
+      return VehicleLocation.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.VehicleLocation build() {
-      google.maps.fleetengine.v1.VehicleLocation result = buildPartial();
+    @Override
+    public VehicleLocation build() {
+      VehicleLocation result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.VehicleLocation buildPartial() {
-      google.maps.fleetengine.v1.VehicleLocation result = new google.maps.fleetengine.v1.VehicleLocation(this);
+    @Override
+    public VehicleLocation buildPartial() {
+      VehicleLocation result = new VehicleLocation(this);
       if (locationBuilder_ == null) {
         result.location_ = location_;
       } else {
@@ -2409,50 +2409,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.VehicleLocation) {
-        return mergeFrom((google.maps.fleetengine.v1.VehicleLocation)other);
+      if (other instanceof VehicleLocation) {
+        return mergeFrom((VehicleLocation)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.VehicleLocation other) {
-      if (other == google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance()) return this;
+    public Builder mergeFrom(VehicleLocation other) {
+      if (other == VehicleLocation.getDefaultInstance()) return this;
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
       }
@@ -2542,21 +2542,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.VehicleLocation parsedMessage = null;
+      VehicleLocation parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.VehicleLocation) e.getUnfinishedMessage();
+        parsedMessage = (VehicleLocation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -2768,7 +2768,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      * @return Whether the horizontalAccuracy field is set.
      */
-    @java.lang.Deprecated public boolean hasHorizontalAccuracy() {
+    @Deprecated public boolean hasHorizontalAccuracy() {
       return horizontalAccuracyBuilder_ != null || horizontalAccuracy_ != null;
     }
     /**
@@ -2779,7 +2779,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      * @return The horizontalAccuracy.
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValue getHorizontalAccuracy() {
+    @Deprecated public com.google.protobuf.DoubleValue getHorizontalAccuracy() {
       if (horizontalAccuracyBuilder_ == null) {
         return horizontalAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : horizontalAccuracy_;
       } else {
@@ -2793,7 +2793,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setHorizontalAccuracy(com.google.protobuf.DoubleValue value) {
+    @Deprecated public Builder setHorizontalAccuracy(com.google.protobuf.DoubleValue value) {
       if (horizontalAccuracyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2813,7 +2813,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setHorizontalAccuracy(
+    @Deprecated public Builder setHorizontalAccuracy(
         com.google.protobuf.DoubleValue.Builder builderForValue) {
       if (horizontalAccuracyBuilder_ == null) {
         horizontalAccuracy_ = builderForValue.build();
@@ -2831,7 +2831,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder mergeHorizontalAccuracy(com.google.protobuf.DoubleValue value) {
+    @Deprecated public Builder mergeHorizontalAccuracy(com.google.protobuf.DoubleValue value) {
       if (horizontalAccuracyBuilder_ == null) {
         if (horizontalAccuracy_ != null) {
           horizontalAccuracy_ =
@@ -2853,7 +2853,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder clearHorizontalAccuracy() {
+    @Deprecated public Builder clearHorizontalAccuracy() {
       if (horizontalAccuracyBuilder_ == null) {
         horizontalAccuracy_ = null;
         onChanged();
@@ -2871,7 +2871,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValue.Builder getHorizontalAccuracyBuilder() {
+    @Deprecated public com.google.protobuf.DoubleValue.Builder getHorizontalAccuracyBuilder() {
       
       onChanged();
       return getHorizontalAccuracyFieldBuilder().getBuilder();
@@ -2883,7 +2883,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValueOrBuilder getHorizontalAccuracyOrBuilder() {
+    @Deprecated public com.google.protobuf.DoubleValueOrBuilder getHorizontalAccuracyOrBuilder() {
       if (horizontalAccuracyBuilder_ != null) {
         return horizontalAccuracyBuilder_.getMessageOrBuilder();
       } else {
@@ -3242,7 +3242,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      * @return Whether the bearingAccuracy field is set.
      */
-    @java.lang.Deprecated public boolean hasBearingAccuracy() {
+    @Deprecated public boolean hasBearingAccuracy() {
       return bearingAccuracyBuilder_ != null || bearingAccuracy_ != null;
     }
     /**
@@ -3253,7 +3253,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      * @return The bearingAccuracy.
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValue getBearingAccuracy() {
+    @Deprecated public com.google.protobuf.DoubleValue getBearingAccuracy() {
       if (bearingAccuracyBuilder_ == null) {
         return bearingAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : bearingAccuracy_;
       } else {
@@ -3267,7 +3267,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setBearingAccuracy(com.google.protobuf.DoubleValue value) {
+    @Deprecated public Builder setBearingAccuracy(com.google.protobuf.DoubleValue value) {
       if (bearingAccuracyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3287,7 +3287,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setBearingAccuracy(
+    @Deprecated public Builder setBearingAccuracy(
         com.google.protobuf.DoubleValue.Builder builderForValue) {
       if (bearingAccuracyBuilder_ == null) {
         bearingAccuracy_ = builderForValue.build();
@@ -3305,7 +3305,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder mergeBearingAccuracy(com.google.protobuf.DoubleValue value) {
+    @Deprecated public Builder mergeBearingAccuracy(com.google.protobuf.DoubleValue value) {
       if (bearingAccuracyBuilder_ == null) {
         if (bearingAccuracy_ != null) {
           bearingAccuracy_ =
@@ -3327,7 +3327,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder clearBearingAccuracy() {
+    @Deprecated public Builder clearBearingAccuracy() {
       if (bearingAccuracyBuilder_ == null) {
         bearingAccuracy_ = null;
         onChanged();
@@ -3345,7 +3345,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValue.Builder getBearingAccuracyBuilder() {
+    @Deprecated public com.google.protobuf.DoubleValue.Builder getBearingAccuracyBuilder() {
       
       onChanged();
       return getBearingAccuracyFieldBuilder().getBuilder();
@@ -3357,7 +3357,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValueOrBuilder getBearingAccuracyOrBuilder() {
+    @Deprecated public com.google.protobuf.DoubleValueOrBuilder getBearingAccuracyOrBuilder() {
       if (bearingAccuracyBuilder_ != null) {
         return bearingAccuracyBuilder_.getMessageOrBuilder();
       } else {
@@ -3707,7 +3707,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      * @return Whether the verticalAccuracy field is set.
      */
-    @java.lang.Deprecated public boolean hasVerticalAccuracy() {
+    @Deprecated public boolean hasVerticalAccuracy() {
       return verticalAccuracyBuilder_ != null || verticalAccuracy_ != null;
     }
     /**
@@ -3718,7 +3718,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      * @return The verticalAccuracy.
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValue getVerticalAccuracy() {
+    @Deprecated public com.google.protobuf.DoubleValue getVerticalAccuracy() {
       if (verticalAccuracyBuilder_ == null) {
         return verticalAccuracy_ == null ? com.google.protobuf.DoubleValue.getDefaultInstance() : verticalAccuracy_;
       } else {
@@ -3732,7 +3732,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setVerticalAccuracy(com.google.protobuf.DoubleValue value) {
+    @Deprecated public Builder setVerticalAccuracy(com.google.protobuf.DoubleValue value) {
       if (verticalAccuracyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3752,7 +3752,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setVerticalAccuracy(
+    @Deprecated public Builder setVerticalAccuracy(
         com.google.protobuf.DoubleValue.Builder builderForValue) {
       if (verticalAccuracyBuilder_ == null) {
         verticalAccuracy_ = builderForValue.build();
@@ -3770,7 +3770,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder mergeVerticalAccuracy(com.google.protobuf.DoubleValue value) {
+    @Deprecated public Builder mergeVerticalAccuracy(com.google.protobuf.DoubleValue value) {
       if (verticalAccuracyBuilder_ == null) {
         if (verticalAccuracy_ != null) {
           verticalAccuracy_ =
@@ -3792,7 +3792,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder clearVerticalAccuracy() {
+    @Deprecated public Builder clearVerticalAccuracy() {
       if (verticalAccuracyBuilder_ == null) {
         verticalAccuracy_ = null;
         onChanged();
@@ -3810,7 +3810,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValue.Builder getVerticalAccuracyBuilder() {
+    @Deprecated public com.google.protobuf.DoubleValue.Builder getVerticalAccuracyBuilder() {
       
       onChanged();
       return getVerticalAccuracyFieldBuilder().getBuilder();
@@ -3822,7 +3822,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.DoubleValueOrBuilder getVerticalAccuracyOrBuilder() {
+    @Deprecated public com.google.protobuf.DoubleValueOrBuilder getVerticalAccuracyOrBuilder() {
       if (verticalAccuracyBuilder_ != null) {
         return verticalAccuracyBuilder_.getMessageOrBuilder();
       } else {
@@ -4018,7 +4018,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      * @return Whether the speedKmph field is set.
      */
-    @java.lang.Deprecated public boolean hasSpeedKmph() {
+    @Deprecated public boolean hasSpeedKmph() {
       return speedKmphBuilder_ != null || speedKmph_ != null;
     }
     /**
@@ -4030,7 +4030,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      * @return The speedKmph.
      */
-    @java.lang.Deprecated public com.google.protobuf.Int32Value getSpeedKmph() {
+    @Deprecated public com.google.protobuf.Int32Value getSpeedKmph() {
       if (speedKmphBuilder_ == null) {
         return speedKmph_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : speedKmph_;
       } else {
@@ -4045,7 +4045,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setSpeedKmph(com.google.protobuf.Int32Value value) {
+    @Deprecated public Builder setSpeedKmph(com.google.protobuf.Int32Value value) {
       if (speedKmphBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4066,7 +4066,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setSpeedKmph(
+    @Deprecated public Builder setSpeedKmph(
         com.google.protobuf.Int32Value.Builder builderForValue) {
       if (speedKmphBuilder_ == null) {
         speedKmph_ = builderForValue.build();
@@ -4085,7 +4085,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder mergeSpeedKmph(com.google.protobuf.Int32Value value) {
+    @Deprecated public Builder mergeSpeedKmph(com.google.protobuf.Int32Value value) {
       if (speedKmphBuilder_ == null) {
         if (speedKmph_ != null) {
           speedKmph_ =
@@ -4108,7 +4108,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder clearSpeedKmph() {
+    @Deprecated public Builder clearSpeedKmph() {
       if (speedKmphBuilder_ == null) {
         speedKmph_ = null;
         onChanged();
@@ -4127,7 +4127,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.Int32Value.Builder getSpeedKmphBuilder() {
+    @Deprecated public com.google.protobuf.Int32Value.Builder getSpeedKmphBuilder() {
       
       onChanged();
       return getSpeedKmphFieldBuilder().getBuilder();
@@ -4140,7 +4140,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.Int32ValueOrBuilder getSpeedKmphOrBuilder() {
+    @Deprecated public com.google.protobuf.Int32ValueOrBuilder getSpeedKmphOrBuilder() {
       if (speedKmphBuilder_ != null) {
         return speedKmphBuilder_.getMessageOrBuilder();
       } else {
@@ -4808,7 +4808,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
      * @return The enum numeric value on the wire for locationSensor.
      */
-    @java.lang.Override public int getLocationSensorValue() {
+    @Override public int getLocationSensorValue() {
       return locationSensor_;
     }
     /**
@@ -4834,11 +4834,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
      * @return The locationSensor.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.LocationSensor getLocationSensor() {
+    @Override
+    public LocationSensor getLocationSensor() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.LocationSensor result = google.maps.fleetengine.v1.LocationSensor.valueOf(locationSensor_);
-      return result == null ? google.maps.fleetengine.v1.LocationSensor.UNRECOGNIZED : result;
+      LocationSensor result = LocationSensor.valueOf(locationSensor_);
+      return result == null ? LocationSensor.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -4849,7 +4849,7 @@ private static final long serialVersionUID = 0L;
      * @param value The locationSensor to set.
      * @return This builder for chaining.
      */
-    public Builder setLocationSensor(google.maps.fleetengine.v1.LocationSensor value) {
+    public Builder setLocationSensor(LocationSensor value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -5866,7 +5866,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.LocationSensor raw_location_sensor = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The enum numeric value on the wire for rawLocationSensor.
      */
-    @java.lang.Override public int getRawLocationSensorValue() {
+    @Override public int getRawLocationSensorValue() {
       return rawLocationSensor_;
     }
     /**
@@ -5892,11 +5892,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.LocationSensor raw_location_sensor = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The rawLocationSensor.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.LocationSensor getRawLocationSensor() {
+    @Override
+    public LocationSensor getRawLocationSensor() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.LocationSensor result = google.maps.fleetengine.v1.LocationSensor.valueOf(rawLocationSensor_);
-      return result == null ? google.maps.fleetengine.v1.LocationSensor.UNRECOGNIZED : result;
+      LocationSensor result = LocationSensor.valueOf(rawLocationSensor_);
+      return result == null ? LocationSensor.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -5907,7 +5907,7 @@ private static final long serialVersionUID = 0L;
      * @param value The rawLocationSensor to set.
      * @return This builder for chaining.
      */
-    public Builder setRawLocationSensor(google.maps.fleetengine.v1.LocationSensor value) {
+    public Builder setRawLocationSensor(LocationSensor value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -6414,7 +6414,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.LocationSensor supplemental_location_sensor = 20 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The enum numeric value on the wire for supplementalLocationSensor.
      */
-    @java.lang.Override public int getSupplementalLocationSensorValue() {
+    @Override public int getSupplementalLocationSensorValue() {
       return supplementalLocationSensor_;
     }
     /**
@@ -6440,11 +6440,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.LocationSensor supplemental_location_sensor = 20 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The supplementalLocationSensor.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.LocationSensor getSupplementalLocationSensor() {
+    @Override
+    public LocationSensor getSupplementalLocationSensor() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.LocationSensor result = google.maps.fleetengine.v1.LocationSensor.valueOf(supplementalLocationSensor_);
-      return result == null ? google.maps.fleetengine.v1.LocationSensor.UNRECOGNIZED : result;
+      LocationSensor result = LocationSensor.valueOf(supplementalLocationSensor_);
+      return result == null ? LocationSensor.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -6455,7 +6455,7 @@ private static final long serialVersionUID = 0L;
      * @param value The supplementalLocationSensor to set.
      * @return This builder for chaining.
      */
-    public Builder setSupplementalLocationSensor(google.maps.fleetengine.v1.LocationSensor value) {
+    public Builder setSupplementalLocationSensor(LocationSensor value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -6652,8 +6652,8 @@ private static final long serialVersionUID = 0L;
      * <code>bool road_snapped = 26 [deprecated = true];</code>
      * @return The roadSnapped.
      */
-    @java.lang.Override
-    @java.lang.Deprecated public boolean getRoadSnapped() {
+    @Override
+    @Deprecated public boolean getRoadSnapped() {
       return roadSnapped_;
     }
     /**
@@ -6665,7 +6665,7 @@ private static final long serialVersionUID = 0L;
      * @param value The roadSnapped to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setRoadSnapped(boolean value) {
+    @Deprecated public Builder setRoadSnapped(boolean value) {
       
       roadSnapped_ = value;
       onChanged();
@@ -6679,19 +6679,19 @@ private static final long serialVersionUID = 0L;
      * <code>bool road_snapped = 26 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearRoadSnapped() {
+    @Deprecated public Builder clearRoadSnapped() {
       
       roadSnapped_ = false;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -6702,18 +6702,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.VehicleLocation)
-  private static final google.maps.fleetengine.v1.VehicleLocation DEFAULT_INSTANCE;
+  private static final VehicleLocation DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.VehicleLocation();
+    DEFAULT_INSTANCE = new VehicleLocation();
   }
 
-  public static google.maps.fleetengine.v1.VehicleLocation getDefaultInstance() {
+  public static VehicleLocation getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<VehicleLocation>
       PARSER = new com.google.protobuf.AbstractParser<VehicleLocation>() {
-    @java.lang.Override
+    @Override
     public VehicleLocation parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6726,13 +6726,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<VehicleLocation> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.VehicleLocation getDefaultInstanceForType() {
+  @Override
+  public VehicleLocation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

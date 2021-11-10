@@ -103,7 +103,7 @@ public final class VehicleApi {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n,google/maps/fleetengine/v1/vehicle_api" +
       ".proto\022\023maps.fleetengine.v1\032\034google/api/" +
       "annotations.proto\032\037google/api/field_beha" +
@@ -260,9 +260,9 @@ public final class VehicleApi {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
-          google.maps.fleetengine.v1.FleetEngine.getDescriptor(),
-          google.maps.fleetengine.v1.Headers.getDescriptor(),
-          google.maps.fleetengine.v1.Vehicles.getDescriptor(),
+          FleetEngine.getDescriptor(),
+          Headers.getDescriptor(),
+          Vehicles.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -275,79 +275,79 @@ public final class VehicleApi {
     internal_static_maps_fleetengine_v1_CreateVehicleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_CreateVehicleRequest_descriptor,
-        new java.lang.String[] { "Header", "Parent", "VehicleId", "Vehicle", });
+        new String[] { "Header", "Parent", "VehicleId", "Vehicle", });
     internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_maps_fleetengine_v1_GetVehicleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_GetVehicleRequest_descriptor,
-        new java.lang.String[] { "Header", "Name", "CurrentRouteSegmentVersion", "WaypointsVersion", });
+        new String[] { "Header", "Name", "CurrentRouteSegmentVersion", "WaypointsVersion", });
     internal_static_maps_fleetengine_v1_UpdateVehicleRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_maps_fleetengine_v1_UpdateVehicleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_UpdateVehicleRequest_descriptor,
-        new java.lang.String[] { "Header", "Name", "Vehicle", "UpdateMask", });
+        new String[] { "Header", "Name", "Vehicle", "UpdateMask", });
     internal_static_maps_fleetengine_v1_UpdateVehicleLocationRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_maps_fleetengine_v1_UpdateVehicleLocationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_UpdateVehicleLocationRequest_descriptor,
-        new java.lang.String[] { "Header", "Name", "CurrentLocation", "CurrentState", });
+        new String[] { "Header", "Name", "CurrentLocation", "CurrentState", });
     internal_static_maps_fleetengine_v1_UpdateVehicleAttributesRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_maps_fleetengine_v1_UpdateVehicleAttributesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_UpdateVehicleAttributesRequest_descriptor,
-        new java.lang.String[] { "Header", "Name", "Attributes", });
+        new String[] { "Header", "Name", "Attributes", });
     internal_static_maps_fleetengine_v1_UpdateVehicleAttributesResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_maps_fleetengine_v1_UpdateVehicleAttributesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_UpdateVehicleAttributesResponse_descriptor,
-        new java.lang.String[] { "Attributes", });
+        new String[] { "Attributes", });
     internal_static_maps_fleetengine_v1_SearchVehiclesRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_maps_fleetengine_v1_SearchVehiclesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_SearchVehiclesRequest_descriptor,
-        new java.lang.String[] { "Header", "Parent", "PickupPoint", "DropoffPoint", "PickupRadiusMeters", "Count", "MinimumCapacity", "TripTypes", "MaximumStaleness", "VehicleTypes", "RequiredAttributes", "RequiredOneOfAttributes", "RequiredOneOfAttributeSets", "OrderBy", "IncludeBackToBack", "TripId", });
+        new String[] { "Header", "Parent", "PickupPoint", "DropoffPoint", "PickupRadiusMeters", "Count", "MinimumCapacity", "TripTypes", "MaximumStaleness", "VehicleTypes", "RequiredAttributes", "RequiredOneOfAttributes", "RequiredOneOfAttributeSets", "OrderBy", "IncludeBackToBack", "TripId", });
     internal_static_maps_fleetengine_v1_SearchVehiclesResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_maps_fleetengine_v1_SearchVehiclesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_SearchVehiclesResponse_descriptor,
-        new java.lang.String[] { "Matches", });
+        new String[] { "Matches", });
     internal_static_maps_fleetengine_v1_ListVehiclesRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_maps_fleetengine_v1_ListVehiclesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_ListVehiclesRequest_descriptor,
-        new java.lang.String[] { "Header", "Parent", "PageSize", "PageToken", "MinimumCapacity", "TripTypes", "MaximumStaleness", "VehicleTypeCategories", "RequiredAttributes", "RequiredOneOfAttributes", "RequiredOneOfAttributeSets", "VehicleState", "OnTripOnly", });
+        new String[] { "Header", "Parent", "PageSize", "PageToken", "MinimumCapacity", "TripTypes", "MaximumStaleness", "VehicleTypeCategories", "RequiredAttributes", "RequiredOneOfAttributes", "RequiredOneOfAttributeSets", "VehicleState", "OnTripOnly", });
     internal_static_maps_fleetengine_v1_ListVehiclesResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_maps_fleetengine_v1_ListVehiclesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_ListVehiclesResponse_descriptor,
-        new java.lang.String[] { "Vehicles", "NextPageToken", "TotalSize", });
+        new String[] { "Vehicles", "NextPageToken", "TotalSize", });
     internal_static_maps_fleetengine_v1_Waypoint_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_maps_fleetengine_v1_Waypoint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_Waypoint_descriptor,
-        new java.lang.String[] { "LatLng", "Eta", });
+        new String[] { "LatLng", "Eta", });
     internal_static_maps_fleetengine_v1_VehicleMatch_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_maps_fleetengine_v1_VehicleMatch_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_VehicleMatch_descriptor,
-        new java.lang.String[] { "Vehicle", "VehiclePickupEta", "VehiclePickupDistanceMeters", "VehiclePickupStraightLineDistanceMeters", "VehicleDropoffEta", "VehiclePickupToDropoffDistanceMeters", "TripType", "VehicleTripsWaypoints", "VehicleMatchType", "RequestedOrderedBy", "OrderedBy", });
+        new String[] { "Vehicle", "VehiclePickupEta", "VehiclePickupDistanceMeters", "VehiclePickupStraightLineDistanceMeters", "VehicleDropoffEta", "VehiclePickupToDropoffDistanceMeters", "TripType", "VehicleTripsWaypoints", "VehicleMatchType", "RequestedOrderedBy", "OrderedBy", });
     internal_static_maps_fleetengine_v1_VehicleAttributeList_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_maps_fleetengine_v1_VehicleAttributeList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_VehicleAttributeList_descriptor,
-        new java.lang.String[] { "Attributes", });
+        new String[] { "Attributes", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -359,9 +359,9 @@ public final class VehicleApi {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    google.maps.fleetengine.v1.FleetEngine.getDescriptor();
-    google.maps.fleetengine.v1.Headers.getDescriptor();
-    google.maps.fleetengine.v1.Vehicles.getDescriptor();
+    FleetEngine.getDescriptor();
+    Headers.getDescriptor();
+    Vehicles.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

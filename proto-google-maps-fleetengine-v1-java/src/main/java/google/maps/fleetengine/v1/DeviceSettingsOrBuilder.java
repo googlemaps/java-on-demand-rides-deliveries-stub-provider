@@ -42,7 +42,7 @@ public interface DeviceSettingsOrBuilder extends
    * <code>.maps.fleetengine.v1.LocationPowerSaveMode location_power_save_mode = 1;</code>
    * @return The locationPowerSaveMode.
    */
-  google.maps.fleetengine.v1.LocationPowerSaveMode getLocationPowerSaveMode();
+  LocationPowerSaveMode getLocationPowerSaveMode();
 
   /**
    * <pre>
@@ -81,7 +81,7 @@ public interface DeviceSettingsOrBuilder extends
    * <code>.maps.fleetengine.v1.BatteryInfo battery_info = 4;</code>
    * @return The batteryInfo.
    */
-  google.maps.fleetengine.v1.BatteryInfo getBatteryInfo();
+  BatteryInfo getBatteryInfo();
   /**
    * <pre>
    * Information about the battery state.
@@ -89,5 +89,5 @@ public interface DeviceSettingsOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.BatteryInfo battery_info = 4;</code>
    */
-  google.maps.fleetengine.v1.BatteryInfoOrBuilder getBatteryInfoOrBuilder();
+  BatteryInfoOrBuilder getBatteryInfoOrBuilder();
 }

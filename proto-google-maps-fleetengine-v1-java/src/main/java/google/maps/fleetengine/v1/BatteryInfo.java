@@ -40,14 +40,14 @@ private static final long serialVersionUID = 0L;
     powerSource_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new BatteryInfo();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -58,7 +58,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -108,15 +108,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_descriptor;
+    return Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_fieldAccessorTable
+    return Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.BatteryInfo.class, google.maps.fleetengine.v1.BatteryInfo.Builder.class);
+            BatteryInfo.class, Builder.class);
   }
 
   public static final int BATTERY_STATUS_FIELD_NUMBER = 1;
@@ -129,7 +129,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.BatteryStatus battery_status = 1;</code>
    * @return The enum numeric value on the wire for batteryStatus.
    */
-  @java.lang.Override public int getBatteryStatusValue() {
+  @Override public int getBatteryStatusValue() {
     return batteryStatus_;
   }
   /**
@@ -140,10 +140,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.BatteryStatus battery_status = 1;</code>
    * @return The batteryStatus.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.BatteryStatus getBatteryStatus() {
+  @Override public BatteryStatus getBatteryStatus() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.BatteryStatus result = google.maps.fleetengine.v1.BatteryStatus.valueOf(batteryStatus_);
-    return result == null ? google.maps.fleetengine.v1.BatteryStatus.UNRECOGNIZED : result;
+    BatteryStatus result = BatteryStatus.valueOf(batteryStatus_);
+    return result == null ? BatteryStatus.UNRECOGNIZED : result;
   }
 
   public static final int POWER_SOURCE_FIELD_NUMBER = 2;
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.PowerSource power_source = 2;</code>
    * @return The enum numeric value on the wire for powerSource.
    */
-  @java.lang.Override public int getPowerSourceValue() {
+  @Override public int getPowerSourceValue() {
     return powerSource_;
   }
   /**
@@ -167,10 +167,10 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.PowerSource power_source = 2;</code>
    * @return The powerSource.
    */
-  @java.lang.Override public google.maps.fleetengine.v1.PowerSource getPowerSource() {
+  @Override public PowerSource getPowerSource() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.PowerSource result = google.maps.fleetengine.v1.PowerSource.valueOf(powerSource_);
-    return result == null ? google.maps.fleetengine.v1.PowerSource.UNRECOGNIZED : result;
+    PowerSource result = PowerSource.valueOf(powerSource_);
+    return result == null ? PowerSource.UNRECOGNIZED : result;
   }
 
   public static final int BATTERY_PERCENTAGE_FIELD_NUMBER = 3;
@@ -183,13 +183,13 @@ private static final long serialVersionUID = 0L;
    * <code>float battery_percentage = 3;</code>
    * @return The batteryPercentage.
    */
-  @java.lang.Override
+  @Override
   public float getBatteryPercentage() {
     return batteryPercentage_;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -199,13 +199,13 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (batteryStatus_ != google.maps.fleetengine.v1.BatteryStatus.UNKNOWN_BATTERY_STATUS.getNumber()) {
+    if (batteryStatus_ != BatteryStatus.UNKNOWN_BATTERY_STATUS.getNumber()) {
       output.writeEnum(1, batteryStatus_);
     }
-    if (powerSource_ != google.maps.fleetengine.v1.PowerSource.UNKNOWN_POWER_SOURCE.getNumber()) {
+    if (powerSource_ != PowerSource.UNKNOWN_POWER_SOURCE.getNumber()) {
       output.writeEnum(2, powerSource_);
     }
     if (batteryPercentage_ != 0F) {
@@ -214,17 +214,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (batteryStatus_ != google.maps.fleetengine.v1.BatteryStatus.UNKNOWN_BATTERY_STATUS.getNumber()) {
+    if (batteryStatus_ != BatteryStatus.UNKNOWN_BATTERY_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, batteryStatus_);
     }
-    if (powerSource_ != google.maps.fleetengine.v1.PowerSource.UNKNOWN_POWER_SOURCE.getNumber()) {
+    if (powerSource_ != PowerSource.UNKNOWN_POWER_SOURCE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, powerSource_);
     }
@@ -237,26 +237,26 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.BatteryInfo)) {
+    if (!(obj instanceof BatteryInfo)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.BatteryInfo other = (google.maps.fleetengine.v1.BatteryInfo) obj;
+    BatteryInfo other = (BatteryInfo) obj;
 
     if (batteryStatus_ != other.batteryStatus_) return false;
     if (powerSource_ != other.powerSource_) return false;
-    if (java.lang.Float.floatToIntBits(getBatteryPercentage())
-        != java.lang.Float.floatToIntBits(
+    if (Float.floatToIntBits(getBatteryPercentage())
+        != Float.floatToIntBits(
             other.getBatteryPercentage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -268,76 +268,76 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + POWER_SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + powerSource_;
     hash = (37 * hash) + BATTERY_PERCENTAGE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+    hash = (53 * hash) + Float.floatToIntBits(
         getBatteryPercentage());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(byte[] data)
+  public static BatteryInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(java.io.InputStream input)
+  public static BatteryInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseDelimitedFrom(java.io.InputStream input)
+  public static BatteryInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseDelimitedFrom(
+  public static BatteryInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.BatteryInfo parseFrom(
+  public static BatteryInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -345,23 +345,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.BatteryInfo prototype) {
+  public static Builder newBuilder(BatteryInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -375,18 +375,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.BatteryInfo)
-      google.maps.fleetengine.v1.BatteryInfoOrBuilder {
+      BatteryInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_descriptor;
+      return Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_fieldAccessorTable
+      return Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.BatteryInfo.class, google.maps.fleetengine.v1.BatteryInfo.Builder.class);
+              BatteryInfo.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.BatteryInfo.newBuilder()
@@ -395,7 +395,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       batteryStatus_ = 0;
@@ -416,29 +416,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_descriptor;
+      return Vehicles.internal_static_maps_fleetengine_v1_BatteryInfo_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.BatteryInfo getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.BatteryInfo.getDefaultInstance();
+    @Override
+    public BatteryInfo getDefaultInstanceForType() {
+      return BatteryInfo.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.BatteryInfo build() {
-      google.maps.fleetengine.v1.BatteryInfo result = buildPartial();
+    @Override
+    public BatteryInfo build() {
+      BatteryInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.BatteryInfo buildPartial() {
-      google.maps.fleetengine.v1.BatteryInfo result = new google.maps.fleetengine.v1.BatteryInfo(this);
+    @Override
+    public BatteryInfo buildPartial() {
+      BatteryInfo result = new BatteryInfo(this);
       result.batteryStatus_ = batteryStatus_;
       result.powerSource_ = powerSource_;
       result.batteryPercentage_ = batteryPercentage_;
@@ -446,50 +446,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.BatteryInfo) {
-        return mergeFrom((google.maps.fleetengine.v1.BatteryInfo)other);
+      if (other instanceof BatteryInfo) {
+        return mergeFrom((BatteryInfo)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.BatteryInfo other) {
-      if (other == google.maps.fleetengine.v1.BatteryInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(BatteryInfo other) {
+      if (other == BatteryInfo.getDefaultInstance()) return this;
       if (other.batteryStatus_ != 0) {
         setBatteryStatusValue(other.getBatteryStatusValue());
       }
@@ -504,21 +504,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.BatteryInfo parsedMessage = null;
+      BatteryInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.BatteryInfo) e.getUnfinishedMessage();
+        parsedMessage = (BatteryInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -537,7 +537,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.BatteryStatus battery_status = 1;</code>
      * @return The enum numeric value on the wire for batteryStatus.
      */
-    @java.lang.Override public int getBatteryStatusValue() {
+    @Override public int getBatteryStatusValue() {
       return batteryStatus_;
     }
     /**
@@ -563,11 +563,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.BatteryStatus battery_status = 1;</code>
      * @return The batteryStatus.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.BatteryStatus getBatteryStatus() {
+    @Override
+    public BatteryStatus getBatteryStatus() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.BatteryStatus result = google.maps.fleetengine.v1.BatteryStatus.valueOf(batteryStatus_);
-      return result == null ? google.maps.fleetengine.v1.BatteryStatus.UNRECOGNIZED : result;
+      BatteryStatus result = BatteryStatus.valueOf(batteryStatus_);
+      return result == null ? BatteryStatus.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
      * @param value The batteryStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setBatteryStatus(google.maps.fleetengine.v1.BatteryStatus value) {
+    public Builder setBatteryStatus(BatteryStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.PowerSource power_source = 2;</code>
      * @return The enum numeric value on the wire for powerSource.
      */
-    @java.lang.Override public int getPowerSourceValue() {
+    @Override public int getPowerSourceValue() {
       return powerSource_;
     }
     /**
@@ -637,11 +637,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.PowerSource power_source = 2;</code>
      * @return The powerSource.
      */
-    @java.lang.Override
-    public google.maps.fleetengine.v1.PowerSource getPowerSource() {
+    @Override
+    public PowerSource getPowerSource() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.PowerSource result = google.maps.fleetengine.v1.PowerSource.valueOf(powerSource_);
-      return result == null ? google.maps.fleetengine.v1.PowerSource.UNRECOGNIZED : result;
+      PowerSource result = PowerSource.valueOf(powerSource_);
+      return result == null ? PowerSource.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -652,7 +652,7 @@ private static final long serialVersionUID = 0L;
      * @param value The powerSource to set.
      * @return This builder for chaining.
      */
-    public Builder setPowerSource(google.maps.fleetengine.v1.PowerSource value) {
+    public Builder setPowerSource(PowerSource value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
      * <code>float battery_percentage = 3;</code>
      * @return The batteryPercentage.
      */
-    @java.lang.Override
+    @Override
     public float getBatteryPercentage() {
       return batteryPercentage_;
     }
@@ -718,13 +718,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -735,18 +735,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.BatteryInfo)
-  private static final google.maps.fleetengine.v1.BatteryInfo DEFAULT_INSTANCE;
+  private static final BatteryInfo DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.BatteryInfo();
+    DEFAULT_INSTANCE = new BatteryInfo();
   }
 
-  public static google.maps.fleetengine.v1.BatteryInfo getDefaultInstance() {
+  public static BatteryInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<BatteryInfo>
       PARSER = new com.google.protobuf.AbstractParser<BatteryInfo>() {
-    @java.lang.Override
+    @Override
     public BatteryInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -759,13 +759,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<BatteryInfo> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.BatteryInfo getDefaultInstanceForType() {
+  @Override
+  public BatteryInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -68,7 +68,7 @@ public final class TripApi {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n)google/maps/fleetengine/v1/trip_api.pr" +
       "oto\022\023maps.fleetengine.v1\032\034google/api/ann" +
       "otations.proto\032\037google/api/field_behavio" +
@@ -144,9 +144,9 @@ public final class TripApi {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
-          google.maps.fleetengine.v1.FleetEngine.getDescriptor(),
-          google.maps.fleetengine.v1.Headers.getDescriptor(),
-          google.maps.fleetengine.v1.Trips.getDescriptor(),
+          FleetEngine.getDescriptor(),
+          Headers.getDescriptor(),
+          Trips.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -158,37 +158,37 @@ public final class TripApi {
     internal_static_maps_fleetengine_v1_CreateTripRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_CreateTripRequest_descriptor,
-        new java.lang.String[] { "Header", "Parent", "TripId", "Trip", });
+        new String[] { "Header", "Parent", "TripId", "Trip", });
     internal_static_maps_fleetengine_v1_GetTripRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_maps_fleetengine_v1_GetTripRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_GetTripRequest_descriptor,
-        new java.lang.String[] { "Header", "Name", "View", "CurrentRouteSegmentVersion", "RemainingWaypointsVersion", "RouteFormatType", });
+        new String[] { "Header", "Name", "View", "CurrentRouteSegmentVersion", "RemainingWaypointsVersion", "RouteFormatType", });
     internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_maps_fleetengine_v1_ReportBillableTripRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_ReportBillableTripRequest_descriptor,
-        new java.lang.String[] { "Name", "CountryCode", "Platform", "RelatedIds", "SolutionType", });
+        new String[] { "Name", "CountryCode", "Platform", "RelatedIds", "SolutionType", });
     internal_static_maps_fleetengine_v1_UpdateTripRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_maps_fleetengine_v1_UpdateTripRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_UpdateTripRequest_descriptor,
-        new java.lang.String[] { "Header", "Name", "Trip", "UpdateMask", });
+        new String[] { "Header", "Name", "Trip", "UpdateMask", });
     internal_static_maps_fleetengine_v1_SearchTripsRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_maps_fleetengine_v1_SearchTripsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_SearchTripsRequest_descriptor,
-        new java.lang.String[] { "Header", "Parent", "VehicleId", "ActiveTripsOnly", "PageSize", "PageToken", "MinimumStaleness", });
+        new String[] { "Header", "Parent", "VehicleId", "ActiveTripsOnly", "PageSize", "PageToken", "MinimumStaleness", });
     internal_static_maps_fleetengine_v1_SearchTripsResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_maps_fleetengine_v1_SearchTripsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_SearchTripsResponse_descriptor,
-        new java.lang.String[] { "Trips", "NextPageToken", });
+        new String[] { "Trips", "NextPageToken", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -200,9 +200,9 @@ public final class TripApi {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    google.maps.fleetengine.v1.FleetEngine.getDescriptor();
-    google.maps.fleetengine.v1.Headers.getDescriptor();
-    google.maps.fleetengine.v1.Trips.getDescriptor();
+    FleetEngine.getDescriptor();
+    Headers.getDescriptor();
+    Trips.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

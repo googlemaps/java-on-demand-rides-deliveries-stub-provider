@@ -40,7 +40,7 @@ public interface SearchTripsRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface SearchTripsRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -61,7 +61,7 @@ public interface SearchTripsRequestOrBuilder extends
    * <code>string parent = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The parent.
    */
-  java.lang.String getParent();
+  String getParent();
   /**
    * <pre>
    * Required. Must be in the format "providers/&#42;"
@@ -89,7 +89,7 @@ public interface SearchTripsRequestOrBuilder extends
    * <code>string vehicle_id = 4;</code>
    * @return The vehicleId.
    */
-  java.lang.String getVehicleId();
+  String getVehicleId();
   /**
    * <pre>
    * The vehicle associated with the trips in the request. If unspecified, the
@@ -137,7 +137,7 @@ public interface SearchTripsRequestOrBuilder extends
    * <code>string page_token = 7;</code>
    * @return The pageToken.
    */
-  java.lang.String getPageToken();
+  String getPageToken();
   /**
    * <pre>
    * Set this to a value previously returned in the

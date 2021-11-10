@@ -24,6 +24,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/maps/fleetengine/v1/trip_api.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class TripServiceGrpc {
 
   private TripServiceGrpc() {}
@@ -31,29 +32,29 @@ public final class TripServiceGrpc {
   public static final String SERVICE_NAME = "maps.fleetengine.v1.TripService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<google.maps.fleetengine.v1.CreateTripRequest,
-      google.maps.fleetengine.v1.Trip> getCreateTripMethod;
+  private static volatile io.grpc.MethodDescriptor<CreateTripRequest,
+      Trip> getCreateTripMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "CreateTrip",
-      requestType = google.maps.fleetengine.v1.CreateTripRequest.class,
-      responseType = google.maps.fleetengine.v1.Trip.class,
+      requestType = CreateTripRequest.class,
+      responseType = Trip.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<google.maps.fleetengine.v1.CreateTripRequest,
-      google.maps.fleetengine.v1.Trip> getCreateTripMethod() {
-    io.grpc.MethodDescriptor<google.maps.fleetengine.v1.CreateTripRequest, google.maps.fleetengine.v1.Trip> getCreateTripMethod;
+  public static io.grpc.MethodDescriptor<CreateTripRequest,
+      Trip> getCreateTripMethod() {
+    io.grpc.MethodDescriptor<CreateTripRequest, Trip> getCreateTripMethod;
     if ((getCreateTripMethod = TripServiceGrpc.getCreateTripMethod) == null) {
       synchronized (TripServiceGrpc.class) {
         if ((getCreateTripMethod = TripServiceGrpc.getCreateTripMethod) == null) {
           TripServiceGrpc.getCreateTripMethod = getCreateTripMethod =
-              io.grpc.MethodDescriptor.<google.maps.fleetengine.v1.CreateTripRequest, google.maps.fleetengine.v1.Trip>newBuilder()
+              io.grpc.MethodDescriptor.<CreateTripRequest, Trip>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTrip"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.CreateTripRequest.getDefaultInstance()))
+                  CreateTripRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.Trip.getDefaultInstance()))
+                  Trip.getDefaultInstance()))
               .setSchemaDescriptor(new TripServiceMethodDescriptorSupplier("CreateTrip"))
               .build();
         }
@@ -62,29 +63,29 @@ public final class TripServiceGrpc {
     return getCreateTripMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<google.maps.fleetengine.v1.GetTripRequest,
-      google.maps.fleetengine.v1.Trip> getGetTripMethod;
+  private static volatile io.grpc.MethodDescriptor<GetTripRequest,
+      Trip> getGetTripMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetTrip",
-      requestType = google.maps.fleetengine.v1.GetTripRequest.class,
-      responseType = google.maps.fleetengine.v1.Trip.class,
+      requestType = GetTripRequest.class,
+      responseType = Trip.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<google.maps.fleetengine.v1.GetTripRequest,
-      google.maps.fleetengine.v1.Trip> getGetTripMethod() {
-    io.grpc.MethodDescriptor<google.maps.fleetengine.v1.GetTripRequest, google.maps.fleetengine.v1.Trip> getGetTripMethod;
+  public static io.grpc.MethodDescriptor<GetTripRequest,
+      Trip> getGetTripMethod() {
+    io.grpc.MethodDescriptor<GetTripRequest, Trip> getGetTripMethod;
     if ((getGetTripMethod = TripServiceGrpc.getGetTripMethod) == null) {
       synchronized (TripServiceGrpc.class) {
         if ((getGetTripMethod = TripServiceGrpc.getGetTripMethod) == null) {
           TripServiceGrpc.getGetTripMethod = getGetTripMethod =
-              io.grpc.MethodDescriptor.<google.maps.fleetengine.v1.GetTripRequest, google.maps.fleetengine.v1.Trip>newBuilder()
+              io.grpc.MethodDescriptor.<GetTripRequest, Trip>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTrip"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.GetTripRequest.getDefaultInstance()))
+                  GetTripRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.Trip.getDefaultInstance()))
+                  Trip.getDefaultInstance()))
               .setSchemaDescriptor(new TripServiceMethodDescriptorSupplier("GetTrip"))
               .build();
         }
@@ -93,27 +94,27 @@ public final class TripServiceGrpc {
     return getGetTripMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<google.maps.fleetengine.v1.ReportBillableTripRequest,
+  private static volatile io.grpc.MethodDescriptor<ReportBillableTripRequest,
       com.google.protobuf.Empty> getReportBillableTripMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ReportBillableTrip",
-      requestType = google.maps.fleetengine.v1.ReportBillableTripRequest.class,
+      requestType = ReportBillableTripRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<google.maps.fleetengine.v1.ReportBillableTripRequest,
+  public static io.grpc.MethodDescriptor<ReportBillableTripRequest,
       com.google.protobuf.Empty> getReportBillableTripMethod() {
-    io.grpc.MethodDescriptor<google.maps.fleetengine.v1.ReportBillableTripRequest, com.google.protobuf.Empty> getReportBillableTripMethod;
+    io.grpc.MethodDescriptor<ReportBillableTripRequest, com.google.protobuf.Empty> getReportBillableTripMethod;
     if ((getReportBillableTripMethod = TripServiceGrpc.getReportBillableTripMethod) == null) {
       synchronized (TripServiceGrpc.class) {
         if ((getReportBillableTripMethod = TripServiceGrpc.getReportBillableTripMethod) == null) {
           TripServiceGrpc.getReportBillableTripMethod = getReportBillableTripMethod =
-              io.grpc.MethodDescriptor.<google.maps.fleetengine.v1.ReportBillableTripRequest, com.google.protobuf.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<ReportBillableTripRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReportBillableTrip"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.ReportBillableTripRequest.getDefaultInstance()))
+                  ReportBillableTripRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new TripServiceMethodDescriptorSupplier("ReportBillableTrip"))
@@ -124,29 +125,29 @@ public final class TripServiceGrpc {
     return getReportBillableTripMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<google.maps.fleetengine.v1.SearchTripsRequest,
-      google.maps.fleetengine.v1.SearchTripsResponse> getSearchTripsMethod;
+  private static volatile io.grpc.MethodDescriptor<SearchTripsRequest,
+      SearchTripsResponse> getSearchTripsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "SearchTrips",
-      requestType = google.maps.fleetengine.v1.SearchTripsRequest.class,
-      responseType = google.maps.fleetengine.v1.SearchTripsResponse.class,
+      requestType = SearchTripsRequest.class,
+      responseType = SearchTripsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<google.maps.fleetengine.v1.SearchTripsRequest,
-      google.maps.fleetengine.v1.SearchTripsResponse> getSearchTripsMethod() {
-    io.grpc.MethodDescriptor<google.maps.fleetengine.v1.SearchTripsRequest, google.maps.fleetengine.v1.SearchTripsResponse> getSearchTripsMethod;
+  public static io.grpc.MethodDescriptor<SearchTripsRequest,
+      SearchTripsResponse> getSearchTripsMethod() {
+    io.grpc.MethodDescriptor<SearchTripsRequest, SearchTripsResponse> getSearchTripsMethod;
     if ((getSearchTripsMethod = TripServiceGrpc.getSearchTripsMethod) == null) {
       synchronized (TripServiceGrpc.class) {
         if ((getSearchTripsMethod = TripServiceGrpc.getSearchTripsMethod) == null) {
           TripServiceGrpc.getSearchTripsMethod = getSearchTripsMethod =
-              io.grpc.MethodDescriptor.<google.maps.fleetengine.v1.SearchTripsRequest, google.maps.fleetengine.v1.SearchTripsResponse>newBuilder()
+              io.grpc.MethodDescriptor.<SearchTripsRequest, SearchTripsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchTrips"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.SearchTripsRequest.getDefaultInstance()))
+                  SearchTripsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.SearchTripsResponse.getDefaultInstance()))
+                  SearchTripsResponse.getDefaultInstance()))
               .setSchemaDescriptor(new TripServiceMethodDescriptorSupplier("SearchTrips"))
               .build();
         }
@@ -155,29 +156,29 @@ public final class TripServiceGrpc {
     return getSearchTripsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<google.maps.fleetengine.v1.UpdateTripRequest,
-      google.maps.fleetengine.v1.Trip> getUpdateTripMethod;
+  private static volatile io.grpc.MethodDescriptor<UpdateTripRequest,
+      Trip> getUpdateTripMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "UpdateTrip",
-      requestType = google.maps.fleetengine.v1.UpdateTripRequest.class,
-      responseType = google.maps.fleetengine.v1.Trip.class,
+      requestType = UpdateTripRequest.class,
+      responseType = Trip.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<google.maps.fleetengine.v1.UpdateTripRequest,
-      google.maps.fleetengine.v1.Trip> getUpdateTripMethod() {
-    io.grpc.MethodDescriptor<google.maps.fleetengine.v1.UpdateTripRequest, google.maps.fleetengine.v1.Trip> getUpdateTripMethod;
+  public static io.grpc.MethodDescriptor<UpdateTripRequest,
+      Trip> getUpdateTripMethod() {
+    io.grpc.MethodDescriptor<UpdateTripRequest, Trip> getUpdateTripMethod;
     if ((getUpdateTripMethod = TripServiceGrpc.getUpdateTripMethod) == null) {
       synchronized (TripServiceGrpc.class) {
         if ((getUpdateTripMethod = TripServiceGrpc.getUpdateTripMethod) == null) {
           TripServiceGrpc.getUpdateTripMethod = getUpdateTripMethod =
-              io.grpc.MethodDescriptor.<google.maps.fleetengine.v1.UpdateTripRequest, google.maps.fleetengine.v1.Trip>newBuilder()
+              io.grpc.MethodDescriptor.<UpdateTripRequest, Trip>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTrip"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.UpdateTripRequest.getDefaultInstance()))
+                  UpdateTripRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  google.maps.fleetengine.v1.Trip.getDefaultInstance()))
+                  Trip.getDefaultInstance()))
               .setSchemaDescriptor(new TripServiceMethodDescriptorSupplier("UpdateTrip"))
               .build();
         }
@@ -192,7 +193,7 @@ public final class TripServiceGrpc {
   public static TripServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TripServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<TripServiceStub>() {
-        @java.lang.Override
+        @Override
         public TripServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new TripServiceStub(channel, callOptions);
         }
@@ -207,7 +208,7 @@ public final class TripServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TripServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<TripServiceBlockingStub>() {
-        @java.lang.Override
+        @Override
         public TripServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new TripServiceBlockingStub(channel, callOptions);
         }
@@ -222,7 +223,7 @@ public final class TripServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TripServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<TripServiceFutureStub>() {
-        @java.lang.Override
+        @Override
         public TripServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new TripServiceFutureStub(channel, callOptions);
         }
@@ -242,8 +243,8 @@ public final class TripServiceGrpc {
      * Creates a trip in the Fleet Engine and returns the new trip.
      * </pre>
      */
-    public void createTrip(google.maps.fleetengine.v1.CreateTripRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip> responseObserver) {
+    public void createTrip(CreateTripRequest request,
+        io.grpc.stub.StreamObserver<Trip> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTripMethod(), responseObserver);
     }
 
@@ -252,8 +253,8 @@ public final class TripServiceGrpc {
      * Get information about a single trip.
      * </pre>
      */
-    public void getTrip(google.maps.fleetengine.v1.GetTripRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip> responseObserver) {
+    public void getTrip(GetTripRequest request,
+        io.grpc.stub.StreamObserver<Trip> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTripMethod(), responseObserver);
     }
 
@@ -262,7 +263,7 @@ public final class TripServiceGrpc {
      * Report billable trip usage.
      * </pre>
      */
-    public void reportBillableTrip(google.maps.fleetengine.v1.ReportBillableTripRequest request,
+    public void reportBillableTrip(ReportBillableTripRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReportBillableTripMethod(), responseObserver);
     }
@@ -272,8 +273,8 @@ public final class TripServiceGrpc {
      * Get all the trips for a specific vehicle.
      * </pre>
      */
-    public void searchTrips(google.maps.fleetengine.v1.SearchTripsRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.SearchTripsResponse> responseObserver) {
+    public void searchTrips(SearchTripsRequest request,
+        io.grpc.stub.StreamObserver<SearchTripsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchTripsMethod(), responseObserver);
     }
 
@@ -282,47 +283,47 @@ public final class TripServiceGrpc {
      * Updates trip data.
      * </pre>
      */
-    public void updateTrip(google.maps.fleetengine.v1.UpdateTripRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip> responseObserver) {
+    public void updateTrip(UpdateTripRequest request,
+        io.grpc.stub.StreamObserver<Trip> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTripMethod(), responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateTripMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                google.maps.fleetengine.v1.CreateTripRequest,
-                google.maps.fleetengine.v1.Trip>(
+                CreateTripRequest,
+                Trip>(
                   this, METHODID_CREATE_TRIP)))
           .addMethod(
             getGetTripMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                google.maps.fleetengine.v1.GetTripRequest,
-                google.maps.fleetengine.v1.Trip>(
+                GetTripRequest,
+                Trip>(
                   this, METHODID_GET_TRIP)))
           .addMethod(
             getReportBillableTripMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                google.maps.fleetengine.v1.ReportBillableTripRequest,
+                ReportBillableTripRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_REPORT_BILLABLE_TRIP)))
           .addMethod(
             getSearchTripsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                google.maps.fleetengine.v1.SearchTripsRequest,
-                google.maps.fleetengine.v1.SearchTripsResponse>(
+                SearchTripsRequest,
+                SearchTripsResponse>(
                   this, METHODID_SEARCH_TRIPS)))
           .addMethod(
             getUpdateTripMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                google.maps.fleetengine.v1.UpdateTripRequest,
-                google.maps.fleetengine.v1.Trip>(
+                UpdateTripRequest,
+                Trip>(
                   this, METHODID_UPDATE_TRIP)))
           .build();
     }
@@ -339,7 +340,7 @@ public final class TripServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected TripServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TripServiceStub(channel, callOptions);
@@ -350,8 +351,8 @@ public final class TripServiceGrpc {
      * Creates a trip in the Fleet Engine and returns the new trip.
      * </pre>
      */
-    public void createTrip(google.maps.fleetengine.v1.CreateTripRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip> responseObserver) {
+    public void createTrip(CreateTripRequest request,
+        io.grpc.stub.StreamObserver<Trip> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTripMethod(), getCallOptions()), request, responseObserver);
     }
@@ -361,8 +362,8 @@ public final class TripServiceGrpc {
      * Get information about a single trip.
      * </pre>
      */
-    public void getTrip(google.maps.fleetengine.v1.GetTripRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip> responseObserver) {
+    public void getTrip(GetTripRequest request,
+        io.grpc.stub.StreamObserver<Trip> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTripMethod(), getCallOptions()), request, responseObserver);
     }
@@ -372,7 +373,7 @@ public final class TripServiceGrpc {
      * Report billable trip usage.
      * </pre>
      */
-    public void reportBillableTrip(google.maps.fleetengine.v1.ReportBillableTripRequest request,
+    public void reportBillableTrip(ReportBillableTripRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReportBillableTripMethod(), getCallOptions()), request, responseObserver);
@@ -383,8 +384,8 @@ public final class TripServiceGrpc {
      * Get all the trips for a specific vehicle.
      * </pre>
      */
-    public void searchTrips(google.maps.fleetengine.v1.SearchTripsRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.SearchTripsResponse> responseObserver) {
+    public void searchTrips(SearchTripsRequest request,
+        io.grpc.stub.StreamObserver<SearchTripsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchTripsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -394,8 +395,8 @@ public final class TripServiceGrpc {
      * Updates trip data.
      * </pre>
      */
-    public void updateTrip(google.maps.fleetengine.v1.UpdateTripRequest request,
-        io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip> responseObserver) {
+    public void updateTrip(UpdateTripRequest request,
+        io.grpc.stub.StreamObserver<Trip> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTripMethod(), getCallOptions()), request, responseObserver);
     }
@@ -412,7 +413,7 @@ public final class TripServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected TripServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TripServiceBlockingStub(channel, callOptions);
@@ -423,7 +424,7 @@ public final class TripServiceGrpc {
      * Creates a trip in the Fleet Engine and returns the new trip.
      * </pre>
      */
-    public google.maps.fleetengine.v1.Trip createTrip(google.maps.fleetengine.v1.CreateTripRequest request) {
+    public Trip createTrip(CreateTripRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTripMethod(), getCallOptions(), request);
     }
@@ -433,7 +434,7 @@ public final class TripServiceGrpc {
      * Get information about a single trip.
      * </pre>
      */
-    public google.maps.fleetengine.v1.Trip getTrip(google.maps.fleetengine.v1.GetTripRequest request) {
+    public Trip getTrip(GetTripRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTripMethod(), getCallOptions(), request);
     }
@@ -443,7 +444,7 @@ public final class TripServiceGrpc {
      * Report billable trip usage.
      * </pre>
      */
-    public com.google.protobuf.Empty reportBillableTrip(google.maps.fleetengine.v1.ReportBillableTripRequest request) {
+    public com.google.protobuf.Empty reportBillableTrip(ReportBillableTripRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReportBillableTripMethod(), getCallOptions(), request);
     }
@@ -453,7 +454,7 @@ public final class TripServiceGrpc {
      * Get all the trips for a specific vehicle.
      * </pre>
      */
-    public google.maps.fleetengine.v1.SearchTripsResponse searchTrips(google.maps.fleetengine.v1.SearchTripsRequest request) {
+    public SearchTripsResponse searchTrips(SearchTripsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchTripsMethod(), getCallOptions(), request);
     }
@@ -463,7 +464,7 @@ public final class TripServiceGrpc {
      * Updates trip data.
      * </pre>
      */
-    public google.maps.fleetengine.v1.Trip updateTrip(google.maps.fleetengine.v1.UpdateTripRequest request) {
+    public Trip updateTrip(UpdateTripRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTripMethod(), getCallOptions(), request);
     }
@@ -480,7 +481,7 @@ public final class TripServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected TripServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TripServiceFutureStub(channel, callOptions);
@@ -491,8 +492,8 @@ public final class TripServiceGrpc {
      * Creates a trip in the Fleet Engine and returns the new trip.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.Trip> createTrip(
-        google.maps.fleetengine.v1.CreateTripRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Trip> createTrip(
+        CreateTripRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTripMethod(), getCallOptions()), request);
     }
@@ -502,8 +503,8 @@ public final class TripServiceGrpc {
      * Get information about a single trip.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.Trip> getTrip(
-        google.maps.fleetengine.v1.GetTripRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Trip> getTrip(
+        GetTripRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTripMethod(), getCallOptions()), request);
     }
@@ -514,7 +515,7 @@ public final class TripServiceGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> reportBillableTrip(
-        google.maps.fleetengine.v1.ReportBillableTripRequest request) {
+        ReportBillableTripRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportBillableTripMethod(), getCallOptions()), request);
     }
@@ -524,8 +525,8 @@ public final class TripServiceGrpc {
      * Get all the trips for a specific vehicle.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.SearchTripsResponse> searchTrips(
-        google.maps.fleetengine.v1.SearchTripsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<SearchTripsResponse> searchTrips(
+        SearchTripsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchTripsMethod(), getCallOptions()), request);
     }
@@ -535,8 +536,8 @@ public final class TripServiceGrpc {
      * Updates trip data.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.Trip> updateTrip(
-        google.maps.fleetengine.v1.UpdateTripRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Trip> updateTrip(
+        UpdateTripRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTripMethod(), getCallOptions()), request);
     }
@@ -561,37 +562,37 @@ public final class TripServiceGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CREATE_TRIP:
-          serviceImpl.createTrip((google.maps.fleetengine.v1.CreateTripRequest) request,
-              (io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip>) responseObserver);
+          serviceImpl.createTrip((CreateTripRequest) request,
+              (io.grpc.stub.StreamObserver<Trip>) responseObserver);
           break;
         case METHODID_GET_TRIP:
-          serviceImpl.getTrip((google.maps.fleetengine.v1.GetTripRequest) request,
-              (io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip>) responseObserver);
+          serviceImpl.getTrip((GetTripRequest) request,
+              (io.grpc.stub.StreamObserver<Trip>) responseObserver);
           break;
         case METHODID_REPORT_BILLABLE_TRIP:
-          serviceImpl.reportBillableTrip((google.maps.fleetengine.v1.ReportBillableTripRequest) request,
+          serviceImpl.reportBillableTrip((ReportBillableTripRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_SEARCH_TRIPS:
-          serviceImpl.searchTrips((google.maps.fleetengine.v1.SearchTripsRequest) request,
-              (io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.SearchTripsResponse>) responseObserver);
+          serviceImpl.searchTrips((SearchTripsRequest) request,
+              (io.grpc.stub.StreamObserver<SearchTripsResponse>) responseObserver);
           break;
         case METHODID_UPDATE_TRIP:
-          serviceImpl.updateTrip((google.maps.fleetengine.v1.UpdateTripRequest) request,
-              (io.grpc.stub.StreamObserver<google.maps.fleetengine.v1.Trip>) responseObserver);
+          serviceImpl.updateTrip((UpdateTripRequest) request,
+              (io.grpc.stub.StreamObserver<Trip>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -605,12 +606,12 @@ public final class TripServiceGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     TripServiceBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return google.maps.fleetengine.v1.TripApi.getDescriptor();
+      return TripApi.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("TripService");
     }
@@ -630,7 +631,7 @@ public final class TripServiceGrpc {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }

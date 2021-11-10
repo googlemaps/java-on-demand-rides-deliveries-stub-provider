@@ -39,7 +39,7 @@ public interface SearchVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleMatch matches = 1;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.VehicleMatch> 
+  java.util.List<VehicleMatch>
       getMatchesList();
   /**
    * <pre>
@@ -57,7 +57,7 @@ public interface SearchVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleMatch matches = 1;</code>
    */
-  google.maps.fleetengine.v1.VehicleMatch getMatches(int index);
+  VehicleMatch getMatches(int index);
   /**
    * <pre>
    * List of vehicles that match the request options.
@@ -91,7 +91,7 @@ public interface SearchVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleMatch matches = 1;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleMatchOrBuilder> 
+  java.util.List<? extends VehicleMatchOrBuilder>
       getMatchesOrBuilderList();
   /**
    * <pre>
@@ -109,6 +109,6 @@ public interface SearchVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleMatch matches = 1;</code>
    */
-  google.maps.fleetengine.v1.VehicleMatchOrBuilder getMatchesOrBuilder(
+  VehicleMatchOrBuilder getMatchesOrBuilder(
       int index);
 }

@@ -23,8 +23,8 @@ apply plugin: 'java'
 description = 'PROTO library for proto-google-maps-fleetengine-v1-java'
 group = 'com.google.api.grpc'
 version = (findProperty('version') == 'unspecified') ? '0.0.0-SNAPSHOT' : version
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
   mavenCentral()
@@ -32,9 +32,9 @@ repositories {
 }
 
 dependencies {
-  compile 'com.google.protobuf:protobuf-java:3.15.2'
-  compile 'com.google.api:api-common:2.0.1'
-  compile 'com.google.api.grpc:proto-google-common-protos:2.0.1'
+  compile 'com.google.protobuf:protobuf-java:3.18.1'
+  compile 'com.google.api:api-common:2.0.5'
+  compile 'com.google.api.grpc:proto-google-common-protos:2.4.1'
   
 }
 

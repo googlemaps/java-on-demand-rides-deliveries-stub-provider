@@ -32,7 +32,7 @@ public interface LicensePlateOrBuilder extends
    * <code>string country_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The countryCode.
    */
-  java.lang.String getCountryCode();
+  String getCountryCode();
   /**
    * <pre>
    * Required. CLDR Country/Region Code.  For example, "US" for United States,
@@ -57,7 +57,7 @@ public interface LicensePlateOrBuilder extends
    * <code>string last_character = 2;</code>
    * @return The lastCharacter.
    */
-  java.lang.String getLastCharacter();
+  String getLastCharacter();
   /**
    * <pre>
    * The last digit of the license plate or "-1" to denote no numeric value

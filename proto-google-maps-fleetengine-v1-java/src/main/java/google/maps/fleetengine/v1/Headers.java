@@ -43,7 +43,7 @@ public final class Headers {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\'google/maps/fleetengine/v1/header.prot" +
       "o\022\023maps.fleetengine.v1\032\037google/api/field" +
       "_behavior.proto\"\177\n\rRequestHeader\022\025\n\rlang" +
@@ -64,7 +64,7 @@ public final class Headers {
     internal_static_maps_fleetengine_v1_RequestHeader_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_RequestHeader_descriptor,
-        new java.lang.String[] { "LanguageCode", "RegionCode", "SdkVersion", "OsVersion", "DeviceModel", });
+        new String[] { "LanguageCode", "RegionCode", "SdkVersion", "OsVersion", "DeviceModel", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

@@ -34,7 +34,7 @@ public interface RequestHeaderOrBuilder extends
    * <code>string language_code = 1;</code>
    * @return The languageCode.
    */
-  java.lang.String getLanguageCode();
+  String getLanguageCode();
   /**
    * <pre>
    * The language requested. The external form of Google International
@@ -57,7 +57,7 @@ public interface RequestHeaderOrBuilder extends
    * <code>string region_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The regionCode.
    */
-  java.lang.String getRegionCode();
+  String getRegionCode();
   /**
    * <pre>
    * Required. CLDR region code of the region where the request originates.
@@ -77,7 +77,7 @@ public interface RequestHeaderOrBuilder extends
    * <code>string sdk_version = 3;</code>
    * @return The sdkVersion.
    */
-  java.lang.String getSdkVersion();
+  String getSdkVersion();
   /**
    * <pre>
    * Version of the calling SDK, if applicable.
@@ -97,7 +97,7 @@ public interface RequestHeaderOrBuilder extends
    * <code>string os_version = 4;</code>
    * @return The osVersion.
    */
-  java.lang.String getOsVersion();
+  String getOsVersion();
   /**
    * <pre>
    * Version of the operating system on which the calling SDK is running.
@@ -117,7 +117,7 @@ public interface RequestHeaderOrBuilder extends
    * <code>string device_model = 5;</code>
    * @return The deviceModel.
    */
-  java.lang.String getDeviceModel();
+  String getDeviceModel();
   /**
    * <pre>
    * Model of the device on which the calling SDK is running.

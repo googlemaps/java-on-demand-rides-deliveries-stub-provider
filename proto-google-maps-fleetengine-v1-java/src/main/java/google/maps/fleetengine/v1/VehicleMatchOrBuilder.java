@@ -40,7 +40,7 @@ public interface VehicleMatchOrBuilder extends
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehicle.
    */
-  google.maps.fleetengine.v1.Vehicle getVehicle();
+  Vehicle getVehicle();
   /**
    * <pre>
    * Required. A vehicle that matches the request.
@@ -48,7 +48,7 @@ public interface VehicleMatchOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.VehicleOrBuilder getVehicleOrBuilder();
+  VehicleOrBuilder getVehicleOrBuilder();
 
   /**
    * <pre>
@@ -264,7 +264,7 @@ public interface VehicleMatchOrBuilder extends
    * <code>.maps.fleetengine.v1.TripType trip_type = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The tripType.
    */
-  google.maps.fleetengine.v1.TripType getTripType();
+  TripType getTripType();
 
   /**
    * <pre>
@@ -277,7 +277,7 @@ public interface VehicleMatchOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.Waypoint> 
+  java.util.List<Waypoint>
       getVehicleTripsWaypointsList();
   /**
    * <pre>
@@ -290,7 +290,7 @@ public interface VehicleMatchOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  google.maps.fleetengine.v1.Waypoint getVehicleTripsWaypoints(int index);
+  Waypoint getVehicleTripsWaypoints(int index);
   /**
    * <pre>
    * The ordered list of waypoints used to calculate the ETA. The list
@@ -314,7 +314,7 @@ public interface VehicleMatchOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.WaypointOrBuilder> 
+  java.util.List<? extends WaypointOrBuilder>
       getVehicleTripsWaypointsOrBuilderList();
   /**
    * <pre>
@@ -327,7 +327,7 @@ public interface VehicleMatchOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Waypoint vehicle_trips_waypoints = 7;</code>
    */
-  google.maps.fleetengine.v1.WaypointOrBuilder getVehicleTripsWaypointsOrBuilder(
+  WaypointOrBuilder getVehicleTripsWaypointsOrBuilder(
       int index);
 
   /**
@@ -347,7 +347,7 @@ public interface VehicleMatchOrBuilder extends
    * <code>.maps.fleetengine.v1.VehicleMatch.VehicleMatchType vehicle_match_type = 8;</code>
    * @return The vehicleMatchType.
    */
-  google.maps.fleetengine.v1.VehicleMatch.VehicleMatchType getVehicleMatchType();
+  VehicleMatch.VehicleMatchType getVehicleMatchType();
 
   /**
    * <pre>
@@ -366,7 +366,7 @@ public interface VehicleMatchOrBuilder extends
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
    * @return The requestedOrderedBy.
    */
-  google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder getRequestedOrderedBy();
+  SearchVehiclesRequest.VehicleMatchOrder getRequestedOrderedBy();
 
   /**
    * <pre>
@@ -391,5 +391,5 @@ public interface VehicleMatchOrBuilder extends
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
    * @return The orderedBy.
    */
-  google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder getOrderedBy();
+  SearchVehiclesRequest.VehicleMatchOrder getOrderedBy();
 }

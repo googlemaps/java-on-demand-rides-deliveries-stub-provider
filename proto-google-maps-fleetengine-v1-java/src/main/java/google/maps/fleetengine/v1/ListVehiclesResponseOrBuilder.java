@@ -32,7 +32,7 @@ public interface ListVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.Vehicle> 
+  java.util.List<Vehicle>
       getVehiclesList();
   /**
    * <pre>
@@ -43,7 +43,7 @@ public interface ListVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
    */
-  google.maps.fleetengine.v1.Vehicle getVehicles(int index);
+  Vehicle getVehicles(int index);
   /**
    * <pre>
    * Depends on vehicles matching request criteria.
@@ -63,7 +63,7 @@ public interface ListVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleOrBuilder> 
+  java.util.List<? extends VehicleOrBuilder>
       getVehiclesOrBuilderList();
   /**
    * <pre>
@@ -74,7 +74,7 @@ public interface ListVehiclesResponseOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
    */
-  google.maps.fleetengine.v1.VehicleOrBuilder getVehiclesOrBuilder(
+  VehicleOrBuilder getVehiclesOrBuilder(
       int index);
 
   /**
@@ -86,7 +86,7 @@ public interface ListVehiclesResponseOrBuilder extends
    * <code>string next_page_token = 2;</code>
    * @return The nextPageToken.
    */
-  java.lang.String getNextPageToken();
+  String getNextPageToken();
   /**
    * <pre>
    * Token to retrieve the next page of vehicles, or empty if there are no

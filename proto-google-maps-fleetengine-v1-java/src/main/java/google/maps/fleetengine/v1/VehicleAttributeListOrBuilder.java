@@ -30,7 +30,7 @@ public interface VehicleAttributeListOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 1;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.VehicleAttribute> 
+  java.util.List<VehicleAttribute>
       getAttributesList();
   /**
    * <pre>
@@ -39,7 +39,7 @@ public interface VehicleAttributeListOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 1;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttribute getAttributes(int index);
+  VehicleAttribute getAttributes(int index);
   /**
    * <pre>
    * A list of attributes in this collection.
@@ -55,7 +55,7 @@ public interface VehicleAttributeListOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 1;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleAttributeOrBuilder> 
+  java.util.List<? extends VehicleAttributeOrBuilder>
       getAttributesOrBuilderList();
   /**
    * <pre>
@@ -64,6 +64,6 @@ public interface VehicleAttributeListOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 1;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeOrBuilder getAttributesOrBuilder(
+  VehicleAttributeOrBuilder getAttributesOrBuilder(
       int index);
 }

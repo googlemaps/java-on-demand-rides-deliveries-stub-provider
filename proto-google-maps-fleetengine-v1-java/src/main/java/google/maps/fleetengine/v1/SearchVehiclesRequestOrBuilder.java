@@ -40,7 +40,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -61,7 +61,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>string parent = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The parent.
    */
-  java.lang.String getParent();
+  String getParent();
   /**
    * <pre>
    * Required. Must be in the format "providers/{provider}".
@@ -93,7 +93,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The pickupPoint.
    */
-  google.maps.fleetengine.v1.TerminalLocation getPickupPoint();
+  TerminalLocation getPickupPoint();
   /**
    * <pre>
    * Required. The pickup point to search near.
@@ -101,7 +101,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.TerminalLocationOrBuilder getPickupPointOrBuilder();
+  TerminalLocationOrBuilder getPickupPointOrBuilder();
 
   /**
    * <pre>
@@ -122,7 +122,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 5;</code>
    * @return The dropoffPoint.
    */
-  google.maps.fleetengine.v1.TerminalLocation getDropoffPoint();
+  TerminalLocation getDropoffPoint();
   /**
    * <pre>
    * The customer's intended dropoff location. The field is required if
@@ -131,7 +131,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 5;</code>
    */
-  google.maps.fleetengine.v1.TerminalLocationOrBuilder getDropoffPointOrBuilder();
+  TerminalLocationOrBuilder getDropoffPointOrBuilder();
 
   /**
    * <pre>
@@ -178,7 +178,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.TripType trip_types = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the tripTypes.
    */
-  java.util.List<google.maps.fleetengine.v1.TripType> getTripTypesList();
+  java.util.List<TripType> getTripTypesList();
   /**
    * <pre>
    * Required. Restricts the search to only those vehicles that support at least
@@ -199,7 +199,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The tripTypes at the given index.
    */
-  google.maps.fleetengine.v1.TripType getTripTypes(int index);
+  TripType getTripTypes(int index);
   /**
    * <pre>
    * Required. Restricts the search to only those vehicles that support at least
@@ -209,7 +209,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>repeated .maps.fleetengine.v1.TripType trip_types = 9 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the enum numeric values on the wire for tripTypes.
    */
-  java.util.List<java.lang.Integer>
+  java.util.List<Integer>
   getTripTypesValueList();
   /**
    * <pre>
@@ -264,7 +264,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType vehicle_types = 14 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  java.util.List<google.maps.fleetengine.v1.Vehicle.VehicleType> 
+  java.util.List<Vehicle.VehicleType>
       getVehicleTypesList();
   /**
    * <pre>
@@ -274,7 +274,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType vehicle_types = 14 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.Vehicle.VehicleType getVehicleTypes(int index);
+  Vehicle.VehicleType getVehicleTypes(int index);
   /**
    * <pre>
    * Required. Restricts the search to those vehicles with the specified types.
@@ -292,7 +292,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType vehicle_types = 14 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.Vehicle.VehicleTypeOrBuilder> 
+  java.util.List<? extends Vehicle.VehicleTypeOrBuilder>
       getVehicleTypesOrBuilderList();
   /**
    * <pre>
@@ -302,7 +302,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType vehicle_types = 14 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.Vehicle.VehicleTypeOrBuilder getVehicleTypesOrBuilder(
+  Vehicle.VehicleTypeOrBuilder getVehicleTypesOrBuilder(
       int index);
 
   /**
@@ -327,7 +327,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute required_attributes = 12;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.VehicleAttribute> 
+  java.util.List<VehicleAttribute>
       getRequiredAttributesList();
   /**
    * <pre>
@@ -351,7 +351,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute required_attributes = 12;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttribute getRequiredAttributes(int index);
+  VehicleAttribute getRequiredAttributes(int index);
   /**
    * <pre>
    * Callers can form complex logical operations using the
@@ -397,7 +397,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute required_attributes = 12;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleAttributeOrBuilder> 
+  java.util.List<? extends VehicleAttributeOrBuilder>
       getRequiredAttributesOrBuilderList();
   /**
    * <pre>
@@ -421,7 +421,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute required_attributes = 12;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeOrBuilder getRequiredAttributesOrBuilder(
+  VehicleAttributeOrBuilder getRequiredAttributesOrBuilder(
       int index);
 
   /**
@@ -435,7 +435,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attributes = 15;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.VehicleAttributeList> 
+  java.util.List<VehicleAttributeList>
       getRequiredOneOfAttributesList();
   /**
    * <pre>
@@ -448,7 +448,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attributes = 15;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeList getRequiredOneOfAttributes(int index);
+  VehicleAttributeList getRequiredOneOfAttributes(int index);
   /**
    * <pre>
    * Restricts the search to only those vehicles with at least one of
@@ -472,7 +472,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attributes = 15;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleAttributeListOrBuilder> 
+  java.util.List<? extends VehicleAttributeListOrBuilder>
       getRequiredOneOfAttributesOrBuilderList();
   /**
    * <pre>
@@ -485,7 +485,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attributes = 15;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeListOrBuilder getRequiredOneOfAttributesOrBuilder(
+  VehicleAttributeListOrBuilder getRequiredOneOfAttributesOrBuilder(
       int index);
 
   /**
@@ -499,7 +499,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attribute_sets = 20;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.VehicleAttributeList> 
+  java.util.List<VehicleAttributeList>
       getRequiredOneOfAttributeSetsList();
   /**
    * <pre>
@@ -512,7 +512,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attribute_sets = 20;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeList getRequiredOneOfAttributeSets(int index);
+  VehicleAttributeList getRequiredOneOfAttributeSets(int index);
   /**
    * <pre>
    * Restricts the search to only those vehicles with at least one set of the
@@ -536,7 +536,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attribute_sets = 20;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleAttributeListOrBuilder> 
+  java.util.List<? extends VehicleAttributeListOrBuilder>
       getRequiredOneOfAttributeSetsOrBuilderList();
   /**
    * <pre>
@@ -549,7 +549,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttributeList required_one_of_attribute_sets = 20;</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeListOrBuilder getRequiredOneOfAttributeSetsOrBuilder(
+  VehicleAttributeListOrBuilder getRequiredOneOfAttributeSetsOrBuilder(
       int index);
 
   /**
@@ -569,7 +569,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder order_by = 13 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The orderBy.
    */
-  google.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder getOrderBy();
+  SearchVehiclesRequest.VehicleMatchOrder getOrderBy();
 
   /**
    * <pre>
@@ -595,7 +595,7 @@ public interface SearchVehiclesRequestOrBuilder extends
    * <code>string trip_id = 19;</code>
    * @return The tripId.
    */
-  java.lang.String getTripId();
+  String getTripId();
   /**
    * <pre>
    * Indicates the ID of the trip the searchVehicleRequest is

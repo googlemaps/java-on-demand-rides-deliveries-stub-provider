@@ -67,7 +67,7 @@ public interface TerminalLocationOrBuilder extends
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The terminalPointId.
    */
-  google.maps.fleetengine.v1.TerminalPointId getTerminalPointId();
+  TerminalPointId getTerminalPointId();
   /**
    * <pre>
    * Required. ID of the terminal point.
@@ -75,7 +75,7 @@ public interface TerminalLocationOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.TerminalPointIdOrBuilder getTerminalPointIdOrBuilder();
+  TerminalPointIdOrBuilder getTerminalPointIdOrBuilder();
 
   /**
    * <pre>
@@ -85,7 +85,7 @@ public interface TerminalLocationOrBuilder extends
    * <code>string access_point_id = 3 [deprecated = true];</code>
    * @return The accessPointId.
    */
-  @java.lang.Deprecated java.lang.String getAccessPointId();
+  @Deprecated String getAccessPointId();
   /**
    * <pre>
    * Deprecated.
@@ -94,7 +94,7 @@ public interface TerminalLocationOrBuilder extends
    * <code>string access_point_id = 3 [deprecated = true];</code>
    * @return The bytes for accessPointId.
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
+  @Deprecated com.google.protobuf.ByteString
       getAccessPointIdBytes();
 
   /**
@@ -105,7 +105,7 @@ public interface TerminalLocationOrBuilder extends
    * <code>string trip_id = 4 [deprecated = true];</code>
    * @return The tripId.
    */
-  @java.lang.Deprecated java.lang.String getTripId();
+  @Deprecated String getTripId();
   /**
    * <pre>
    * Deprecated. Use vehicle.waypoint instead.
@@ -114,7 +114,7 @@ public interface TerminalLocationOrBuilder extends
    * <code>string trip_id = 4 [deprecated = true];</code>
    * @return The bytes for tripId.
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
+  @Deprecated com.google.protobuf.ByteString
       getTripIdBytes();
 
   /**
@@ -125,7 +125,7 @@ public interface TerminalLocationOrBuilder extends
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    * @return The enum numeric value on the wire for terminalLocationType.
    */
-  @java.lang.Deprecated int getTerminalLocationTypeValue();
+  @Deprecated int getTerminalLocationTypeValue();
   /**
    * <pre>
    * Deprecated. Vehicle.waypoint will have this data.
@@ -134,5 +134,5 @@ public interface TerminalLocationOrBuilder extends
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    * @return The terminalLocationType.
    */
-  @java.lang.Deprecated google.maps.fleetengine.v1.WaypointType getTerminalLocationType();
+  @Deprecated WaypointType getTerminalLocationType();
 }

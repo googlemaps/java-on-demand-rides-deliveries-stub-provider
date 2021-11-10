@@ -31,7 +31,7 @@ public interface TripOrBuilder extends
    * <code>string name = 1;</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * In the format "providers/{provider}/trips/{trip}"
@@ -51,7 +51,7 @@ public interface TripOrBuilder extends
    * <code>string vehicle_id = 2;</code>
    * @return The vehicleId.
    */
-  java.lang.String getVehicleId();
+  String getVehicleId();
   /**
    * <pre>
    * ID of the vehicle making this trip.
@@ -80,7 +80,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.TripStatus trip_status = 3;</code>
    * @return The tripStatus.
    */
-  google.maps.fleetengine.v1.TripStatus getTripStatus();
+  TripStatus getTripStatus();
 
   /**
    * <pre>
@@ -99,7 +99,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.TripType trip_type = 4;</code>
    * @return The tripType.
    */
-  google.maps.fleetengine.v1.TripType getTripType();
+  TripType getTripType();
 
   /**
    * <pre>
@@ -118,7 +118,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
    * @return The pickupPoint.
    */
-  google.maps.fleetengine.v1.TerminalLocation getPickupPoint();
+  TerminalLocation getPickupPoint();
   /**
    * <pre>
    * Location where customer indicates they will be picked up.
@@ -126,7 +126,7 @@ public interface TripOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TerminalLocation pickup_point = 5;</code>
    */
-  google.maps.fleetengine.v1.TerminalLocationOrBuilder getPickupPointOrBuilder();
+  TerminalLocationOrBuilder getPickupPointOrBuilder();
 
   /**
    * <pre>
@@ -149,7 +149,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The actualPickupPoint.
    */
-  google.maps.fleetengine.v1.StopLocation getActualPickupPoint();
+  StopLocation getActualPickupPoint();
   /**
    * <pre>
    * Input only. The actual location when and where customer was picked up.
@@ -159,7 +159,7 @@ public interface TripOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_point = 22 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.StopLocationOrBuilder getActualPickupPointOrBuilder();
+  StopLocationOrBuilder getActualPickupPointOrBuilder();
 
   /**
    * <pre>
@@ -184,7 +184,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The actualPickupArrivalPoint.
    */
-  google.maps.fleetengine.v1.StopLocation getActualPickupArrivalPoint();
+  StopLocation getActualPickupArrivalPoint();
   /**
    * <pre>
    * Input only. The actual time and location of the driver arrival at
@@ -195,7 +195,7 @@ public interface TripOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.StopLocation actual_pickup_arrival_point = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.StopLocationOrBuilder getActualPickupArrivalPointOrBuilder();
+  StopLocationOrBuilder getActualPickupArrivalPointOrBuilder();
 
   /**
    * <pre>
@@ -236,7 +236,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.TerminalLocation> 
+  java.util.List<TerminalLocation>
       getIntermediateDestinationsList();
   /**
    * <pre>
@@ -247,7 +247,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  google.maps.fleetengine.v1.TerminalLocation getIntermediateDestinations(int index);
+  TerminalLocation getIntermediateDestinations(int index);
   /**
    * <pre>
    * Intermediate stops in order that the trip requests (in addition
@@ -267,7 +267,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.TerminalLocationOrBuilder> 
+  java.util.List<? extends TerminalLocationOrBuilder>
       getIntermediateDestinationsOrBuilderList();
   /**
    * <pre>
@@ -278,7 +278,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TerminalLocation intermediate_destinations = 14;</code>
    */
-  google.maps.fleetengine.v1.TerminalLocationOrBuilder getIntermediateDestinationsOrBuilder(
+  TerminalLocationOrBuilder getIntermediateDestinationsOrBuilder(
       int index);
 
   /**
@@ -343,7 +343,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  java.util.List<google.maps.fleetengine.v1.StopLocation> 
+  java.util.List<StopLocation>
       getActualIntermediateDestinationArrivalPointsList();
   /**
    * <pre>
@@ -355,7 +355,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinationArrivalPoints(int index);
+  StopLocation getActualIntermediateDestinationArrivalPoints(int index);
   /**
    * <pre>
    * Input only. The actual time and location of the driver's arrival at
@@ -377,7 +377,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.StopLocationOrBuilder> 
+  java.util.List<? extends StopLocationOrBuilder>
       getActualIntermediateDestinationArrivalPointsOrBuilderList();
   /**
    * <pre>
@@ -389,7 +389,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destination_arrival_points = 33 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.StopLocationOrBuilder getActualIntermediateDestinationArrivalPointsOrBuilder(
+  StopLocationOrBuilder getActualIntermediateDestinationArrivalPointsOrBuilder(
       int index);
 
   /**
@@ -402,7 +402,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  java.util.List<google.maps.fleetengine.v1.StopLocation> 
+  java.util.List<StopLocation>
       getActualIntermediateDestinationsList();
   /**
    * <pre>
@@ -414,7 +414,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinations(int index);
+  StopLocation getActualIntermediateDestinations(int index);
   /**
    * <pre>
    * Input only. The actual time and location when and where the customer was picked up from
@@ -436,7 +436,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.StopLocationOrBuilder> 
+  java.util.List<? extends StopLocationOrBuilder>
       getActualIntermediateDestinationsOrBuilderList();
   /**
    * <pre>
@@ -448,7 +448,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.StopLocation actual_intermediate_destinations = 34 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.StopLocationOrBuilder getActualIntermediateDestinationsOrBuilder(
+  StopLocationOrBuilder getActualIntermediateDestinationsOrBuilder(
       int index);
 
   /**
@@ -468,7 +468,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
    * @return The dropoffPoint.
    */
-  google.maps.fleetengine.v1.TerminalLocation getDropoffPoint();
+  TerminalLocation getDropoffPoint();
   /**
    * <pre>
    * Location where customer indicates they will be dropped off.
@@ -476,7 +476,7 @@ public interface TripOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TerminalLocation dropoff_point = 7;</code>
    */
-  google.maps.fleetengine.v1.TerminalLocationOrBuilder getDropoffPointOrBuilder();
+  TerminalLocationOrBuilder getDropoffPointOrBuilder();
 
   /**
    * <pre>
@@ -499,7 +499,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The actualDropoffPoint.
    */
-  google.maps.fleetengine.v1.StopLocation getActualDropoffPoint();
+  StopLocation getActualDropoffPoint();
   /**
    * <pre>
    * Input only. The actual time and location when and where customer was dropped off.
@@ -509,7 +509,7 @@ public interface TripOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.StopLocation actual_dropoff_point = 23 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.StopLocationOrBuilder getActualDropoffPointOrBuilder();
+  StopLocationOrBuilder getActualDropoffPointOrBuilder();
 
   /**
    * <pre>
@@ -550,7 +550,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  java.util.List<google.maps.fleetengine.v1.TripWaypoint> 
+  java.util.List<TripWaypoint>
       getRemainingWaypointsList();
   /**
    * <pre>
@@ -561,7 +561,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.TripWaypoint getRemainingWaypoints(int index);
+  TripWaypoint getRemainingWaypoints(int index);
   /**
    * <pre>
    * Output only. The full path from the current location to the dropoff point, inclusive.
@@ -581,7 +581,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+  java.util.List<? extends TripWaypointOrBuilder>
       getRemainingWaypointsOrBuilderList();
   /**
    * <pre>
@@ -592,7 +592,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint remaining_waypoints = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  google.maps.fleetengine.v1.TripWaypointOrBuilder getRemainingWaypointsOrBuilder(
+  TripWaypointOrBuilder getRemainingWaypointsOrBuilder(
       int index);
 
   /**
@@ -607,7 +607,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  java.util.List<google.maps.fleetengine.v1.TripWaypoint> 
+  java.util.List<TripWaypoint>
       getVehicleWaypointsList();
   /**
    * <pre>
@@ -621,7 +621,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  google.maps.fleetengine.v1.TripWaypoint getVehicleWaypoints(int index);
+  TripWaypoint getVehicleWaypoints(int index);
   /**
    * <pre>
    * This field supports manual ordering of the waypoints for the trip.
@@ -647,7 +647,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.TripWaypointOrBuilder> 
+  java.util.List<? extends TripWaypointOrBuilder>
       getVehicleWaypointsOrBuilderList();
   /**
    * <pre>
@@ -661,7 +661,7 @@ public interface TripOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.TripWaypoint vehicle_waypoints = 20;</code>
    */
-  google.maps.fleetengine.v1.TripWaypointOrBuilder getVehicleWaypointsOrBuilder(
+  TripWaypointOrBuilder getVehicleWaypointsOrBuilder(
       int index);
 
   /**
@@ -745,7 +745,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
    * @return The currentRouteSegmentEndPoint.
    */
-  google.maps.fleetengine.v1.TripWaypoint getCurrentRouteSegmentEndPoint();
+  TripWaypoint getCurrentRouteSegmentEndPoint();
   /**
    * <pre>
    * The waypoint where current_route_segment ends. This can be supplied by
@@ -758,7 +758,7 @@ public interface TripOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
    */
-  google.maps.fleetengine.v1.TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder();
+  TripWaypointOrBuilder getCurrentRouteSegmentEndPointOrBuilder();
 
   /**
    * <pre>
@@ -984,7 +984,7 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
    * @return The lastLocation.
    */
-  google.maps.fleetengine.v1.VehicleLocation getLastLocation();
+  VehicleLocation getLastLocation();
   /**
    * <pre>
    * Indicates the last reported location of the vehicle along the route.
@@ -992,7 +992,7 @@ public interface TripOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
    */
-  google.maps.fleetengine.v1.VehicleLocationOrBuilder getLastLocationOrBuilder();
+  VehicleLocationOrBuilder getLastLocationOrBuilder();
 
   /**
    * <pre>
@@ -1026,5 +1026,5 @@ public interface TripOrBuilder extends
    * <code>.maps.fleetengine.v1.TripView view = 31;</code>
    * @return The view.
    */
-  google.maps.fleetengine.v1.TripView getView();
+  TripView getView();
 }

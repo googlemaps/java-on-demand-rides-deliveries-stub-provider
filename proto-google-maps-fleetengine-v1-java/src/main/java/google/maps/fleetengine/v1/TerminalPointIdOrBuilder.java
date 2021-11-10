@@ -31,7 +31,7 @@ public interface TerminalPointIdOrBuilder extends
    * <code>string place_id = 2 [deprecated = true];</code>
    * @return Whether the placeId field is set.
    */
-  @java.lang.Deprecated boolean hasPlaceId();
+  @Deprecated boolean hasPlaceId();
   /**
    * <pre>
    * Deprecated.
@@ -40,7 +40,7 @@ public interface TerminalPointIdOrBuilder extends
    * <code>string place_id = 2 [deprecated = true];</code>
    * @return The placeId.
    */
-  @java.lang.Deprecated java.lang.String getPlaceId();
+  @Deprecated String getPlaceId();
   /**
    * <pre>
    * Deprecated.
@@ -49,7 +49,7 @@ public interface TerminalPointIdOrBuilder extends
    * <code>string place_id = 2 [deprecated = true];</code>
    * @return The bytes for placeId.
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
+  @Deprecated com.google.protobuf.ByteString
       getPlaceIdBytes();
 
   /**
@@ -60,7 +60,7 @@ public interface TerminalPointIdOrBuilder extends
    * <code>string generated_id = 3 [deprecated = true];</code>
    * @return Whether the generatedId field is set.
    */
-  @java.lang.Deprecated boolean hasGeneratedId();
+  @Deprecated boolean hasGeneratedId();
   /**
    * <pre>
    * Deprecated.
@@ -69,7 +69,7 @@ public interface TerminalPointIdOrBuilder extends
    * <code>string generated_id = 3 [deprecated = true];</code>
    * @return The generatedId.
    */
-  @java.lang.Deprecated java.lang.String getGeneratedId();
+  @Deprecated String getGeneratedId();
   /**
    * <pre>
    * Deprecated.
@@ -78,7 +78,7 @@ public interface TerminalPointIdOrBuilder extends
    * <code>string generated_id = 3 [deprecated = true];</code>
    * @return The bytes for generatedId.
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
+  @Deprecated com.google.protobuf.ByteString
       getGeneratedIdBytes();
 
   /**
@@ -89,7 +89,7 @@ public interface TerminalPointIdOrBuilder extends
    * <code>string value = 4;</code>
    * @return The value.
    */
-  java.lang.String getValue();
+  String getValue();
   /**
    * <pre>
    * Unique ID of the terminal point.
@@ -101,5 +101,5 @@ public interface TerminalPointIdOrBuilder extends
   com.google.protobuf.ByteString
       getValueBytes();
 
-  public google.maps.fleetengine.v1.TerminalPointId.IdCase getIdCase();
+  public TerminalPointId.IdCase getIdCase();
 }

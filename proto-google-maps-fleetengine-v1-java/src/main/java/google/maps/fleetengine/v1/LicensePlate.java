@@ -43,14 +43,14 @@ private static final long serialVersionUID = 0L;
     lastCharacter_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new LicensePlate();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -74,13 +74,13 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             countryCode_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             lastCharacter_ = s;
             break;
@@ -106,19 +106,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_descriptor;
+    return Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_fieldAccessorTable
+    return Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.LicensePlate.class, google.maps.fleetengine.v1.LicensePlate.Builder.class);
+            LicensePlate.class, Builder.class);
   }
 
   public static final int COUNTRY_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object countryCode_;
+  private volatile Object countryCode_;
   /**
    * <pre>
    * Required. CLDR Country/Region Code.  For example, "US" for United States,
@@ -128,15 +128,15 @@ private static final long serialVersionUID = 0L;
    * <code>string country_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The countryCode.
    */
-  @java.lang.Override
-  public java.lang.String getCountryCode() {
-    java.lang.Object ref = countryCode_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getCountryCode() {
+    Object ref = countryCode_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       countryCode_ = s;
       return s;
     }
@@ -150,14 +150,14 @@ private static final long serialVersionUID = 0L;
    * <code>string country_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for countryCode.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getCountryCodeBytes() {
-    java.lang.Object ref = countryCode_;
-    if (ref instanceof java.lang.String) {
+    Object ref = countryCode_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       countryCode_ = b;
       return b;
     } else {
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LAST_CHARACTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object lastCharacter_;
+  private volatile Object lastCharacter_;
   /**
    * <pre>
    * The last digit of the license plate or "-1" to denote no numeric value
@@ -179,15 +179,15 @@ private static final long serialVersionUID = 0L;
    * <code>string last_character = 2;</code>
    * @return The lastCharacter.
    */
-  @java.lang.Override
-  public java.lang.String getLastCharacter() {
-    java.lang.Object ref = lastCharacter_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getLastCharacter() {
+    Object ref = lastCharacter_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       lastCharacter_ = s;
       return s;
     }
@@ -204,14 +204,14 @@ private static final long serialVersionUID = 0L;
    * <code>string last_character = 2;</code>
    * @return The bytes for lastCharacter.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getLastCharacterBytes() {
-    java.lang.Object ref = lastCharacter_;
-    if (ref instanceof java.lang.String) {
+    Object ref = lastCharacter_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       lastCharacter_ = b;
       return b;
     } else {
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -230,28 +230,28 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCountryCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, countryCode_);
     }
-    if (!getLastCharacterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastCharacter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastCharacter_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCountryCodeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countryCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, countryCode_);
     }
-    if (!getLastCharacterBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastCharacter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastCharacter_);
     }
     size += unknownFields.getSerializedSize();
@@ -259,15 +259,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.LicensePlate)) {
+    if (!(obj instanceof LicensePlate)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.LicensePlate other = (google.maps.fleetengine.v1.LicensePlate) obj;
+    LicensePlate other = (LicensePlate) obj;
 
     if (!getCountryCode()
         .equals(other.getCountryCode())) return false;
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -293,69 +293,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(byte[] data)
+  public static LicensePlate parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(java.io.InputStream input)
+  public static LicensePlate parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseDelimitedFrom(java.io.InputStream input)
+  public static LicensePlate parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseDelimitedFrom(
+  public static LicensePlate parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.LicensePlate parseFrom(
+  public static LicensePlate parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -363,23 +363,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.LicensePlate prototype) {
+  public static Builder newBuilder(LicensePlate prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -396,18 +396,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.LicensePlate)
-      google.maps.fleetengine.v1.LicensePlateOrBuilder {
+      LicensePlateOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_descriptor;
+      return Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_fieldAccessorTable
+      return Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.LicensePlate.class, google.maps.fleetengine.v1.LicensePlate.Builder.class);
+              LicensePlate.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.LicensePlate.newBuilder()
@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       countryCode_ = "";
@@ -435,79 +435,79 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_descriptor;
+      return Vehicles.internal_static_maps_fleetengine_v1_LicensePlate_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.LicensePlate getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.LicensePlate.getDefaultInstance();
+    @Override
+    public LicensePlate getDefaultInstanceForType() {
+      return LicensePlate.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.LicensePlate build() {
-      google.maps.fleetengine.v1.LicensePlate result = buildPartial();
+    @Override
+    public LicensePlate build() {
+      LicensePlate result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.LicensePlate buildPartial() {
-      google.maps.fleetengine.v1.LicensePlate result = new google.maps.fleetengine.v1.LicensePlate(this);
+    @Override
+    public LicensePlate buildPartial() {
+      LicensePlate result = new LicensePlate(this);
       result.countryCode_ = countryCode_;
       result.lastCharacter_ = lastCharacter_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.LicensePlate) {
-        return mergeFrom((google.maps.fleetengine.v1.LicensePlate)other);
+      if (other instanceof LicensePlate) {
+        return mergeFrom((LicensePlate)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.LicensePlate other) {
-      if (other == google.maps.fleetengine.v1.LicensePlate.getDefaultInstance()) return this;
+    public Builder mergeFrom(LicensePlate other) {
+      if (other == LicensePlate.getDefaultInstance()) return this;
       if (!other.getCountryCode().isEmpty()) {
         countryCode_ = other.countryCode_;
         onChanged();
@@ -521,21 +521,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.LicensePlate parsedMessage = null;
+      LicensePlate parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.LicensePlate) e.getUnfinishedMessage();
+        parsedMessage = (LicensePlate) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object countryCode_ = "";
+    private Object countryCode_ = "";
     /**
      * <pre>
      * Required. CLDR Country/Region Code.  For example, "US" for United States,
@@ -555,16 +555,16 @@ private static final long serialVersionUID = 0L;
      * <code>string country_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The countryCode.
      */
-    public java.lang.String getCountryCode() {
-      java.lang.Object ref = countryCode_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getCountryCode() {
+      Object ref = countryCode_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         countryCode_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -578,11 +578,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
-      java.lang.Object ref = countryCode_;
+      Object ref = countryCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         countryCode_ = b;
         return b;
       } else {
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCountryCode(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object lastCharacter_ = "";
+    private Object lastCharacter_ = "";
     /**
      * <pre>
      * The last digit of the license plate or "-1" to denote no numeric value
@@ -659,16 +659,16 @@ private static final long serialVersionUID = 0L;
      * <code>string last_character = 2;</code>
      * @return The lastCharacter.
      */
-    public java.lang.String getLastCharacter() {
-      java.lang.Object ref = lastCharacter_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getLastCharacter() {
+      Object ref = lastCharacter_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         lastCharacter_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -685,11 +685,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getLastCharacterBytes() {
-      java.lang.Object ref = lastCharacter_;
+      Object ref = lastCharacter_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         lastCharacter_ = b;
         return b;
       } else {
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setLastCharacter(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -761,13 +761,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -778,18 +778,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.LicensePlate)
-  private static final google.maps.fleetengine.v1.LicensePlate DEFAULT_INSTANCE;
+  private static final LicensePlate DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.LicensePlate();
+    DEFAULT_INSTANCE = new LicensePlate();
   }
 
-  public static google.maps.fleetengine.v1.LicensePlate getDefaultInstance() {
+  public static LicensePlate getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<LicensePlate>
       PARSER = new com.google.protobuf.AbstractParser<LicensePlate>() {
-    @java.lang.Override
+    @Override
     public LicensePlate parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -802,13 +802,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<LicensePlate> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.LicensePlate getDefaultInstanceForType() {
+  @Override
+  public LicensePlate getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

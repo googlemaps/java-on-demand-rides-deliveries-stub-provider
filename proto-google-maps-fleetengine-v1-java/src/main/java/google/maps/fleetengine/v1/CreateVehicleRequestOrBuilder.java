@@ -40,7 +40,7 @@ public interface CreateVehicleRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface CreateVehicleRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -61,7 +61,7 @@ public interface CreateVehicleRequestOrBuilder extends
    * <code>string parent = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The parent.
    */
-  java.lang.String getParent();
+  String getParent();
   /**
    * <pre>
    * Required. Must be in the format "providers/{provider}".
@@ -86,7 +86,7 @@ public interface CreateVehicleRequestOrBuilder extends
    * <code>string vehicle_id = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehicleId.
    */
-  java.lang.String getVehicleId();
+  String getVehicleId();
   /**
    * <pre>
    * Required. Unique Vehicle ID; must be unique per provider.  The actual
@@ -151,7 +151,7 @@ public interface CreateVehicleRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehicle.
    */
-  google.maps.fleetengine.v1.Vehicle getVehicle();
+  Vehicle getVehicle();
   /**
    * <pre>
    * Required. The Vehicle entity to create. When creating a Vehicle, the following
@@ -176,5 +176,5 @@ public interface CreateVehicleRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.VehicleOrBuilder getVehicleOrBuilder();
+  VehicleOrBuilder getVehicleOrBuilder();
 }

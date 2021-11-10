@@ -41,14 +41,14 @@ private static final long serialVersionUID = 0L;
     terminalLocationType_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new TerminalLocation();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -85,11 +85,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            google.maps.fleetengine.v1.TerminalPointId.Builder subBuilder = null;
+            TerminalPointId.Builder subBuilder = null;
             if (terminalPointId_ != null) {
               subBuilder = terminalPointId_.toBuilder();
             }
-            terminalPointId_ = input.readMessage(google.maps.fleetengine.v1.TerminalPointId.parser(), extensionRegistry);
+            terminalPointId_ = input.readMessage(TerminalPointId.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(terminalPointId_);
               terminalPointId_ = subBuilder.buildPartial();
@@ -98,13 +98,13 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             accessPointId_ = s;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             tripId_ = s;
             break;
@@ -136,15 +136,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_descriptor;
+    return FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_fieldAccessorTable
+    return FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.TerminalLocation.class, google.maps.fleetengine.v1.TerminalLocation.Builder.class);
+            TerminalLocation.class, Builder.class);
   }
 
   public static final int POINT_FIELD_NUMBER = 1;
@@ -157,7 +157,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng point = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the point field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasPoint() {
     return point_ != null;
   }
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.type.LatLng point = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The point.
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLng getPoint() {
     return point_ == null ? com.google.type.LatLng.getDefaultInstance() : point_;
   }
@@ -180,13 +180,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.type.LatLng point = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  @java.lang.Override
+  @Override
   public com.google.type.LatLngOrBuilder getPointOrBuilder() {
     return getPoint();
   }
 
   public static final int TERMINAL_POINT_ID_FIELD_NUMBER = 2;
-  private google.maps.fleetengine.v1.TerminalPointId terminalPointId_;
+  private TerminalPointId terminalPointId_;
   /**
    * <pre>
    * Required. ID of the terminal point.
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the terminalPointId field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasTerminalPointId() {
     return terminalPointId_ != null;
   }
@@ -207,9 +207,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The terminalPointId.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalPointId getTerminalPointId() {
-    return terminalPointId_ == null ? google.maps.fleetengine.v1.TerminalPointId.getDefaultInstance() : terminalPointId_;
+  @Override
+  public TerminalPointId getTerminalPointId() {
+    return terminalPointId_ == null ? TerminalPointId.getDefaultInstance() : terminalPointId_;
   }
   /**
    * <pre>
@@ -218,13 +218,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalPointIdOrBuilder getTerminalPointIdOrBuilder() {
+  @Override
+  public TerminalPointIdOrBuilder getTerminalPointIdOrBuilder() {
     return getTerminalPointId();
   }
 
   public static final int ACCESS_POINT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object accessPointId_;
+  private volatile Object accessPointId_;
   /**
    * <pre>
    * Deprecated.
@@ -233,15 +233,15 @@ private static final long serialVersionUID = 0L;
    * <code>string access_point_id = 3 [deprecated = true];</code>
    * @return The accessPointId.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public java.lang.String getAccessPointId() {
-    java.lang.Object ref = accessPointId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  @Deprecated public String getAccessPointId() {
+    Object ref = accessPointId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       accessPointId_ = s;
       return s;
     }
@@ -254,14 +254,14 @@ private static final long serialVersionUID = 0L;
    * <code>string access_point_id = 3 [deprecated = true];</code>
    * @return The bytes for accessPointId.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.ByteString
+  @Override
+  @Deprecated public com.google.protobuf.ByteString
       getAccessPointIdBytes() {
-    java.lang.Object ref = accessPointId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = accessPointId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       accessPointId_ = b;
       return b;
     } else {
@@ -270,7 +270,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRIP_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object tripId_;
+  private volatile Object tripId_;
   /**
    * <pre>
    * Deprecated. Use vehicle.waypoint instead.
@@ -279,15 +279,15 @@ private static final long serialVersionUID = 0L;
    * <code>string trip_id = 4 [deprecated = true];</code>
    * @return The tripId.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public java.lang.String getTripId() {
-    java.lang.Object ref = tripId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  @Deprecated public String getTripId() {
+    Object ref = tripId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       tripId_ = s;
       return s;
     }
@@ -300,14 +300,14 @@ private static final long serialVersionUID = 0L;
    * <code>string trip_id = 4 [deprecated = true];</code>
    * @return The bytes for tripId.
    */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.ByteString
+  @Override
+  @Deprecated public com.google.protobuf.ByteString
       getTripIdBytes() {
-    java.lang.Object ref = tripId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = tripId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       tripId_ = b;
       return b;
     } else {
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    * @return The enum numeric value on the wire for terminalLocationType.
    */
-  @java.lang.Override @java.lang.Deprecated public int getTerminalLocationTypeValue() {
+  @Override @Deprecated public int getTerminalLocationTypeValue() {
     return terminalLocationType_;
   }
   /**
@@ -336,14 +336,14 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
    * @return The terminalLocationType.
    */
-  @java.lang.Override @java.lang.Deprecated public google.maps.fleetengine.v1.WaypointType getTerminalLocationType() {
+  @Override @Deprecated public WaypointType getTerminalLocationType() {
     @SuppressWarnings("deprecation")
-    google.maps.fleetengine.v1.WaypointType result = google.maps.fleetengine.v1.WaypointType.valueOf(terminalLocationType_);
-    return result == null ? google.maps.fleetengine.v1.WaypointType.UNRECOGNIZED : result;
+    WaypointType result = WaypointType.valueOf(terminalLocationType_);
+    return result == null ? WaypointType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (point_ != null) {
@@ -362,19 +362,19 @@ private static final long serialVersionUID = 0L;
     if (terminalPointId_ != null) {
       output.writeMessage(2, getTerminalPointId());
     }
-    if (!getAccessPointIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessPointId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, accessPointId_);
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tripId_);
     }
-    if (terminalLocationType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
+    if (terminalLocationType_ != WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
       output.writeEnum(5, terminalLocationType_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -388,13 +388,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTerminalPointId());
     }
-    if (!getAccessPointIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessPointId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, accessPointId_);
     }
-    if (!getTripIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tripId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tripId_);
     }
-    if (terminalLocationType_ != google.maps.fleetengine.v1.WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
+    if (terminalLocationType_ != WaypointType.UNKNOWN_WAYPOINT_TYPE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, terminalLocationType_);
     }
@@ -403,15 +403,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.TerminalLocation)) {
+    if (!(obj instanceof TerminalLocation)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.TerminalLocation other = (google.maps.fleetengine.v1.TerminalLocation) obj;
+    TerminalLocation other = (TerminalLocation) obj;
 
     if (hasPoint() != other.hasPoint()) return false;
     if (hasPoint()) {
@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -458,69 +458,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(byte[] data)
+  public static TerminalLocation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(java.io.InputStream input)
+  public static TerminalLocation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseDelimitedFrom(java.io.InputStream input)
+  public static TerminalLocation parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseDelimitedFrom(
+  public static TerminalLocation parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.TerminalLocation parseFrom(
+  public static TerminalLocation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -528,23 +528,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.TerminalLocation prototype) {
+  public static Builder newBuilder(TerminalLocation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -558,18 +558,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.TerminalLocation)
-      google.maps.fleetengine.v1.TerminalLocationOrBuilder {
+      TerminalLocationOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_fieldAccessorTable
+      return FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.TerminalLocation.class, google.maps.fleetengine.v1.TerminalLocation.Builder.class);
+              TerminalLocation.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.TerminalLocation.newBuilder()
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (pointBuilder_ == null) {
@@ -611,29 +611,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_descriptor;
+      return FleetEngine.internal_static_maps_fleetengine_v1_TerminalLocation_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TerminalLocation getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance();
+    @Override
+    public TerminalLocation getDefaultInstanceForType() {
+      return TerminalLocation.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TerminalLocation build() {
-      google.maps.fleetengine.v1.TerminalLocation result = buildPartial();
+    @Override
+    public TerminalLocation build() {
+      TerminalLocation result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.TerminalLocation buildPartial() {
-      google.maps.fleetengine.v1.TerminalLocation result = new google.maps.fleetengine.v1.TerminalLocation(this);
+    @Override
+    public TerminalLocation buildPartial() {
+      TerminalLocation result = new TerminalLocation(this);
       if (pointBuilder_ == null) {
         result.point_ = point_;
       } else {
@@ -651,50 +651,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.TerminalLocation) {
-        return mergeFrom((google.maps.fleetengine.v1.TerminalLocation)other);
+      if (other instanceof TerminalLocation) {
+        return mergeFrom((TerminalLocation)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.TerminalLocation other) {
-      if (other == google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance()) return this;
+    public Builder mergeFrom(TerminalLocation other) {
+      if (other == TerminalLocation.getDefaultInstance()) return this;
       if (other.hasPoint()) {
         mergePoint(other.getPoint());
       }
@@ -717,21 +717,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.TerminalLocation parsedMessage = null;
+      TerminalLocation parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.TerminalLocation) e.getUnfinishedMessage();
+        parsedMessage = (TerminalLocation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -896,9 +896,9 @@ private static final long serialVersionUID = 0L;
       return pointBuilder_;
     }
 
-    private google.maps.fleetengine.v1.TerminalPointId terminalPointId_;
+    private TerminalPointId terminalPointId_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalPointId, google.maps.fleetengine.v1.TerminalPointId.Builder, google.maps.fleetengine.v1.TerminalPointIdOrBuilder> terminalPointIdBuilder_;
+        TerminalPointId, TerminalPointId.Builder, TerminalPointIdOrBuilder> terminalPointIdBuilder_;
     /**
      * <pre>
      * Required. ID of the terminal point.
@@ -918,9 +918,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The terminalPointId.
      */
-    public google.maps.fleetengine.v1.TerminalPointId getTerminalPointId() {
+    public TerminalPointId getTerminalPointId() {
       if (terminalPointIdBuilder_ == null) {
-        return terminalPointId_ == null ? google.maps.fleetengine.v1.TerminalPointId.getDefaultInstance() : terminalPointId_;
+        return terminalPointId_ == null ? TerminalPointId.getDefaultInstance() : terminalPointId_;
       } else {
         return terminalPointIdBuilder_.getMessage();
       }
@@ -932,7 +932,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setTerminalPointId(google.maps.fleetengine.v1.TerminalPointId value) {
+    public Builder setTerminalPointId(TerminalPointId value) {
       if (terminalPointIdBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -953,7 +953,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTerminalPointId(
-        google.maps.fleetengine.v1.TerminalPointId.Builder builderForValue) {
+        TerminalPointId.Builder builderForValue) {
       if (terminalPointIdBuilder_ == null) {
         terminalPointId_ = builderForValue.build();
         onChanged();
@@ -970,11 +970,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeTerminalPointId(google.maps.fleetengine.v1.TerminalPointId value) {
+    public Builder mergeTerminalPointId(TerminalPointId value) {
       if (terminalPointIdBuilder_ == null) {
         if (terminalPointId_ != null) {
           terminalPointId_ =
-            google.maps.fleetengine.v1.TerminalPointId.newBuilder(terminalPointId_).mergeFrom(value).buildPartial();
+            TerminalPointId.newBuilder(terminalPointId_).mergeFrom(value).buildPartial();
         } else {
           terminalPointId_ = value;
         }
@@ -1010,7 +1010,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public google.maps.fleetengine.v1.TerminalPointId.Builder getTerminalPointIdBuilder() {
+    public TerminalPointId.Builder getTerminalPointIdBuilder() {
       
       onChanged();
       return getTerminalPointIdFieldBuilder().getBuilder();
@@ -1022,12 +1022,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public google.maps.fleetengine.v1.TerminalPointIdOrBuilder getTerminalPointIdOrBuilder() {
+    public TerminalPointIdOrBuilder getTerminalPointIdOrBuilder() {
       if (terminalPointIdBuilder_ != null) {
         return terminalPointIdBuilder_.getMessageOrBuilder();
       } else {
         return terminalPointId_ == null ?
-            google.maps.fleetengine.v1.TerminalPointId.getDefaultInstance() : terminalPointId_;
+            TerminalPointId.getDefaultInstance() : terminalPointId_;
       }
     }
     /**
@@ -1038,11 +1038,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.TerminalPointId terminal_point_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.TerminalPointId, google.maps.fleetengine.v1.TerminalPointId.Builder, google.maps.fleetengine.v1.TerminalPointIdOrBuilder> 
+        TerminalPointId, TerminalPointId.Builder, TerminalPointIdOrBuilder>
         getTerminalPointIdFieldBuilder() {
       if (terminalPointIdBuilder_ == null) {
         terminalPointIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.TerminalPointId, google.maps.fleetengine.v1.TerminalPointId.Builder, google.maps.fleetengine.v1.TerminalPointIdOrBuilder>(
+            TerminalPointId, TerminalPointId.Builder, TerminalPointIdOrBuilder>(
                 getTerminalPointId(),
                 getParentForChildren(),
                 isClean());
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
       return terminalPointIdBuilder_;
     }
 
-    private java.lang.Object accessPointId_ = "";
+    private Object accessPointId_ = "";
     /**
      * <pre>
      * Deprecated.
@@ -1060,16 +1060,16 @@ private static final long serialVersionUID = 0L;
      * <code>string access_point_id = 3 [deprecated = true];</code>
      * @return The accessPointId.
      */
-    @java.lang.Deprecated public java.lang.String getAccessPointId() {
-      java.lang.Object ref = accessPointId_;
-      if (!(ref instanceof java.lang.String)) {
+    @Deprecated public String getAccessPointId() {
+      Object ref = accessPointId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         accessPointId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1080,13 +1080,13 @@ private static final long serialVersionUID = 0L;
      * <code>string access_point_id = 3 [deprecated = true];</code>
      * @return The bytes for accessPointId.
      */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
+    @Deprecated public com.google.protobuf.ByteString
         getAccessPointIdBytes() {
-      java.lang.Object ref = accessPointId_;
+      Object ref = accessPointId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         accessPointId_ = b;
         return b;
       } else {
@@ -1102,8 +1102,8 @@ private static final long serialVersionUID = 0L;
      * @param value The accessPointId to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setAccessPointId(
-        java.lang.String value) {
+    @Deprecated public Builder setAccessPointId(
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1120,7 +1120,7 @@ private static final long serialVersionUID = 0L;
      * <code>string access_point_id = 3 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearAccessPointId() {
+    @Deprecated public Builder clearAccessPointId() {
       
       accessPointId_ = getDefaultInstance().getAccessPointId();
       onChanged();
@@ -1135,7 +1135,7 @@ private static final long serialVersionUID = 0L;
      * @param value The bytes for accessPointId to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setAccessPointIdBytes(
+    @Deprecated public Builder setAccessPointIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1147,7 +1147,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object tripId_ = "";
+    private Object tripId_ = "";
     /**
      * <pre>
      * Deprecated. Use vehicle.waypoint instead.
@@ -1156,16 +1156,16 @@ private static final long serialVersionUID = 0L;
      * <code>string trip_id = 4 [deprecated = true];</code>
      * @return The tripId.
      */
-    @java.lang.Deprecated public java.lang.String getTripId() {
-      java.lang.Object ref = tripId_;
-      if (!(ref instanceof java.lang.String)) {
+    @Deprecated public String getTripId() {
+      Object ref = tripId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         tripId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1176,13 +1176,13 @@ private static final long serialVersionUID = 0L;
      * <code>string trip_id = 4 [deprecated = true];</code>
      * @return The bytes for tripId.
      */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
+    @Deprecated public com.google.protobuf.ByteString
         getTripIdBytes() {
-      java.lang.Object ref = tripId_;
+      Object ref = tripId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         tripId_ = b;
         return b;
       } else {
@@ -1198,8 +1198,8 @@ private static final long serialVersionUID = 0L;
      * @param value The tripId to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setTripId(
-        java.lang.String value) {
+    @Deprecated public Builder setTripId(
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1216,7 +1216,7 @@ private static final long serialVersionUID = 0L;
      * <code>string trip_id = 4 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearTripId() {
+    @Deprecated public Builder clearTripId() {
       
       tripId_ = getDefaultInstance().getTripId();
       onChanged();
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
      * @param value The bytes for tripId to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setTripIdBytes(
+    @Deprecated public Builder setTripIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1252,7 +1252,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
      * @return The enum numeric value on the wire for terminalLocationType.
      */
-    @java.lang.Override @java.lang.Deprecated public int getTerminalLocationTypeValue() {
+    @Override @Deprecated public int getTerminalLocationTypeValue() {
       return terminalLocationType_;
     }
     /**
@@ -1264,7 +1264,7 @@ private static final long serialVersionUID = 0L;
      * @param value The enum numeric value on the wire for terminalLocationType to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setTerminalLocationTypeValue(int value) {
+    @Deprecated public Builder setTerminalLocationTypeValue(int value) {
       
       terminalLocationType_ = value;
       onChanged();
@@ -1278,11 +1278,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
      * @return The terminalLocationType.
      */
-    @java.lang.Override
-    @java.lang.Deprecated public google.maps.fleetengine.v1.WaypointType getTerminalLocationType() {
+    @Override
+    @Deprecated public WaypointType getTerminalLocationType() {
       @SuppressWarnings("deprecation")
-      google.maps.fleetengine.v1.WaypointType result = google.maps.fleetengine.v1.WaypointType.valueOf(terminalLocationType_);
-      return result == null ? google.maps.fleetengine.v1.WaypointType.UNRECOGNIZED : result;
+      WaypointType result = WaypointType.valueOf(terminalLocationType_);
+      return result == null ? WaypointType.UNRECOGNIZED : result;
     }
     /**
      * <pre>
@@ -1293,7 +1293,7 @@ private static final long serialVersionUID = 0L;
      * @param value The terminalLocationType to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setTerminalLocationType(google.maps.fleetengine.v1.WaypointType value) {
+    @Deprecated public Builder setTerminalLocationType(WaypointType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1310,19 +1310,19 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearTerminalLocationType() {
+    @Deprecated public Builder clearTerminalLocationType() {
       
       terminalLocationType_ = 0;
       onChanged();
       return this;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1333,18 +1333,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.TerminalLocation)
-  private static final google.maps.fleetengine.v1.TerminalLocation DEFAULT_INSTANCE;
+  private static final TerminalLocation DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.TerminalLocation();
+    DEFAULT_INSTANCE = new TerminalLocation();
   }
 
-  public static google.maps.fleetengine.v1.TerminalLocation getDefaultInstance() {
+  public static TerminalLocation getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<TerminalLocation>
       PARSER = new com.google.protobuf.AbstractParser<TerminalLocation>() {
-    @java.lang.Override
+    @Override
     public TerminalLocation parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1357,13 +1357,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<TerminalLocation> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.TerminalLocation getDefaultInstanceForType() {
+  @Override
+  public TerminalLocation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

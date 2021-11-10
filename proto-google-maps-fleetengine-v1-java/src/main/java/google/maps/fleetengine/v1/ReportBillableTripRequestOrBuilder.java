@@ -35,7 +35,7 @@ public interface ReportBillableTripRequestOrBuilder extends
    * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * Required. Must be in the format
@@ -60,7 +60,7 @@ public interface ReportBillableTripRequestOrBuilder extends
    * <code>string country_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The countryCode.
    */
-  java.lang.String getCountryCode();
+  String getCountryCode();
   /**
    * <pre>
    * Required. Two letter country code of the country where the trip takes place. Price is
@@ -90,7 +90,7 @@ public interface ReportBillableTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.BillingPlatformIdentifier platform = 5;</code>
    * @return The platform.
    */
-  google.maps.fleetengine.v1.BillingPlatformIdentifier getPlatform();
+  BillingPlatformIdentifier getPlatform();
 
   /**
    * <pre>
@@ -103,7 +103,7 @@ public interface ReportBillableTripRequestOrBuilder extends
    * <code>repeated string related_ids = 6;</code>
    * @return A list containing the relatedIds.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getRelatedIdsList();
   /**
    * <pre>
@@ -129,7 +129,7 @@ public interface ReportBillableTripRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The relatedIds at the given index.
    */
-  java.lang.String getRelatedIds(int index);
+  String getRelatedIds(int index);
   /**
    * <pre>
    * The identifiers that are directly related to the trip being reported. These
@@ -164,5 +164,5 @@ public interface ReportBillableTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
    * @return The solutionType.
    */
-  google.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType getSolutionType();
+  ReportBillableTripRequest.SolutionType getSolutionType();
 }

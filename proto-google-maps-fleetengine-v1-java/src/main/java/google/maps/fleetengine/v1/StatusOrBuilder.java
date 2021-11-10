@@ -42,7 +42,7 @@ public interface StatusOrBuilder extends
    * <code>.maps.fleetengine.v1.Status.Code code = 1;</code>
    * @return The code.
    */
-  google.maps.fleetengine.v1.Status.Code getCode();
+  Status.Code getCode();
 
   /**
    * <pre>
@@ -52,7 +52,7 @@ public interface StatusOrBuilder extends
    * <code>string message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
    * <pre>
    * Detailed error message.

@@ -31,7 +31,7 @@ public interface VehicleAttributeOrBuilder extends
    * <code>string key = 1;</code>
    * @return The key.
    */
-  java.lang.String getKey();
+  String getKey();
   /**
    * <pre>
    * The attribute's key. Keys may not contain the colon character (:).
@@ -51,7 +51,7 @@ public interface VehicleAttributeOrBuilder extends
    * <code>string value = 2;</code>
    * @return The value.
    */
-  java.lang.String getValue();
+  String getValue();
   /**
    * <pre>
    * The attribute's value.

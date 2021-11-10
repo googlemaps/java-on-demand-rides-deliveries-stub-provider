@@ -40,7 +40,7 @@ public interface AddressOrBuilder extends
    * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
    * @return The formattedAddress.
    */
-  google.maps.fleetengine.v1.FormattedAddress getFormattedAddress();
+  FormattedAddress getFormattedAddress();
   /**
    * <pre>
    * A full, human-readable address for this place.
@@ -48,5 +48,5 @@ public interface AddressOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.FormattedAddress formatted_address = 1;</code>
    */
-  google.maps.fleetengine.v1.FormattedAddressOrBuilder getFormattedAddressOrBuilder();
+  FormattedAddressOrBuilder getFormattedAddressOrBuilder();
 }

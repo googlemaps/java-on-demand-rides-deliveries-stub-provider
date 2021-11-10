@@ -40,14 +40,14 @@ private static final long serialVersionUID = 0L;
     vehicleId_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new CreateVehicleRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -58,7 +58,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -71,11 +71,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            google.maps.fleetengine.v1.RequestHeader.Builder subBuilder = null;
+            RequestHeader.Builder subBuilder = null;
             if (header_ != null) {
               subBuilder = header_.toBuilder();
             }
-            header_ = input.readMessage(google.maps.fleetengine.v1.RequestHeader.parser(), extensionRegistry);
+            header_ = input.readMessage(RequestHeader.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(header_);
               header_ = subBuilder.buildPartial();
@@ -84,23 +84,23 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             parent_ = s;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             vehicleId_ = s;
             break;
           }
           case 42: {
-            google.maps.fleetengine.v1.Vehicle.Builder subBuilder = null;
+            Vehicle.Builder subBuilder = null;
             if (vehicle_ != null) {
               subBuilder = vehicle_.toBuilder();
             }
-            vehicle_ = input.readMessage(google.maps.fleetengine.v1.Vehicle.parser(), extensionRegistry);
+            vehicle_ = input.readMessage(Vehicle.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(vehicle_);
               vehicle_ = subBuilder.buildPartial();
@@ -129,19 +129,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_descriptor;
+    return VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_fieldAccessorTable
+    return VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            google.maps.fleetengine.v1.CreateVehicleRequest.class, google.maps.fleetengine.v1.CreateVehicleRequest.Builder.class);
+            CreateVehicleRequest.class, Builder.class);
   }
 
   public static final int HEADER_FIELD_NUMBER = 1;
-  private google.maps.fleetengine.v1.RequestHeader header_;
+  private RequestHeader header_;
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return Whether the header field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasHeader() {
     return header_ != null;
   }
@@ -162,9 +162,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.RequestHeader getHeader() {
-    return header_ == null ? google.maps.fleetengine.v1.RequestHeader.getDefaultInstance() : header_;
+  @Override
+  public RequestHeader getHeader() {
+    return header_ == null ? RequestHeader.getDefaultInstance() : header_;
   }
   /**
    * <pre>
@@ -173,13 +173,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder() {
+  @Override
+  public RequestHeaderOrBuilder getHeaderOrBuilder() {
     return getHeader();
   }
 
   public static final int PARENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object parent_;
+  private volatile Object parent_;
   /**
    * <pre>
    * Required. Must be in the format "providers/{provider}".
@@ -191,15 +191,15 @@ private static final long serialVersionUID = 0L;
    * <code>string parent = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The parent.
    */
-  @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getParent() {
+    Object ref = parent_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
@@ -215,14 +215,14 @@ private static final long serialVersionUID = 0L;
    * <code>string parent = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for parent.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
+    Object ref = parent_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       parent_ = b;
       return b;
     } else {
@@ -231,7 +231,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VEHICLE_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object vehicleId_;
+  private volatile Object vehicleId_;
   /**
    * <pre>
    * Required. Unique Vehicle ID; must be unique per provider.  The actual
@@ -242,15 +242,15 @@ private static final long serialVersionUID = 0L;
    * <code>string vehicle_id = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehicleId.
    */
-  @java.lang.Override
-  public java.lang.String getVehicleId() {
-    java.lang.Object ref = vehicleId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getVehicleId() {
+    Object ref = vehicleId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       vehicleId_ = s;
       return s;
     }
@@ -265,14 +265,14 @@ private static final long serialVersionUID = 0L;
    * <code>string vehicle_id = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for vehicleId.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getVehicleIdBytes() {
-    java.lang.Object ref = vehicleId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = vehicleId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       vehicleId_ = b;
       return b;
     } else {
@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VEHICLE_FIELD_NUMBER = 5;
-  private google.maps.fleetengine.v1.Vehicle vehicle_;
+  private Vehicle vehicle_;
   /**
    * <pre>
    * Required. The Vehicle entity to create. When creating a Vehicle, the following
@@ -307,7 +307,7 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the vehicle field is set.
    */
-  @java.lang.Override
+  @Override
   public boolean hasVehicle() {
     return vehicle_ != null;
   }
@@ -336,9 +336,9 @@ private static final long serialVersionUID = 0L;
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehicle.
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.Vehicle getVehicle() {
-    return vehicle_ == null ? google.maps.fleetengine.v1.Vehicle.getDefaultInstance() : vehicle_;
+  @Override
+  public Vehicle getVehicle() {
+    return vehicle_ == null ? Vehicle.getDefaultInstance() : vehicle_;
   }
   /**
    * <pre>
@@ -364,13 +364,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  @java.lang.Override
-  public google.maps.fleetengine.v1.VehicleOrBuilder getVehicleOrBuilder() {
+  @Override
+  public VehicleOrBuilder getVehicleOrBuilder() {
     return getVehicle();
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -380,16 +380,16 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (header_ != null) {
       output.writeMessage(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, parent_);
     }
-    if (!getVehicleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vehicleId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, vehicleId_);
     }
     if (vehicle_ != null) {
@@ -398,7 +398,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -408,10 +408,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getHeader());
     }
-    if (!getParentBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, parent_);
     }
-    if (!getVehicleIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vehicleId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, vehicleId_);
     }
     if (vehicle_ != null) {
@@ -423,15 +423,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof google.maps.fleetengine.v1.CreateVehicleRequest)) {
+    if (!(obj instanceof CreateVehicleRequest)) {
       return super.equals(obj);
     }
-    google.maps.fleetengine.v1.CreateVehicleRequest other = (google.maps.fleetengine.v1.CreateVehicleRequest) obj;
+    CreateVehicleRequest other = (CreateVehicleRequest) obj;
 
     if (hasHeader() != other.hasHeader()) return false;
     if (hasHeader()) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -475,69 +475,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(byte[] data)
+  public static CreateVehicleRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(java.io.InputStream input)
+  public static CreateVehicleRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseDelimitedFrom(java.io.InputStream input)
+  public static CreateVehicleRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseDelimitedFrom(
+  public static CreateVehicleRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static google.maps.fleetengine.v1.CreateVehicleRequest parseFrom(
+  public static CreateVehicleRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -545,23 +545,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(google.maps.fleetengine.v1.CreateVehicleRequest prototype) {
+  public static Builder newBuilder(CreateVehicleRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -575,18 +575,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:maps.fleetengine.v1.CreateVehicleRequest)
-      google.maps.fleetengine.v1.CreateVehicleRequestOrBuilder {
+      CreateVehicleRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_descriptor;
+      return VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_fieldAccessorTable
+      return VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.maps.fleetengine.v1.CreateVehicleRequest.class, google.maps.fleetengine.v1.CreateVehicleRequest.Builder.class);
+              CreateVehicleRequest.class, Builder.class);
     }
 
     // Construct using google.maps.fleetengine.v1.CreateVehicleRequest.newBuilder()
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       if (headerBuilder_ == null) {
@@ -626,29 +626,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return google.maps.fleetengine.v1.VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_descriptor;
+      return VehicleApi.internal_static_maps_fleetengine_v1_CreateVehicleRequest_descriptor;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.CreateVehicleRequest getDefaultInstanceForType() {
-      return google.maps.fleetengine.v1.CreateVehicleRequest.getDefaultInstance();
+    @Override
+    public CreateVehicleRequest getDefaultInstanceForType() {
+      return CreateVehicleRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.CreateVehicleRequest build() {
-      google.maps.fleetengine.v1.CreateVehicleRequest result = buildPartial();
+    @Override
+    public CreateVehicleRequest build() {
+      CreateVehicleRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public google.maps.fleetengine.v1.CreateVehicleRequest buildPartial() {
-      google.maps.fleetengine.v1.CreateVehicleRequest result = new google.maps.fleetengine.v1.CreateVehicleRequest(this);
+    @Override
+    public CreateVehicleRequest buildPartial() {
+      CreateVehicleRequest result = new CreateVehicleRequest(this);
       if (headerBuilder_ == null) {
         result.header_ = header_;
       } else {
@@ -665,50 +665,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof google.maps.fleetengine.v1.CreateVehicleRequest) {
-        return mergeFrom((google.maps.fleetengine.v1.CreateVehicleRequest)other);
+      if (other instanceof CreateVehicleRequest) {
+        return mergeFrom((CreateVehicleRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(google.maps.fleetengine.v1.CreateVehicleRequest other) {
-      if (other == google.maps.fleetengine.v1.CreateVehicleRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(CreateVehicleRequest other) {
+      if (other == CreateVehicleRequest.getDefaultInstance()) return this;
       if (other.hasHeader()) {
         mergeHeader(other.getHeader());
       }
@@ -728,21 +728,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      google.maps.fleetengine.v1.CreateVehicleRequest parsedMessage = null;
+      CreateVehicleRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (google.maps.fleetengine.v1.CreateVehicleRequest) e.getUnfinishedMessage();
+        parsedMessage = (CreateVehicleRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -752,9 +752,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private google.maps.fleetengine.v1.RequestHeader header_;
+    private RequestHeader header_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.RequestHeader, google.maps.fleetengine.v1.RequestHeader.Builder, google.maps.fleetengine.v1.RequestHeaderOrBuilder> headerBuilder_;
+        RequestHeader, RequestHeader.Builder, RequestHeaderOrBuilder> headerBuilder_;
     /**
      * <pre>
      * The standard Fleet Engine request header.
@@ -774,9 +774,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      * @return The header.
      */
-    public google.maps.fleetengine.v1.RequestHeader getHeader() {
+    public RequestHeader getHeader() {
       if (headerBuilder_ == null) {
-        return header_ == null ? google.maps.fleetengine.v1.RequestHeader.getDefaultInstance() : header_;
+        return header_ == null ? RequestHeader.getDefaultInstance() : header_;
       } else {
         return headerBuilder_.getMessage();
       }
@@ -788,7 +788,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public Builder setHeader(google.maps.fleetengine.v1.RequestHeader value) {
+    public Builder setHeader(RequestHeader value) {
       if (headerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
     public Builder setHeader(
-        google.maps.fleetengine.v1.RequestHeader.Builder builderForValue) {
+        RequestHeader.Builder builderForValue) {
       if (headerBuilder_ == null) {
         header_ = builderForValue.build();
         onChanged();
@@ -826,11 +826,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public Builder mergeHeader(google.maps.fleetengine.v1.RequestHeader value) {
+    public Builder mergeHeader(RequestHeader value) {
       if (headerBuilder_ == null) {
         if (header_ != null) {
           header_ =
-            google.maps.fleetengine.v1.RequestHeader.newBuilder(header_).mergeFrom(value).buildPartial();
+            RequestHeader.newBuilder(header_).mergeFrom(value).buildPartial();
         } else {
           header_ = value;
         }
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public google.maps.fleetengine.v1.RequestHeader.Builder getHeaderBuilder() {
+    public RequestHeader.Builder getHeaderBuilder() {
       
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
@@ -878,12 +878,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
-    public google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder() {
+    public RequestHeaderOrBuilder getHeaderOrBuilder() {
       if (headerBuilder_ != null) {
         return headerBuilder_.getMessageOrBuilder();
       } else {
         return header_ == null ?
-            google.maps.fleetengine.v1.RequestHeader.getDefaultInstance() : header_;
+            RequestHeader.getDefaultInstance() : header_;
       }
     }
     /**
@@ -894,11 +894,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.RequestHeader, google.maps.fleetengine.v1.RequestHeader.Builder, google.maps.fleetengine.v1.RequestHeaderOrBuilder> 
+        RequestHeader, RequestHeader.Builder, RequestHeaderOrBuilder>
         getHeaderFieldBuilder() {
       if (headerBuilder_ == null) {
         headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.RequestHeader, google.maps.fleetengine.v1.RequestHeader.Builder, google.maps.fleetengine.v1.RequestHeaderOrBuilder>(
+            RequestHeader, RequestHeader.Builder, RequestHeaderOrBuilder>(
                 getHeader(),
                 getParentForChildren(),
                 isClean());
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
       return headerBuilder_;
     }
 
-    private java.lang.Object parent_ = "";
+    private Object parent_ = "";
     /**
      * <pre>
      * Required. Must be in the format "providers/{provider}".
@@ -919,16 +919,16 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The parent.
      */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getParent() {
+      Object ref = parent_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         parent_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -944,11 +944,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getParentBytes() {
-      java.lang.Object ref = parent_;
+      Object ref = parent_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         parent_ = b;
         return b;
       } else {
@@ -968,7 +968,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setParent(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1018,7 +1018,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object vehicleId_ = "";
+    private Object vehicleId_ = "";
     /**
      * <pre>
      * Required. Unique Vehicle ID; must be unique per provider.  The actual
@@ -1029,16 +1029,16 @@ private static final long serialVersionUID = 0L;
      * <code>string vehicle_id = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The vehicleId.
      */
-    public java.lang.String getVehicleId() {
-      java.lang.Object ref = vehicleId_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getVehicleId() {
+      Object ref = vehicleId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         vehicleId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1053,11 +1053,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getVehicleIdBytes() {
-      java.lang.Object ref = vehicleId_;
+      Object ref = vehicleId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         vehicleId_ = b;
         return b;
       } else {
@@ -1076,7 +1076,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setVehicleId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1124,9 +1124,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private google.maps.fleetengine.v1.Vehicle vehicle_;
+    private Vehicle vehicle_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.Vehicle, google.maps.fleetengine.v1.Vehicle.Builder, google.maps.fleetengine.v1.VehicleOrBuilder> vehicleBuilder_;
+        Vehicle, Vehicle.Builder, VehicleOrBuilder> vehicleBuilder_;
     /**
      * <pre>
      * Required. The Vehicle entity to create. When creating a Vehicle, the following
@@ -1180,9 +1180,9 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The vehicle.
      */
-    public google.maps.fleetengine.v1.Vehicle getVehicle() {
+    public Vehicle getVehicle() {
       if (vehicleBuilder_ == null) {
-        return vehicle_ == null ? google.maps.fleetengine.v1.Vehicle.getDefaultInstance() : vehicle_;
+        return vehicle_ == null ? Vehicle.getDefaultInstance() : vehicle_;
       } else {
         return vehicleBuilder_.getMessage();
       }
@@ -1211,7 +1211,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder setVehicle(google.maps.fleetengine.v1.Vehicle value) {
+    public Builder setVehicle(Vehicle value) {
       if (vehicleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1249,7 +1249,7 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setVehicle(
-        google.maps.fleetengine.v1.Vehicle.Builder builderForValue) {
+        Vehicle.Builder builderForValue) {
       if (vehicleBuilder_ == null) {
         vehicle_ = builderForValue.build();
         onChanged();
@@ -1283,11 +1283,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder mergeVehicle(google.maps.fleetengine.v1.Vehicle value) {
+    public Builder mergeVehicle(Vehicle value) {
       if (vehicleBuilder_ == null) {
         if (vehicle_ != null) {
           vehicle_ =
-            google.maps.fleetengine.v1.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
+            Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
         } else {
           vehicle_ = value;
         }
@@ -1357,7 +1357,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public google.maps.fleetengine.v1.Vehicle.Builder getVehicleBuilder() {
+    public Vehicle.Builder getVehicleBuilder() {
       
       onChanged();
       return getVehicleFieldBuilder().getBuilder();
@@ -1386,12 +1386,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public google.maps.fleetengine.v1.VehicleOrBuilder getVehicleOrBuilder() {
+    public VehicleOrBuilder getVehicleOrBuilder() {
       if (vehicleBuilder_ != null) {
         return vehicleBuilder_.getMessageOrBuilder();
       } else {
         return vehicle_ == null ?
-            google.maps.fleetengine.v1.Vehicle.getDefaultInstance() : vehicle_;
+            Vehicle.getDefaultInstance() : vehicle_;
       }
     }
     /**
@@ -1419,11 +1419,11 @@ private static final long serialVersionUID = 0L;
      * <code>.maps.fleetengine.v1.Vehicle vehicle = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        google.maps.fleetengine.v1.Vehicle, google.maps.fleetengine.v1.Vehicle.Builder, google.maps.fleetengine.v1.VehicleOrBuilder> 
+        Vehicle, Vehicle.Builder, VehicleOrBuilder>
         getVehicleFieldBuilder() {
       if (vehicleBuilder_ == null) {
         vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            google.maps.fleetengine.v1.Vehicle, google.maps.fleetengine.v1.Vehicle.Builder, google.maps.fleetengine.v1.VehicleOrBuilder>(
+            Vehicle, Vehicle.Builder, VehicleOrBuilder>(
                 getVehicle(),
                 getParentForChildren(),
                 isClean());
@@ -1431,13 +1431,13 @@ private static final long serialVersionUID = 0L;
       }
       return vehicleBuilder_;
     }
-    @java.lang.Override
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1448,18 +1448,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:maps.fleetengine.v1.CreateVehicleRequest)
-  private static final google.maps.fleetengine.v1.CreateVehicleRequest DEFAULT_INSTANCE;
+  private static final CreateVehicleRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new google.maps.fleetengine.v1.CreateVehicleRequest();
+    DEFAULT_INSTANCE = new CreateVehicleRequest();
   }
 
-  public static google.maps.fleetengine.v1.CreateVehicleRequest getDefaultInstance() {
+  public static CreateVehicleRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<CreateVehicleRequest>
       PARSER = new com.google.protobuf.AbstractParser<CreateVehicleRequest>() {
-    @java.lang.Override
+    @Override
     public CreateVehicleRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1472,13 +1472,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<CreateVehicleRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public google.maps.fleetengine.v1.CreateVehicleRequest getDefaultInstanceForType() {
+  @Override
+  public CreateVehicleRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

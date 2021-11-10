@@ -40,7 +40,7 @@ public interface TripWaypointOrBuilder extends
    * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
    * @return The location.
    */
-  google.maps.fleetengine.v1.TerminalLocation getLocation();
+  TerminalLocation getLocation();
   /**
    * <pre>
    * The location where this waypoint is
@@ -48,7 +48,7 @@ public interface TripWaypointOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.TerminalLocation location = 1;</code>
    */
-  google.maps.fleetengine.v1.TerminalLocationOrBuilder getLocationOrBuilder();
+  TerminalLocationOrBuilder getLocationOrBuilder();
 
   /**
    * <pre>
@@ -58,7 +58,7 @@ public interface TripWaypointOrBuilder extends
    * <code>string trip_id = 2;</code>
    * @return The tripId.
    */
-  java.lang.String getTripId();
+  String getTripId();
   /**
    * <pre>
    * The trip this waypoint is part of
@@ -89,7 +89,7 @@ public interface TripWaypointOrBuilder extends
    * <code>.maps.fleetengine.v1.WaypointType waypoint_type = 3;</code>
    * @return The waypointType.
    */
-  google.maps.fleetengine.v1.WaypointType getWaypointType();
+  WaypointType getWaypointType();
 
   /**
    * <pre>

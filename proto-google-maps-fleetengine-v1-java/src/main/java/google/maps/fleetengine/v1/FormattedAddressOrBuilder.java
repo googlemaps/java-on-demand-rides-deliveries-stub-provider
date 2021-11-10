@@ -32,7 +32,7 @@ public interface FormattedAddressOrBuilder extends
    * <code>repeated string lines = 1;</code>
    * @return A list containing the lines.
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getLinesList();
   /**
    * <pre>
@@ -54,7 +54,7 @@ public interface FormattedAddressOrBuilder extends
    * @param index The index of the element to return.
    * @return The lines at the given index.
    */
-  java.lang.String getLines(int index);
+  String getLines(int index);
   /**
    * <pre>
    * The lines of text that describe the address.

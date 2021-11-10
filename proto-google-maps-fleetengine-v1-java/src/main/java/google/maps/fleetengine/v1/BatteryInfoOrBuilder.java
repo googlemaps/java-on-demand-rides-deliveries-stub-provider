@@ -40,7 +40,7 @@ public interface BatteryInfoOrBuilder extends
    * <code>.maps.fleetengine.v1.BatteryStatus battery_status = 1;</code>
    * @return The batteryStatus.
    */
-  google.maps.fleetengine.v1.BatteryStatus getBatteryStatus();
+  BatteryStatus getBatteryStatus();
 
   /**
    * <pre>
@@ -59,7 +59,7 @@ public interface BatteryInfoOrBuilder extends
    * <code>.maps.fleetengine.v1.PowerSource power_source = 2;</code>
    * @return The powerSource.
    */
-  google.maps.fleetengine.v1.PowerSource getPowerSource();
+  PowerSource getPowerSource();
 
   /**
    * <pre>

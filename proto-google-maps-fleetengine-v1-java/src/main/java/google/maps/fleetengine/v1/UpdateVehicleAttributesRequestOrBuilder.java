@@ -40,7 +40,7 @@ public interface UpdateVehicleAttributesRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface UpdateVehicleAttributesRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -62,7 +62,7 @@ public interface UpdateVehicleAttributesRequestOrBuilder extends
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * Required. Must be in the format
@@ -88,7 +88,7 @@ public interface UpdateVehicleAttributesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  java.util.List<google.maps.fleetengine.v1.VehicleAttribute> 
+  java.util.List<VehicleAttribute>
       getAttributesList();
   /**
    * <pre>
@@ -100,7 +100,7 @@ public interface UpdateVehicleAttributesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.VehicleAttribute getAttributes(int index);
+  VehicleAttribute getAttributes(int index);
   /**
    * <pre>
    * Required. The attributes to update;
@@ -122,7 +122,7 @@ public interface UpdateVehicleAttributesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  java.util.List<? extends google.maps.fleetengine.v1.VehicleAttributeOrBuilder> 
+  java.util.List<? extends VehicleAttributeOrBuilder>
       getAttributesOrBuilderList();
   /**
    * <pre>
@@ -134,6 +134,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder extends
    *
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.VehicleAttributeOrBuilder getAttributesOrBuilder(
+  VehicleAttributeOrBuilder getAttributesOrBuilder(
       int index);
 }

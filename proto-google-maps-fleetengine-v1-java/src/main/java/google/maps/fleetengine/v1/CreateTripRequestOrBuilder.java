@@ -40,7 +40,7 @@ public interface CreateTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface CreateTripRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -61,7 +61,7 @@ public interface CreateTripRequestOrBuilder extends
    * <code>string parent = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
-  java.lang.String getParent();
+  String getParent();
   /**
    * <pre>
    * Required. Must be in the format "providers/{provider}".
@@ -86,7 +86,7 @@ public interface CreateTripRequestOrBuilder extends
    * <code>string trip_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The tripId.
    */
-  java.lang.String getTripId();
+  String getTripId();
   /**
    * <pre>
    * Required. Unique Trip ID; must be unique per provider.  The actual
@@ -161,7 +161,7 @@ public interface CreateTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.Trip trip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trip.
    */
-  google.maps.fleetengine.v1.Trip getTrip();
+  Trip getTrip();
   /**
    * <pre>
    * Required. Trip entity to create.
@@ -191,5 +191,5 @@ public interface CreateTripRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.Trip trip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.TripOrBuilder getTripOrBuilder();
+  TripOrBuilder getTripOrBuilder();
 }

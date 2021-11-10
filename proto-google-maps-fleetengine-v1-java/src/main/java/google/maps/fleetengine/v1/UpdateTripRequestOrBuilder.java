@@ -40,7 +40,7 @@ public interface UpdateTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface UpdateTripRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -61,7 +61,7 @@ public interface UpdateTripRequestOrBuilder extends
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * Required. Must be in the format
@@ -151,7 +151,7 @@ public interface UpdateTripRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.Trip trip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trip.
    */
-  google.maps.fleetengine.v1.Trip getTrip();
+  Trip getTrip();
   /**
    * <pre>
    * Required. The Trip associated with the update.
@@ -188,7 +188,7 @@ public interface UpdateTripRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.Trip trip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.TripOrBuilder getTripOrBuilder();
+  TripOrBuilder getTripOrBuilder();
 
   /**
    * <pre>

@@ -97,7 +97,7 @@ public class TripServiceSettings extends ClientSettings<TripServiceSettings> {
   }
 
   public static final TripServiceSettings create(TripServiceStubSettings stub) throws IOException {
-    return new TripServiceSettings.Builder(stub.toBuilder()).build();
+    return new Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */

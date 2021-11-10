@@ -70,7 +70,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    * @return Whether the horizontalAccuracy field is set.
    */
-  @java.lang.Deprecated boolean hasHorizontalAccuracy();
+  @Deprecated boolean hasHorizontalAccuracy();
   /**
    * <pre>
    * Deprecated. Use latlng_accuracy instead.
@@ -79,7 +79,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    * @return The horizontalAccuracy.
    */
-  @java.lang.Deprecated com.google.protobuf.DoubleValue getHorizontalAccuracy();
+  @Deprecated com.google.protobuf.DoubleValue getHorizontalAccuracy();
   /**
    * <pre>
    * Deprecated. Use latlng_accuracy instead.
@@ -87,7 +87,7 @@ public interface VehicleLocationOrBuilder extends
    *
    * <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.DoubleValueOrBuilder getHorizontalAccuracyOrBuilder();
+  @Deprecated com.google.protobuf.DoubleValueOrBuilder getHorizontalAccuracyOrBuilder();
 
   /**
    * <pre>
@@ -154,7 +154,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    * @return Whether the bearingAccuracy field is set.
    */
-  @java.lang.Deprecated boolean hasBearingAccuracy();
+  @Deprecated boolean hasBearingAccuracy();
   /**
    * <pre>
    * Deprecated. Use heading_accuracy instead.
@@ -163,7 +163,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    * @return The bearingAccuracy.
    */
-  @java.lang.Deprecated com.google.protobuf.DoubleValue getBearingAccuracy();
+  @Deprecated com.google.protobuf.DoubleValue getBearingAccuracy();
   /**
    * <pre>
    * Deprecated. Use heading_accuracy instead.
@@ -171,7 +171,7 @@ public interface VehicleLocationOrBuilder extends
    *
    * <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.DoubleValueOrBuilder getBearingAccuracyOrBuilder();
+  @Deprecated com.google.protobuf.DoubleValueOrBuilder getBearingAccuracyOrBuilder();
 
   /**
    * <pre>
@@ -235,7 +235,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    * @return Whether the verticalAccuracy field is set.
    */
-  @java.lang.Deprecated boolean hasVerticalAccuracy();
+  @Deprecated boolean hasVerticalAccuracy();
   /**
    * <pre>
    * Deprecated. Use altitude_accurarcy instead.
@@ -244,7 +244,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    * @return The verticalAccuracy.
    */
-  @java.lang.Deprecated com.google.protobuf.DoubleValue getVerticalAccuracy();
+  @Deprecated com.google.protobuf.DoubleValue getVerticalAccuracy();
   /**
    * <pre>
    * Deprecated. Use altitude_accurarcy instead.
@@ -252,7 +252,7 @@ public interface VehicleLocationOrBuilder extends
    *
    * <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.DoubleValueOrBuilder getVerticalAccuracyOrBuilder();
+  @Deprecated com.google.protobuf.DoubleValueOrBuilder getVerticalAccuracyOrBuilder();
 
   /**
    * <pre>
@@ -290,7 +290,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    * @return Whether the speedKmph field is set.
    */
-  @java.lang.Deprecated boolean hasSpeedKmph();
+  @Deprecated boolean hasSpeedKmph();
   /**
    * <pre>
    * Speed of the vehicle in kilometers per hour.
@@ -300,7 +300,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    * @return The speedKmph.
    */
-  @java.lang.Deprecated com.google.protobuf.Int32Value getSpeedKmph();
+  @Deprecated com.google.protobuf.Int32Value getSpeedKmph();
   /**
    * <pre>
    * Speed of the vehicle in kilometers per hour.
@@ -309,7 +309,7 @@ public interface VehicleLocationOrBuilder extends
    *
    * <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.Int32ValueOrBuilder getSpeedKmphOrBuilder();
+  @Deprecated com.google.protobuf.Int32ValueOrBuilder getSpeedKmphOrBuilder();
 
   /**
    * <pre>
@@ -439,7 +439,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
    * @return The locationSensor.
    */
-  google.maps.fleetengine.v1.LocationSensor getLocationSensor();
+  LocationSensor getLocationSensor();
 
   /**
    * <pre>
@@ -638,7 +638,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.maps.fleetengine.v1.LocationSensor raw_location_sensor = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The rawLocationSensor.
    */
-  google.maps.fleetengine.v1.LocationSensor getRawLocationSensor();
+  LocationSensor getRawLocationSensor();
 
   /**
    * <pre>
@@ -741,7 +741,7 @@ public interface VehicleLocationOrBuilder extends
    * <code>.maps.fleetengine.v1.LocationSensor supplemental_location_sensor = 20 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The supplementalLocationSensor.
    */
-  google.maps.fleetengine.v1.LocationSensor getSupplementalLocationSensor();
+  LocationSensor getSupplementalLocationSensor();
 
   /**
    * <pre>
@@ -781,5 +781,5 @@ public interface VehicleLocationOrBuilder extends
    * <code>bool road_snapped = 26 [deprecated = true];</code>
    * @return The roadSnapped.
    */
-  @java.lang.Deprecated boolean getRoadSnapped();
+  @Deprecated boolean getRoadSnapped();
 }

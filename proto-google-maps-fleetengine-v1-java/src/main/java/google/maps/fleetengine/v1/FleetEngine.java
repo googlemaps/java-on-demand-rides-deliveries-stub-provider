@@ -78,7 +78,7 @@ public final class FleetEngine {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n,google/maps/fleetengine/v1/fleetengine" +
       ".proto\022\023maps.fleetengine.v1\032\037google/api/" +
       "field_behavior.proto\032\031google/protobuf/an" +
@@ -185,49 +185,49 @@ public final class FleetEngine {
     internal_static_maps_fleetengine_v1_TerminalPointId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_TerminalPointId_descriptor,
-        new java.lang.String[] { "PlaceId", "GeneratedId", "Value", "Id", });
+        new String[] { "PlaceId", "GeneratedId", "Value", "Id", });
     internal_static_maps_fleetengine_v1_TerminalLocation_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_maps_fleetengine_v1_TerminalLocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_TerminalLocation_descriptor,
-        new java.lang.String[] { "Point", "TerminalPointId", "AccessPointId", "TripId", "TerminalLocationType", });
+        new String[] { "Point", "TerminalPointId", "AccessPointId", "TripId", "TerminalLocationType", });
     internal_static_maps_fleetengine_v1_TripWaypoint_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_maps_fleetengine_v1_TripWaypoint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_TripWaypoint_descriptor,
-        new java.lang.String[] { "Location", "TripId", "WaypointType", "PathToWaypoint", "DistanceMeters", "Eta", "Duration", });
+        new String[] { "Location", "TripId", "WaypointType", "PathToWaypoint", "DistanceMeters", "Eta", "Duration", });
     internal_static_maps_fleetengine_v1_Status_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_maps_fleetengine_v1_Status_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_Status_descriptor,
-        new java.lang.String[] { "Code", "Message", "Details", });
+        new String[] { "Code", "Message", "Details", });
     internal_static_maps_fleetengine_v1_FormattedAddress_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_maps_fleetengine_v1_FormattedAddress_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_FormattedAddress_descriptor,
-        new java.lang.String[] { "Lines", });
+        new String[] { "Lines", });
     internal_static_maps_fleetengine_v1_Address_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_maps_fleetengine_v1_Address_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_Address_descriptor,
-        new java.lang.String[] { "FormattedAddress", });
+        new String[] { "FormattedAddress", });
     internal_static_maps_fleetengine_v1_VehicleAttribute_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_maps_fleetengine_v1_VehicleAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_VehicleAttribute_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new String[] { "Key", "Value", });
     internal_static_maps_fleetengine_v1_VehicleLocation_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_maps_fleetengine_v1_VehicleLocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_VehicleLocation_descriptor,
-        new java.lang.String[] { "Location", "HorizontalAccuracy", "LatlngAccuracy", "Heading", "BearingAccuracy", "HeadingAccuracy", "Altitude", "VerticalAccuracy", "AltitudeAccuracy", "SpeedKmph", "Speed", "SpeedAccuracy", "UpdateTime", "ServerTime", "LocationSensor", "IsRoadSnapped", "IsGpsSensorEnabled", "TimeSinceUpdate", "NumStaleUpdates", "RawLocation", "RawLocationTime", "RawLocationSensor", "RawLocationAccuracy", "SupplementalLocation", "SupplementalLocationTime", "SupplementalLocationSensor", "SupplementalLocationAccuracy", "RoadSnapped", });
+        new String[] { "Location", "HorizontalAccuracy", "LatlngAccuracy", "Heading", "BearingAccuracy", "HeadingAccuracy", "Altitude", "VerticalAccuracy", "AltitudeAccuracy", "SpeedKmph", "Speed", "SpeedAccuracy", "UpdateTime", "ServerTime", "LocationSensor", "IsRoadSnapped", "IsGpsSensorEnabled", "TimeSinceUpdate", "NumStaleUpdates", "RawLocation", "RawLocationTime", "RawLocationSensor", "RawLocationAccuracy", "SupplementalLocation", "SupplementalLocationTime", "SupplementalLocationSensor", "SupplementalLocationAccuracy", "RoadSnapped", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

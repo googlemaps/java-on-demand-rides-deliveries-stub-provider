@@ -48,7 +48,7 @@ public final class Trips {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n&google/maps/fleetengine/v1/trips.proto" +
       "\022\023maps.fleetengine.v1\032\037google/api/field_" +
       "behavior.proto\032\031google/api/resource.prot" +
@@ -125,7 +125,7 @@ public final class Trips {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
-          google.maps.fleetengine.v1.FleetEngine.getDescriptor(),
+          FleetEngine.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
@@ -136,13 +136,13 @@ public final class Trips {
     internal_static_maps_fleetengine_v1_Trip_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_Trip_descriptor,
-        new java.lang.String[] { "Name", "VehicleId", "TripStatus", "TripType", "PickupPoint", "ActualPickupPoint", "ActualPickupArrivalPoint", "PickupTime", "IntermediateDestinations", "IntermediateDestinationsVersion", "IntermediateDestinationIndex", "ActualIntermediateDestinationArrivalPoints", "ActualIntermediateDestinations", "DropoffPoint", "ActualDropoffPoint", "DropoffTime", "RemainingWaypoints", "VehicleWaypoints", "Route", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeToFirstWaypoint", "RemainingWaypointsVersion", "RemainingWaypointsRouteVersion", "NumberOfPassengers", "LastLocation", "LastLocationSnappable", "View", });
+        new String[] { "Name", "VehicleId", "TripStatus", "TripType", "PickupPoint", "ActualPickupPoint", "ActualPickupArrivalPoint", "PickupTime", "IntermediateDestinations", "IntermediateDestinationsVersion", "IntermediateDestinationIndex", "ActualIntermediateDestinationArrivalPoints", "ActualIntermediateDestinations", "DropoffPoint", "ActualDropoffPoint", "DropoffTime", "RemainingWaypoints", "VehicleWaypoints", "Route", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeToFirstWaypoint", "RemainingWaypointsVersion", "RemainingWaypointsRouteVersion", "NumberOfPassengers", "LastLocation", "LastLocationSnappable", "View", });
     internal_static_maps_fleetengine_v1_StopLocation_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_maps_fleetengine_v1_StopLocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_StopLocation_descriptor,
-        new java.lang.String[] { "Point", "Timestamp", "StopTime", });
+        new String[] { "Point", "Timestamp", "StopTime", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -151,7 +151,7 @@ public final class Trips {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    google.maps.fleetengine.v1.FleetEngine.getDescriptor();
+    FleetEngine.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();

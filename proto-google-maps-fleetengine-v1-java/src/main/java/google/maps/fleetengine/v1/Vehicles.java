@@ -63,7 +63,7 @@ public final class Vehicles {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n)google/maps/fleetengine/v1/vehicles.pr" +
       "oto\022\023maps.fleetengine.v1\032\037google/api/fie" +
       "ld_behavior.proto\032\031google/api/resource.p" +
@@ -142,7 +142,7 @@ public final class Vehicles {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
-          google.maps.fleetengine.v1.FleetEngine.getDescriptor(),
+          FleetEngine.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
         });
@@ -151,31 +151,31 @@ public final class Vehicles {
     internal_static_maps_fleetengine_v1_Vehicle_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_Vehicle_descriptor,
-        new java.lang.String[] { "Name", "VehicleState", "SupportedTripTypes", "CurrentTrips", "LastLocation", "MaximumCapacity", "AvailableCapacity", "Attributes", "VehicleType", "LicensePlate", "Route", "CurrentRouteSegment", "CurrentRouteSegmentVersion", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeSeconds", "Waypoints", "WaypointsVersion", "BackToBackEnabled", "NavigationStatus", "DeviceSettings", });
+        new String[] { "Name", "VehicleState", "SupportedTripTypes", "CurrentTrips", "LastLocation", "MaximumCapacity", "AvailableCapacity", "Attributes", "VehicleType", "LicensePlate", "Route", "CurrentRouteSegment", "CurrentRouteSegmentVersion", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeSeconds", "Waypoints", "WaypointsVersion", "BackToBackEnabled", "NavigationStatus", "DeviceSettings", });
     internal_static_maps_fleetengine_v1_Vehicle_VehicleType_descriptor =
       internal_static_maps_fleetengine_v1_Vehicle_descriptor.getNestedTypes().get(0);
     internal_static_maps_fleetengine_v1_Vehicle_VehicleType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_Vehicle_VehicleType_descriptor,
-        new java.lang.String[] { "Category", });
+        new String[] { "Category", });
     internal_static_maps_fleetengine_v1_BatteryInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_maps_fleetengine_v1_BatteryInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_BatteryInfo_descriptor,
-        new java.lang.String[] { "BatteryStatus", "PowerSource", "BatteryPercentage", });
+        new String[] { "BatteryStatus", "PowerSource", "BatteryPercentage", });
     internal_static_maps_fleetengine_v1_DeviceSettings_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_maps_fleetengine_v1_DeviceSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_DeviceSettings_descriptor,
-        new java.lang.String[] { "LocationPowerSaveMode", "IsPowerSaveMode", "IsInteractive", "BatteryInfo", });
+        new String[] { "LocationPowerSaveMode", "IsPowerSaveMode", "IsInteractive", "BatteryInfo", });
     internal_static_maps_fleetengine_v1_LicensePlate_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_maps_fleetengine_v1_LicensePlate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_maps_fleetengine_v1_LicensePlate_descriptor,
-        new java.lang.String[] { "CountryCode", "LastCharacter", });
+        new String[] { "CountryCode", "LastCharacter", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -184,7 +184,7 @@ public final class Vehicles {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    google.maps.fleetengine.v1.FleetEngine.getDescriptor();
+    FleetEngine.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
   }

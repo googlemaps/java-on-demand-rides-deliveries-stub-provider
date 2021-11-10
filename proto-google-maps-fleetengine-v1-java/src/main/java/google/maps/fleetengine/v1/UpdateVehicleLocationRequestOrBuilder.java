@@ -19,7 +19,7 @@
 
 package google.maps.fleetengine.v1;
 
-@java.lang.Deprecated public interface UpdateVehicleLocationRequestOrBuilder extends
+@Deprecated public interface UpdateVehicleLocationRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:maps.fleetengine.v1.UpdateVehicleLocationRequest)
     com.google.protobuf.MessageOrBuilder {
 
@@ -40,7 +40,7 @@ package google.maps.fleetengine.v1;
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ package google.maps.fleetengine.v1;
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -62,7 +62,7 @@ package google.maps.fleetengine.v1;
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * Required. Must be in the format
@@ -97,7 +97,7 @@ package google.maps.fleetengine.v1;
    * <code>.maps.fleetengine.v1.VehicleLocation current_location = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The currentLocation.
    */
-  google.maps.fleetengine.v1.VehicleLocation getCurrentLocation();
+  VehicleLocation getCurrentLocation();
   /**
    * <pre>
    * Required. The location to update to.  The last_location and update_time
@@ -106,7 +106,7 @@ package google.maps.fleetengine.v1;
    *
    * <code>.maps.fleetengine.v1.VehicleLocation current_location = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.VehicleLocationOrBuilder getCurrentLocationOrBuilder();
+  VehicleLocationOrBuilder getCurrentLocationOrBuilder();
 
   /**
    * <pre>
@@ -127,5 +127,5 @@ package google.maps.fleetengine.v1;
    * <code>.maps.fleetengine.v1.VehicleState current_state = 5;</code>
    * @return The currentState.
    */
-  google.maps.fleetengine.v1.VehicleState getCurrentState();
+  VehicleState getCurrentState();
 }

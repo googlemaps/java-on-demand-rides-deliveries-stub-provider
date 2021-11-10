@@ -40,7 +40,7 @@ public interface UpdateVehicleRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    * @return The header.
    */
-  google.maps.fleetengine.v1.RequestHeader getHeader();
+  RequestHeader getHeader();
   /**
    * <pre>
    * The standard Fleet Engine request header.
@@ -48,7 +48,7 @@ public interface UpdateVehicleRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.RequestHeader header = 1;</code>
    */
-  google.maps.fleetengine.v1.RequestHeaderOrBuilder getHeaderOrBuilder();
+  RequestHeaderOrBuilder getHeaderOrBuilder();
 
   /**
    * <pre>
@@ -65,7 +65,7 @@ public interface UpdateVehicleRequestOrBuilder extends
    * <code>string name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <pre>
    * Required. Must be in the format
@@ -115,7 +115,7 @@ public interface UpdateVehicleRequestOrBuilder extends
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The vehicle.
    */
-  google.maps.fleetengine.v1.Vehicle getVehicle();
+  Vehicle getVehicle();
   /**
    * <pre>
    * Required. The Vehicle entity update to apply.  When updating a Vehicle,
@@ -130,7 +130,7 @@ public interface UpdateVehicleRequestOrBuilder extends
    *
    * <code>.maps.fleetengine.v1.Vehicle vehicle = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  google.maps.fleetengine.v1.VehicleOrBuilder getVehicleOrBuilder();
+  VehicleOrBuilder getVehicleOrBuilder();
 
   /**
    * <pre>
