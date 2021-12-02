@@ -43,6 +43,8 @@ dependencies {
   testCompile 'junit:junit:4.13.2'
   compile project(':proto-google-maps-fleetengine-v1-java')
   testCompile project(':grpc-google-maps-fleetengine-v1-java')
+  implementation "io.grpc:grpc-protobuf:1.42.1"
+  implementation "io.grpc:grpc-stub:1.42.1"
 }
 
 task smokeTest(type: Test) {
