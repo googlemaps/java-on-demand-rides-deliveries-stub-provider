@@ -37,7 +37,7 @@ Install and configure the following prerequisites:
 - Java 8 (if a newer Java version is installed, set the Java version to 8).
   There is an issue with the App Engine plugin and newer versions of Java. To set
   the version to 8, run this command:
-  "``export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``"
+  `` export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``
 - Make sure that your Cloud project is set up on your Google account. Go to
   [Setting up and validating your Cloud project](https://cloud.google.com/appengine/docs/standard/java/using-gradle#setting_up_and_validating_your)
 - [gcloud CLI tool](https://cloud.google.com/sdk/install).
@@ -64,7 +64,7 @@ To run the server:
 
 `Caused by: java.lang.NoSuchMethodException: java.net.SocksSocketImpl.<init>()`
 - Set the Java version to 8 by running the command
-  "``export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``".
+  `` export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``.
 
 ## Endpoints
 
