@@ -97,7 +97,7 @@ GET /vehicle/:vehicleId
 #### POST
 
 Creates a new vehicle given the vehicle ID. The vehicle ID is given in the body
-with the field "vehicleId".
+with the field `vehicleId`.
 
 ```
 POST /vehicle/new
@@ -116,7 +116,8 @@ Sample request body:
 
 Retrieves the Fleet Engine specification of a registered trip. If registered a
 trip object will be returned even if there is no match for it yet. Once a trip
-match is found it will be included in the response.
+match is found it will be included in the response. If the trip ID is not
+specified, the most recent trip is return.
 
 ```
 GET /trip/:tripId
@@ -127,6 +128,10 @@ GET /trip/:tripId
 Creates a new trip given the JSON provided by the body of the POST. The pickup
 and the dropoff points are provided and a new trip is configured. If there is an
 existing vehicle, the sample provider will match the vehicle with the trip.
+
+```
+POST /trip/new
+```
 
 Sample request body:
 ```json
@@ -142,3 +147,18 @@ Sample request body:
 }
 ```
 
+#### PUT
+
+Updates the status of a trip given the trip ID. The status is given in the body
+with the field `status`.
+
+```
+PUT /trip/:tripId
+```
+
+Sample request body:
+```json
+{
+  "status": "NEW"
+}
+```
