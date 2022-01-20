@@ -13,7 +13,3 @@
  * limitations under the License.
  */
 rootProject.name = 'sampleprovider'
-
-include 'gapic-google-maps-fleetengine-v1-java'
-include 'grpc-google-maps-fleetengine-v1-java'
-include 'proto-google-maps-fleetengine-v1-java'
