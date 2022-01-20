@@ -67,7 +67,7 @@ To run the server:
   `` export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``.
 
 `Error injecting constructor, com.google.auth.ServiceAccountSigner$SigningException: Failed to sign the provided bytes`
-- Fill in the required 'Fleet engine' configuration in `src/main/config.properties`.
+- Fill in the required Fleet Engine configuration in `src/main/resources/config.properties`.
 
 ## Endpoints
 
