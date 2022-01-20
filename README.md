@@ -66,6 +66,9 @@ To run the server:
 - Set the Java version to 8 by running the command
   `` export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``.
 
+`Error injecting constructor, com.google.auth.ServiceAccountSigner$SigningException: Failed to sign the provided bytes`
+- Fill in the required Fleet Engine configuration in `src/main/resources/config.properties`.
+
 ## Endpoints
 
 These are the supported endpoints and how to interact with them:
