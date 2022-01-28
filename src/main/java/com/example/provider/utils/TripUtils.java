@@ -15,10 +15,13 @@
  */
 package com.example.provider.utils;
 
+import static java.util.Arrays.stream;
+
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.TerminalLocation;
 import google.maps.fleetengine.v1.Trip;
 import google.maps.fleetengine.v1.TripType;
+import java.util.stream.Collectors;
 
 /** Utility class for Trip. */
 public final class TripUtils {
@@ -39,18 +42,32 @@ public final class TripUtils {
 
   /** Creates exclusive trip with {@code DEFAULT_NUM_PASSENGERS} and given params. */
   public static final Trip createTrip(
-      String tripId, String vehicleId, LatLng pickup, LatLng dropoff) {
+      String tripId, 
+      String vehicleId, 
+      LatLng pickup, 
+      LatLng dropoff, 
+      LatLng[] intermediateDestinationsLatLng) {
     TerminalLocation pickupPoint = TerminalLocation.newBuilder().setPoint(pickup).build();
 
     TerminalLocation dropoffPoint = TerminalLocation.newBuilder().setPoint(dropoff).build();
 
-    return Trip.newBuilder()
+    Trip.Builder tripBuilder = Trip.newBuilder()
         .setName(getTripNameFromId(tripId))
         .setVehicleId(vehicleId)
         .setTripType(TripType.EXCLUSIVE)
         .setPickupPoint(pickupPoint)
         .setDropoffPoint(dropoffPoint)
-        .setNumberOfPassengers(DEFAULT_NUM_PASSENGERS)
-        .build();
+        .setNumberOfPassengers(DEFAULT_NUM_PASSENGERS);
+
+    if (intermediateDestinationsLatLng != null) {
+      tripBuilder.addAllIntermediateDestinations( 
+        stream(intermediateDestinationsLatLng)
+        .map(
+          intermediateDestinationLatLng -> 
+            TerminalLocation.newBuilder().setPoint(intermediateDestinationLatLng).build()
+        ).collect(Collectors.toList()));
+    }
+
+    return tripBuilder.build();
   }
 }

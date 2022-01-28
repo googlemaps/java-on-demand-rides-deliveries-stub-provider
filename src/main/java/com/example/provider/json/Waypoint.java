@@ -42,6 +42,7 @@ abstract class Waypoint {
   /** Type of waypoint. */
   public enum WaypointType {
     PICKUP_WAYPOINT_TYPE,
-    DROP_OFF_WAYPOINT_TYPE
+    DROP_OFF_WAYPOINT_TYPE,
+    INTERMEDIATE_DESTINATION_WAYPOINT_TYPE
   }
 }

@@ -22,6 +22,9 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import google.maps.fleetengine.v1.Trip;
 import java.lang.reflect.Type;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 /**
  * Serializer for trip object to provide relevant information to its clients.
@@ -30,7 +33,6 @@ final class TripSerializer implements JsonSerializer<Trip> {
 
   @Override
   public JsonElement serialize(Trip src, Type typeOfSrc, JsonSerializationContext context) {
-
     Waypoint pickupWaypoint = Waypoint.newBuilder()
         .setLocation(
             SerializedLocation.newBuilder()
@@ -47,10 +49,23 @@ final class TripSerializer implements JsonSerializer<Trip> {
         .setWaypointType(WaypointType.DROP_OFF_WAYPOINT_TYPE)
         .build();
 
+    List<Waypoint> intermediateWaypoints = 
+      src.getIntermediateDestinationsList()
+        .stream()
+        .map(destination -> Waypoint.newBuilder()
+          .setLocation(
+              SerializedLocation.newBuilder()
+                .setPoint(destination.getPoint())
+                .build())
+                .setWaypointType(WaypointType.INTERMEDIATE_DESTINATION_WAYPOINT_TYPE)
+        .build()).collect(Collectors.toList());;
+
+    ImmutableList<Waypoint> waypoints = ImmutableList.<Waypoint>builder().add(pickupWaypoint).addAll(intermediateWaypoints).add(dropoffWaypoint).build();
+
     SerializedTrip trip = SerializedTrip.newBuilder()
         .setName(src.getName())
         .setTripStatus(src.getTripStatus().name())
-        .setWaypoints(ImmutableList.of(pickupWaypoint, dropoffWaypoint))
+        .setWaypoints(waypoints)
         .setVehicleId(src.getVehicleId())
         .build();
 
