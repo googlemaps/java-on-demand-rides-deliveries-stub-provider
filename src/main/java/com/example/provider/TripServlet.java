@@ -54,8 +54,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * <p>GET /trip/:tripID
  *
- * <p>POST /trip/new pickup={"latitude":{@code double},"longitude":{@code double}},
- * dropoff={"latitude":{@code double},"longitude":{@code double}}
+ * <p>POST /trip/new 
+ * pickup={"latitude":{@code double},"longitude":{@code double}},
+ * dropoff={"latitude":{@code double},"longitude":{@code double}}, 
+ * intermediateDestinations={"latitude":{@code double},"longitude":{@code double}}[] (Optional)
  *
  * <p>PUT /trip/:tripID status:{@code TripStatus}
  */
@@ -73,6 +75,7 @@ public final class TripServlet extends HttpServlet {
   private static final String STATUS_INPUT_FIELD = "status";
   private static final String PICKUP_INPUT_FIELD = "pickup";
   private static final String DROPOFF_INPUT_FIELD = "dropoff";
+  private static final String INTERMEDIATE_DESTINATIONS_INPUT_FIELD = "intermediateDestinations";
 
   private static final String NOT_PROVIDED_MESSAGE = "%s not provided";
 
@@ -134,6 +137,7 @@ public final class TripServlet extends HttpServlet {
     }
 
     String postData = CharStreams.toString(request.getReader());
+
     JsonObject jsonBody = GsonProvider.get().fromJson(postData, JsonObject.class);
 
     // Validate request body.
@@ -151,13 +155,21 @@ public final class TripServlet extends HttpServlet {
     // Process request.
     JsonElement pickup = jsonBody.get(PICKUP_INPUT_FIELD);
     JsonElement dropoff = jsonBody.get(DROPOFF_INPUT_FIELD);
+    JsonElement intermediateDestinations = jsonBody.get(INTERMEDIATE_DESTINATIONS_INPUT_FIELD);
+
     Gson gson = GsonProvider.get();
 
     LatLng pickupLatLng;
     LatLng dropoffLatLng;
+    LatLng[] intermediateDestinationsLatLng = null;
+
     try {
       pickupLatLng = gson.fromJson(pickup, LatLng.class);
       dropoffLatLng = gson.fromJson(dropoff, LatLng.class);
+
+      if (intermediateDestinations != null) {
+          intermediateDestinationsLatLng = gson.fromJson(intermediateDestinations, LatLng[].class);
+      }
     } catch (JsonParseException exception) {
       sendError(response, exception.getMessage(), HttpServletResponse.SC_BAD_REQUEST);
       return;
@@ -167,7 +179,7 @@ public final class TripServlet extends HttpServlet {
 
     String vehicleId = Strings.nullToEmpty(servletState.getLastVehicleId());
 
-    Trip trip = TripUtils.createTrip(tripId, vehicleId, pickupLatLng, dropoffLatLng);
+    Trip trip = TripUtils.createTrip(tripId, vehicleId, pickupLatLng, dropoffLatLng, intermediateDestinationsLatLng);
 
     CreateTripRequest createReq =
         CreateTripRequest.newBuilder()

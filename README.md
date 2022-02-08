@@ -132,6 +132,7 @@ Creates a new trip given the JSON provided by the body of the POST. The pickup
 and the dropoff points are provided and a new trip is configured. If there is an
 existing vehicle, the sample provider will match the vehicle with the trip.
 
+The 'intermediateDestinations' field is optional and it's used to support multi-waypoint trips.
 ```
 POST /trip/new
 ```
@@ -146,7 +147,17 @@ Sample request body:
   "dropoff": {
     "latitude": 3.44,
     "longitude": 4.43
-  }
+  },
+  "intermediateDestinations": [
+    {
+      "latitude": 4.44,
+      "longitude": 4.43
+    },
+    {
+      "latitude": 5.44,
+      "longitude": 2.43
+    }
+  ]
 }
 ```
 
