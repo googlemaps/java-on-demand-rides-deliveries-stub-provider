@@ -31,6 +31,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.inject.Inject;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.CreateTripRequest;
 import google.maps.fleetengine.v1.GetTripRequest;
@@ -54,12 +55,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * <p>GET /trip/:tripID
  *
- * <p>POST /trip/new 
- * pickup={"latitude":{@code double},"longitude":{@code double}},
- * dropoff={"latitude":{@code double},"longitude":{@code double}}, 
+ * <p>POST /trip/new pickup={"latitude":{@code double},"longitude":{@code double}},
+ * dropoff={"latitude":{@code double},"longitude":{@code double}},
  * intermediateDestinations={"latitude":{@code double},"longitude":{@code double}}[] (Optional)
  *
- * <p>PUT /trip/:tripID status:{@code TripStatus}
+ * <p>PUT /trip/:tripID status:{@code TripStatus} intermediateDestinationIndex: {@code int}
+ * (Optional)
  */
 @Singleton
 public final class TripServlet extends HttpServlet {
@@ -76,6 +77,11 @@ public final class TripServlet extends HttpServlet {
   private static final String PICKUP_INPUT_FIELD = "pickup";
   private static final String DROPOFF_INPUT_FIELD = "dropoff";
   private static final String INTERMEDIATE_DESTINATIONS_INPUT_FIELD = "intermediateDestinations";
+  private static final String INTERMEDIATE_DESTINATION_INDEX_INPUT_FIELD =
+      "intermediateDestinationIndex";
+  private static final String TRIP_STATUS_UPDATE_MASK = "trip_status";
+  private static final String INTERMEDIATE_DESTINATION_INDEX_UPDATE_MASK =
+      "intermediate_destination_index";
 
   private static final String NOT_PROVIDED_MESSAGE = "%s not provided";
 
@@ -105,7 +111,6 @@ public final class TripServlet extends HttpServlet {
       response.getWriter().print(GsonProvider.get().toJson(TripData.create(trip, routeToken)));
       response.getWriter().flush();
       return;
-
     }
     String tripId = request.getPathInfo().substring(1);
 
@@ -168,7 +173,7 @@ public final class TripServlet extends HttpServlet {
       dropoffLatLng = gson.fromJson(dropoff, LatLng.class);
 
       if (intermediateDestinations != null) {
-          intermediateDestinationsLatLng = gson.fromJson(intermediateDestinations, LatLng[].class);
+        intermediateDestinationsLatLng = gson.fromJson(intermediateDestinations, LatLng[].class);
       }
     } catch (JsonParseException exception) {
       sendError(response, exception.getMessage(), HttpServletResponse.SC_BAD_REQUEST);
@@ -179,7 +184,9 @@ public final class TripServlet extends HttpServlet {
 
     String vehicleId = Strings.nullToEmpty(servletState.getLastVehicleId());
 
-    Trip trip = TripUtils.createTrip(tripId, vehicleId, pickupLatLng, dropoffLatLng, intermediateDestinationsLatLng);
+    Trip trip =
+        TripUtils.createTrip(
+            tripId, vehicleId, pickupLatLng, dropoffLatLng, intermediateDestinationsLatLng);
 
     CreateTripRequest createReq =
         CreateTripRequest.newBuilder()
@@ -208,40 +215,28 @@ public final class TripServlet extends HttpServlet {
       sendError(response, "No Trip ID provided.", HttpServletResponse.SC_BAD_REQUEST);
       return;
     }
+
     String tripId = request.getPathInfo().substring(1);
 
     String putData = CharStreams.toString(request.getReader());
     JsonObject jsonBody = GsonProvider.get().fromJson(putData, JsonObject.class);
-    if (!jsonBody.has(STATUS_INPUT_FIELD)) {
-      sendError(response, "No status provided.", HttpServletResponse.SC_BAD_REQUEST);
+
+    logger.info(String.format("Updating trip %s with input %s.", tripId, putData));
+
+    UpdateTripRequest updateRequest = getUpdateTripRequest(jsonBody, tripId, response);
+
+    if (updateRequest == null) {
       return;
     }
-
-    String status = jsonBody.get(STATUS_INPUT_FIELD).getAsString();
-    TripStatus tripStatus;
-    try {
-      tripStatus = TripStatus.valueOf(Ascii.toUpperCase(status));
-    } catch (IllegalArgumentException e) {
-      sendError(response, "Unknown status provided", HttpServletResponse.SC_BAD_REQUEST);
-      return;
-    }
-
-    logger.info(String.format("Updating trip %s with status %s.", tripId, status));
-
-    String tripStatusPath = "trip_status";
-    // Update trip status.
-    UpdateTripRequest updateReq =
-        UpdateTripRequest.newBuilder()
-            .setName(TripUtils.getTripNameFromId(tripId))
-            .setTrip(Trip.newBuilder().setTripStatus(tripStatus).build())
-            .setUpdateMask(FieldMask.newBuilder().addPaths(tripStatusPath).build())
-            .build();
 
     TripServiceClient authenticatedServerTripService =
         grpcServiceProvider.getAuthenticatedTripService();
-    Trip updatedTrip = authenticatedServerTripService.updateTrip(updateReq);
 
-    if (tripStatus == TripStatus.COMPLETE || tripStatus == TripStatus.CANCELED) {
+    Trip updatedTrip = authenticatedServerTripService.updateTrip(updateRequest);
+
+    TripStatus updatedTripStatus = updatedTrip.getTripStatus();
+
+    if (updatedTripStatus == TripStatus.COMPLETE || updatedTripStatus == TripStatus.CANCELED) {
       logger.info(
           String.format("Trip %s reached a terminal status. Cleaning up servlet state.", tripId));
       servletState.setLastTrip(null);
@@ -250,6 +245,60 @@ public final class TripServlet extends HttpServlet {
     logger.info(String.format("Trip:\n%s", updatedTrip));
     response.getWriter().print(GsonProvider.get().toJson(updatedTrip));
     response.getWriter().flush();
+  }
+
+  private UpdateTripRequest getUpdateTripRequest(
+      JsonObject jsonBody, String tripId, HttpServletResponse response) throws IOException {
+    if (!jsonBody.has(STATUS_INPUT_FIELD)) {
+      sendError(response, "No status provided.", HttpServletResponse.SC_BAD_REQUEST);
+      return null;
+    }
+
+    String status = jsonBody.get(STATUS_INPUT_FIELD).getAsString();
+
+    TripStatus tripStatus;
+
+    try {
+      tripStatus = TripStatus.valueOf(Ascii.toUpperCase(status));
+    } catch (IllegalArgumentException e) {
+      sendError(response, "Unknown status provided", HttpServletResponse.SC_BAD_REQUEST);
+      return null;
+    }
+
+    Trip.Builder updatedTripBuilder = Trip.newBuilder().setTripStatus(tripStatus);
+
+    FieldMask.Builder updateTripMaskBuilder =
+        FieldMask.newBuilder().addPaths(TRIP_STATUS_UPDATE_MASK);
+
+    if (jsonBody.has(INTERMEDIATE_DESTINATION_INDEX_INPUT_FIELD)) {
+      int intermediateDestinationIndex;
+
+      try {
+        intermediateDestinationIndex =
+            jsonBody.get(INTERMEDIATE_DESTINATION_INDEX_INPUT_FIELD).getAsInt();
+      } catch (ClassCastException | IllegalArgumentException e) {
+        sendError(
+            response,
+            "Invalid intermediateDestinationIndex provided.",
+            HttpServletResponse.SC_BAD_REQUEST);
+        return null;
+      }
+
+      Timestamp intermediateDestinationsVersion =
+          servletState.getLastTrip().getIntermediateDestinationsVersion();
+
+      updatedTripBuilder
+          .setIntermediateDestinationsVersion(intermediateDestinationsVersion)
+          .setIntermediateDestinationIndex(intermediateDestinationIndex);
+
+      updateTripMaskBuilder.addPaths(INTERMEDIATE_DESTINATION_INDEX_UPDATE_MASK);
+    }
+
+    return UpdateTripRequest.newBuilder()
+        .setName(TripUtils.getTripNameFromId(tripId))
+        .setTrip(updatedTripBuilder.build())
+        .setUpdateMask(updateTripMaskBuilder.build())
+        .build();
   }
 
   /**
