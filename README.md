@@ -132,7 +132,7 @@ Creates a new trip given the JSON provided by the body of the POST. The pickup
 and the dropoff points are provided and a new trip is configured. If there is an
 existing vehicle, the sample provider will match the vehicle with the trip.
 
-The 'intermediateDestinations' field is optional and it's used to support multi-waypoint trips.
+The 'intermediateDestinations' field is optional and it's used to support multi-destination trips.
 ```
 POST /trip/new
 ```
@@ -164,7 +164,7 @@ Sample request body:
 #### PUT
 
 Updates the status of a trip given the trip ID. The status is given in the body
-with the field `status`.
+with the field `status`. An optional `intermediateDestinationIndex` field can be passed in case this is a multi-destination trip and driver is moving between intermediate destinations.
 
 ```
 PUT /trip/:tripId
@@ -174,5 +174,13 @@ Sample request body:
 ```json
 {
   "status": "NEW"
+}
+```
+
+Sample request body (updating intermediate destination pointer):
+```json
+{
+  "status": "ENROUTE_TO_INTERMEDIATE_DESTINATION",
+  "intermediateDestinationIndex": 0
 }
 ```
