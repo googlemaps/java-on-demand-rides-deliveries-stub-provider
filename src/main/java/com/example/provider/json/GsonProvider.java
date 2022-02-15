@@ -23,9 +23,8 @@ import google.maps.fleetengine.v1.Vehicle;
 /**
  * Provider for Gson after setting custom serializer and deserializer.
  *
- * Registers the following serializers and deserializers:
- *  - VehicleSerializer for serializing fleetengine vehicles
- *  - LatLngDeserializer for deserializing LatLng protos
+ * <p>Registers the following serializers and deserializers: - VehicleSerializer for serializing
+ * fleetengine vehicles - LatLngDeserializer for deserializing LatLng protos
  */
 public final class GsonProvider {
 
@@ -41,7 +40,8 @@ public final class GsonProvider {
     }
 
     GsonBuilder gsonBuilder = new GsonBuilder();
-    gsonBuilder.registerTypeAdapter(Vehicle.class, new VehicleSerializer())
+    gsonBuilder
+        .registerTypeAdapter(Vehicle.class, new VehicleSerializer())
         .registerTypeAdapter(Trip.class, new TripSerializer())
         .registerTypeAdapter(LatLng.class, new LatLngDeserializer())
         .setPrettyPrinting();

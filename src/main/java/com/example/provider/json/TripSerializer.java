@@ -25,49 +25,53 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
-/**
- * Serializer for trip object to provide relevant information to its clients.
- */
+/** Serializer for trip object to provide relevant information to its clients. */
 final class TripSerializer implements JsonSerializer<Trip> {
 
   @Override
   public JsonElement serialize(Trip src, Type typeOfSrc, JsonSerializationContext context) {
-    Waypoint pickupWaypoint = Waypoint.newBuilder()
-        .setLocation(
-            SerializedLocation.newBuilder()
-              .setPoint(src.getPickupPoint().getPoint())
-              .build())
-        .setWaypointType(WaypointType.PICKUP_WAYPOINT_TYPE)
-        .build();
+    Waypoint pickupWaypoint =
+        Waypoint.newBuilder()
+            .setLocation(
+                SerializedLocation.newBuilder().setPoint(src.getPickupPoint().getPoint()).build())
+            .setWaypointType(WaypointType.PICKUP_WAYPOINT_TYPE)
+            .build();
 
-    Waypoint dropoffWaypoint = Waypoint.newBuilder()
-        .setLocation(
-            SerializedLocation.newBuilder()
-              .setPoint(src.getDropoffPoint().getPoint())
-              .build())
-        .setWaypointType(WaypointType.DROP_OFF_WAYPOINT_TYPE)
-        .build();
+    Waypoint dropoffWaypoint =
+        Waypoint.newBuilder()
+            .setLocation(
+                SerializedLocation.newBuilder().setPoint(src.getDropoffPoint().getPoint()).build())
+            .setWaypointType(WaypointType.DROP_OFF_WAYPOINT_TYPE)
+            .build();
 
-    List<Waypoint> intermediateWaypoints = 
-      src.getIntermediateDestinationsList()
-        .stream()
-        .map(destination -> Waypoint.newBuilder()
-          .setLocation(
-              SerializedLocation.newBuilder()
-                .setPoint(destination.getPoint())
-                .build())
-                .setWaypointType(WaypointType.INTERMEDIATE_DESTINATION_WAYPOINT_TYPE)
-        .build()).collect(Collectors.toList());;
+    List<Waypoint> intermediateWaypoints =
+        src.getIntermediateDestinationsList().stream()
+            .map(
+                destination ->
+                    Waypoint.newBuilder()
+                        .setLocation(
+                            SerializedLocation.newBuilder()
+                                .setPoint(destination.getPoint())
+                                .build())
+                        .setWaypointType(WaypointType.INTERMEDIATE_DESTINATION_WAYPOINT_TYPE)
+                        .build())
+            .collect(Collectors.toList());
+    ;
 
-    ImmutableList<Waypoint> waypoints = ImmutableList.<Waypoint>builder().add(pickupWaypoint).addAll(intermediateWaypoints).add(dropoffWaypoint).build();
+    ImmutableList<Waypoint> waypoints =
+        ImmutableList.<Waypoint>builder()
+            .add(pickupWaypoint)
+            .addAll(intermediateWaypoints)
+            .add(dropoffWaypoint)
+            .build();
 
-    SerializedTrip trip = SerializedTrip.newBuilder()
-        .setName(src.getName())
-        .setTripStatus(src.getTripStatus().name())
-        .setWaypoints(waypoints)
-        .setVehicleId(src.getVehicleId())
-        .build();
+    SerializedTrip trip =
+        SerializedTrip.newBuilder()
+            .setName(src.getName())
+            .setTripStatus(src.getTripStatus().name())
+            .setWaypoints(waypoints)
+            .setVehicleId(src.getVehicleId())
+            .build();
 
     return new Gson().toJsonTree(trip);
   }

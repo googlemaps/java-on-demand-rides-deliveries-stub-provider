@@ -21,8 +21,7 @@ import java.io.InputStream;
 public final class SampleProviderUtils {
   public static ProviderProperties providerProperties = createProviderProperties();
 
-  private static final String CONFIG_FILE_PATH =
-      "/config.properties";
+  private static final String CONFIG_FILE_PATH = "/config.properties";
 
   private static ProviderProperties createProviderProperties() {
     try {

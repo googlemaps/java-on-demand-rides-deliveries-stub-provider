@@ -19,8 +19,8 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 
 /**
- * Trip object to serialize to clients. This object will only contain relevant
- * trip information to send to the clients.
+ * Trip object to serialize to clients. This object will only contain relevant trip information to
+ * send to the clients.
  */
 @AutoValue
 abstract class SerializedTrip {
@@ -43,8 +43,11 @@ abstract class SerializedTrip {
   abstract static class Builder {
 
     abstract Builder setName(String name);
+
     abstract Builder setTripStatus(String tripStatus);
+
     abstract Builder setWaypoints(List<Waypoint> waypoints);
+
     abstract Builder setVehicleId(String vehicleId);
 
     abstract SerializedTrip build();

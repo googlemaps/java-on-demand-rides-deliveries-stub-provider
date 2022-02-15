@@ -23,19 +23,18 @@ import google.maps.fleetengine.v1.Vehicle.VehicleType.Category;
 import google.maps.fleetengine.v1.VehicleLocation;
 import google.maps.fleetengine.v1.VehicleState;
 
-/**
- * Utility class to create Vehicles
- */
+/** Utility class to create Vehicles */
 public final class VehicleUtils {
 
-  public static final String PROVIDER_NAME = String.format("providers/%s",
-      SampleProviderUtils.providerProperties.providerId());
+  public static final String PROVIDER_NAME =
+      String.format("providers/%s", SampleProviderUtils.providerProperties.providerId());
   public static final String VEHICLE_NAME_FORMAT = PROVIDER_NAME + "/vehicles/%s";
 
   /** Default latitude for vehicle creation located to Google MTV. */
   private static final double DEFAULT_LATITUDE = 37.419645;
   /** Default longitude for vehicle creation located to Google MTV. */
   private static final double DEFAULT_LONGITUDE = -122.073884;
+
   private static final int MAX_CAPACITY = 4;
   private static final int DEFAULT_SPEED = 30;
   private static final double SPEED_ACCURACY = 1.0;
@@ -48,10 +47,10 @@ public final class VehicleUtils {
   }
 
   /**
-   *  Create vehicle using the vehicleId with default parameters.
-   *  This defaults to creating a 4 person vehicle with a default location and default speed.
+   * Create vehicle using the vehicleId with default parameters. This defaults to creating a 4
+   * person vehicle with a default location and default speed.
    *
-   *  TODO(b/153661805) Adding support for custom parameters.
+   * <p>TODO(b/153661805) Adding support for custom parameters.
    */
   public static final Vehicle createVehicle(String vehicleId) {
     return Vehicle.newBuilder()
@@ -65,8 +64,8 @@ public final class VehicleUtils {
   }
 
   /**
-   * Creates a default location with the current timestamp. The default location is set to
-   * Google Mountain View with a default speed of 30mph. This will be customizable in the future.
+   * Creates a default location with the current timestamp. The default location is set to Google
+   * Mountain View with a default speed of 30mph. This will be customizable in the future.
    */
   private static final VehicleLocation getVehicleLocation() {
     LatLng latlng = ProtosUtil.getLatLng(DEFAULT_LATITUDE, DEFAULT_LONGITUDE);
@@ -78,6 +77,5 @@ public final class VehicleUtils {
         .setAltitude(ProtosUtil.getDoubleValue(0))
         .setSpeedAccuracy(ProtosUtil.getDoubleValue(SPEED_ACCURACY))
         .build();
-
   }
 }

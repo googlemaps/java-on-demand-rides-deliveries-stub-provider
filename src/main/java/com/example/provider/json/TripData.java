@@ -17,12 +17,11 @@ package com.example.provider.json;
 import com.google.auto.value.AutoValue;
 import google.maps.fleetengine.v1.Trip;
 
-/**
- * Trip response JSON object that contains the trip information as well as route token.
- */
+/** Trip response JSON object that contains the trip information as well as route token. */
 @AutoValue
 public abstract class TripData {
   abstract Trip trip();
+
   abstract String routeToken();
 
   public static TripData create(Trip trip, String routeToken) {

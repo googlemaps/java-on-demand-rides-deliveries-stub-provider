@@ -21,7 +21,8 @@ import com.google.inject.servlet.GuiceServletContextListener;
 /** ContextListener for sample provider. This is where injection starts. */
 public final class SampleProviderGuiceServletContextListener extends GuiceServletContextListener {
 
-  @Override protected Injector getInjector() {
+  @Override
+  protected Injector getInjector() {
     return Guice.createInjector(new SampleServletModule());
   }
 }
