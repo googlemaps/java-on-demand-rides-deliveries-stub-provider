@@ -42,7 +42,7 @@ final class AuthenticatedGrpcServiceProviderImpl implements AuthenticatedGrpcSer
 
     TripServiceSettings tripSettings =
         new FleetEngineClientSettingsModifier<TripServiceSettings, TripServiceSettings.Builder>(
-            minter)
+                minter)
             .updateBuilder(TripServiceSettings.newBuilder())
             .setEndpoint(SampleProviderUtils.providerProperties.fleetEngineAddress())
             .build();
@@ -50,7 +50,7 @@ final class AuthenticatedGrpcServiceProviderImpl implements AuthenticatedGrpcSer
 
     VehicleServiceSettings vehicleSettings =
         new FleetEngineClientSettingsModifier<
-            VehicleServiceSettings, VehicleServiceSettings.Builder>(minter)
+                VehicleServiceSettings, VehicleServiceSettings.Builder>(minter)
             .updateBuilder(VehicleServiceSettings.newBuilder())
             .setEndpoint(SampleProviderUtils.providerProperties.fleetEngineAddress())
             .build();

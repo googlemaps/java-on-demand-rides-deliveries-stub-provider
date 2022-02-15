@@ -34,6 +34,7 @@ abstract class Waypoint {
   abstract static class Builder {
 
     abstract Builder setLocation(SerializedLocation location);
+
     abstract Builder setWaypointType(WaypointType type);
 
     abstract Waypoint build();

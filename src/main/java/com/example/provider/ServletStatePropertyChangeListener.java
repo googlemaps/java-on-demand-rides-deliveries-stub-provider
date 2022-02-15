@@ -111,7 +111,6 @@ class ServletStatePropertyChangeListener implements PropertyChangeListener {
             .setActiveTripsOnly(true)
             .build();
 
-
     SearchTripsPagedResponse tripResponse = authenticatedServerTripService.searchTrips(searchReq);
     if (tripResponse.getPage() == null) {
       logger.info(String.format("No trips found with vehicleId: %s", vehicleId));
@@ -124,7 +123,7 @@ class ServletStatePropertyChangeListener implements PropertyChangeListener {
       return;
     }
 
-    while(trips.hasNext()) {
+    while (trips.hasNext()) {
       Trip trip = trips.next();
       String tripName = trip.getName();
       if (lastCreatedTrip == null || !lastCreatedTrip.getName().equals(tripName)) {

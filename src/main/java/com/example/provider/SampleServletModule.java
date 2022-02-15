@@ -25,11 +25,8 @@ import com.google.fleetengine.auth.token.factory.signer.SignerInitializationExce
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.servlet.ServletModule;
-import jdk.jfr.internal.Logger;
 
-/**
- *  Module for configuring routes for this sample provider.
- */
+/** Module for configuring routes for this sample provider. */
 public final class SampleServletModule extends ServletModule {
 
   @Override

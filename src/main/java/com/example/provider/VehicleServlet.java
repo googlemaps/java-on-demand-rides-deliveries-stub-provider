@@ -66,16 +66,15 @@ public class VehicleServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
 
-    VehicleServiceClient vehicleService =
-        grpcServiceProvider.getAuthenticatedVehicleService();
+    VehicleServiceClient vehicleService = grpcServiceProvider.getAuthenticatedVehicleService();
 
     // remove preceding "/"
     String vehicleId = request.getPathInfo().substring(1);
 
     logger.info(String.format("Getting vehicle with vehicleID: %s", vehicleId));
 
-    GetVehicleRequest getVehicleRequest = GetVehicleRequest.newBuilder()
-        .setName(VehicleUtils.getVehicleName(vehicleId)).build();
+    GetVehicleRequest getVehicleRequest =
+        GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
 
     Vehicle vehicle = vehicleService.getVehicle(getVehicleRequest);
     logger.info(String.format("Vehicle:\n%s", vehicle));
@@ -98,8 +97,7 @@ public class VehicleServlet extends HttpServlet {
       return;
     }
 
-    VehicleServiceClient vehicleService =
-        grpcServiceProvider.getAuthenticatedVehicleService();
+    VehicleServiceClient vehicleService = grpcServiceProvider.getAuthenticatedVehicleService();
 
     String postData = CharStreams.toString(request.getReader());
     JsonObject jsonBody = GsonProvider.get().fromJson(postData, JsonObject.class);
@@ -116,11 +114,12 @@ public class VehicleServlet extends HttpServlet {
 
     // TODO(b/153661805) Add support to add form body fields for vehicle creation
     Vehicle vehicle = VehicleUtils.createVehicle(vehicleId);
-    CreateVehicleRequest createVehicleRequest = CreateVehicleRequest.newBuilder()
-        .setParent(VehicleUtils.PROVIDER_NAME)
-        .setVehicleId(vehicleId)
-        .setVehicle(vehicle)
-        .build();
+    CreateVehicleRequest createVehicleRequest =
+        CreateVehicleRequest.newBuilder()
+            .setParent(VehicleUtils.PROVIDER_NAME)
+            .setVehicleId(vehicleId)
+            .setVehicle(vehicle)
+            .build();
 
     Vehicle createdVehicle;
     try {
@@ -128,11 +127,13 @@ public class VehicleServlet extends HttpServlet {
     } catch (StatusRuntimeException e) {
       logger.warning(String.format("GRPC reported exception: %s", e.getStatus()));
       if (e.getStatus().getCode().equals(Status.ALREADY_EXISTS.getCode())) {
-        response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+        response.sendError(
+            HttpServletResponse.SC_BAD_REQUEST,
             String.format("Vehicle already exists with the vehicleId: %s", vehicleId));
         return;
       }
-      response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
+      response.sendError(
+          HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
           String.format("Error has occurred with the Grpc service: %s", e));
       return;
     }

@@ -18,9 +18,7 @@ import com.google.protobuf.DoubleValue;
 import com.google.protobuf.Int32Value;
 import com.google.type.LatLng;
 
-/**
- * Util class for easy way to create protos values.
- */
+/** Util class for easy way to create protos values. */
 final class ProtosUtil {
   static Int32Value getIntValue(int value) {
     return Int32Value.of(value);

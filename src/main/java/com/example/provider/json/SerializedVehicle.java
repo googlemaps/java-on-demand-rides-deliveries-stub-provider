@@ -17,8 +17,8 @@ package com.example.provider.json;
 import com.google.auto.value.AutoValue;
 
 /**
- * Vehicle object to serialize to clients. This object will only contain relevant
- * vehicle information to send to the clients.
+ * Vehicle object to serialize to clients. This object will only contain relevant vehicle
+ * information to send to the clients.
  */
 @AutoValue
 abstract class SerializedVehicle {

@@ -57,9 +57,10 @@ public class TokenServlet extends HttpServlet {
     try {
       tokenTypeEnum = FleetEngineTokenType.valueOf(Ascii.toUpperCase(tokenType));
     } catch (IllegalArgumentException e) {
-      logger.warning(String.format("Requested token for tokenType [%s], but did not find token.",
-          tokenType));
-      response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+      logger.warning(
+          String.format("Requested token for tokenType [%s], but did not find token.", tokenType));
+      response.sendError(
+          HttpServletResponse.SC_BAD_REQUEST,
           String.format("Could not find token for the given type: %s", tokenType));
       return;
     }

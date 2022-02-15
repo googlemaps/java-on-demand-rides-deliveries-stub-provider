@@ -24,16 +24,17 @@ import java.lang.reflect.Type;
 /**
  * Serializer for vehicle object to provide relevant information to its clients.
  *
- * From the fleetengine vehicle object, this serializer retrieves the name and the vehicleState.
+ * <p>From the fleetengine vehicle object, this serializer retrieves the name and the vehicleState.
  */
 final class VehicleSerializer implements JsonSerializer<Vehicle> {
 
   @Override
   public JsonElement serialize(Vehicle src, Type typeOfSrc, JsonSerializationContext context) {
-    SerializedVehicle vehicle = SerializedVehicle.newBuilder()
-        .setName(src.getName())
-        .setVehicleState(src.getVehicleState().name())
-        .build();
+    SerializedVehicle vehicle =
+        SerializedVehicle.newBuilder()
+            .setName(src.getName())
+            .setVehicleState(src.getVehicleState().name())
+            .build();
 
     return new Gson().toJsonTree(vehicle);
   }
