@@ -19,6 +19,7 @@ import com.google.gson.GsonBuilder;
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.Trip;
 import google.maps.fleetengine.v1.Vehicle;
+import java.util.Date;
 
 /**
  * Provider for Gson after setting custom serializer and deserializer.
@@ -43,6 +44,7 @@ public final class GsonProvider {
     gsonBuilder
         .registerTypeAdapter(Vehicle.class, new VehicleSerializer())
         .registerTypeAdapter(Trip.class, new TripSerializer())
+        .registerTypeAdapter(Date.class, new DateSerializer())
         .registerTypeAdapter(LatLng.class, new LatLngDeserializer())
         .setPrettyPrinting();
     gson = gsonBuilder.create();
