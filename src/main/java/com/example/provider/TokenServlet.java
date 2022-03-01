@@ -14,6 +14,7 @@
  */
 package com.example.provider;
 
+import com.example.provider.json.GsonProvider;
 import com.example.provider.utils.ServletUtils;
 import com.google.common.base.Ascii;
 import com.google.fleetengine.auth.AuthTokenMinter;
@@ -87,7 +88,7 @@ public class TokenServlet extends HttpServlet {
 
     logger.info(String.format("Found token for type %s: %s", tokenType, authToken.jwt()));
 
-    response.getWriter().print(new Gson().toJson(authToken));
+    response.getWriter().print(GsonProvider.get().toJson(authToken));
     response.getWriter().flush();
   }
 }
