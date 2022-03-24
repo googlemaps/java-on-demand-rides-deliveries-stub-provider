@@ -35,13 +35,10 @@ import java.util.logging.Logger;
 
 /** PropertyChangeListener class for ServletState. */
 class ServletStatePropertyChangeListener implements PropertyChangeListener {
-
   private static final Logger logger =
       Logger.getLogger(ServletStatePropertyChangeListener.class.getName());
-
   private static final String TRIP_VEHICLE_ID_PROPERTY = "vehicle_id";
   private static final String TRIP_STATUS_PROPERTY = "trip_status";
-
   private final TripServiceClient authenticatedServerTripService;
   private final ServletState servletState;
 
@@ -51,7 +48,6 @@ class ServletStatePropertyChangeListener implements PropertyChangeListener {
     this.servletState = servletState;
     this.authenticatedServerTripService = grpcServiceProvider.getAuthenticatedTripService();
   }
-
   /**
    * Handles {@code ServletState.VEHICLE_PROPERTY_KEY} property changes by matching the new
    * vehicleid with an existing trip.
@@ -64,54 +60,31 @@ class ServletStatePropertyChangeListener implements PropertyChangeListener {
     checkNotNull(servletState);
 
     String propertyName = Strings.nullToEmpty(event.getPropertyName());
-    if (propertyName.equals(ServletState.VEHICLE_PROPERTY_KEY)
-        && servletState.getLastTrip() != null) {
+
+    if (propertyName.equals(ServletState.VEHICLE_PROPERTY_KEY)) {
       String vehicleId = event.getNewValue().toString();
-      searchAndCancelTrip(vehicleId, servletState.getLastTrip());
+      searchAndCancelTrips(vehicleId);
 
-      logger.info(String.format("Matching trip with vehicle id:\n%s", vehicleId));
-
-      // Match previously created trip to vehicle.
-      UpdateTripRequest updateReq =
-          UpdateTripRequest.newBuilder()
-              .setName(servletState.getLastTrip().getName())
-              .setTrip(Trip.newBuilder().setVehicleId(vehicleId).build())
-              .setUpdateMask(FieldMask.newBuilder().addPaths(TRIP_VEHICLE_ID_PROPERTY).build())
-              .build();
-
-      Trip updatedTrip = authenticatedServerTripService.updateTrip(updateReq);
-      servletState.setLastTrip(updatedTrip);
-
-      logger.info(String.format("Trip:\n%s", updatedTrip));
-    } else if (propertyName.equals(ServletState.TRIP_PROPERTY_KEY)) {
-      String vehicleId = Strings.nullToEmpty(servletState.getLastVehicleId());
-      if (vehicleId.isEmpty()) {
-        return;
-      }
-
-      Trip createdTrip = (Trip) event.getNewValue();
-      searchAndCancelTrip(vehicleId, createdTrip);
+      servletState.clearTrips();
     }
   }
 
   /**
    * Find trips with corresponding vehicleId to set the status to cancel.
    *
-   * <p>This is because this provider is a naive provider that matches the last saved trip with the
-   * last vehicle ID, but there is an issue creating another trip matched to the same vehicle and
-   * journeysharing will not start for the new trip. Find trips matched to the vehicle and set the
-   * status to cancelled.
+   * <p>The sample provider currently manages a singleton Vehicle.
    */
-  private void searchAndCancelTrip(String vehicleId, Trip lastCreatedTrip) {
+  private void searchAndCancelTrips(String vehicleId) {
     logger.info(String.format("Searching for trips with vehicleId: %s", vehicleId));
-    SearchTripsRequest searchReq =
+    SearchTripsRequest searchRequest =
         SearchTripsRequest.newBuilder()
             .setParent(TripUtils.PROVIDER_NAME)
             .setVehicleId(vehicleId)
             .setActiveTripsOnly(true)
             .build();
 
-    SearchTripsPagedResponse tripResponse = authenticatedServerTripService.searchTrips(searchReq);
+    SearchTripsPagedResponse tripResponse =
+        authenticatedServerTripService.searchTrips(searchRequest);
     if (tripResponse.getPage() == null) {
       logger.info(String.format("No trips found with vehicleId: %s", vehicleId));
       return;
@@ -126,17 +99,16 @@ class ServletStatePropertyChangeListener implements PropertyChangeListener {
     while (trips.hasNext()) {
       Trip trip = trips.next();
       String tripName = trip.getName();
-      if (lastCreatedTrip == null || !lastCreatedTrip.getName().equals(tripName)) {
-        logger.info(String.format("Cancelling Trip: %s", tripName));
-        UpdateTripRequest updateReq =
-            UpdateTripRequest.newBuilder()
-                .setName(tripName)
-                .setTrip(Trip.newBuilder().setTripStatus(TripStatus.CANCELED))
-                .setUpdateMask(FieldMask.newBuilder().addPaths(TRIP_STATUS_PROPERTY).build())
-                .build();
 
-        authenticatedServerTripService.updateTrip(updateReq);
-      }
+      logger.info(String.format("Cancelling Trip: %s", tripName));
+      UpdateTripRequest updateReq =
+          UpdateTripRequest.newBuilder()
+              .setName(tripName)
+              .setTrip(Trip.newBuilder().setTripStatus(TripStatus.CANCELED))
+              .setUpdateMask(FieldMask.newBuilder().addPaths(TRIP_STATUS_PROPERTY).build())
+              .build();
+
+      authenticatedServerTripService.updateTrip(updateReq);
     }
   }
 }

@@ -18,6 +18,10 @@ package com.example.provider;
 import google.maps.fleetengine.v1.Trip;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.logging.Logger;
 import javax.inject.Singleton;
 
 /**
@@ -37,32 +41,34 @@ class ServletState {
   /** Key used to identify the vehicleid property in PropertyChangeEvent signals. */
   public static final String VEHICLE_PROPERTY_KEY = "vehicleid";
 
-  /** Key used to identify the trip property in PropertyChangeEvent signals. */
-  public static final String TRIP_PROPERTY_KEY = "trip";
+  private static final Logger logger = Logger.getLogger(ServletState.class.getName());
 
-  private String lastVehicleId;
-  private Trip lastTrip;
+  private String vehicleId;
   private String routeToken;
+
+  /** Queue of trips created awaiting to be matched. */
+  private LinkedList<Trip> tripsPendingMatches = new LinkedList<>();
+
+  /** List of current active trips. */
+  private Map<String, Trip> tripsMap = new HashMap<>();
 
   private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 
-  public synchronized void setLastVehicleId(String lastVehicleId) {
-    propertyChangeSupport.firePropertyChange(
-        VEHICLE_PROPERTY_KEY, this.lastVehicleId, lastVehicleId);
-    this.lastVehicleId = lastVehicleId;
+  public synchronized void clearTrips() {
+    tripsPendingMatches.clear();
+    tripsMap.clear();
   }
 
-  public synchronized String getLastVehicleId() {
-    return this.lastVehicleId;
-  }
+  /**
+   * Sets the current active vehicleId. It also triggers a 'property change' event which ends up
+   * cancelling the trips assigned to the previous vehicle.
+   */
+  public synchronized void setVehicleId(String vehicleId) {
+    if (this.vehicleId != null && !this.vehicleId.equals(vehicleId)) {
+      propertyChangeSupport.firePropertyChange(VEHICLE_PROPERTY_KEY, this.vehicleId, vehicleId);
+    }
 
-  public synchronized void setLastTrip(Trip lastTrip) {
-    propertyChangeSupport.firePropertyChange(TRIP_PROPERTY_KEY, this.lastTrip, lastTrip);
-    this.lastTrip = lastTrip;
-  }
-
-  public synchronized Trip getLastTrip() {
-    return this.lastTrip;
+    this.vehicleId = vehicleId;
   }
 
   public synchronized void setRouteToken(String routeToken) {
@@ -70,10 +76,54 @@ class ServletState {
   }
 
   public synchronized String getRouteToken() {
-    return this.routeToken;
+    return routeToken;
+  }
+
+  /** Adds a trip to the queue of trips to match as well as to the map of active trips. */
+  public synchronized void addTrip(String tripId, Trip trip) {
+    logger.info(String.format("addTrip: %s", tripId));
+
+    tripsMap.put(tripId, trip);
+    tripsPendingMatches.add(trip);
+  }
+
+  /**
+   * Removes a trip from the list of active trips. (Ex: when status is CANCELED/COMPLETED/UNKNOWN)
+   */
+  public synchronized void removeTrip(String tripId) {
+    tripsMap.remove(tripId);
+  }
+
+  /** Gets the trip given by ID from the map of active trips. */
+  public synchronized Trip getTrip(String tripId) {
+    return tripsMap.get(tripId);
+  }
+
+  /** Returns the current vehicleId. */
+  public synchronized String getVehicleId() {
+    return vehicleId;
+  }
+
+  /** Checks if there are any active trips. */
+  public synchronized boolean hasNoTrips() {
+    return tripsMap.isEmpty();
+  }
+
+  /** Checks if there are any trips created waiting for match. */
+  public synchronized boolean hasTripPendingMatch() {
+    return tripsPendingMatches.peek() != null;
+  }
+
+  /** Gets the next trip in the queue waiting for match. */
+  public synchronized Trip getNextTripToMatch() {
+    return tripsPendingMatches.poll();
+  }
+
+  public synchronized Map<String, Trip> getActiveTripsMap() {
+    return tripsMap;
   }
 
   public void addPropertyChangeListener(PropertyChangeListener listener) {
-    this.propertyChangeSupport.addPropertyChangeListener(listener);
+    propertyChangeSupport.addPropertyChangeListener(listener);
   }
 }

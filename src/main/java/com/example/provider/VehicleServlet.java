@@ -47,18 +47,20 @@ public class VehicleServlet extends HttpServlet {
   private static final String BACK_TO_BACK_ENABLED_FIELD = "backToBackEnabled";
 
   private final AuthenticatedGrpcServiceProvider grpcServiceProvider;
-
   private final ServletState servletState;
+  private final TripMatcher tripMatcher;
 
   @Inject
   public VehicleServlet(
       ServletState servletState,
       AuthenticatedGrpcServiceProvider grpcServiceProvider,
-      ServletStatePropertyChangeListener propertyChangeListener) {
+      ServletStatePropertyChangeListener propertyChangeListener,
+      TripMatcher tripMatcher) {
     super();
 
     this.servletState = servletState;
     this.grpcServiceProvider = grpcServiceProvider;
+    this.tripMatcher = tripMatcher;
 
     this.servletState.addPropertyChangeListener(propertyChangeListener);
   }
@@ -78,10 +80,15 @@ public class VehicleServlet extends HttpServlet {
         GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
 
     Vehicle vehicle = vehicleService.getVehicle(getVehicleRequest);
+    servletState.setVehicleId(vehicleId);
+
     logger.info(String.format("Vehicle:\n%s", vehicle));
 
     if (vehicle != null) {
-      servletState.setLastVehicleId(vehicleId);
+      if (tripMatcher.isVehicleReadyForMatch()) {
+        tripMatcher.triggerMatching();
+        vehicle = vehicleService.getVehicle(getVehicleRequest);
+      }
     }
 
     response.getWriter().print(GsonProvider.get().toJson(vehicle));
@@ -144,7 +151,7 @@ public class VehicleServlet extends HttpServlet {
       return;
     }
 
-    servletState.setLastVehicleId(vehicleId);
+    servletState.setVehicleId(vehicleId);
     logger.info(String.format("Vehicle:\n%s", vehicle));
 
     response.getWriter().print(GsonProvider.get().toJson(createdVehicle));

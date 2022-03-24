@@ -22,6 +22,7 @@ import com.example.provider.json.TripData;
 import com.example.provider.utils.SampleProviderUtils;
 import com.example.provider.utils.ServletUtils;
 import com.example.provider.utils.TripUtils;
+import com.example.provider.utils.VehicleUtils;
 import com.google.common.base.Ascii;
 import com.google.common.base.Strings;
 import com.google.common.io.CharStreams;
@@ -35,10 +36,13 @@ import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.CreateTripRequest;
 import google.maps.fleetengine.v1.GetTripRequest;
+import google.maps.fleetengine.v1.GetVehicleRequest;
 import google.maps.fleetengine.v1.Trip;
 import google.maps.fleetengine.v1.TripServiceClient;
 import google.maps.fleetengine.v1.TripStatus;
 import google.maps.fleetengine.v1.UpdateTripRequest;
+import google.maps.fleetengine.v1.Vehicle;
+import google.maps.fleetengine.v1.VehicleServiceClient;
 import java.io.IOException;
 import java.util.UUID;
 import java.util.logging.Level;
@@ -66,8 +70,8 @@ import javax.servlet.http.HttpServletResponse;
 public final class TripServlet extends HttpServlet {
 
   private final AuthenticatedGrpcServiceProvider grpcServiceProvider;
-
   private final ServletState servletState;
+  private final TripMatcher tripMatcher;
 
   private static final String SUPPORTED_POST_LINK = "/new";
 
@@ -87,32 +91,62 @@ public final class TripServlet extends HttpServlet {
 
   @Inject
   public TripServlet(
-      ServletState servletState, AuthenticatedGrpcServiceProvider grpcServiceProvider) {
+      ServletState servletState,
+      AuthenticatedGrpcServiceProvider grpcServiceProvider,
+      TripMatcher tripMatcher) {
     this.servletState = servletState;
     this.grpcServiceProvider = grpcServiceProvider;
+    this.tripMatcher = tripMatcher;
   }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
 
+    String tripId = "";
+
     if (isNullOrEmpty(request.getPathInfo()) || request.getPathInfo().equals("/")) {
-      if (servletState.getLastTrip() == null
-          || servletState.getLastTrip().getVehicleId().isEmpty()) {
+      if (servletState.hasNoTrips()) {
         // Return empty response to indicate no trips are available.
         logger.log(Level.INFO, "No Trips Found.");
         return;
       }
 
-      Trip trip = servletState.getLastTrip();
-      logger.info(String.format("Trip:\n%s", trip));
-      String routeToken = Strings.nullToEmpty(servletState.getRouteToken());
+      /**
+       * Backwards compatibility - The way the provider worked initially, it allowed calls to GET
+       * Trip without parameters, and it'd return the last created trip. This would always be a
+       * matched trip.
+       */
+      String vehicleId = servletState.getVehicleId();
 
-      response.getWriter().print(GsonProvider.get().toJson(TripData.create(trip, routeToken)));
-      response.getWriter().flush();
-      return;
+      if (vehicleId == null || vehicleId.equals("")) {
+        logger.log(Level.INFO, "No vehicle id.");
+        return;
+      }
+
+      if (tripMatcher.isVehicleReadyForMatch()) {
+        tripMatcher.triggerMatching();
+
+        GetVehicleRequest getVehicleRequest =
+            GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
+
+        VehicleServiceClient vehicleService = grpcServiceProvider.getAuthenticatedVehicleService();
+
+        Vehicle vehicle = vehicleService.getVehicle(getVehicleRequest);
+        if (vehicle.getCurrentTripsList().size() == 0) {
+          logger.log(Level.INFO, "No trips assigned.");
+          return;
+        }
+
+        tripId = vehicle.getCurrentTripsList().get(0);
+      } else {
+        return;
+      }
     }
-    String tripId = request.getPathInfo().substring(1);
+
+    if (tripId.equals("")) {
+      tripId = request.getPathInfo().substring(1);
+    }
 
     GetTripRequest getTripRequest =
         GetTripRequest.newBuilder().setName(TripUtils.getTripNameFromId(tripId)).build();
@@ -182,7 +216,8 @@ public final class TripServlet extends HttpServlet {
 
     String tripId = UUID.randomUUID().toString();
 
-    String vehicleId = Strings.nullToEmpty(servletState.getLastVehicleId());
+    // Do not match automatically for simplicity. This will occur when vehicle state is polled.
+    String vehicleId = "";
 
     Trip trip =
         TripUtils.createTrip(
@@ -199,8 +234,7 @@ public final class TripServlet extends HttpServlet {
         grpcServiceProvider.getAuthenticatedTripService();
 
     Trip createdTrip = authenticatedServerTripService.createTrip(createReq);
-
-    servletState.setLastTrip(createdTrip);
+    servletState.addTrip(tripId, createdTrip);
 
     logger.info(String.format("Trip:\n%s", createdTrip));
     response.getWriter().print(gson.toJson(createdTrip));
@@ -239,7 +273,7 @@ public final class TripServlet extends HttpServlet {
     if (updatedTripStatus == TripStatus.COMPLETE || updatedTripStatus == TripStatus.CANCELED) {
       logger.info(
           String.format("Trip %s reached a terminal status. Cleaning up servlet state.", tripId));
-      servletState.setLastTrip(null);
+      servletState.removeTrip(tripId);
     }
 
     logger.info(String.format("Trip:\n%s", updatedTrip));
@@ -285,7 +319,7 @@ public final class TripServlet extends HttpServlet {
       }
 
       Timestamp intermediateDestinationsVersion =
-          servletState.getLastTrip().getIntermediateDestinationsVersion();
+          servletState.getTrip(tripId).getIntermediateDestinationsVersion();
 
       updatedTripBuilder
           .setIntermediateDestinationsVersion(intermediateDestinationsVersion)

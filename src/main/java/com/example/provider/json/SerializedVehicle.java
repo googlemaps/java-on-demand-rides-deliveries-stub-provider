@@ -56,7 +56,7 @@ abstract class SerializedVehicle {
     /**
      * Setter for list of IDs of trips assigned to vehicle.
      *
-     * @param vehicleState current list of trip ids in Fleet Engine.
+     * @param currentTripsIds current list of trip ids in Fleet Engine.
      */
     abstract Builder setCurrentTripsIds(List<String> currentTripsIds);
 
