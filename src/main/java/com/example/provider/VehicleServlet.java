@@ -44,6 +44,7 @@ public class VehicleServlet extends HttpServlet {
 
   private static final String SUPPORTED_POST_LINK = "/new";
   private static final String VEHICLE_ID_FIELD = "vehicleId";
+  private static final String BACK_TO_BACK_ENABLED_FIELD = "backToBackEnabled";
 
   private final AuthenticatedGrpcServiceProvider grpcServiceProvider;
 
@@ -108,12 +109,17 @@ public class VehicleServlet extends HttpServlet {
       return;
     }
 
+    boolean backToBackEnabled =
+        jsonBody.has(BACK_TO_BACK_ENABLED_FIELD)
+            && jsonBody.get(BACK_TO_BACK_ENABLED_FIELD).getAsBoolean() == true;
+
     String vehicleId = jsonBody.get(VEHICLE_ID_FIELD).getAsString();
 
     logger.info(String.format("Creating vehicle with vehicleID: %s", vehicleId));
 
     // TODO(b/153661805) Add support to add form body fields for vehicle creation
-    Vehicle vehicle = VehicleUtils.createVehicle(vehicleId);
+    Vehicle vehicle = VehicleUtils.createVehicle(vehicleId, backToBackEnabled);
+
     CreateVehicleRequest createVehicleRequest =
         CreateVehicleRequest.newBuilder()
             .setParent(VehicleUtils.PROVIDER_NAME)

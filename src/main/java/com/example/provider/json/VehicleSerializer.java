@@ -34,6 +34,7 @@ final class VehicleSerializer implements JsonSerializer<Vehicle> {
         SerializedVehicle.newBuilder()
             .setName(src.getName())
             .setVehicleState(src.getVehicleState().name())
+            .setCurrentTripsIds(src.getCurrentTripsList())
             .build();
 
     return new Gson().toJsonTree(vehicle);

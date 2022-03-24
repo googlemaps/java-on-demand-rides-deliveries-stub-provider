@@ -15,6 +15,7 @@
 package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
+import java.util.List;
 
 /**
  * Vehicle object to serialize to clients. This object will only contain relevant vehicle
@@ -27,6 +28,8 @@ abstract class SerializedVehicle {
   abstract String name();
   /** Current state of the vehicle given by fleetengine. */
   abstract String vehicleState();
+  /** List of assigned trip Ids for vehicle */
+  abstract List<String> currentTripsIds();
 
   static Builder newBuilder() {
     return new AutoValue_SerializedVehicle.Builder();
@@ -49,6 +52,13 @@ abstract class SerializedVehicle {
      * @param vehicleState current state of vehicle in fleetengine.
      */
     abstract Builder setVehicleState(String vehicleState);
+
+    /**
+     * Setter for list of IDs of trips assigned to vehicle.
+     *
+     * @param vehicleState current list of trip ids in Fleet Engine.
+     */
+    abstract Builder setCurrentTripsIds(List<String> currentTripsIds);
 
     abstract SerializedVehicle build();
   }
