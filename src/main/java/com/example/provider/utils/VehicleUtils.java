@@ -52,7 +52,7 @@ public final class VehicleUtils {
    *
    * <p>TODO(b/153661805) Adding support for custom parameters.
    */
-  public static final Vehicle createVehicle(String vehicleId) {
+  public static final Vehicle createVehicle(String vehicleId, Boolean backToBackEnabled) {
     return Vehicle.newBuilder()
         .setName(getVehicleName(vehicleId))
         .setVehicleState(VehicleState.ONLINE)
@@ -60,6 +60,7 @@ public final class VehicleUtils {
         .setVehicleType(VehicleType.newBuilder().setCategory(Category.AUTO))
         .addSupportedTripTypes(TripType.EXCLUSIVE)
         .setLastLocation(getVehicleLocation())
+        .setBackToBackEnabled(backToBackEnabled)
         .build();
   }
 
