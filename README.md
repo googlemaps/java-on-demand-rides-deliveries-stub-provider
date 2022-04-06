@@ -78,11 +78,11 @@ These are the supported endpoints and how to interact with them:
 #### GET
 
 Retrieves a signed JWT to be used to communicate with the Fleet Engine. The
-token will expire after 60 minutes of its creation. Supported values for the
-token type are `driver` and `consumer`.
+token will expire after 60 minutes of its creation.
 
 ```
-GET /token/:tokenType
+GET /token/driver/:vehicleId
+GET /token/consumer/:tripId
 ```
 
 ### Vehicle

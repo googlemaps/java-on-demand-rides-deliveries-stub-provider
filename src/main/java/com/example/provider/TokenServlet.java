@@ -53,7 +53,14 @@ public class TokenServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
 
-    String tokenType = request.getPathInfo().substring(1);
+    String tokenType;
+    String pathInfo = request.getPathInfo();
+    int separatorIndex = pathInfo.indexOf("/", 1);
+    if (separatorIndex != -1) {
+      tokenType = pathInfo.substring(1, separatorIndex);
+    } else {
+      tokenType = pathInfo.substring(1);
+    }
     FleetEngineTokenType tokenTypeEnum;
     try {
       tokenTypeEnum = FleetEngineTokenType.valueOf(Ascii.toUpperCase(tokenType));
@@ -70,10 +77,20 @@ public class TokenServlet extends HttpServlet {
     try {
       switch (tokenTypeEnum) {
         case DRIVER:
-          authToken = this.minter.getDriverToken(VehicleClaims.create());
+          if (separatorIndex != -1) {
+            String vehicleId = pathInfo.substring(separatorIndex + 1);
+            authToken = this.minter.getDriverToken(VehicleClaims.create(vehicleId));
+          } else {
+            authToken = this.minter.getDriverToken(VehicleClaims.create());
+          }
           break;
         case CONSUMER:
-          authToken = this.minter.getConsumerToken(TripClaims.create());
+          if (separatorIndex != -1) {
+            String tripId = pathInfo.substring(separatorIndex + 1);
+            authToken = this.minter.getConsumerToken(TripClaims.create(tripId));
+          } else {
+            authToken = this.minter.getConsumerToken(TripClaims.create());
+          }
           break;
         default:
           logger.severe("Requested token for tokenType [%s], but it should not get here.");
