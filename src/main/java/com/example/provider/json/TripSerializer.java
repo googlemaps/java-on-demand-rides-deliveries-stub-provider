@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+import com.google.type.LatLng;
 import google.maps.fleetengine.v1.Trip;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -30,31 +31,52 @@ final class TripSerializer implements JsonSerializer<Trip> {
 
   @Override
   public JsonElement serialize(Trip src, Type typeOfSrc, JsonSerializationContext context) {
+    LatLng pickupLatLng = src.getPickupPoint().getPoint();
     Waypoint pickupWaypoint =
         Waypoint.newBuilder()
-            .setLocation(
-                SerializedLocation.newBuilder().setPoint(src.getPickupPoint().getPoint()).build())
+            .setLocation(SerializedLocation.newBuilder()
+                .setPoint(SerializedLatLng.newBuilder()
+                    .setLatitude(pickupLatLng.getLatitude())
+                    .setLongitude(pickupLatLng.getLongitude())
+                    .setLatitude_(pickupLatLng.getLatitude())
+                    .setLongitude_(pickupLatLng.getLongitude())
+                    .build())
+                .build())
             .setWaypointType(WaypointType.PICKUP_WAYPOINT_TYPE)
             .build();
 
+    LatLng dropoffLatLng = src.getDropoffPoint().getPoint();
     Waypoint dropoffWaypoint =
         Waypoint.newBuilder()
-            .setLocation(
-                SerializedLocation.newBuilder().setPoint(src.getDropoffPoint().getPoint()).build())
+            .setLocation(SerializedLocation.newBuilder()
+                .setPoint(SerializedLatLng.newBuilder()
+                    .setLatitude(dropoffLatLng.getLatitude())
+                    .setLongitude(dropoffLatLng.getLongitude())
+                    .setLatitude_(dropoffLatLng.getLatitude())
+                    .setLongitude_(dropoffLatLng.getLongitude())
+                    .build())
+                .build())
             .setWaypointType(WaypointType.DROP_OFF_WAYPOINT_TYPE)
             .build();
 
     List<Waypoint> intermediateWaypoints =
         src.getIntermediateDestinationsList().stream()
             .map(
-                destination ->
-                    Waypoint.newBuilder()
-                        .setLocation(
-                            SerializedLocation.newBuilder()
-                                .setPoint(destination.getPoint())
+                destination -> {
+                    LatLng latLng = destination.getPoint();
+                    return Waypoint.newBuilder()
+                        .setLocation(SerializedLocation.newBuilder()
+                            .setPoint(SerializedLatLng.newBuilder()
+                                .setLatitude(latLng.getLatitude())
+                                .setLongitude(latLng.getLongitude())
+                                .setLatitude_(latLng.getLatitude())
+                                .setLongitude_(latLng.getLongitude())
                                 .build())
+                            .build())
                         .setWaypointType(WaypointType.INTERMEDIATE_DESTINATION_WAYPOINT_TYPE)
-                        .build())
+                        .build();
+                }
+            )
             .collect(Collectors.toList());
     ;
 
