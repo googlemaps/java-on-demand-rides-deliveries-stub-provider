@@ -31,52 +31,26 @@ final class TripSerializer implements JsonSerializer<Trip> {
 
   @Override
   public JsonElement serialize(Trip src, Type typeOfSrc, JsonSerializationContext context) {
-    LatLng pickupLatLng = src.getPickupPoint().getPoint();
     Waypoint pickupWaypoint =
         Waypoint.newBuilder()
-            .setLocation(SerializedLocation.newBuilder()
-                .setPoint(SerializedLatLng.newBuilder()
-                    .setLatitude(pickupLatLng.getLatitude())
-                    .setLongitude(pickupLatLng.getLongitude())
-                    .setLatitude_(pickupLatLng.getLatitude())
-                    .setLongitude_(pickupLatLng.getLongitude())
-                    .build())
-                .build())
+            .setLocation(createSerializedLocation(src.getPickupPoint().getPoint()))
             .setWaypointType(WaypointType.PICKUP_WAYPOINT_TYPE)
             .build();
 
-    LatLng dropoffLatLng = src.getDropoffPoint().getPoint();
     Waypoint dropoffWaypoint =
         Waypoint.newBuilder()
-            .setLocation(SerializedLocation.newBuilder()
-                .setPoint(SerializedLatLng.newBuilder()
-                    .setLatitude(dropoffLatLng.getLatitude())
-                    .setLongitude(dropoffLatLng.getLongitude())
-                    .setLatitude_(dropoffLatLng.getLatitude())
-                    .setLongitude_(dropoffLatLng.getLongitude())
-                    .build())
-                .build())
+            .setLocation(createSerializedLocation(src.getDropoffPoint().getPoint()))
             .setWaypointType(WaypointType.DROP_OFF_WAYPOINT_TYPE)
             .build();
 
     List<Waypoint> intermediateWaypoints =
         src.getIntermediateDestinationsList().stream()
             .map(
-                destination -> {
-                    LatLng latLng = destination.getPoint();
-                    return Waypoint.newBuilder()
-                        .setLocation(SerializedLocation.newBuilder()
-                            .setPoint(SerializedLatLng.newBuilder()
-                                .setLatitude(latLng.getLatitude())
-                                .setLongitude(latLng.getLongitude())
-                                .setLatitude_(latLng.getLatitude())
-                                .setLongitude_(latLng.getLongitude())
-                                .build())
-                            .build())
+                destination ->
+                    Waypoint.newBuilder()
+                        .setLocation(createSerializedLocation(destination.getPoint()))
                         .setWaypointType(WaypointType.INTERMEDIATE_DESTINATION_WAYPOINT_TYPE)
-                        .build();
-                }
-            )
+                        .build())
             .collect(Collectors.toList());
     ;
 
@@ -96,5 +70,16 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .build();
 
     return new Gson().toJsonTree(trip);
+  }
+
+  static SerializedLocation createSerializedLocation(LatLng latLng) {
+    return SerializedLocation.newBuilder()
+        .setPoint(SerializedLatLng.newBuilder()
+            .setLatitude(latLng.getLatitude())
+            .setLongitude(latLng.getLongitude())
+            .setLatitude_(latLng.getLatitude())
+            .setLongitude_(latLng.getLongitude())
+            .build())
+        .build();
   }
 }
