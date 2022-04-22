@@ -72,7 +72,7 @@ final class TripSerializer implements JsonSerializer<Trip> {
     return new Gson().toJsonTree(trip);
   }
 
-  static SerializedLocation createSerializedLocation(LatLng latLng) {
+  private static SerializedLocation createSerializedLocation(LatLng latLng) {
     return SerializedLocation.newBuilder()
         .setPoint(SerializedLatLng.newBuilder()
             .setLatitude(latLng.getLatitude())
