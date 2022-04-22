@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+import com.google.type.LatLng;
 import google.maps.fleetengine.v1.Trip;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -32,15 +33,13 @@ final class TripSerializer implements JsonSerializer<Trip> {
   public JsonElement serialize(Trip src, Type typeOfSrc, JsonSerializationContext context) {
     Waypoint pickupWaypoint =
         Waypoint.newBuilder()
-            .setLocation(
-                SerializedLocation.newBuilder().setPoint(src.getPickupPoint().getPoint()).build())
+            .setLocation(createSerializedLocation(src.getPickupPoint().getPoint()))
             .setWaypointType(WaypointType.PICKUP_WAYPOINT_TYPE)
             .build();
 
     Waypoint dropoffWaypoint =
         Waypoint.newBuilder()
-            .setLocation(
-                SerializedLocation.newBuilder().setPoint(src.getDropoffPoint().getPoint()).build())
+            .setLocation(createSerializedLocation(src.getDropoffPoint().getPoint()))
             .setWaypointType(WaypointType.DROP_OFF_WAYPOINT_TYPE)
             .build();
 
@@ -49,10 +48,7 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .map(
                 destination ->
                     Waypoint.newBuilder()
-                        .setLocation(
-                            SerializedLocation.newBuilder()
-                                .setPoint(destination.getPoint())
-                                .build())
+                        .setLocation(createSerializedLocation(destination.getPoint()))
                         .setWaypointType(WaypointType.INTERMEDIATE_DESTINATION_WAYPOINT_TYPE)
                         .build())
             .collect(Collectors.toList());
@@ -74,5 +70,16 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .build();
 
     return new Gson().toJsonTree(trip);
+  }
+
+  private static SerializedLocation createSerializedLocation(LatLng latLng) {
+    return SerializedLocation.newBuilder()
+        .setPoint(SerializedLatLng.newBuilder()
+            .setLatitude(latLng.getLatitude())
+            .setLongitude(latLng.getLongitude())
+            .setLatitude_(latLng.getLatitude())
+            .setLongitude_(latLng.getLongitude())
+            .build())
+        .build();
   }
 }

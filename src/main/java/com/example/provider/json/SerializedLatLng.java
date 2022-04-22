@@ -1,4 +1,4 @@
-/* Copyright 2020 Google LLC
+/* Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,18 +18,32 @@ import com.google.auto.value.AutoValue;
 
 /** Representation of terminal location. */
 @AutoValue
-abstract class SerializedLocation {
+abstract class SerializedLatLng {
 
-  abstract SerializedLatLng point();
+  abstract double latitude();
+
+  abstract double longitude();
+
+  // For backward compatibility.
+  abstract double latitude_();
+
+  // For backward compatibility.
+  abstract double longitude_();
 
   static Builder newBuilder() {
-    return new AutoValue_SerializedLocation.Builder();
+    return new AutoValue_SerializedLatLng.Builder();
   }
 
   @AutoValue.Builder
   abstract static class Builder {
-    abstract Builder setPoint(SerializedLatLng point);
+    abstract Builder setLatitude(double latitude);
 
-    abstract SerializedLocation build();
+    abstract Builder setLongitude(double longitude);
+
+    abstract Builder setLatitude_(double latitude_);
+
+    abstract Builder setLongitude_(double longitude_);
+
+    abstract SerializedLatLng build();
   }
 }
