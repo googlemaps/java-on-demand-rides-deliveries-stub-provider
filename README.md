@@ -85,6 +85,15 @@ GET /token/driver/:vehicleId
 GET /token/consumer/:tripId
 ```
 
+Sample response:
+```json
+{
+  "jwt": "abcdefgh01234567",
+  "creationTimestamp": 1650500000000,
+  "expirationTimestamp": 1650503600000
+}
+```
+
 ### Vehicle
 
 #### GET
@@ -95,6 +104,15 @@ its information.
 
 ```
 GET /vehicle/:vehicleId
+```
+
+Sample response:
+```json
+{
+  "name": "providers/testProvider/vehicles/testVehicle",
+  "vehicleState": "ONLINE",
+  "currentTripsIds": ["testTrip"]
+}
 ```
 
 #### POST
@@ -126,13 +144,38 @@ specified, the most recent trip is return.
 GET /trip/:tripId
 ```
 
+Sample response:
+```json
+{
+  "trip": {
+    "name": "providers/testProvider/trips/testTrip",
+    "vehicleId": "testVehicle",
+    "tripStatus": "ENROUTE_TO_PICKUP",
+    "waypoints": [
+      {
+        "location": {
+          "point": { "latitude": 3.45, "longitude": 4.4 }
+        },
+        "waypointType": "PICKUP_WAYPOINT_TYPE"
+      },
+      {
+        "location": {
+          "point": { "latitude": 3.44, "longitude": 4.43 }
+        },
+        "waypointType": "DROP_OFF_WAYPOINT_TYPE"
+      }
+    ]
+  }
+}
+```
+
 #### POST
 
 Creates a new trip given the JSON provided by the body of the POST. The pickup
 and the dropoff points are provided and a new trip is configured. If there is an
 existing vehicle, the sample provider will match the vehicle with the trip.
 
-The 'intermediateDestinations' field is optional and it's used to support multi-destination trips.
+The `intermediateDestinations` field is optional and it's used to support multi-destination trips.
 ```
 POST /trip/new
 ```
