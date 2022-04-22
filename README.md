@@ -109,6 +109,8 @@ GET /vehicle/:vehicleId
 Sample response:
 ```json
 {
+  "name": "providers/testProvider/vehicles/testVehicle",
+  "vehicleState": "ONLINE",
   "currentTripsIds": ["testTrip"]
 }
 ```
@@ -146,6 +148,8 @@ Sample response:
 ```json
 {
   "trip": {
+    "name": "providers/testProvider/trips/testTrip",
+    "vehicleId": "testVehicle",
     "tripStatus": "ENROUTE_TO_PICKUP",
     "waypoints": [
       {
