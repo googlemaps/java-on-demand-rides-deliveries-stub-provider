@@ -1,0 +1,11 @@
+.error-label {
+  color: red;
+}
+
+.success-label {
+  color: green;
+}
+  
+.status-area {
+  margin: 10px;
+}

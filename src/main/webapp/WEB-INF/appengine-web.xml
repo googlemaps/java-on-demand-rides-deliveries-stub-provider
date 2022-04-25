@@ -19,4 +19,6 @@
        Delete this to use the socket API, which is more performant but could
        conceivably lead to different behavior. -->
   <url-stream-handler>urlfetch</url-stream-handler>
+
+  <public-root>/static</public-root>
 </appengine-web-app>
