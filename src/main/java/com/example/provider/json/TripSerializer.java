@@ -77,8 +77,6 @@ final class TripSerializer implements JsonSerializer<Trip> {
         .setPoint(SerializedLatLng.newBuilder()
             .setLatitude(latLng.getLatitude())
             .setLongitude(latLng.getLongitude())
-            .setLatitude_(latLng.getLatitude())
-            .setLongitude_(latLng.getLongitude())
             .build())
         .build();
   }

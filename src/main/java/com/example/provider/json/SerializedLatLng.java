@@ -24,12 +24,6 @@ abstract class SerializedLatLng {
 
   abstract double longitude();
 
-  // For backward compatibility.
-  abstract double latitude_();
-
-  // For backward compatibility.
-  abstract double longitude_();
-
   static Builder newBuilder() {
     return new AutoValue_SerializedLatLng.Builder();
   }
@@ -39,10 +33,6 @@ abstract class SerializedLatLng {
     abstract Builder setLatitude(double latitude);
 
     abstract Builder setLongitude(double longitude);
-
-    abstract Builder setLatitude_(double latitude_);
-
-    abstract Builder setLongitude_(double longitude_);
 
     abstract SerializedLatLng build();
   }
