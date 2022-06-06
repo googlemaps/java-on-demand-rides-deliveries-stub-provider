@@ -176,6 +176,8 @@ and the dropoff points are provided and a new trip is configured. If there is an
 existing vehicle, the sample provider will match the vehicle with the trip.
 
 The `intermediateDestinations` field is optional and it's used to support multi-destination trips.
+
+The `tripType` field is optional. The possible values are `EXCLUSIVE` and `SHARED`. In case it is not provided, the provider will default to `EXCLUSIVE`.
 ```
 POST /trip/new
 ```
@@ -200,7 +202,8 @@ Sample request body:
       "latitude": 5.44,
       "longitude": 2.43
     }
-  ]
+  ],
+  "tripType": "EXCLUSIVE"
 }
 ```
 
