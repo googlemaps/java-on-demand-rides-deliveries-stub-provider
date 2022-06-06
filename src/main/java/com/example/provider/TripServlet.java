@@ -40,6 +40,7 @@ import google.maps.fleetengine.v1.GetVehicleRequest;
 import google.maps.fleetengine.v1.Trip;
 import google.maps.fleetengine.v1.TripServiceClient;
 import google.maps.fleetengine.v1.TripStatus;
+import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.UpdateTripRequest;
 import google.maps.fleetengine.v1.Vehicle;
 import google.maps.fleetengine.v1.VehicleServiceClient;
@@ -80,6 +81,7 @@ public final class TripServlet extends HttpServlet {
   private static final String STATUS_INPUT_FIELD = "status";
   private static final String PICKUP_INPUT_FIELD = "pickup";
   private static final String DROPOFF_INPUT_FIELD = "dropoff";
+  private static final String TRIP_TYPE_INPUT_FIELD = "tripType";
   private static final String INTERMEDIATE_DESTINATIONS_INPUT_FIELD = "intermediateDestinations";
   private static final String INTERMEDIATE_DESTINATION_INDEX_INPUT_FIELD =
       "intermediateDestinationIndex";
@@ -192,22 +194,30 @@ public final class TripServlet extends HttpServlet {
     }
 
     // Process request.
-    JsonElement pickup = jsonBody.get(PICKUP_INPUT_FIELD);
-    JsonElement dropoff = jsonBody.get(DROPOFF_INPUT_FIELD);
-    JsonElement intermediateDestinations = jsonBody.get(INTERMEDIATE_DESTINATIONS_INPUT_FIELD);
+    JsonElement pickupElement = jsonBody.get(PICKUP_INPUT_FIELD);
+    JsonElement dropoffElement = jsonBody.get(DROPOFF_INPUT_FIELD);
+    JsonElement intermediateDestinationsElement =
+        jsonBody.get(INTERMEDIATE_DESTINATIONS_INPUT_FIELD);
+    JsonElement tripTypeElement = jsonBody.get(TRIP_TYPE_INPUT_FIELD);
 
     Gson gson = GsonProvider.get();
 
     LatLng pickupLatLng;
     LatLng dropoffLatLng;
     LatLng[] intermediateDestinationsLatLng = null;
+    TripType tripType = TripType.EXCLUSIVE;
 
     try {
-      pickupLatLng = gson.fromJson(pickup, LatLng.class);
-      dropoffLatLng = gson.fromJson(dropoff, LatLng.class);
+      pickupLatLng = gson.fromJson(pickupElement, LatLng.class);
+      dropoffLatLng = gson.fromJson(dropoffElement, LatLng.class);
 
-      if (intermediateDestinations != null) {
-        intermediateDestinationsLatLng = gson.fromJson(intermediateDestinations, LatLng[].class);
+      if (intermediateDestinationsElement != null) {
+        intermediateDestinationsLatLng =
+            gson.fromJson(intermediateDestinationsElement, LatLng[].class);
+      }
+
+      if (tripTypeElement != null) {
+        tripType = new Gson().fromJson(tripTypeElement, TripType.class);
       }
     } catch (JsonParseException exception) {
       sendError(response, exception.getMessage(), HttpServletResponse.SC_BAD_REQUEST);
@@ -221,7 +231,12 @@ public final class TripServlet extends HttpServlet {
 
     Trip trip =
         TripUtils.createTrip(
-            tripId, vehicleId, pickupLatLng, dropoffLatLng, intermediateDestinationsLatLng);
+            tripId,
+            vehicleId,
+            pickupLatLng,
+            dropoffLatLng,
+            intermediateDestinationsLatLng,
+            tripType);
 
     CreateTripRequest createReq =
         CreateTripRequest.newBuilder()

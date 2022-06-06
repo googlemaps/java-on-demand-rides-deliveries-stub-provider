@@ -46,7 +46,8 @@ public final class TripUtils {
       String vehicleId,
       LatLng pickup,
       LatLng dropoff,
-      LatLng[] intermediateDestinationsLatLng) {
+      LatLng[] intermediateDestinationsLatLng,
+      TripType tripType) {
     TerminalLocation pickupPoint = TerminalLocation.newBuilder().setPoint(pickup).build();
 
     TerminalLocation dropoffPoint = TerminalLocation.newBuilder().setPoint(dropoff).build();
@@ -55,7 +56,7 @@ public final class TripUtils {
         Trip.newBuilder()
             .setName(getTripNameFromId(tripId))
             .setVehicleId(vehicleId)
-            .setTripType(TripType.EXCLUSIVE)
+            .setTripType(tripType)
             .setPickupPoint(pickupPoint)
             .setDropoffPoint(dropoffPoint)
             .setNumberOfPassengers(DEFAULT_NUM_PASSENGERS);
