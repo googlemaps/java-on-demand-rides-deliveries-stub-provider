@@ -35,6 +35,9 @@ final class VehicleSerializer implements JsonSerializer<Vehicle> {
             .setName(src.getName())
             .setVehicleState(src.getVehicleState().name())
             .setCurrentTripsIds(src.getCurrentTripsList())
+            .setBackToBackEnabled(src.getBackToBackEnabled())
+            .setSupportedTripTypes(src.getSupportedTripTypesList())
+            .setMaximumCapacity(src.getMaximumCapacity())
             .build();
 
     return new Gson().toJsonTree(vehicle);

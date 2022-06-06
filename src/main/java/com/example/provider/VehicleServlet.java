@@ -20,11 +20,14 @@ import com.example.provider.utils.ServletUtils;
 import com.example.provider.utils.VehicleUtils;
 import com.google.common.base.Ascii;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import com.google.common.io.CharStreams;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.inject.Inject;
 import google.maps.fleetengine.v1.CreateVehicleRequest;
 import google.maps.fleetengine.v1.GetVehicleRequest;
+import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.Vehicle;
 import google.maps.fleetengine.v1.VehicleServiceClient;
 import io.grpc.Status;
@@ -45,6 +48,12 @@ public class VehicleServlet extends HttpServlet {
   private static final String SUPPORTED_POST_LINK = "/new";
   private static final String VEHICLE_ID_FIELD = "vehicleId";
   private static final String BACK_TO_BACK_ENABLED_FIELD = "backToBackEnabled";
+  private static final String SUPPORTED_TRIP_TYPES_FIELD = "supportedTripTypes";
+  private static final String MAXIMUM_CAPACITY_FIELD = "maximumCapacity";
+
+  private static final int MAXIMUM_CAPACITY_DEFAULT = 4;
+  private static final TripType[] SUPPORTED_TRIP_TYPES_DEFAULT =
+      new TripType[] {TripType.EXCLUSIVE};
 
   private final AuthenticatedGrpcServiceProvider grpcServiceProvider;
   private final ServletState servletState;
@@ -116,16 +125,29 @@ public class VehicleServlet extends HttpServlet {
       return;
     }
 
+    String vehicleId = jsonBody.get(VEHICLE_ID_FIELD).getAsString();
+    logger.info(String.format("Creating vehicle with vehicleID: %s", vehicleId));
+
     boolean backToBackEnabled =
         jsonBody.has(BACK_TO_BACK_ENABLED_FIELD)
             && jsonBody.get(BACK_TO_BACK_ENABLED_FIELD).getAsBoolean() == true;
 
-    String vehicleId = jsonBody.get(VEHICLE_ID_FIELD).getAsString();
+    int maximumCapacity =
+        jsonBody.has(MAXIMUM_CAPACITY_FIELD)
+            ? jsonBody.get(MAXIMUM_CAPACITY_FIELD).getAsInt()
+            : MAXIMUM_CAPACITY_DEFAULT;
 
-    logger.info(String.format("Creating vehicle with vehicleID: %s", vehicleId));
+    TripType[] supportedTripTypes =
+        jsonBody.has(SUPPORTED_TRIP_TYPES_FIELD)
+            ? new Gson().fromJson(jsonBody.get(SUPPORTED_TRIP_TYPES_FIELD), TripType[].class)
+            : SUPPORTED_TRIP_TYPES_DEFAULT;
 
-    // TODO(b/153661805) Add support to add form body fields for vehicle creation
-    Vehicle vehicle = VehicleUtils.createVehicle(vehicleId, backToBackEnabled);
+    Vehicle vehicle =
+        VehicleUtils.createVehicle(
+            vehicleId,
+            backToBackEnabled,
+            maximumCapacity,
+            ImmutableList.copyOf(supportedTripTypes));
 
     CreateVehicleRequest createVehicleRequest =
         CreateVehicleRequest.newBuilder()

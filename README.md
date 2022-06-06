@@ -111,14 +111,18 @@ Sample response:
 {
   "name": "providers/testProvider/vehicles/testVehicle",
   "vehicleState": "ONLINE",
-  "currentTripsIds": ["testTrip"]
+  "currentTripsIds": ["testTrip"],
+  "supportedTripTypes": ["EXCLUSIVE"],
+  "backToBackEnabled": true,
+  "maximumCapacity": 5
 }
 ```
 
 #### POST
 
 Creates a new vehicle given the vehicle ID. The vehicle ID is given in the body
-with the field `vehicleId`.
+with the field `vehicleId`. The attributes that can be specified are: `supportedTripTypes`, `backToBackEnabled`, and `maximumCapacity`.
+
 
 ```
 POST /vehicle/new
@@ -127,7 +131,10 @@ POST /vehicle/new
 Sample request body:
 ```json
 {
-  "vehicleId": "testVehicle"
+  "vehicleId": "testVehicle",
+  "supportedTripTypes": ["EXCLUSIVE"],
+  "backToBackEnabled": false,
+  "maximumCapacity": 5
 }
 ```
 
