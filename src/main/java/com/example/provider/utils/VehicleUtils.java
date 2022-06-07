@@ -15,6 +15,7 @@
  */
 package com.example.provider.utils;
 
+import com.google.common.collect.ImmutableList;
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.Vehicle;
@@ -35,7 +36,6 @@ public final class VehicleUtils {
   /** Default longitude for vehicle creation located to Google MTV. */
   private static final double DEFAULT_LONGITUDE = -122.073884;
 
-  private static final int MAX_CAPACITY = 4;
   private static final int DEFAULT_SPEED = 30;
   private static final double SPEED_ACCURACY = 1.0;
 
@@ -52,13 +52,17 @@ public final class VehicleUtils {
    *
    * <p>TODO(b/153661805) Adding support for custom parameters.
    */
-  public static final Vehicle createVehicle(String vehicleId, Boolean backToBackEnabled) {
+  public static final Vehicle createVehicle(
+      String vehicleId,
+      Boolean backToBackEnabled,
+      int maximumCapacity,
+      ImmutableList<TripType> supportedTripTypes) {
     return Vehicle.newBuilder()
         .setName(getVehicleName(vehicleId))
         .setVehicleState(VehicleState.ONLINE)
-        .setMaximumCapacity(MAX_CAPACITY)
+        .setMaximumCapacity(maximumCapacity)
         .setVehicleType(VehicleType.newBuilder().setCategory(Category.AUTO))
-        .addSupportedTripTypes(TripType.EXCLUSIVE)
+        .addAllSupportedTripTypes(supportedTripTypes)
         .setLastLocation(getVehicleLocation())
         .setBackToBackEnabled(backToBackEnabled)
         .build();

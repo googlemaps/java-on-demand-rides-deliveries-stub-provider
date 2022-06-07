@@ -15,6 +15,7 @@
 package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
+import google.maps.fleetengine.v1.TripType;
 import java.util.List;
 
 /**
@@ -30,6 +31,12 @@ abstract class SerializedVehicle {
   abstract String vehicleState();
   /** List of assigned trip Ids for vehicle */
   abstract List<String> currentTripsIds();
+  /** Back to back enabled */
+  abstract boolean backToBackEnabled();
+  /** Maximum capacity */
+  abstract int maximumCapacity();
+  /** Supported trip types */
+  abstract List<TripType> supportedTripTypes();
 
   static Builder newBuilder() {
     return new AutoValue_SerializedVehicle.Builder();
@@ -59,6 +66,27 @@ abstract class SerializedVehicle {
      * @param currentTripsIds current list of trip ids in Fleet Engine.
      */
     abstract Builder setCurrentTripsIds(List<String> currentTripsIds);
+
+    /**
+     * Setter for the backToBackEnabled setting for the vehicle.
+     *
+     * @param backToBackEnabled indicates if vehicle supports B2B trips.
+     */
+    abstract Builder setBackToBackEnabled(boolean backToBackEnabled);
+
+    /**
+     * Setter for the maximum passenger capacity.
+     *
+     * @param maximumCapacity vehicle maximum passengers capacity.
+     */
+    abstract Builder setMaximumCapacity(int maximumCapacity);
+
+    /**
+     * Setter for the list of supported trip types for the vehicle.
+     *
+     * @param supportedTripTypes list of supported trip types.
+     */
+    abstract Builder setSupportedTripTypes(List<TripType> supportedTripTypes);
 
     abstract SerializedVehicle build();
   }
