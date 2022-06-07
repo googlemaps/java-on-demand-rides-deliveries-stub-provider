@@ -138,6 +138,24 @@ Sample request body:
 }
 ```
 
+#### PUT
+
+Updates a vehicle with the attributes provided. The vehicle ID is supplied in the url path.
+The attributes that can be modified are: `supportedTripTypes`, `backToBackEnabled`, and `maximumCapacity`.
+
+```
+PUT /vehicle/:vehicleId
+```
+
+Sample request body:
+```json
+{
+  "supportedTripTypes": ["EXCLUSIVE"],
+  "backToBackEnabled": false,
+  "maximumCapacity": 5
+}
+```
+
 ### Trip
 
 #### GET

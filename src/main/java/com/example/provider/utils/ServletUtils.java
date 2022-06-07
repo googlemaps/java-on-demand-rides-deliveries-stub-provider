@@ -14,11 +14,13 @@
  */
 package com.example.provider.utils;
 
+import static com.google.common.base.Strings.isNullOrEmpty;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.example.provider.json.ErrorResponse;
 import com.example.provider.json.GsonProvider;
 import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.MediaType;
 
@@ -42,5 +44,20 @@ public final class ServletUtils {
     ErrorResponse errorResponse = ErrorResponse.create(message, status);
     response.setStatus(status);
     response.getWriter().write(GsonProvider.get().toJson(errorResponse));
+  }
+
+  /**
+   * Extracts the 'ID' piece of a URL request. Use for REST endpoints where ID is supplied in that
+   * format.
+   *
+   * @throws IllegalArgumentException if path is not contained in the Request URL.
+   */
+  public static String getEntityIdFromRequestPath(HttpServletRequest request)
+      throws IllegalArgumentException {
+    if (isNullOrEmpty(request.getPathInfo())) {
+      throw new IllegalArgumentException("Request is missing ID from the URL path.");
+    }
+
+    return request.getPathInfo().substring(1);
   }
 }
