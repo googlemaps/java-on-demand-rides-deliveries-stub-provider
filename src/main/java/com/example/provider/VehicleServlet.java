@@ -25,14 +25,18 @@ import com.google.common.io.CharStreams;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.inject.Inject;
+import com.google.protobuf.FieldMask;
 import google.maps.fleetengine.v1.CreateVehicleRequest;
 import google.maps.fleetengine.v1.GetVehicleRequest;
 import google.maps.fleetengine.v1.TripType;
+import google.maps.fleetengine.v1.UpdateVehicleRequest;
 import google.maps.fleetengine.v1.Vehicle;
 import google.maps.fleetengine.v1.VehicleServiceClient;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.inject.Singleton;
 import javax.servlet.http.HttpServlet;
@@ -55,7 +59,8 @@ public class VehicleServlet extends HttpServlet {
   private static final TripType[] SUPPORTED_TRIP_TYPES_DEFAULT =
       new TripType[] {TripType.EXCLUSIVE};
 
-  private final AuthenticatedGrpcServiceProvider grpcServiceProvider;
+  private final VehicleServiceClient vehicleServiceClient;
+
   private final ServletState servletState;
   private final TripMatcher tripMatcher;
 
@@ -68,8 +73,8 @@ public class VehicleServlet extends HttpServlet {
     super();
 
     this.servletState = servletState;
-    this.grpcServiceProvider = grpcServiceProvider;
     this.tripMatcher = tripMatcher;
+    this.vehicleServiceClient = grpcServiceProvider.getAuthenticatedVehicleService();
 
     this.servletState.addPropertyChangeListener(propertyChangeListener);
   }
@@ -78,17 +83,21 @@ public class VehicleServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
 
-    VehicleServiceClient vehicleService = grpcServiceProvider.getAuthenticatedVehicleService();
+    String vehicleId;
 
-    // remove preceding "/"
-    String vehicleId = request.getPathInfo().substring(1);
+    try {
+      vehicleId = ServletUtils.getEntityIdFromRequestPath(request);
+    } catch (IllegalArgumentException e) {
+      response.sendError(HttpServletResponse.SC_BAD_REQUEST, "No Vehicle id provided.");
+      return;
+    }
 
     logger.info(String.format("Getting vehicle with vehicleID: %s", vehicleId));
 
     GetVehicleRequest getVehicleRequest =
         GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
 
-    Vehicle vehicle = vehicleService.getVehicle(getVehicleRequest);
+    Vehicle vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
     servletState.setVehicleId(vehicleId);
 
     logger.info(String.format("Vehicle:\n%s", vehicle));
@@ -96,7 +105,7 @@ public class VehicleServlet extends HttpServlet {
     if (vehicle != null) {
       if (tripMatcher.isVehicleReadyForMatch()) {
         tripMatcher.triggerMatching();
-        vehicle = vehicleService.getVehicle(getVehicleRequest);
+        vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
       }
     }
 
@@ -114,10 +123,10 @@ public class VehicleServlet extends HttpServlet {
       return;
     }
 
-    VehicleServiceClient vehicleService = grpcServiceProvider.getAuthenticatedVehicleService();
-
     String postData = CharStreams.toString(request.getReader());
-    JsonObject jsonBody = GsonProvider.get().fromJson(postData, JsonObject.class);
+
+    Gson gson = GsonProvider.get();
+    JsonObject jsonBody = gson.fromJson(postData, JsonObject.class);
 
     if (!jsonBody.has(VEHICLE_ID_FIELD)) {
       String message = "Vehicle ID was not provided.";
@@ -139,7 +148,7 @@ public class VehicleServlet extends HttpServlet {
 
     TripType[] supportedTripTypes =
         jsonBody.has(SUPPORTED_TRIP_TYPES_FIELD)
-            ? new Gson().fromJson(jsonBody.get(SUPPORTED_TRIP_TYPES_FIELD), TripType[].class)
+            ? gson.fromJson(jsonBody.get(SUPPORTED_TRIP_TYPES_FIELD), TripType[].class)
             : SUPPORTED_TRIP_TYPES_DEFAULT;
 
     Vehicle vehicle =
@@ -158,7 +167,7 @@ public class VehicleServlet extends HttpServlet {
 
     Vehicle createdVehicle;
     try {
-      createdVehicle = vehicleService.createVehicle(createVehicleRequest);
+      createdVehicle = vehicleServiceClient.createVehicle(createVehicleRequest);
     } catch (StatusRuntimeException e) {
       logger.warning(String.format("GRPC reported exception: %s", e.getStatus()));
       if (e.getStatus().getCode().equals(Status.ALREADY_EXISTS.getCode())) {
@@ -178,5 +187,83 @@ public class VehicleServlet extends HttpServlet {
 
     response.getWriter().print(GsonProvider.get().toJson(createdVehicle));
     response.getWriter().flush();
+  }
+
+  @Override
+  public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    ServletUtils.setStandardResponseHeaders(response);
+
+    String vehicleId;
+
+    try {
+      vehicleId = ServletUtils.getEntityIdFromRequestPath(request);
+    } catch (IllegalArgumentException e) {
+      response.sendError(HttpServletResponse.SC_BAD_REQUEST, "No Vehicle id provided.");
+      return;
+    }
+
+    String putData = CharStreams.toString(request.getReader());
+    logger.info(String.format("Updating vehicle %s with input %s.", vehicleId, putData));
+
+    Gson gson = GsonProvider.get();
+    JsonObject jsonBody = gson.fromJson(putData, JsonObject.class);
+
+    UpdateVehicleRequest updateVehicleRequest = getUpdateVehicleRequest(vehicleId, gson, jsonBody);
+
+    Vehicle updatedVehicle;
+
+    try {
+      updatedVehicle = vehicleServiceClient.updateVehicle(updateVehicleRequest);
+    } catch (StatusRuntimeException e) {
+      logger.warning(String.format("GRPC reported exception: %s", e.getStatus()));
+
+      if (e.getStatus().getCode().equals(Status.NOT_FOUND.getCode())) {
+        response.sendError(
+            HttpServletResponse.SC_BAD_REQUEST,
+            String.format("Vehicle with Id: %s does not exist.", vehicleId));
+        return;
+      }
+
+      response.sendError(
+          HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
+          String.format("Error has occurred with the Grpc service: %s", e));
+      return;
+    }
+
+    response.getWriter().print(GsonProvider.get().toJson(updatedVehicle));
+
+    logger.info(response.toString());
+    response.getWriter().flush();
+  }
+
+  private static UpdateVehicleRequest getUpdateVehicleRequest(
+      String vehicleId, Gson gson, JsonObject jsonBody) {
+    Vehicle.Builder updatedVehicleBuilder = Vehicle.newBuilder();
+    List<String> fieldMask = new ArrayList<>();
+
+    if (jsonBody.has(SUPPORTED_TRIP_TYPES_FIELD)) {
+      TripType[] supportedTripTypes =
+          gson.fromJson(jsonBody.get(SUPPORTED_TRIP_TYPES_FIELD), TripType[].class);
+
+      updatedVehicleBuilder.addAllSupportedTripTypes(ImmutableList.copyOf(supportedTripTypes));
+      fieldMask.add("supported_trip_types");
+    }
+
+    if (jsonBody.has(BACK_TO_BACK_ENABLED_FIELD)) {
+      updatedVehicleBuilder.setBackToBackEnabled(
+          jsonBody.get(BACK_TO_BACK_ENABLED_FIELD).getAsBoolean());
+      fieldMask.add("back_to_back_enabled");
+    }
+
+    if (jsonBody.has(MAXIMUM_CAPACITY_FIELD)) {
+      updatedVehicleBuilder.setMaximumCapacity(jsonBody.get(MAXIMUM_CAPACITY_FIELD).getAsInt());
+      fieldMask.add("maximum_capacity");
+    }
+
+    return UpdateVehicleRequest.newBuilder()
+        .setName(VehicleUtils.getVehicleName(vehicleId))
+        .setVehicle(updatedVehicleBuilder.build())
+        .setUpdateMask(FieldMask.newBuilder().addAllPaths(fieldMask))
+        .build();
   }
 }
