@@ -103,8 +103,7 @@ public class VehicleServlet extends HttpServlet {
     logger.info(String.format("Vehicle:\n%s", vehicle));
 
     if (vehicle != null) {
-      if (tripMatcher.isVehicleReadyForMatch()) {
-        tripMatcher.triggerMatching();
+      if (tripMatcher.triggerMatching(vehicle, vehicleId)) {
         vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
       }
     }

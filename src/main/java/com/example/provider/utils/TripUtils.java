@@ -21,6 +21,8 @@ import com.google.type.LatLng;
 import google.maps.fleetengine.v1.TerminalLocation;
 import google.maps.fleetengine.v1.Trip;
 import google.maps.fleetengine.v1.TripType;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /** Utility class for Trip. */
@@ -30,14 +32,21 @@ public final class TripUtils {
       String.format("providers/%s", SampleProviderUtils.providerProperties.providerId());
   public static final String TRIP_NAME_FORMAT =
       "providers/" + SampleProviderUtils.providerProperties.providerId() + "/trips/%s";
-
+  private static final Pattern TRIP_NAME_PATTERN =
+      Pattern.compile("/?providers/([\\S]+)/trips/([\\S]+)");
   private static final int DEFAULT_NUM_PASSENGERS = 1;
 
   private TripUtils() {}
 
-  /** Returns fleetengine formatted trip name from trip ID. */
+  /** Returns Fleet Engine formatted trip name from trip ID. */
   public static String getTripNameFromId(String tripId) {
     return String.format(TRIP_NAME_FORMAT, tripId);
+  }
+
+  /** Extracts the 'Trip Id' from the Fleet Engine formatted 'Trip name'. */
+  public static String getTripIdFromName(String tripName) {
+    Matcher matcher = TRIP_NAME_PATTERN.matcher(tripName);
+    return matcher.matches() ? matcher.group(2) : null;
   }
 
   /** Creates exclusive trip with {@code DEFAULT_NUM_PASSENGERS} and given params. */

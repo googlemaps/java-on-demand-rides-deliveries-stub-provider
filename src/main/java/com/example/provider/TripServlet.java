@@ -22,7 +22,6 @@ import com.example.provider.json.TripData;
 import com.example.provider.utils.SampleProviderUtils;
 import com.example.provider.utils.ServletUtils;
 import com.example.provider.utils.TripUtils;
-import com.example.provider.utils.VehicleUtils;
 import com.google.common.base.Ascii;
 import com.google.common.base.Strings;
 import com.google.common.io.CharStreams;
@@ -36,14 +35,11 @@ import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.CreateTripRequest;
 import google.maps.fleetengine.v1.GetTripRequest;
-import google.maps.fleetengine.v1.GetVehicleRequest;
 import google.maps.fleetengine.v1.Trip;
 import google.maps.fleetengine.v1.TripServiceClient;
 import google.maps.fleetengine.v1.TripStatus;
 import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.UpdateTripRequest;
-import google.maps.fleetengine.v1.Vehicle;
-import google.maps.fleetengine.v1.VehicleServiceClient;
 import java.io.IOException;
 import java.util.UUID;
 import java.util.logging.Level;
@@ -104,51 +100,11 @@ public final class TripServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
-
-    String tripId = "";
-
     if (isNullOrEmpty(request.getPathInfo()) || request.getPathInfo().equals("/")) {
-      if (servletState.hasNoTrips()) {
-        // Return empty response to indicate no trips are available.
-        logger.log(Level.INFO, "No Trips Found.");
-        return;
-      }
-
-      /**
-       * Backwards compatibility - The way the provider worked initially, it allowed calls to GET
-       * Trip without parameters, and it'd return the last created trip. This would always be a
-       * matched trip.
-       */
-      String vehicleId = servletState.getVehicleId();
-
-      if (vehicleId == null || vehicleId.equals("")) {
-        logger.log(Level.INFO, "No vehicle id.");
-        return;
-      }
-
-      if (tripMatcher.isVehicleReadyForMatch()) {
-        tripMatcher.triggerMatching();
-
-        GetVehicleRequest getVehicleRequest =
-            GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
-
-        VehicleServiceClient vehicleService = grpcServiceProvider.getAuthenticatedVehicleService();
-
-        Vehicle vehicle = vehicleService.getVehicle(getVehicleRequest);
-        if (vehicle.getCurrentTripsList().size() == 0) {
-          logger.log(Level.INFO, "No trips assigned.");
-          return;
-        }
-
-        tripId = vehicle.getCurrentTripsList().get(0);
-      } else {
-        return;
-      }
+      sendError(response, "Missing trip id in URL.", HttpServletResponse.SC_BAD_REQUEST);
     }
 
-    if (tripId.equals("")) {
-      tripId = request.getPathInfo().substring(1);
-    }
+    String tripId = request.getPathInfo().substring(1);
 
     GetTripRequest getTripRequest =
         GetTripRequest.newBuilder().setName(TripUtils.getTripNameFromId(tripId)).build();
