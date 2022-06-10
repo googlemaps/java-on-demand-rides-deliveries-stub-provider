@@ -112,6 +112,22 @@ Sample response:
   "name": "providers/testProvider/vehicles/testVehicle",
   "vehicleState": "ONLINE",
   "currentTripsIds": ["testTrip"],
+  "waypoints": [
+    {
+      "location": {
+        "point": { "latitude": 3.45, "longitude": 4.4 }
+      },
+      "waypointType": "PICKUP_WAYPOINT_TYPE",
+      "tripId": "testTrip"
+    },
+    {
+      "location": {
+        "point": { "latitude": 3.44, "longitude": 4.43 }
+      },
+      "waypointType": "DROP_OFF_WAYPOINT_TYPE",
+      "tripId": "testTrip"
+    }
+  ],
   "supportedTripTypes": ["EXCLUSIVE"],
   "backToBackEnabled": true,
   "maximumCapacity": 5
@@ -181,13 +197,15 @@ Sample response:
         "location": {
           "point": { "latitude": 3.45, "longitude": 4.4 }
         },
-        "waypointType": "PICKUP_WAYPOINT_TYPE"
+        "waypointType": "PICKUP_WAYPOINT_TYPE",
+        "tripId": "testTrip"
       },
       {
         "location": {
           "point": { "latitude": 3.44, "longitude": 4.43 }
         },
-        "waypointType": "DROP_OFF_WAYPOINT_TYPE"
+        "waypointType": "DROP_OFF_WAYPOINT_TYPE",
+        "tripId": "testTrip"
       }
     ]
   }
