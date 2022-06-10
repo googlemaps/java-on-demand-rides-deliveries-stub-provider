@@ -110,12 +110,12 @@ class ServletState {
   }
 
   /** Checks if there are any trips created waiting for match. */
-  public synchronized boolean hasTripPendingMatch() {
-    return tripsPendingMatches.peek() != null;
+  public synchronized Trip peekTripToMatch() {
+    return tripsPendingMatches.peek();
   }
 
   /** Gets the next trip in the queue waiting for match. */
-  public synchronized Trip getNextTripToMatch() {
+  public synchronized Trip pollTripToMatch() {
     return tripsPendingMatches.poll();
   }
 
