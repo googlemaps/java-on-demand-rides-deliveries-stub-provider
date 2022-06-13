@@ -29,6 +29,8 @@ abstract class SerializedVehicle {
   abstract String name();
   /** Current state of the vehicle given by fleetengine. */
   abstract String vehicleState();
+  /** List of remanining waypoints. Ex: Waypoints that the vehicle will visit next. */
+  abstract List<Waypoint> waypoints();
   /** List of assigned trip Ids for vehicle */
   abstract List<String> currentTripsIds();
   /** Back to back enabled */
@@ -66,6 +68,13 @@ abstract class SerializedVehicle {
      * @param currentTripsIds current list of trip ids in Fleet Engine.
      */
     abstract Builder setCurrentTripsIds(List<String> currentTripsIds);
+
+    /**
+     * Setter for the remaining waypoints for the vehicle.
+     *
+     * @param waypoints list of remaining waypoints.
+     */
+    abstract Builder setWaypoints(List<Waypoint> waypoints);
 
     /**
      * Setter for the backToBackEnabled setting for the vehicle.

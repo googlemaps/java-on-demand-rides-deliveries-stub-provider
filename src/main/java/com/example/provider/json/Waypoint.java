@@ -18,13 +18,15 @@ import com.google.auto.value.AutoValue;
 
 /** Represents a vehicle waypoint. */
 @AutoValue
-abstract class Waypoint {
+public abstract class Waypoint {
 
   /** Geo location of the waypoint. */
   abstract SerializedLocation location();
 
   /** Type of waypoint. */
   abstract WaypointType waypointType();
+
+  abstract String tripId();
 
   static Builder newBuilder() {
     return new AutoValue_Waypoint.Builder();
@@ -36,6 +38,8 @@ abstract class Waypoint {
     abstract Builder setLocation(SerializedLocation location);
 
     abstract Builder setWaypointType(WaypointType type);
+
+    abstract Builder setTripId(String tripId);
 
     abstract Waypoint build();
   }

@@ -14,12 +14,16 @@
  */
 package com.example.provider.json;
 
+import static java.util.stream.Collectors.toList;
+
+import com.example.provider.utils.WaypointUtils;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import google.maps.fleetengine.v1.Vehicle;
 import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * Serializer for vehicle object to provide relevant information to its clients.
@@ -30,11 +34,26 @@ final class VehicleSerializer implements JsonSerializer<Vehicle> {
 
   @Override
   public JsonElement serialize(Vehicle src, Type typeOfSrc, JsonSerializationContext context) {
+    List<Waypoint> waypoints =
+        src.getWaypointsList().stream()
+            .map(
+                waypoint ->
+                    Waypoint.newBuilder()
+                        .setTripId(waypoint.getTripId())
+                        .setWaypointType(
+                            WaypointUtils.getWaypointTypeString(waypoint.getWaypointType()))
+                        .setLocation(
+                            SerializationUtils.createSerializedLocation(
+                                waypoint.getLocation().getPoint()))
+                        .build())
+            .collect(toList());
+
     SerializedVehicle vehicle =
         SerializedVehicle.newBuilder()
             .setName(src.getName())
             .setVehicleState(src.getVehicleState().name())
             .setCurrentTripsIds(src.getCurrentTripsList())
+            .setWaypoints(waypoints)
             .setBackToBackEnabled(src.getBackToBackEnabled())
             .setSupportedTripTypes(src.getSupportedTripTypesList())
             .setMaximumCapacity(src.getMaximumCapacity())

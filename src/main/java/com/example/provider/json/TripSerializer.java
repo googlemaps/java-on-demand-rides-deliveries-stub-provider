@@ -15,12 +15,12 @@
 package com.example.provider.json;
 
 import com.example.provider.json.Waypoint.WaypointType;
+import com.example.provider.utils.TripUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
-import com.google.type.LatLng;
 import google.maps.fleetengine.v1.Trip;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -31,16 +31,22 @@ final class TripSerializer implements JsonSerializer<Trip> {
 
   @Override
   public JsonElement serialize(Trip src, Type typeOfSrc, JsonSerializationContext context) {
+    String tripId = TripUtils.getTripIdFromName(src.getName());
+
     Waypoint pickupWaypoint =
         Waypoint.newBuilder()
-            .setLocation(createSerializedLocation(src.getPickupPoint().getPoint()))
+            .setLocation(
+                SerializationUtils.createSerializedLocation(src.getPickupPoint().getPoint()))
             .setWaypointType(WaypointType.PICKUP_WAYPOINT_TYPE)
+            .setTripId(tripId)
             .build();
 
     Waypoint dropoffWaypoint =
         Waypoint.newBuilder()
-            .setLocation(createSerializedLocation(src.getDropoffPoint().getPoint()))
+            .setLocation(
+                SerializationUtils.createSerializedLocation(src.getDropoffPoint().getPoint()))
             .setWaypointType(WaypointType.DROP_OFF_WAYPOINT_TYPE)
+            .setTripId(tripId)
             .build();
 
     List<Waypoint> intermediateWaypoints =
@@ -48,8 +54,10 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .map(
                 destination ->
                     Waypoint.newBuilder()
-                        .setLocation(createSerializedLocation(destination.getPoint()))
+                        .setLocation(
+                            SerializationUtils.createSerializedLocation(destination.getPoint()))
                         .setWaypointType(WaypointType.INTERMEDIATE_DESTINATION_WAYPOINT_TYPE)
+                        .setTripId(tripId)
                         .build())
             .collect(Collectors.toList());
     ;
@@ -70,14 +78,5 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .build();
 
     return new Gson().toJsonTree(trip);
-  }
-
-  private static SerializedLocation createSerializedLocation(LatLng latLng) {
-    return SerializedLocation.newBuilder()
-        .setPoint(SerializedLatLng.newBuilder()
-            .setLatitude(latLng.getLatitude())
-            .setLongitude(latLng.getLongitude())
-            .build())
-        .build();
   }
 }
