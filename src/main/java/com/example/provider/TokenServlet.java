@@ -23,7 +23,6 @@ import com.google.fleetengine.auth.token.FleetEngineTokenType;
 import com.google.fleetengine.auth.token.TripClaims;
 import com.google.fleetengine.auth.token.VehicleClaims;
 import com.google.fleetengine.auth.token.factory.signer.SigningTokenException;
-import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.logging.Logger;
 import javax.inject.Inject;

@@ -30,7 +30,6 @@ import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.TripWaypoint;
 import google.maps.fleetengine.v1.UpdateTripRequest;
 import google.maps.fleetengine.v1.Vehicle;
-import google.maps.fleetengine.v1.VehicleServiceClient;
 import google.maps.fleetengine.v1.VehicleState;
 import google.maps.fleetengine.v1.WaypointType;
 import java.util.ArrayList;
@@ -43,7 +42,6 @@ import javax.inject.Singleton;
 class TripMatcher {
 
   private final TripServiceClient authenticatedServerTripService;
-  private final VehicleServiceClient authenticatedServerVehicleService;
   private final ServletState servletState;
 
   private static final Logger logger = Logger.getLogger(TripMatcher.class.getName());
@@ -52,19 +50,15 @@ class TripMatcher {
   public TripMatcher(
       AuthenticatedGrpcServiceProvider grpcServiceProvider, ServletState servletState) {
     this.authenticatedServerTripService = grpcServiceProvider.getAuthenticatedTripService();
-    this.authenticatedServerVehicleService = grpcServiceProvider.getAuthenticatedVehicleService();
     this.servletState = servletState;
   }
 
   /** Determines if the given vehicle is ready to take a match based on current state. */
-  private synchronized boolean isVehicleReadyForMatch(Vehicle vehicle) {
-    Trip potentialTripMatch = servletState.peekTripToMatch();
+  private synchronized boolean canTripBeAssignedToVehicle(Vehicle vehicle, Trip tripToMatch) {
+    List<TripType> vehicleSupportedTripTypes = vehicle.getSupportedTripTypesList();
+    TripType tripType = tripToMatch.getTripType();
 
-    if (potentialTripMatch == null) {
-      return false;
-    }
-
-    if (vehicle.getVehicleState() != VehicleState.ONLINE) {
+    if (!vehicleSupportedTripTypes.contains(tripType)) {
       return false;
     }
 
@@ -81,13 +75,12 @@ class TripMatcher {
      * That means, that in case the 'Vehicle maximum capacity' equals 'Trip number of passengers',
      * the 'Trip will be added at the end of the 'waypoints' list.
      */
-    List<TripType> vehicleSupportedTripTypes = vehicle.getSupportedTripTypesList();
     boolean vehicleSupportsSharedTrips = vehicleSupportedTripTypes.contains(TripType.SHARED);
-    boolean isTripMatchShareable = potentialTripMatch.getTripType() == TripType.SHARED;
+    boolean isTripMatchShareable = tripType == TripType.SHARED;
 
     if (vehicleSupportsSharedTrips
         && isTripMatchShareable
-        && vehicle.getMaximumCapacity() >= potentialTripMatch.getNumberOfPassengers()) {
+        && vehicle.getMaximumCapacity() >= tripToMatch.getNumberOfPassengers()) {
       return true;
     }
 
@@ -118,11 +111,23 @@ class TripMatcher {
 
   /** Tries to match the 'next trip' in the pending matches list to the active 'Vehicle'. */
   public synchronized boolean triggerMatching(Vehicle vehicle, String vehicleId) {
-    if (!isVehicleReadyForMatch(vehicle)) {
+    if (vehicle.getVehicleState() != VehicleState.ONLINE) {
       return false;
     }
 
-    Trip tripToMatch = servletState.pollTripToMatch();
+    Trip tripToMatch = null;
+
+    for (Trip trip : servletState.getTripsPendingMatches()) {
+      if (canTripBeAssignedToVehicle(vehicle, trip)) {
+        tripToMatch = trip;
+        servletState.removeTripPendingMatch(trip);
+        break;
+      }
+    }
+
+    if (tripToMatch == null) {
+      return false;
+    }
 
     logger.info(
         String.format(

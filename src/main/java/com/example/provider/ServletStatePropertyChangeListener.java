@@ -37,7 +37,6 @@ import java.util.logging.Logger;
 class ServletStatePropertyChangeListener implements PropertyChangeListener {
   private static final Logger logger =
       Logger.getLogger(ServletStatePropertyChangeListener.class.getName());
-  private static final String TRIP_VEHICLE_ID_PROPERTY = "vehicle_id";
   private static final String TRIP_STATUS_PROPERTY = "trip_status";
   private final TripServiceClient authenticatedServerTripService;
   private final ServletState servletState;

@@ -20,6 +20,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 import javax.inject.Singleton;
@@ -47,7 +48,7 @@ class ServletState {
   private String routeToken;
 
   /** Queue of trips created awaiting to be matched. */
-  private LinkedList<Trip> tripsPendingMatches = new LinkedList<>();
+  private List<Trip> tripsPendingMatches = new LinkedList<>();
 
   /** List of current active trips. */
   private Map<String, Trip> tripsMap = new HashMap<>();
@@ -109,14 +110,14 @@ class ServletState {
     return tripsMap.isEmpty();
   }
 
-  /** Checks if there are any trips created waiting for match. */
-  public synchronized Trip peekTripToMatch() {
-    return tripsPendingMatches.peek();
+  /** Gets the list of pending matches. */
+  public synchronized List<Trip> getTripsPendingMatches() {
+    return tripsPendingMatches;
   }
 
-  /** Gets the next trip in the queue waiting for match. */
-  public synchronized Trip pollTripToMatch() {
-    return tripsPendingMatches.poll();
+  /** Removes the given trip from the queue of pending matches.  */
+  public synchronized void removeTripPendingMatch(Trip trip) {
+    tripsPendingMatches.remove(trip);
   }
 
   public synchronized Map<String, Trip> getActiveTripsMap() {
