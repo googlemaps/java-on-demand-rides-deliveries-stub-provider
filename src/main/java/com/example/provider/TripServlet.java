@@ -68,7 +68,6 @@ public final class TripServlet extends HttpServlet {
 
   private final AuthenticatedGrpcServiceProvider grpcServiceProvider;
   private final ServletState servletState;
-  private final TripMatcher tripMatcher;
 
   private static final String SUPPORTED_POST_LINK = "/new";
 
@@ -90,11 +89,9 @@ public final class TripServlet extends HttpServlet {
   @Inject
   public TripServlet(
       ServletState servletState,
-      AuthenticatedGrpcServiceProvider grpcServiceProvider,
-      TripMatcher tripMatcher) {
+      AuthenticatedGrpcServiceProvider grpcServiceProvider) {
     this.servletState = servletState;
     this.grpcServiceProvider = grpcServiceProvider;
-    this.tripMatcher = tripMatcher;
   }
 
   @Override
