@@ -73,6 +73,8 @@ To run the server:
 
 These are the supported endpoints and how to interact with them:
 
+Hello world
+
 ### Token
 
 #### GET
