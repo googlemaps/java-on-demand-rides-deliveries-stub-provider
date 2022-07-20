@@ -28,10 +28,16 @@ import com.google.inject.Inject;
 import com.google.protobuf.FieldMask;
 import google.maps.fleetengine.v1.CreateVehicleRequest;
 import google.maps.fleetengine.v1.GetVehicleRequest;
+import google.maps.fleetengine.v1.GetVehicleRequestOrBuilder;
 import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.UpdateVehicleRequest;
 import google.maps.fleetengine.v1.Vehicle;
+import google.maps.fleetengine.v1.VehicleState;
 import google.maps.fleetengine.v1.VehicleServiceClient;
+import google.maps.fleetengine.v1.VehicleServiceClient.ListVehiclesPagedResponse;
+import google.maps.fleetengine.v1.VehicleServiceSettings;
+import google.maps.fleetengine.v1.ListVehiclesRequest;
+import google.maps.fleetengine.v1.ListVehiclesResponse;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -82,34 +88,49 @@ public class VehicleServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
-
+    
     String vehicleId;
 
+    // Check if there is a vehicle_id
     try {
       vehicleId = ServletUtils.getEntityIdFromRequestPath(request);
-    } catch (IllegalArgumentException e) {
-      response.sendError(HttpServletResponse.SC_BAD_REQUEST, "No Vehicle id provided.");
-      return;
-    }
+      logger.info(String.format("Getting vehicle with vehicleID: %s", vehicleId));
 
-    logger.info(String.format("Getting vehicle with vehicleID: %s", vehicleId));
-
-    GetVehicleRequest getVehicleRequest =
+      GetVehicleRequest getVehicleRequest =
         GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
 
-    Vehicle vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
-    servletState.setVehicleId(vehicleId);
+      Vehicle vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
+      servletState.setVehicleId(vehicleId);
 
-    logger.info(String.format("Vehicle:\n%s", vehicle));
+      logger.info(String.format("Vehicle:\n%s", vehicle));
 
-    if (vehicle != null) {
-      if (tripMatcher.triggerMatching(vehicle, vehicleId)) {
-        vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
+      if (vehicle != null) {
+        if (tripMatcher.triggerMatching(vehicle, vehicleId)) {
+          vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
+        }
       }
-    }
 
-    response.getWriter().print(GsonProvider.get().toJson(vehicle));
-    response.getWriter().flush();
+      response.getWriter().print(GsonProvider.get().toJson(vehicle));
+      response.getWriter().flush();
+    
+    // There is no vehicle_id, return all vehicles
+    // document reasoning, get page, and move catch block
+    } catch (IllegalArgumentException e) {
+        ListVehiclesRequest.Builder listVehiclesRequestBuilder = ListVehiclesRequest.newBuilder()
+          .setParent(VehicleUtils.PROVIDER_NAME)
+          .setVehicleState(VehicleState.ONLINE);
+      
+        ListVehiclesRequest listVehiclesRequest = listVehiclesRequestBuilder.build();
+
+        // version 1
+        logger.info(String.format("Getting list of all vehicles"));
+        ListVehiclesPagedResponse listVehiclesResponse = vehicleServiceClient.listVehicles(listVehiclesRequest);
+        listVehiclesResponse.get
+        logger.info(String.format("List Vehicle Response:\n%s", listVehiclesResponse));
+
+        response.getWriter().print(GsonProvider.get().toJson(listVehiclesResponse.getPage()));
+        response.getWriter().flush();
+    }
   }
 
   @Override
