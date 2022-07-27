@@ -13,7 +13,15 @@
 # limitations under the License.
 
 name: Run tests
-on: pull_request
+
+on:
+  repository_dispatch:
+    types: [test]
+  push:
+    branches-ignore: ['gh-pages']
+  pull_request:
+    branches-ignore: ['gh-pages']
+  workflow_dispatch:
 
 jobs:
   dependabot:
