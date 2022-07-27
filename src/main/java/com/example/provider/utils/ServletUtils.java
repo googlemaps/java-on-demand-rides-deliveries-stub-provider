@@ -49,15 +49,11 @@ public final class ServletUtils {
   /**
    * Extracts the 'ID' piece of a URL request. Use for REST endpoints where ID is supplied in that
    * format.
-   *
-   * @throws IllegalArgumentException if path is not contained in the Request URL.
    */
-  public static String getEntityIdFromRequestPath(HttpServletRequest request)
-      throws IllegalArgumentException {
+  public static String getEntityIdFromRequestPath(HttpServletRequest request) {
     if (isNullOrEmpty(request.getPathInfo())) {
-      throw new IllegalArgumentException("Request is missing ID from the URL path.");
+      return "";
     }
-
     return request.getPathInfo().substring(1);
   }
 }
