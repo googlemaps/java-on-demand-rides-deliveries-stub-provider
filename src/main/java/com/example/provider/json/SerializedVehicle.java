@@ -23,41 +23,29 @@ import java.util.List;
 
 /**
  * Vehicle object to serialize to clients. This object will only contain
- * relevant vehicle
- * information to send to the clients.
+ * relevant vehicle information to send to the clients.
  */
 @AutoValue
 abstract class SerializedVehicle {
 
   /** Name of the vehicle. */
   abstract String name();
-
   /** Current state of the vehicle given by fleetengine. */
   abstract String vehicleState();
-
-  /**
-   * List of remanining waypoints. Ex: Waypoints that the vehicle will visit next.
-   */
+  /** List of remanining waypoints, waypoints that vehicle will visit next. */
   abstract List<Waypoint> waypoints();
-
   /** List of assigned trip Ids for vehicle */
   abstract List<String> currentTripsIds();
-
   /** Back to back enabled */
   abstract boolean backToBackEnabled();
-
   /** Maximum capacity */
   abstract int maximumCapacity();
-
   /** Supported trip types */
   abstract List<TripType> supportedTripTypes();
-
   /** Last location of vehicle */
   abstract SerializedLastLocation lastLocation();
-
   /** Vehicle attributes */
   abstract List<VehicleAttribute> vehicleAttributes();
-
   /** Vehicle type */
   abstract VehicleType vehicleType();
 
