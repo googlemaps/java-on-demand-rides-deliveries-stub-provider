@@ -77,6 +77,7 @@ final class VehicleSerializer implements JsonSerializer<Vehicle> {
             .setLastLocation(serializedLastLocation)
             .setVehicleAttributes(src.getAttributesList())
             .setVehicleType(src.getVehicleType())
+            .setEtaToFirstWaypoint(src.getEtaToFirstWaypoint())
             .build();
 
     return new Gson().toJsonTree(vehicle);
