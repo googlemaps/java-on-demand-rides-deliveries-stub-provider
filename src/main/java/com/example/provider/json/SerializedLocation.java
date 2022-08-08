@@ -22,6 +22,8 @@ abstract class SerializedLocation {
 
   abstract SerializedLatLng point();
 
+  abstract int heading();
+
   static Builder newBuilder() {
     return new AutoValue_SerializedLocation.Builder();
   }
@@ -29,6 +31,8 @@ abstract class SerializedLocation {
   @AutoValue.Builder
   abstract static class Builder {
     abstract Builder setPoint(SerializedLatLng point);
+
+    abstract Builder setHeading(int heading);
 
     abstract SerializedLocation build();
   }

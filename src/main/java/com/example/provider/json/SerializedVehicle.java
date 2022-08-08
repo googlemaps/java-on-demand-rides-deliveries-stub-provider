@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,6 +16,8 @@ package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
 import google.maps.fleetengine.v1.TripType;
+import google.maps.fleetengine.v1.Vehicle.VehicleType;
+import google.maps.fleetengine.v1.VehicleAttribute;
 import java.util.List;
 
 /**
@@ -39,6 +41,12 @@ abstract class SerializedVehicle {
   abstract int maximumCapacity();
   /** Supported trip types */
   abstract List<TripType> supportedTripTypes();
+  /** Last location of vehicle */
+  abstract SerializedLocation lastLocation();
+  /** Vehicle attributes */
+  abstract List<VehicleAttribute> vehicleAttributes();
+  /** Vehicle type */
+  abstract VehicleType vehicleType();
 
   static Builder newBuilder() {
     return new AutoValue_SerializedVehicle.Builder();
@@ -58,7 +66,7 @@ abstract class SerializedVehicle {
     /**
      * Setter for vehicle state.
      *
-     * @param vehicleState current state of vehicle in fleetengine.
+     * @param vehicleState current state of vehicle in Fleet Engine.
      */
     abstract Builder setVehicleState(String vehicleState);
 
@@ -96,6 +104,27 @@ abstract class SerializedVehicle {
      * @param supportedTripTypes list of supported trip types.
      */
     abstract Builder setSupportedTripTypes(List<TripType> supportedTripTypes);
+
+    /**
+     * Setter for the last reported location of the vehicle.
+     *
+     * @param lastLocation last reported location of the vehicle.
+     */
+    abstract Builder setLastLocation(SerializedLocation lastLocation);
+
+    /**
+     * Setter for the list of vehicle attributes.
+     *
+     * @param vehicleAttributes attribute list of vehicle.
+     */
+    abstract Builder setVehicleAttributes(List<VehicleAttribute> vehicleAttributes);
+
+    /**
+     * Setter for the type category of the vehicle.
+     *
+     * @param vehicleType type category of the vehicle.
+     */
+    abstract Builder setVehicleType(VehicleType vehicleType);
 
     abstract SerializedVehicle build();
   }

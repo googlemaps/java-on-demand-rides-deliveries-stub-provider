@@ -27,6 +27,7 @@ public final class SerializationUtils {
                 .setLatitude(latLng.getLatitude())
                 .setLongitude(latLng.getLongitude())
                 .build())
+        .setHeading(0)
         .build();
   }
 }
