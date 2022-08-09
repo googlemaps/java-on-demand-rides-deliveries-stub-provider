@@ -15,6 +15,7 @@
 package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
+import com.google.protobuf.Timestamp;
 import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.Vehicle.VehicleType;
 import google.maps.fleetengine.v1.VehicleAttribute;
@@ -47,6 +48,8 @@ abstract class SerializedVehicle {
   abstract List<VehicleAttribute> vehicleAttributes();
   /** Vehicle type */
   abstract VehicleType vehicleType();
+  /** ETA to first waypoint */
+  abstract Timestamp etaToFirstWaypoint();
 
   static Builder newBuilder() {
     return new AutoValue_SerializedVehicle.Builder();
@@ -125,6 +128,14 @@ abstract class SerializedVehicle {
      * @param vehicleType type category of the vehicle.
      */
     abstract Builder setVehicleType(VehicleType vehicleType);
+
+    /**
+     * Setter for the ETA to the first waypoint of the vehicle.
+     *
+     * @param etaToFirstWaypoint time needed to get to the first waypoint of the
+     *                           vehicle.
+     */
+    abstract Builder setEtaToFirstWaypoint(Timestamp etaToFirstWaypoint);
 
     abstract SerializedVehicle build();
   }
