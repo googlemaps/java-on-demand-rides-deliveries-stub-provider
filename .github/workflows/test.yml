@@ -24,7 +24,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  dependabot:
+  test:
     runs-on: ubuntu-latest
 
     steps:
