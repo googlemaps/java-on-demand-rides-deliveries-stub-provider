@@ -1,3 +1,5 @@
+
+
 # Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,11 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: test
+name: Run tests
 
 on:
-  repository_dispatch:
-    types: [test]
   push:
     branches-ignore: ['gh-pages']
   pull_request:
@@ -28,17 +28,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v1.0.4
+    - name: Gradle Wrapper Validation
+      uses: gradle/wrapper-validation-action@v1.0.4
 
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
 
-      - name: Build modules
-        run: ./gradlew build
+    - name: Build modules
+      run: ./gradlew build
