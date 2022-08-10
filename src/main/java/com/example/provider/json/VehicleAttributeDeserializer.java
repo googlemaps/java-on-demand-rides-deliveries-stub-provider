@@ -19,16 +19,20 @@ final class VehicleAttributeDeserializer implements JsonDeserializer<VehicleAttr
       JsonElement json, Type typeOfT, JsonDeserializationContext context)
       throws JsonParseException {
     JsonObject jsonObject = json.getAsJsonObject();
+
     if (!jsonObject.has(KEY_FIELD)) {
       String errorMsg = String.format(NOT_PROVIDED_MESSAGE, KEY_FIELD);
       throw new JsonParseException(errorMsg);
     }
+
     if (!jsonObject.has(VALUE_FIELD)) {
       String errorMsg = String.format(NOT_PROVIDED_MESSAGE, VALUE_FIELD);
       throw new JsonParseException(errorMsg);
     }
+
     String vehicleAttributeKey = jsonObject.get(KEY_FIELD).getAsString();
     String vehicleAttributeValue = jsonObject.get(VALUE_FIELD).getAsString();
+
     return VehicleAttribute.newBuilder()
         .setKey(vehicleAttributeKey)
         .setValue(vehicleAttributeValue)
