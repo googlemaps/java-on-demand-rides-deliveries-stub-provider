@@ -42,6 +42,8 @@ class ServletState {
   /** Key used to identify the vehicleid property in PropertyChangeEvent signals. */
   public static final String VEHICLE_PROPERTY_KEY = "vehicleid";
 
+  /* Test status check. DO NOT MERGE */
+
   private static final Logger logger = Logger.getLogger(ServletState.class.getName());
 
   private String vehicleId;
