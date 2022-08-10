@@ -16,6 +16,8 @@ package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
+import com.google.type.LatLng;
+import google.maps.fleetengine.v1.ConsumableTrafficPolyline;
 import java.util.List;
 
 /**
@@ -33,6 +35,10 @@ abstract class SerializedTrip {
   abstract ImmutableList<Waypoint> waypoints();
   /** ID of the vehicle. */
   abstract String vehicleId();
+  /** Routes to waypoints */
+  abstract List<LatLng> routeList();
+  /** Traffic of the routes */
+  abstract ConsumableTrafficPolyline currentRouteSegmentTraffic();
 
   static Builder newBuilder() {
     return new AutoValue_SerializedTrip.Builder();
@@ -49,6 +55,10 @@ abstract class SerializedTrip {
     abstract Builder setWaypoints(List<Waypoint> waypoints);
 
     abstract Builder setVehicleId(String vehicleId);
+
+    abstract Builder setRouteList(List<LatLng> routes);
+
+    abstract Builder setCurrentRouteSegmentTraffic(ConsumableTrafficPolyline routeTraffic);
 
     abstract SerializedTrip build();
   }

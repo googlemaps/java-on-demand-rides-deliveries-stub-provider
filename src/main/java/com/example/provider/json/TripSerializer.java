@@ -75,6 +75,8 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .setTripStatus(src.getTripStatus().name())
             .setWaypoints(waypoints)
             .setVehicleId(src.getVehicleId())
+            .setRouteList(src.getRouteList())
+            .setCurrentRouteSegmentTraffic(src.getCurrentRouteSegmentTraffic())
             .build();
 
     return new Gson().toJsonTree(trip);
