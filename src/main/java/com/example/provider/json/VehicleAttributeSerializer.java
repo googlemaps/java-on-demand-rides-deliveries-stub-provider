@@ -7,7 +7,7 @@ import com.google.gson.JsonSerializer;
 import google.maps.fleetengine.v1.VehicleAttribute;
 import java.lang.reflect.Type;
 
-/** JSON Serializer for vehicleAttribute objects. */
+/** JSON serializer for vehicleAttribute objects. */
 public class VehicleAttributeSerializer implements JsonSerializer<VehicleAttribute> {
 
   @Override

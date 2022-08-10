@@ -2,7 +2,7 @@ package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
 
-/** Class used to represent a serialized Vehicle attribute object. */
+/** Class used to represent a serialized VehicleAttribute object. */
 @AutoValue
 abstract class SerializedVehicleAttribute {
 

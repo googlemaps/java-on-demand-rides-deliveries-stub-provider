@@ -8,7 +8,7 @@ import com.google.gson.JsonParseException;
 import google.maps.fleetengine.v1.VehicleAttribute;
 import java.lang.reflect.Type;
 
-/** JSON Deserializer for vehicleAttribute objects. */
+/** JSON deserializer for vehicleAttribute objects. */
 final class VehicleAttributeDeserializer implements JsonDeserializer<VehicleAttribute> {
   private static final String KEY_FIELD = "key";
   private static final String VALUE_FIELD = "value";
