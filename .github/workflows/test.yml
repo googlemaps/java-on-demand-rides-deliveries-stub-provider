@@ -12,8 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Run tests
-on: pull_request
+name: Build modules
+
+on:
+  repository_dispatch:
+    types: [test]
+  push:
+    branches-ignore: ['gh-pages']
+  pull_request:
+    branches-ignore: ['gh-pages']
+  workflow_dispatch:
 
 jobs:
   dependabot:
