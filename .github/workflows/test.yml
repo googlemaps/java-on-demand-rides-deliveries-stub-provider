@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Build modules
+name: Run tests
 
 on:
   repository_dispatch:
@@ -42,3 +42,7 @@ jobs:
 
       - name: Build modules
         run: ./gradlew build
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
