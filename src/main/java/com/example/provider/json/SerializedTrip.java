@@ -33,6 +33,8 @@ abstract class SerializedTrip {
   abstract ImmutableList<Waypoint> waypoints();
   /** ID of the vehicle. */
   abstract String vehicleId();
+  /** Route for this trip. */
+  abstract List<SerializedLatLng> routeList();
 
   static Builder newBuilder() {
     return new AutoValue_SerializedTrip.Builder();
@@ -43,6 +45,8 @@ abstract class SerializedTrip {
   abstract static class Builder {
 
     abstract Builder setName(String name);
+
+    abstract Builder setRouteList(List<SerializedLatLng> serializedRouteList);
 
     abstract Builder setTripStatus(String tripStatus);
 
