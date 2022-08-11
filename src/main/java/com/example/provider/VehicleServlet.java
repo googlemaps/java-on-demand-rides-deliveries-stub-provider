@@ -28,16 +28,11 @@ import com.google.inject.Inject;
 import com.google.protobuf.FieldMask;
 import google.maps.fleetengine.v1.CreateVehicleRequest;
 import google.maps.fleetengine.v1.GetVehicleRequest;
-import google.maps.fleetengine.v1.GetVehicleRequestOrBuilder;
 import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.UpdateVehicleRequest;
 import google.maps.fleetengine.v1.Vehicle;
-import google.maps.fleetengine.v1.VehicleState;
+import google.maps.fleetengine.v1.VehicleAttribute;
 import google.maps.fleetengine.v1.VehicleServiceClient;
-import google.maps.fleetengine.v1.VehicleServiceClient.ListVehiclesPagedResponse;
-import google.maps.fleetengine.v1.VehicleServiceSettings;
-import google.maps.fleetengine.v1.ListVehiclesRequest;
-import google.maps.fleetengine.v1.ListVehiclesResponse;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -60,10 +55,13 @@ public class VehicleServlet extends HttpServlet {
   private static final String BACK_TO_BACK_ENABLED_FIELD = "backToBackEnabled";
   private static final String SUPPORTED_TRIP_TYPES_FIELD = "supportedTripTypes";
   private static final String MAXIMUM_CAPACITY_FIELD = "maximumCapacity";
+  private static final String VEHICLE_ATTRIBUTES_FIELD = "attributes";
 
   private static final int MAXIMUM_CAPACITY_DEFAULT = 4;
   private static final TripType[] SUPPORTED_TRIP_TYPES_DEFAULT =
       new TripType[] {TripType.EXCLUSIVE};
+  private static final VehicleAttribute[] VEHICLE_ATTRIBUTES_DEFAULT = 
+      new VehicleAttribute[] {};
 
   private final VehicleServiceClient vehicleServiceClient;
 
@@ -113,21 +111,8 @@ public class VehicleServlet extends HttpServlet {
       response.getWriter().print(GsonProvider.get().toJson(vehicle));
       response.getWriter().flush();
       return;
-    } 
-    // Only returning the first page for now because Expeditor use case only needs 5-10 vehicles on average
-    ListVehiclesRequest listVehiclesRequest = ListVehiclesRequest.newBuilder()
-      .setParent(VehicleUtils.PROVIDER_NAME)
-      .setVehicleState(VehicleState.ONLINE)
-      .setPageSize(100)
-      .build();
-
-    logger.info("Getting a list of all vehicles");
-    ListVehiclesPagedResponse listVehiclesResponse = vehicleServiceClient.listVehicles(listVehiclesRequest);
-      
-    response.getWriter().print(GsonProvider.get().toJson(listVehiclesResponse.getPage().getValues()));
-    response.getWriter().flush();
+    }
   }
-  
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -167,12 +152,18 @@ public class VehicleServlet extends HttpServlet {
             ? gson.fromJson(jsonBody.get(SUPPORTED_TRIP_TYPES_FIELD), TripType[].class)
             : SUPPORTED_TRIP_TYPES_DEFAULT;
 
+    VehicleAttribute[] attributes =
+        jsonBody.has(VEHICLE_ATTRIBUTES_FIELD)
+            ? gson.fromJson(jsonBody.get(VEHICLE_ATTRIBUTES_FIELD), VehicleAttribute[].class)
+            : VEHICLE_ATTRIBUTES_DEFAULT;
+
     Vehicle vehicle =
         VehicleUtils.createVehicle(
             vehicleId,
             backToBackEnabled,
             maximumCapacity,
-            ImmutableList.copyOf(supportedTripTypes));
+            ImmutableList.copyOf(supportedTripTypes),
+            ImmutableList.copyOf(attributes));
 
     CreateVehicleRequest createVehicleRequest =
         CreateVehicleRequest.newBuilder()
@@ -274,6 +265,14 @@ public class VehicleServlet extends HttpServlet {
     if (jsonBody.has(MAXIMUM_CAPACITY_FIELD)) {
       updatedVehicleBuilder.setMaximumCapacity(jsonBody.get(MAXIMUM_CAPACITY_FIELD).getAsInt());
       fieldMask.add("maximum_capacity");
+    }
+
+    if (jsonBody.has(VEHICLE_ATTRIBUTES_FIELD)) {
+      VehicleAttribute[] attributes = 
+          gson.fromJson(jsonBody.get(VEHICLE_ATTRIBUTES_FIELD), VehicleAttribute[].class);
+
+      updatedVehicleBuilder.addAllAttributes(ImmutableList.copyOf(attributes));
+      fieldMask.add("attributes");
     }
 
     return UpdateVehicleRequest.newBuilder()
