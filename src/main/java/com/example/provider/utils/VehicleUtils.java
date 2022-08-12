@@ -19,6 +19,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.Vehicle;
+import google.maps.fleetengine.v1.VehicleAttribute;
 import google.maps.fleetengine.v1.Vehicle.VehicleType;
 import google.maps.fleetengine.v1.Vehicle.VehicleType.Category;
 import google.maps.fleetengine.v1.VehicleLocation;
@@ -56,7 +57,8 @@ public final class VehicleUtils {
       String vehicleId,
       Boolean backToBackEnabled,
       int maximumCapacity,
-      ImmutableList<TripType> supportedTripTypes) {
+      ImmutableList<TripType> supportedTripTypes,
+      ImmutableList<VehicleAttribute> vehicleAttributes) {
     return Vehicle.newBuilder()
         .setName(getVehicleName(vehicleId))
         .setVehicleState(VehicleState.ONLINE)
@@ -65,6 +67,7 @@ public final class VehicleUtils {
         .addAllSupportedTripTypes(supportedTripTypes)
         .setLastLocation(getVehicleLocation())
         .setBackToBackEnabled(backToBackEnabled)
+        .addAllAttributes(vehicleAttributes)
         .build();
   }
 

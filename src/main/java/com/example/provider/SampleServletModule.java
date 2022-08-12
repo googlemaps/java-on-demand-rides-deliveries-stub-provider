@@ -35,6 +35,7 @@ public final class SampleServletModule extends ServletModule {
     install(new GrpcServiceModule());
 
     serve("/vehicle/*").with(VehicleServlet.class);
+    serve("/vehicles/*").with(VehiclesServlet.class);
     serve("/trip").with(TripServlet.class);
     serve("/trip/*").with(TripServlet.class);
     serve("/token/*").with(TokenServlet.class);
