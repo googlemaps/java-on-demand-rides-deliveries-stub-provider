@@ -60,8 +60,7 @@ public class VehicleServlet extends HttpServlet {
   private static final int MAXIMUM_CAPACITY_DEFAULT = 4;
   private static final TripType[] SUPPORTED_TRIP_TYPES_DEFAULT =
       new TripType[] {TripType.EXCLUSIVE};
-  private static final VehicleAttribute[] VEHICLE_ATTRIBUTES_DEFAULT = 
-      new VehicleAttribute[] {};
+  private static final VehicleAttribute[] VEHICLE_ATTRIBUTES_DEFAULT = new VehicleAttribute[] {};
 
   private final VehicleServiceClient vehicleServiceClient;
 
@@ -86,7 +85,7 @@ public class VehicleServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
-    
+
     String vehicleId;
 
     vehicleId = ServletUtils.getEntityIdFromRequestPath(request);
@@ -95,7 +94,7 @@ public class VehicleServlet extends HttpServlet {
       logger.info(String.format("Getting vehicle with vehicleID: %s", vehicleId));
 
       GetVehicleRequest getVehicleRequest =
-        GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
+          GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
 
       Vehicle vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
       servletState.setVehicleId(vehicleId);
@@ -268,7 +267,7 @@ public class VehicleServlet extends HttpServlet {
     }
 
     if (jsonBody.has(VEHICLE_ATTRIBUTES_FIELD)) {
-      VehicleAttribute[] attributes = 
+      VehicleAttribute[] attributes =
           gson.fromJson(jsonBody.get(VEHICLE_ATTRIBUTES_FIELD), VehicleAttribute[].class);
 
       updatedVehicleBuilder.addAllAttributes(ImmutableList.copyOf(attributes));

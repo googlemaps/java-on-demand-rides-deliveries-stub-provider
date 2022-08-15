@@ -115,7 +115,7 @@ class ServletState {
     return tripsPendingMatches;
   }
 
-  /** Removes the given trip from the queue of pending matches.  */
+  /** Removes the given trip from the queue of pending matches. */
   public synchronized void removeTripPendingMatch(Trip trip) {
     tripsPendingMatches.remove(trip);
   }

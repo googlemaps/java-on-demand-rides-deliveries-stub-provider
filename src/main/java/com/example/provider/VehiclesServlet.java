@@ -19,12 +19,11 @@ import com.example.provider.json.GsonProvider;
 import com.example.provider.utils.ServletUtils;
 import com.example.provider.utils.VehicleUtils;
 import com.google.inject.Inject;
-import google.maps.fleetengine.v1.VehicleState;
+import google.maps.fleetengine.v1.ListVehiclesRequest;
 import google.maps.fleetengine.v1.ListVehiclesRequest.Builder;
 import google.maps.fleetengine.v1.VehicleServiceClient;
 import google.maps.fleetengine.v1.VehicleServiceClient.ListVehiclesPagedResponse;
-import google.maps.fleetengine.v1.ListVehiclesRequest;
-
+import google.maps.fleetengine.v1.VehicleState;
 import java.io.IOException;
 import java.util.logging.Logger;
 import javax.inject.Singleton;
@@ -43,24 +42,24 @@ public class VehiclesServlet extends HttpServlet {
   private static final String RESTAURANT_ID_FIELD = "restaurantId";
 
   @Inject
-  public VehiclesServlet(
-      AuthenticatedGrpcServiceProvider grpcServiceProvider) {
+  public VehiclesServlet(AuthenticatedGrpcServiceProvider grpcServiceProvider) {
     super();
 
     this.vehicleServiceClient = grpcServiceProvider.getAuthenticatedVehicleService();
-    }
+  }
 
-@Override
+  @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     ServletUtils.setStandardResponseHeaders(response);
 
     String restaurantId = ServletUtils.getEntityIdFromRequestPath(request);
 
     ListVehiclesRequest listVehiclesRequest;
-    Builder listVehiclesRequestBuilder = ListVehiclesRequest.newBuilder()
-      .setParent(VehicleUtils.PROVIDER_NAME)
-      .setVehicleState(VehicleState.ONLINE)
-      .setPageSize(100);
+    Builder listVehiclesRequestBuilder =
+        ListVehiclesRequest.newBuilder()
+            .setParent(VehicleUtils.PROVIDER_NAME)
+            .setVehicleState(VehicleState.ONLINE)
+            .setPageSize(100);
 
     if (restaurantId != null && !restaurantId.isEmpty()) {
       String restaurantIdAttribute = RESTAURANT_ID_FIELD + ":" + restaurantId;
@@ -72,16 +71,17 @@ public class VehiclesServlet extends HttpServlet {
       logger.info("Getting a list of all vehicles");
     }
 
-    ListVehiclesPagedResponse listVehiclesResponse = vehicleServiceClient.listVehicles(listVehiclesRequest);
-    response.getWriter().print(GsonProvider.get().toJson(listVehiclesResponse.getPage().getValues()));
+    ListVehiclesPagedResponse listVehiclesResponse =
+        vehicleServiceClient.listVehicles(listVehiclesRequest);
+    response
+        .getWriter()
+        .print(GsonProvider.get().toJson(listVehiclesResponse.getPage().getValues()));
     response.getWriter().flush();
   }
 
-@Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-  }
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {}
 
-@Override
-  public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
-  }
+  @Override
+  public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {}
 }

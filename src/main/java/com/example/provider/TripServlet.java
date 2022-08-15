@@ -88,8 +88,7 @@ public final class TripServlet extends HttpServlet {
 
   @Inject
   public TripServlet(
-      ServletState servletState,
-      AuthenticatedGrpcServiceProvider grpcServiceProvider) {
+      ServletState servletState, AuthenticatedGrpcServiceProvider grpcServiceProvider) {
     this.servletState = servletState;
     this.grpcServiceProvider = grpcServiceProvider;
   }

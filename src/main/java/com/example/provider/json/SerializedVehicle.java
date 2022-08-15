@@ -132,8 +132,7 @@ abstract class SerializedVehicle {
     /**
      * Setter for the ETA to the first waypoint of the vehicle.
      *
-     * @param etaToFirstWaypoint time needed to get to the first waypoint of the
-     *                           vehicle.
+     * @param etaToFirstWaypoint time needed to get to the first waypoint of the vehicle.
      */
     abstract Builder setEtaToFirstWaypoint(Timestamp etaToFirstWaypoint);
 
