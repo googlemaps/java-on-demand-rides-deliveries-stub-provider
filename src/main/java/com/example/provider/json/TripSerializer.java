@@ -23,10 +23,8 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import google.maps.fleetengine.v1.Trip;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import com.google.type.LatLng;
 
 /** Serializer for trip object to provide relevant information to its clients. */
 final class TripSerializer implements JsonSerializer<Trip> {
@@ -52,7 +50,8 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .build();
 
     List<Waypoint> intermediateWaypoints =
-        src.getIntermediateDestinationsList().stream()
+        src.getIntermediateDestinationsList()
+            .stream()
             .map(
                 destination ->
                     Waypoint.newBuilder()
@@ -71,14 +70,15 @@ final class TripSerializer implements JsonSerializer<Trip> {
             .add(dropoffWaypoint)
             .build();
 
-    List<SerializedLatLng> serializedRouteList = 
-        src.getRouteList().stream()
-        .map(
-            route -> 
-                SerializedLatLng.newBuilder()
-                    .setLatitude(route.getLatitude())
-                    .setLongitude(route.getLongitude())
-                    .build())
+    List<SerializedLatLng> serializedRouteList =
+        src.getRouteList()
+            .stream()
+            .map(
+                route ->
+                    SerializedLatLng.newBuilder()
+                        .setLatitude(route.getLatitude())
+                        .setLongitude(route.getLongitude())
+                        .build())
             .collect(Collectors.toList());
 
     SerializedTrip trip =

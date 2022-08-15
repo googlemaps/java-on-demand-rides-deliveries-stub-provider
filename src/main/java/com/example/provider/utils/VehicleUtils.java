@@ -19,9 +19,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.type.LatLng;
 import google.maps.fleetengine.v1.TripType;
 import google.maps.fleetengine.v1.Vehicle;
-import google.maps.fleetengine.v1.VehicleAttribute;
 import google.maps.fleetengine.v1.Vehicle.VehicleType;
 import google.maps.fleetengine.v1.Vehicle.VehicleType.Category;
+import google.maps.fleetengine.v1.VehicleAttribute;
 import google.maps.fleetengine.v1.VehicleLocation;
 import google.maps.fleetengine.v1.VehicleState;
 

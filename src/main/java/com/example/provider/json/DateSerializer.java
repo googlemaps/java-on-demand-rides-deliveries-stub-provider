@@ -21,9 +21,7 @@ import com.google.gson.JsonSerializer;
 import java.lang.reflect.Type;
 import java.util.Date;
 
-/**
- * Serializer for Date object to provide the number of milliseconds since the Unix epoch.
- */
+/** Serializer for Date object to provide the number of milliseconds since the Unix epoch. */
 final class DateSerializer implements JsonSerializer<Date> {
 
   @Override
