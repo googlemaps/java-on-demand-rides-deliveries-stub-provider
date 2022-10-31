@@ -14,11 +14,10 @@
  */
 buildscript {    // Configuration for building
   repositories {
-    jcenter()    // Bintray's repository - a fast Maven Central mirror & more
     mavenCentral()
   }
   dependencies {
-    classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.2.0'    // Latest 1.x.x release
+    classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.4.3'    // Latest 1.x.x release
     classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
   }
 }
@@ -33,7 +32,6 @@ repositories {   // repositories for Jar's you access in your code
     url 'https://oss.sonatype.org/content/repositories/snapshots' // SNAPSHOT repository (if needed)
   }
   mavenCentral()
-  jcenter()
 }
 
 repositories {
