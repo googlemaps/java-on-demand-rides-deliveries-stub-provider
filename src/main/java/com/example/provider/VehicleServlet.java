@@ -18,6 +18,7 @@ import com.example.provider.auth.grpcservice.AuthenticatedGrpcServiceProvider;
 import com.example.provider.json.GsonProvider;
 import com.example.provider.utils.ServletUtils;
 import com.example.provider.utils.VehicleUtils;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.common.base.Ascii;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
@@ -96,7 +97,17 @@ public class VehicleServlet extends HttpServlet {
       GetVehicleRequest getVehicleRequest =
           GetVehicleRequest.newBuilder().setName(VehicleUtils.getVehicleName(vehicleId)).build();
 
-      Vehicle vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
+      Vehicle vehicle = null;
+
+      try {
+        vehicle = vehicleServiceClient.getVehicle(getVehicleRequest);
+      } catch (NotFoundException e) {
+        response.sendError(
+            HttpServletResponse.SC_NOT_FOUND,
+            String.format("Vehicle with Id: %s does not exist.", vehicleId));
+        return;
+      }
+
       servletState.setVehicleId(vehicleId);
 
       logger.info(String.format("Vehicle:\n%s", vehicle));
@@ -220,19 +231,10 @@ public class VehicleServlet extends HttpServlet {
 
     try {
       updatedVehicle = vehicleServiceClient.updateVehicle(updateVehicleRequest);
-    } catch (StatusRuntimeException e) {
-      logger.warning(String.format("GRPC reported exception: %s", e.getStatus()));
-
-      if (e.getStatus().getCode().equals(Status.NOT_FOUND.getCode())) {
-        response.sendError(
-            HttpServletResponse.SC_BAD_REQUEST,
-            String.format("Vehicle with Id: %s does not exist.", vehicleId));
-        return;
-      }
-
+    } catch (NotFoundException e) {
       response.sendError(
-          HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
-          String.format("Error has occurred with the Grpc service: %s", e));
+          HttpServletResponse.SC_NOT_FOUND,
+          String.format("Vehicle with Id: %s does not exist.", vehicleId));
       return;
     }
 
