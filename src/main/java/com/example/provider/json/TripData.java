@@ -22,9 +22,7 @@ import google.maps.fleetengine.v1.Trip;
 public abstract class TripData {
   abstract Trip trip();
 
-  abstract String routeToken();
-
-  public static TripData create(Trip trip, String routeToken) {
-    return new AutoValue_TripData(trip, routeToken);
+  public static TripData create(Trip trip) {
+    return new AutoValue_TripData(trip);
   }
 }

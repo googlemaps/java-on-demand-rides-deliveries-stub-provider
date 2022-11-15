@@ -109,9 +109,8 @@ public final class TripServlet extends HttpServlet {
         grpcServiceProvider.getAuthenticatedTripService();
 
     Trip trip = authenticatedServerTripService.getTrip(getTripRequest);
-    String routeToken = Strings.nullToEmpty(servletState.getRouteToken());
 
-    response.getWriter().print(GsonProvider.get().toJson(TripData.create(trip, routeToken)));
+    response.getWriter().print(GsonProvider.get().toJson(TripData.create(trip)));
 
     logger.info(response.toString());
     response.getWriter().flush();
