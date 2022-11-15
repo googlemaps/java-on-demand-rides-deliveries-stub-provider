@@ -45,7 +45,6 @@ class ServletState {
   private static final Logger logger = Logger.getLogger(ServletState.class.getName());
 
   private String vehicleId;
-  private String routeToken;
 
   /** Queue of trips created awaiting to be matched. */
   private List<Trip> tripsPendingMatches = new LinkedList<>();
@@ -70,14 +69,6 @@ class ServletState {
     }
 
     this.vehicleId = vehicleId;
-  }
-
-  public synchronized void setRouteToken(String routeToken) {
-    this.routeToken = routeToken;
-  }
-
-  public synchronized String getRouteToken() {
-    return routeToken;
   }
 
   /** Adds a trip to the queue of trips to match as well as to the map of active trips. */
