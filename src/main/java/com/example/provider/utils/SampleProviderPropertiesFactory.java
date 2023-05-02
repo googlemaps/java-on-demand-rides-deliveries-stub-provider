@@ -17,22 +17,29 @@ package com.example.provider.utils;
 import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Optional;
 import java.util.Properties;
 
 /** Factory class for ProviderProperties. */
 public final class SampleProviderPropertiesFactory {
 
   @VisibleForTesting static final String FLEET_ENGINE_ADDRESS_PROP_KEY = "fleetengine-address";
+  @VisibleForTesting static final String ENV_FLEET_ENGINE_ADDRESS = "FLEETENGINE_ADDRESS";
 
   @VisibleForTesting static final String PROVIDER_ID_PROP_KEY = "provider-id";
+  @VisibleForTesting static final String ENV_PROVIDER_ID = "PROVIDER_ID";
 
   @VisibleForTesting static final String SERVER_TOKEN_ACCOUNT_NAME = "server-token-account";
+  @VisibleForTesting static final String ENV_SERVER_TOKEN_ACCOUNT = "SERVER_TOKEN_ACCOUNT";
 
   @VisibleForTesting static final String CONSUMER_TOKEN_ACCOUNT_NAME = "consumer-token-account";
+  @VisibleForTesting static final String ENV_CONSUMER_TOKEN_ACCOUNT = "CONSUMER_TOKEN_ACCOUNT";
 
   @VisibleForTesting static final String DRIVER_TOKEN_ACCOUNT_NAME = "driver-token-account";
+  @VisibleForTesting static final String ENV_DRIVER_TOKEN_ACCOUNT = "DRIVER_TOKEN_ACCOUNT";
 
   @VisibleForTesting static final String FLEET_ENGINE_AUDIENCE = "fleetengine-audience";
+  @VisibleForTesting static final String ENV_FLEET_ENGINE_AUDIENCE = "FLEETENGINE_AUDIENCE";
 
   private SampleProviderPropertiesFactory() {}
 
@@ -61,12 +68,13 @@ public final class SampleProviderPropertiesFactory {
   public static ProviderProperties create(InputStream stream) throws IOException {
     Properties properties = loadPropertiesFromInputStream(stream);
     return create(
-        getPropertyFromKey(properties, PROVIDER_ID_PROP_KEY),
-        getPropertyFromKey(properties, FLEET_ENGINE_ADDRESS_PROP_KEY),
-        getPropertyFromKey(properties, SERVER_TOKEN_ACCOUNT_NAME),
-        getPropertyFromKey(properties, CONSUMER_TOKEN_ACCOUNT_NAME),
-        getPropertyFromKey(properties, DRIVER_TOKEN_ACCOUNT_NAME),
-        getPropertyFromKey(properties, FLEET_ENGINE_AUDIENCE));
+        envVariable(ENV_PROVIDER_ID).orElseGet(() -> getProperty(properties, PROVIDER_ID_PROP_KEY)),
+        envVariable(ENV_FLEET_ENGINE_ADDRESS).orElseGet(() -> getProperty(properties, FLEET_ENGINE_ADDRESS_PROP_KEY)),
+        envVariable(ENV_SERVER_TOKEN_ACCOUNT).orElseGet(() -> getProperty(properties, SERVER_TOKEN_ACCOUNT_NAME)),
+        envVariable(ENV_CONSUMER_TOKEN_ACCOUNT).orElseGet(() -> getProperty(properties, CONSUMER_TOKEN_ACCOUNT_NAME)),
+        envVariable(ENV_DRIVER_TOKEN_ACCOUNT).orElseGet(() -> getProperty(properties, DRIVER_TOKEN_ACCOUNT_NAME)),
+        envVariable(ENV_FLEET_ENGINE_AUDIENCE).orElseGet(() -> getProperty(properties, FLEET_ENGINE_AUDIENCE))
+    );
   }
 
   /**
@@ -81,11 +89,20 @@ public final class SampleProviderPropertiesFactory {
   }
 
   /**
+   * Returns the environment variable value for a given key.
+   *
+   * @return Optional, might be empty
+   */
+  private static Optional<String> envVariable(final String key) {
+    return Optional.ofNullable(System.getenv(key));
+  }
+
+  /**
    * Returns the value for a given property.
    *
    * @throws IllegalArgumentException if a property with given key does not exist
    */
-  private static String getPropertyFromKey(Properties properties, String propertyKey) {
+  private static String getProperty(Properties properties, String propertyKey) {
     String propertyValue = properties.getProperty(propertyKey);
     if (propertyValue == null) {
       throw new IllegalArgumentException(
