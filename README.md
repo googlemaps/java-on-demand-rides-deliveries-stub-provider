@@ -34,10 +34,8 @@ regarding the App Engine plugin with Gradle, go to this
 [website](https://cloud.google.com/appengine/docs/standard/java/using-gradle).
 
 Install and configure the following prerequisites:
-- Java 8 (if a newer Java version is installed, set the Java version to 8).
-  There is an issue with the App Engine plugin and newer versions of Java. To set
-  the version to 8, run this command:
-  `` export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``
+- Java 8 or 11. Make sure your environment is set to either of the two.
+  We recommend [SDKMan](https://sdkman.io/usage) for more convenient management of the Java version in your system.
 - Make sure that your Cloud project is set up on your Google account. Go to
   [Setting up and validating your Cloud project](https://cloud.google.com/appengine/docs/standard/java/using-gradle#setting_up_and_validating_your)
 - [gcloud CLI tool](https://cloud.google.com/sdk/install).
@@ -62,9 +60,10 @@ To run the server:
 
 ## Frequent Errors
 
-`Caused by: java.lang.NoSuchMethodException: java.net.SocksSocketImpl.<init>()`
-- Set the Java version to 8 by running the command
-  `` export JAVA_HOME=`/usr/libexec/java_home -v 1.8` ``.
+`Caused by: java.lang.NoSuchMethodException: java.net.SocksSocketImpl.<init>()` or
+`Exception java.lang.NoClassDefFoundError: Could not initialize class org.codehaus.groovy.reflection.ReflectionCache [in thread "Daemon worker"]`
+
+- Make sure to set Java 8 or 11. We recommend [SDKMan](https://sdkman.io/usage) to manage this in your system.
 
 `Error injecting constructor, com.google.auth.ServiceAccountSigner$SigningException: Failed to sign the provided bytes`
 - Fill in the required Fleet Engine configuration in `src/main/resources/config.properties`.
