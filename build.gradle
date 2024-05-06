@@ -14,6 +14,7 @@
  */
 buildscript {    // Configuration for building
   repositories {
+    google()
     mavenCentral()
   }
   dependencies {
@@ -47,10 +48,10 @@ apply plugin: 'com.google.protobuf'
 
 
 dependencies {
-  compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.79'  // Latest App Engine Api's
+  implementation 'com.google.appengine:appengine-api-1.0-sdk:2.0.26'  // Latest App Engine Api's
   providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 
-  compile 'jstl:jstl:1.2'
+  implementation 'jstl:jstl:1.2'
 
   // Add dependencies here
   implementation 'com.google.maps:fleetengine-auth:1.9.1'
@@ -65,22 +66,22 @@ dependencies {
   implementation 'com.google.auto.value:auto-value-annotations:1.6.2'
   implementation 'com.google.guava:guava:16+'
   implementation 'com.google.auth:google-auth-library-oauth2-http:0+'
-  implementation 'io.grpc:grpc-protobuf:1.28.0'
-  implementation 'io.grpc:grpc-stub:1.28.0'
-  implementation 'io.grpc:grpc-netty:1.28.0'
+  implementation 'io.grpc:grpc-protobuf:1.62.2'
+  implementation 'io.grpc:grpc-stub:1.62.2'
+  implementation 'io.grpc:grpc-netty:1.62.2'
   implementation 'javax.ws.rs:jsr311-api:1.1.1'
-  implementation 'com.google.protobuf:protobuf-java:3.11.4'
+  implementation 'com.google.protobuf:protobuf-java:3.25.3'
   implementation 'javax.annotation:javax.annotation-api:1.2'
   implementation 'io.netty:netty-tcnative-boringssl-static:2.0.29.Final'
   annotationProcessor 'com.google.auto.value:auto-value:1.6.2'
 
-  testCompile 'junit:junit:4.12'
-  testCompile 'com.google.truth:truth:0.33'
-  testCompile 'org.mockito:mockito-all:1.10.19'
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'com.google.truth:truth:0.33'
+  testImplementation 'org.mockito:mockito-all:1.10.19'
 
-  testCompile 'com.google.appengine:appengine-testing:+'
-  testCompile 'com.google.appengine:appengine-api-stubs:+'
-  testCompile 'com.google.appengine:appengine-tools-sdk:+'
+  testImplementation 'com.google.appengine:appengine-testing:+'
+  testImplementation 'com.google.appengine:appengine-api-stubs:+'
+  testImplementation 'com.google.appengine:appengine-tools-sdk:+'
 }
 
 // Always run unit tests
@@ -93,7 +94,7 @@ appengine {  // App Engine tasks configuration
   }
 
   deploy {   // deploy configuration
-    projectId = 'sample-provider-testeijr'
+    projectId = 'YOUR-CLOUD-PROJECT'
     version = '1'
   }
 }
@@ -113,8 +114,8 @@ test {
   }
 }
 
-group   = "com.example.appenginej8"        // Generated output GroupId
+group   = "com.example.appenginej11"        // Generated output GroupId
 version = "1.0-SNAPSHOT"       // Version in generated output
 
-sourceCompatibility = 1.8     // App Engine Flexible uses Java 8
-targetCompatibility = 1.8     // App Engine Flexible uses Java 8
+sourceCompatibility = 11
+targetCompatibility = 11
