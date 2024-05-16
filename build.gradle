@@ -48,10 +48,9 @@ apply plugin: 'com.google.protobuf'
 
 
 dependencies {
-  implementation 'com.google.appengine:appengine-api-1.0-sdk:2.0.26'
+  compileOnly 'com.google.appengine:appengine-api-1.0-sdk:2.0.26'
   compileOnly 'javax.servlet:javax.servlet-api:3.1.0' // Use compileOnly for provided dependencies
-
-  implementation 'jstl:jstl:1.2'
+  compileOnly 'jstl:jstl:1.2'
 
   // Add dependencies here
   implementation 'com.google.maps:fleetengine-auth:1.11.0'
