@@ -18,7 +18,7 @@ buildscript {    // Configuration for building
     mavenCentral()
   }
   dependencies {
-    classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.4.3'    // Latest 1.x.x release
+    classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.4.3'
     classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
   }
 }
@@ -48,26 +48,24 @@ apply plugin: 'com.google.protobuf'
 
 
 dependencies {
-  implementation 'com.google.appengine:appengine-api-1.0-sdk:2.0.26'  // Latest App Engine Api's
-  providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+  implementation 'com.google.appengine:appengine-api-1.0-sdk:2.0.26'
+  compileOnly 'javax.servlet:javax.servlet-api:3.1.0' // Use compileOnly for provided dependencies
 
   implementation 'jstl:jstl:1.2'
 
   // Add dependencies here
-  implementation 'com.google.maps:fleetengine-auth:1.9.1'
-
-  implementation 'com.google.api:gax:1.65.1'
+  implementation 'com.google.maps:fleetengine-auth:1.11.0'
+  implementation('com.google.api:gax:2.48.0')
   implementation 'com.google.maps:gapic-google-maps-fleetengine-v1-java:0.0.197'
 
   implementation 'com.auth0:java-jwt:3.10.2'
-  implementation 'com.google.inject:guice:4.2.2'
-  implementation 'com.google.inject.extensions:guice-servlet:4.2.3'
+  implementation('com.google.inject:guice:5.1.0')
+  implementation 'com.google.inject.extensions:guice-servlet:5.1.0'
   implementation 'com.google.code.gson:gson:2.8.0'
   implementation 'com.google.auto.value:auto-value-annotations:1.6.2'
-  implementation 'com.google.guava:guava:16+'
-  implementation 'com.google.auth:google-auth-library-oauth2-http:0+'
+  implementation 'com.google.guava:guava:30.1-jre'
   implementation 'io.grpc:grpc-protobuf:1.62.2'
-  implementation 'io.grpc:grpc-stub:1.62.2'
+  implementation('io.grpc:grpc-stub:1.62.2')
   implementation 'io.grpc:grpc-netty:1.62.2'
   implementation 'javax.ws.rs:jsr311-api:1.1.1'
   implementation 'com.google.protobuf:protobuf-java:3.25.3'
@@ -82,6 +80,16 @@ dependencies {
   testImplementation 'com.google.appengine:appengine-testing:+'
   testImplementation 'com.google.appengine:appengine-api-stubs:+'
   testImplementation 'com.google.appengine:appengine-tools-sdk:+'
+}
+
+configurations.all {
+  withDependencies {
+    resolutionStrategy.eachDependency {
+      if (it.requested.group == 'com.google.guava' && it.requested.name == 'guava') {
+        it.useTarget("com.google.guava:guava:30.1-jre")
+      }
+    }
+  }
 }
 
 // Always run unit tests
