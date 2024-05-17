@@ -50,7 +50,7 @@ To run the server:
 4. This will redirect to signin with your gmail.
 5. Go to the root folder of this provider.
 6. Run `./gradlew appengineRun`.
-7. Check that the server is running on http://10.0.2.2:8080.
+7. Check that the server is running on http://127.0.0.1:8080 or http://localhost:8080.
 8. To exit the server, there's a Java application that starts up. Quit out of
    the application to exit the server. You can also run `ps auxw | grep java`
    to find the PIDs and then do `kill $pid1 $pid2` to kill the process that's
