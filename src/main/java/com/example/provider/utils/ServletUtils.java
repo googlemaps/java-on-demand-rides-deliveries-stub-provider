@@ -32,6 +32,11 @@ public final class ServletUtils {
   public static void setStandardResponseHeaders(HttpServletResponse response) {
     response.setContentType(MediaType.APPLICATION_JSON);
     response.setCharacterEncoding(UTF_8.name());
+    response.addHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+    response.setHeader("Access-Control-Allow-Credentials", "true");
+    response.setHeader("Access-Control-Max-Age", "3600");
   }
 
   /**
