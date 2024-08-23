@@ -59,6 +59,10 @@ class TripMatcher {
     TripType tripType = tripToMatch.getTripType();
 
     if (!vehicleSupportedTripTypes.contains(tripType)) {
+      logger.warning(
+              String.format(
+                      "canTripBeAssignedToVehicle() returning false due to tripType not supported: for vehicleId: %s tripName: %s",
+                      vehicle.getName(), tripToMatch.getName()));
       return false;
     }
 
@@ -89,10 +93,18 @@ class TripMatcher {
      * supported, then provider will try to assign as 'B2B' trip.
      */
     if (numberOfTripsAssigned >= 2) {
+      logger.warning(
+              String.format(
+                      "canTripBeAssignedToVehicle() returning false due to numberOfTripsAssigned %s: vehicleId: %s tripName: %s",
+                      numberOfTripsAssigned, vehicle.getName(), tripToMatch.getName()));
       return false;
     }
 
     if (vehicle.getBackToBackEnabled() == false) {
+      logger.warning(
+              String.format(
+                      "canTripBeAssignedToVehicle() returning false due to backToBackEnabled not enabled on vehicleId: %s tripName: %s",
+                      vehicle.getName(), tripToMatch.getName()));
       return false;
     }
 
@@ -112,6 +124,10 @@ class TripMatcher {
   /** Tries to match the 'next trip' in the pending matches list to the active 'Vehicle'. */
   public synchronized boolean triggerMatching(Vehicle vehicle, String vehicleId) {
     if (vehicle.getVehicleState() != VehicleState.ONLINE) {
+      logger.warning(
+              String.format(
+                      "triggerMatching() returning false because of vehicleState not being ONLINE: vehicleId: %s vehicleState: %s",
+                      vehicleId, vehicle.getVehicleState()));
       return false;
     }
 
@@ -120,12 +136,14 @@ class TripMatcher {
     for (Trip trip : servletState.getTripsPendingMatches()) {
       if (canTripBeAssignedToVehicle(vehicle, trip)) {
         tripToMatch = trip;
-        servletState.removeTripPendingMatch(trip);
         break;
       }
     }
 
     if (tripToMatch == null) {
+      logger.warning(
+              String.format(
+                      "triggerMatching() returning false due to tripToMatch being null: vehicleId: %s", vehicleId));
       return false;
     }
 
@@ -172,6 +190,7 @@ class TripMatcher {
 
     Trip updatedTrip = authenticatedServerTripService.updateTrip(updateRequest);
     servletState.getActiveTripsMap().put(updatedTrip.getName(), updatedTrip);
+    servletState.removeTripPendingMatch(tripToMatch); // Trip assigned, no longer pending.
 
     logger.info(
         String.format(
