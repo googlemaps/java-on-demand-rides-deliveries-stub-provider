@@ -37,6 +37,8 @@ import javax.servlet.http.HttpServletResponse;
  * <p>GET /token/driver/:vehicleId
  *
  * <p>GET /token/consumer/:tripId
+ *
+ * <p>GET /token/server
  */
 @Singleton
 public class TokenServlet extends HttpServlet {
@@ -55,13 +57,19 @@ public class TokenServlet extends HttpServlet {
     ServletUtils.setStandardResponseHeaders(response);
 
     String pathInfo = request.getPathInfo();
-    int separatorIndex = pathInfo.indexOf("/", 1);
-    if (separatorIndex == -1 || separatorIndex == pathInfo.length() - 1) {
-      response.sendError(
-          HttpServletResponse.SC_BAD_REQUEST, "Vehicle ID or trip ID was not provided.");
+    if (pathInfo == null || pathInfo.length() <= 1) {
+      response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid token request.");
       return;
     }
-    String tokenType = pathInfo.substring(1, separatorIndex);
+
+    String tokenType = pathInfo.substring(1);
+    int separatorIndex = tokenType.indexOf("/");
+    String id = null;
+    if (separatorIndex != -1) {
+      id = tokenType.substring(separatorIndex + 1);
+      tokenType = tokenType.substring(0, separatorIndex);
+    }
+
     FleetEngineTokenType tokenTypeEnum;
     try {
       tokenTypeEnum = FleetEngineTokenType.valueOf(Ascii.toUpperCase(tokenType));
@@ -78,12 +86,21 @@ public class TokenServlet extends HttpServlet {
     try {
       switch (tokenTypeEnum) {
         case DRIVER:
-          String vehicleId = pathInfo.substring(separatorIndex + 1);
-          authToken = this.minter.getDriverToken(VehicleClaims.create(vehicleId));
+          if (id == null) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Vehicle ID was not provided.");
+            return;
+          }
+          authToken = this.minter.getDriverToken(VehicleClaims.create(id));
           break;
         case CONSUMER:
-          String tripId = pathInfo.substring(separatorIndex + 1);
-          authToken = this.minter.getConsumerToken(TripClaims.create(tripId));
+          if (id == null) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Trip ID was not provided.");
+            return;
+          }
+          authToken = this.minter.getConsumerToken(TripClaims.create(id));
+          break;
+        case SERVER:
+          authToken = this.minter.getServerToken();
           break;
         default:
           logger.severe("Requested token for tokenType [%s], but it should not get here.");
