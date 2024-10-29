@@ -21,7 +21,7 @@ import com.example.provider.json.Waypoint.WaypointType;
 public final class WaypointUtils {
   /** Returns a Provider 'WaypointType' value based on the provided FleetEngine enum value. */
   public static WaypointType getWaypointTypeString(
-      google.maps.fleetengine.v1.WaypointType waypointType) {
+      com.google.maps.fleetengine.v1.WaypointType waypointType) {
     switch (waypointType) {
       case PICKUP_WAYPOINT_TYPE:
         return WaypointType.PICKUP_WAYPOINT_TYPE;

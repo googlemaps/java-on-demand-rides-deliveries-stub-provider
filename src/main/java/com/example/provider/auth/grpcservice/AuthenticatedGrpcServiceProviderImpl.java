@@ -18,10 +18,10 @@ import com.example.provider.utils.SampleProviderUtils;
 import com.google.fleetengine.auth.AuthTokenMinter;
 import com.google.fleetengine.auth.client.FleetEngineClientSettingsModifier;
 import com.google.inject.Inject;
-import google.maps.fleetengine.v1.TripServiceClient;
-import google.maps.fleetengine.v1.TripServiceSettings;
-import google.maps.fleetengine.v1.VehicleServiceClient;
-import google.maps.fleetengine.v1.VehicleServiceSettings;
+import com.google.maps.fleetengine.v1.TripServiceClient;
+import com.google.maps.fleetengine.v1.TripServiceSettings;
+import com.google.maps.fleetengine.v1.VehicleServiceClient;
+import com.google.maps.fleetengine.v1.VehicleServiceSettings;
 import java.io.IOException;
 
 final class AuthenticatedGrpcServiceProviderImpl implements AuthenticatedGrpcServiceProvider {

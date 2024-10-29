@@ -15,7 +15,7 @@
  */
 package com.example.provider;
 
-import google.maps.fleetengine.v1.Trip;
+import com.google.maps.fleetengine.v1.Trip;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.HashMap;

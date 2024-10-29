@@ -14,8 +14,8 @@
  */
 package com.example.provider.auth.grpcservice;
 
-import google.maps.fleetengine.v1.TripServiceClient;
-import google.maps.fleetengine.v1.VehicleServiceClient;
+import com.google.maps.fleetengine.v1.TripServiceClient;
+import com.google.maps.fleetengine.v1.VehicleServiceClient;
 
 /** Provider to get authenticated Grpc services. */
 public interface AuthenticatedGrpcServiceProvider {
