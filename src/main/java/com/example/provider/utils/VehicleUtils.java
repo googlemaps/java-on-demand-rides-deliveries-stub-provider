@@ -16,14 +16,14 @@
 package com.example.provider.utils;
 
 import com.google.common.collect.ImmutableList;
+import com.google.maps.fleetengine.v1.TripType;
+import com.google.maps.fleetengine.v1.Vehicle;
+import com.google.maps.fleetengine.v1.Vehicle.VehicleType;
+import com.google.maps.fleetengine.v1.Vehicle.VehicleType.Category;
+import com.google.maps.fleetengine.v1.VehicleAttribute;
+import com.google.maps.fleetengine.v1.VehicleLocation;
+import com.google.maps.fleetengine.v1.VehicleState;
 import com.google.type.LatLng;
-import google.maps.fleetengine.v1.TripType;
-import google.maps.fleetengine.v1.Vehicle;
-import google.maps.fleetengine.v1.Vehicle.VehicleType;
-import google.maps.fleetengine.v1.Vehicle.VehicleType.Category;
-import google.maps.fleetengine.v1.VehicleAttribute;
-import google.maps.fleetengine.v1.VehicleLocation;
-import google.maps.fleetengine.v1.VehicleState;
 
 /** Utility class to create Vehicles */
 public final class VehicleUtils {

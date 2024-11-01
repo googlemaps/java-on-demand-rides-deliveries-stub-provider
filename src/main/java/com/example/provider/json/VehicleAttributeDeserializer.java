@@ -5,7 +5,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import google.maps.fleetengine.v1.VehicleAttribute;
+import com.google.maps.fleetengine.v1.VehicleAttribute;
 import java.lang.reflect.Type;
 
 /** JSON deserializer for vehicleAttribute objects. */

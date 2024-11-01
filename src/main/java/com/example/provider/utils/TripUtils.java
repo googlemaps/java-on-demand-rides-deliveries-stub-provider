@@ -17,10 +17,10 @@ package com.example.provider.utils;
 
 import static java.util.Arrays.stream;
 
+import com.google.maps.fleetengine.v1.TerminalLocation;
+import com.google.maps.fleetengine.v1.Trip;
+import com.google.maps.fleetengine.v1.TripType;
 import com.google.type.LatLng;
-import google.maps.fleetengine.v1.TerminalLocation;
-import google.maps.fleetengine.v1.Trip;
-import google.maps.fleetengine.v1.TripType;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;

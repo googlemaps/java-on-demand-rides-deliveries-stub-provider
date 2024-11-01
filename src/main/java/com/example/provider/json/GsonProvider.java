@@ -16,10 +16,10 @@ package com.example.provider.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.maps.fleetengine.v1.Trip;
+import com.google.maps.fleetengine.v1.Vehicle;
+import com.google.maps.fleetengine.v1.VehicleAttribute;
 import com.google.type.LatLng;
-import google.maps.fleetengine.v1.Trip;
-import google.maps.fleetengine.v1.Vehicle;
-import google.maps.fleetengine.v1.VehicleAttribute;
 import java.util.Date;
 
 /**

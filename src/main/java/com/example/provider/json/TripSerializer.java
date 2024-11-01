@@ -21,7 +21,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
-import google.maps.fleetengine.v1.Trip;
+import com.google.maps.fleetengine.v1.Trip;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.stream.Collectors;

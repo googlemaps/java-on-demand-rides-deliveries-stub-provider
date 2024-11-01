@@ -15,7 +15,7 @@
 package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
-import google.maps.fleetengine.v1.Trip;
+import com.google.maps.fleetengine.v1.Trip;
 
 /** Trip response JSON object that contains the trip information as well as route token. */
 @AutoValue

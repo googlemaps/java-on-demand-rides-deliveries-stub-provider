@@ -15,10 +15,10 @@
 package com.example.provider.json;
 
 import com.google.auto.value.AutoValue;
+import com.google.maps.fleetengine.v1.TripType;
+import com.google.maps.fleetengine.v1.Vehicle.VehicleType;
+import com.google.maps.fleetengine.v1.VehicleAttribute;
 import com.google.protobuf.Timestamp;
-import google.maps.fleetengine.v1.TripType;
-import google.maps.fleetengine.v1.Vehicle.VehicleType;
-import google.maps.fleetengine.v1.VehicleAttribute;
 import java.util.List;
 
 /**
