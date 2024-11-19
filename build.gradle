@@ -25,7 +25,6 @@ buildscript {    // Configuration for building
 
 plugins {
 //  id 'com.github.sherter.google-java-format' version '0.8'
-  id "com.google.cloud.artifactregistry.gradle-plugin" version "2.1.5"
 }
 
 repositories {   // repositories for Jar's you access in your code
@@ -33,12 +32,6 @@ repositories {   // repositories for Jar's you access in your code
     url 'https://oss.sonatype.org/content/repositories/snapshots' // SNAPSHOT repository (if needed)
   }
   mavenCentral()
-}
-
-repositories {
-  maven {
-    url "artifactregistry://us-maven.pkg.dev/fleetengine-gapic/maven"
-  }
 }
 
 apply plugin: 'java'                              // standard Java tasks
@@ -55,7 +48,7 @@ dependencies {
   // Add dependencies here
   implementation 'com.google.maps:fleetengine-auth:2.0.0'
   implementation 'com.google.api:gax:1.65.1'
-  implementation 'com.google.maps:gapic-google-maps-fleetengine-v1-java:1.0.0'
+  implementation 'com.google.maps:google-maps-fleetengine:0.1.0'
 
   implementation 'com.auth0:java-jwt:3.10.2'
   implementation 'com.google.inject:guice:5.1.0'
