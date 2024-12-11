@@ -1,12 +1,27 @@
-# Sample App Server
+![Tests/Build Status](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider/workflows/Test/badge.svg)
 
-This server is a basic Provider implementation for the Journey Sharing Sample
+![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/java-on-demand-rides-deliveries-stub-provider?color=green)
+[![GitHub License](https://img.shields.io/github/license/googlemaps/java-on-demand-rides-deliveries-stub-provider?color=blue)][license]
+[![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)][Discord server]
+
+# Java On-Demand Rides and Deliveries Stub Provider Sample App
+
+## Description
+
+This repo features a sample app server, a basic Provider implementation for the Journey Sharing Sample
 Apps that will communicate with Fleet Engine. It is a standalone server
 providing endpoints that Journey Sharing Sample Apps can use to create
 vehicles/trips and all the necessary requirements of Journey Sharing for a
 single exclusive ride.
 
-## Setup
+## Requirements
+
+* [Sign up with Google Maps Platform]
+* A Google Maps Platform [project] with **App Engine** and the **Fleet Engine APIs** enabled
+* An [API key] associated with the project above
+* Gradle and Java 11+
+
+## Installation
 
 The server uses the Fleet Engine Auth Library to sign JWTs. This allows
 for authenticated communications with Fleet Engine. In order to run it properly,
@@ -26,7 +41,7 @@ If impersonation is not an option for you, you can
 switch signers by modifying the `provideMinter` method within
 [./src/main/java/com/example/provider/SampleServletModule.java](./src/main/java/com/example/provider/SampleServletModule.java)
 
-## Running or deploying the Server with Gradle.
+## Running or deploying the Server with Gradle
 
 This sample provider is running App Engine with Gradle. For more information
 regarding the App Engine plugin with Gradle, go to this
@@ -39,7 +54,7 @@ Install and configure the following prerequisites:
   [Setting up and validating your Cloud project](https://cloud.google.com/appengine/docs/standard/java/using-gradle#setting_up_and_validating_your)
 - [gcloud CLI tool](https://cloud.google.com/sdk/install).
 
-### To run the server:
+## Usage
 
 1. Make sure that the user running the sample provider has the Service Account
    Token Creator role by following
@@ -59,7 +74,7 @@ Install and configure the following prerequisites:
    running the Java application. Note: there are always two matching PIDs
    because the Java process forks itself.
 
-### To deploy to App Engine:
+### To deploy to App Engine
 
 1. Make sure that the user running the *App Engine* has the Service Account
    Token Creator role by following
@@ -325,23 +340,43 @@ Sample request body (updating intermediate destination pointer):
 }
 ```
 
-## License
+## Contributing
 
-```
-Copyright 2022 Google, Inc.
+Contributions are welcome and encouraged! If you'd like to contribute, send us a [pull request] and refer to our [code of conduct] and [contributing guide].
 
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
+## Terms of Service
 
-  http://www.apache.org/licenses/LICENSE-2.0
+This library uses Google Maps Platform services. Use of Google Maps Platform services through this library is subject to the Google Maps Platform [Terms of Service].
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.
-```
+This library is not a Google Maps Platform Core Service. Therefore, the Google Maps Platform Terms of Service (e.g. Technical Support Services, Service Level Agreements, and Deprecation Policy) do not apply to the code in this library.
+
+## Support
+
+This library is offered via an open source [license]. It is not governed by the Google Maps Platform Support [Technical Support Services Guidelines, the SLA, or the [Deprecation Policy]. However, any Google Maps Platform services used by the library remain subject to the Google Maps Platform Terms of Service.
+
+This library adheres to [semantic versioning] to indicate when backwards-incompatible changes are introduced. Accordingly, while the library is in version 0.x, backwards-incompatible changes may be introduced at any time.
+
+If you find a bug, or have a feature request, please [file an issue] on GitHub. If you would like to get answers to technical questions from other Google Maps Platform developers, ask through one of our [developer community channels]. If you'd like to contribute, please check the [contributing guide].
+
+You can also discuss this library on our [Discord server].
+
+[API key]: https://developers.google.com/maps/documentation/javascript/get-api-key
+[maps-sdk]: https://developers.google.com/maps/documentation/mobility
+[documentation]: https://googlemaps.github.io/java-on-demand-rides-deliveries-stub-provider
+
+[code of conduct]: CODE_OF_CONDUCT.md
+[contributing guide]: CONTRIBUTING.md
+[Deprecation Policy]: https://cloud.google.com/maps-platform/terms
+[developer community channels]: https://developers.google.com/maps/developer-community
+[Discord server]: https://discord.gg/hYsWbmk
+[file an issue]: https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider/issues/new/choose
+[license]: LICENSE
+[project]: https://developers.google.com/maps/documentation/mobility/fleet-engine/essentials/set-up-fleet/create-project
+[pull request]: https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider/compare
+[semantic versioning]: https://semver.org
+[Sign up with Google Maps Platform]: https://console.cloud.google.com/google/maps-apis/start
+[similar inquiry]: https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider/issues
+[SLA]: https://cloud.google.com/maps-platform/terms/sla
+[Technical Support Services Guidelines]: https://cloud.google.com/maps-platform/terms/tssg
+[Terms of Service]: https://cloud.google.com/maps-platform/terms
+
