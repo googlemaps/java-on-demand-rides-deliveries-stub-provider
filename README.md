@@ -1,7 +1,8 @@
-![Tests/Build Status](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider/workflows/Test/badge.svg)
+[![Tests/Build](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider/actions/workflows/test.yml/badge.svg)](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider/actions/workflows/test.yml)
 
-![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/java-on-demand-rides-deliveries-stub-provider?color=green)
-[![GitHub License](https://img.shields.io/github/license/googlemaps/java-on-demand-rides-deliveries-stub-provider?color=blue)][license]
+![Contributors](https://img.shields.io/github/contributors/googlemaps/java-on-demand-rides-deliveries-stub-provider?color=green)
+[![License](https://img.shields.io/github/license/googlemaps/java-on-demand-rides-deliveries-stub-provider?color=blue)][license]
+[![StackOverflow](https://img.shields.io/stackexchange/stackoverflow/t/google-maps?color=orange&label=google-maps&logo=stackoverflow)](https://stackoverflow.com/questions/tagged/google-maps)
 [![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)][Discord server]
 
 # Java On-Demand Rides and Deliveries Stub Provider Sample App
@@ -16,10 +17,10 @@ single exclusive ride.
 
 ## Requirements
 
-* [Sign up with Google Maps Platform]
-* A Google Maps Platform [project] with **App Engine** and the **Fleet Engine APIs** enabled
-* An [API key] associated with the project above
-* Gradle and Java 11+
+- [Sign up with Google Maps Platform]
+- A Google Maps Platform [project] with **App Engine** and the **Fleet Engine APIs** enabled
+- An [API key] associated with the project above
+- Gradle and Java 11+
 
 ## Installation
 
@@ -364,7 +365,7 @@ You can also discuss this library on our [Discord server].
 [maps-sdk]: https://developers.google.com/maps/documentation/mobility
 [documentation]: https://googlemaps.github.io/java-on-demand-rides-deliveries-stub-provider
 
-[code of conduct]: CODE_OF_CONDUCT.md
+[code of conduct]: ?tab=coc-ov-file#readme
 [contributing guide]: CONTRIBUTING.md
 [Deprecation Policy]: https://cloud.google.com/maps-platform/terms
 [developer community channels]: https://developers.google.com/maps/developer-community
