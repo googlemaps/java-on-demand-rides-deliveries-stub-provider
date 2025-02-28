@@ -284,8 +284,47 @@ public final class TripServlet extends HttpServlet {
         return null;
       }
 
-      Timestamp intermediateDestinationsVersion =
-          servletState.getTrip(tripId).getIntermediateDestinationsVersion();
+      // Get the trip from servlet state
+      Trip tripFromState = servletState.getTrip(tripId);
+
+      // Check if trip exists in state before accessing its properties
+      if (tripFromState == null) {
+        logger.warning(String.format("Trip %s not found in servlet state. Retrieving from Fleet Engine.", tripId));
+
+        try {
+          // Attempt to get the trip directly from Fleet Engine
+          GetTripRequest getTripRequest =
+              GetTripRequest.newBuilder().setName(TripUtils.getTripNameFromId(tripId)).build();
+
+          TripServiceClient authenticatedServerTripService =
+              grpcServiceProvider.getAuthenticatedTripService();
+
+          tripFromState = authenticatedServerTripService.getTrip(getTripRequest);
+
+          // Store trip in servlet state for future use
+          servletState.addTrip(tripId, tripFromState);
+
+          logger.info(String.format("Retrieved and stored trip %s from Fleet Engine", tripId));
+        } catch (Exception e) {
+          logger.log(Level.SEVERE, String.format("Error retrieving trip %s: %s", tripId, e.getMessage()), e);
+          sendError(
+              response,
+              "Could not retrieve trip information required for update.",
+              HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+          return null;
+        }
+      }
+
+      // Check again if we have the trip (either from state or newly retrieved)
+      if (tripFromState == null) {
+        sendError(
+            response,
+            "Trip not found, cannot update intermediateDestinationIndex.",
+            HttpServletResponse.SC_NOT_FOUND);
+        return null;
+      }
+
+      Timestamp intermediateDestinationsVersion = tripFromState.getIntermediateDestinationsVersion();
 
       updatedTripBuilder
           .setIntermediateDestinationsVersion(intermediateDestinationsVersion)
@@ -300,6 +339,7 @@ public final class TripServlet extends HttpServlet {
         .setUpdateMask(updateTripMaskBuilder.build())
         .build();
   }
+
 
   /**
    * Sends an error response using the specified {@code errorMsg} and {@code errorCode}. Logs {@code
