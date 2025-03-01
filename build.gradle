@@ -18,13 +18,9 @@ buildscript {    // Configuration for building
     mavenCentral()
   }
   dependencies {
-    classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.4.5'
-    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+    classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.8.1'
+    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.9.4'
   }
-}
-
-plugins {
-//  id 'com.github.sherter.google-java-format' version '0.8'
 }
 
 repositories {   // repositories for Jar's you access in your code
@@ -39,47 +35,84 @@ apply plugin: 'war'                               // standard Web Archive plugin
 apply plugin: 'com.google.cloud.tools.appengine'  // App Engine tasks
 apply plugin: 'com.google.protobuf'
 
+// Define this to handle any internal references to 'compile' configuration
+configurations {
+  compile.extendsFrom implementation
+}
 
 dependencies {
   compileOnly 'com.google.appengine:appengine-api-1.0-sdk:2.0.26'
-  compileOnly 'javax.servlet:javax.servlet-api:3.1.0' // Use compileOnly for provided dependencies
+  compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
   compileOnly 'jstl:jstl:1.2'
 
-  // Add dependencies here
+  // Core dependencies
   implementation 'com.google.maps:fleetengine-auth:2.0.0'
-  implementation 'com.google.api:gax:1.65.1'
+  implementation 'com.google.api:gax:2.30.0'
   implementation 'com.google.maps:google-maps-fleetengine:0.1.0'
 
-  implementation 'com.auth0:java-jwt:3.10.2'
+  // Guice dependencies
   implementation 'com.google.inject:guice:5.1.0'
   implementation 'com.google.inject.extensions:guice-servlet:5.1.0'
-  implementation 'com.google.code.gson:gson:2.8.0'
-  implementation 'com.google.auto.value:auto-value-annotations:1.6.2'
-  implementation 'com.google.guava:guava:30.1-jre'
-  implementation 'io.grpc:grpc-protobuf:1.28.0'
-  implementation 'io.grpc:grpc-stub:1.28.0'
-  implementation 'io.grpc:grpc-netty:1.28.0'
+
+  // Other dependencies
+  implementation 'com.auth0:java-jwt:3.19.2'
+  implementation 'com.google.code.gson:gson:2.10.1'
+  implementation 'com.google.auto.value:auto-value-annotations:1.10.1'
+  annotationProcessor 'com.google.auto.value:auto-value:1.10.1'
+  implementation 'com.google.guava:guava:32.1.2-jre'
+
+  // Explicitly add gRPC dependencies with fixed versions
+  implementation 'io.grpc:grpc-api:1.53.0'
+  implementation 'io.grpc:grpc-context:1.53.0'
+  implementation 'io.grpc:grpc-core:1.53.0'
+  implementation 'io.grpc:grpc-protobuf:1.53.0'
+  implementation 'io.grpc:grpc-stub:1.53.0'
+  implementation 'io.grpc:grpc-netty-shaded:1.53.0'
+  implementation 'io.grpc:grpc-auth:1.53.0'
+
+  // Protobuf dependencies
+  implementation 'com.google.protobuf:protobuf-java:3.21.7'
+  implementation 'com.google.protobuf:protobuf-java-util:3.21.7'
+
+  // Java annotations
+  implementation 'javax.annotation:javax.annotation-api:1.3.2'
   implementation 'javax.ws.rs:jsr311-api:1.1.1'
-  implementation 'com.google.protobuf:protobuf-java:3.25.3'
-  implementation 'javax.annotation:javax.annotation-api:1.2'
-  annotationProcessor 'com.google.auto.value:auto-value:1.6.2'
 
-  testImplementation 'junit:junit:4.12'
-  testImplementation 'com.google.truth:truth:0.33'
-  testImplementation 'org.mockito:mockito-all:1.10.19'
-
+  // Test dependencies
+  testImplementation 'junit:junit:4.13.2'
+  testImplementation 'com.google.truth:truth:1.1.3'
+  testImplementation 'org.mockito:mockito-core:3.12.4'
   testImplementation 'com.google.appengine:appengine-testing:+'
   testImplementation 'com.google.appengine:appengine-api-stubs:+'
   testImplementation 'com.google.appengine:appengine-tools-sdk:+'
 }
 
 configurations.all {
-  withDependencies {
-    resolutionStrategy.eachDependency {
-      if (it.requested.group == 'com.google.guava' && it.requested.name == 'guava') {
-        it.useTarget("com.google.guava:guava:30.1-jre")
-      }
-    }
+  resolutionStrategy {
+    // Force gRPC versions to be consistent
+    force 'io.grpc:grpc-api:1.53.0'
+    force 'io.grpc:grpc-context:1.53.0'
+    force 'io.grpc:grpc-core:1.53.0'
+    force 'io.grpc:grpc-protobuf:1.53.0'
+    force 'io.grpc:grpc-stub:1.53.0'
+    force 'io.grpc:grpc-netty-shaded:1.53.0'
+    force 'io.grpc:grpc-auth:1.53.0'
+
+    // Force Guice to be consistent
+    force 'com.google.inject:guice:5.1.0'
+    force 'com.google.inject.extensions:guice-servlet:5.1.0'
+
+    // Force Guava version
+    force 'com.google.guava:guava:32.1.2-jre'
+  }
+}
+
+war {
+  duplicatesStrategy = DuplicatesStrategy.INCLUDE
+  from(configurations.runtimeClasspath) {
+    include '**/grpc-context-*.jar'
+    include '**/grpc-api-*.jar'
+    into 'WEB-INF/lib'
   }
 }
 
@@ -113,8 +146,11 @@ test {
   }
 }
 
-group   = "com.example.appenginej11"        // Generated output GroupId
+group = "com.example.appenginej17"        // Generated output GroupId
 version = "1.0-SNAPSHOT"       // Version in generated output
 
-sourceCompatibility = 11
-targetCompatibility = 11
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}

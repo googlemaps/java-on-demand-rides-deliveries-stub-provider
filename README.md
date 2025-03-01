@@ -34,7 +34,7 @@ regarding the App Engine plugin with Gradle, go to this
 
 Install and configure the following prerequisites:
 
-- Make sure your environment is set to Java 11.
+- Make sure your environment is set to Java 17.
 - Make sure that your Cloud project is set up on your Google account. Go to
   [Setting up and validating your Cloud project](https://cloud.google.com/appengine/docs/standard/java/using-gradle#setting_up_and_validating_your)
 - [gcloud CLI tool](https://cloud.google.com/sdk/install).

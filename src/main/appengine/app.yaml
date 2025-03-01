@@ -1,0 +1,19 @@
+runtime: java17
+entrypoint: java -noverify -jar sampleprovider-1.0-SNAPSHOT.war
+inbound_services:
+  - warmup
+derived_file_type:
+  - java_precompiled
+threadsafe: True
+auto_id_policy: default
+beta_settings:
+  'source_reference': 'https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider.git#49b50e019b836f0cc96da29e14adc9bdfdab52e7'
+api_version: 'user_defined'
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+    http_headers:
+      Access-Control-Allow-Origin: '*'
+
+skip_files: app.yaml
