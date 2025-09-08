@@ -79,7 +79,7 @@ Install and configure the following prerequisites:
 
 1. Make sure that the user running the *App Engine* has the Service Account
    Token Creator role by following
-   [these instructions](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/fleet-engine/auth).
+   [these instructions](https://cloud.google.com/docs/authentication/use-service-account-impersonation).
    The `App Engine default service account` default has this format:
    YOUR-CLOUD-PROJECT@appspot.gserviceaccount.com
 2. Update `src/main/resources/config.properties` with the provider ID and
